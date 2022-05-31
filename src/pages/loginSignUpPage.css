@@ -33,7 +33,7 @@
 }
 
 #content h1 {
-  margin: 5px;
+  margin: 79px;
 }
 
 #content p {
@@ -70,13 +70,14 @@ form {
 
 #title-l {
   position: relative;
-  top: -20%;
+  top: 0%;
   color: #475bee;
 }
 
 #title-r {
   position: relative;
-  top: -8%;
+  top: 0%;
+  color: #475bee;
 }
 
 input {
@@ -88,7 +89,7 @@ input {
 }
 
 #switchmode {
-  margin-top: 5%;
+  margin-top: 0%;
 }
 
 #switchmode button {
@@ -97,7 +98,7 @@ input {
   margin: 0 0 10px 0;
   color: white;
   border: none;
-  background-color: #2ee59d;
+  background-color: #475bee;
 }
 
 button {
@@ -111,4 +112,21 @@ button {
   outline: none;
   font-weight: bold;
   color: #475bee;
+}
+#switchmode button:hover {
+  box-shadow:  
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+  0 0 42px rgb(76, 0, 255),
+  0 0 82px rgb(64, 0, 255),
+  0 0 92px rgb(64, 0, 255),
+  0 0 102px rgb(25, 0, 255);
+  color: #fff;;
+  border-radius: 25px;
+}
+
+form button:hover {
+  color: black;
+  border-radius: 25px;
 }
