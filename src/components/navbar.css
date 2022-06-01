@@ -1,0 +1,40 @@
+#tab {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  height: 100vh;
+}
+
+#logo {
+  font-size: 1.5rem;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+#iconStart {
+  margin-top: 4rem;
+}
+
+.iconCover {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.iconCover:hover {
+  background-color: #496aff;
+  color: white;
+}
