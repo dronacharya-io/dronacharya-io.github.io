@@ -9,13 +9,9 @@ export const Loginpage = () => {
     setToggle(!toggle);
     if (toggle) {
       document.getElementById("heading").innerHTML = "Hi There!";
-      document.getElementById("para").innerHTML =
-        "Create your account and get onboard.";
       document.getElementById("switch").innerHTML = "Sign In";
     } else {
       document.getElementById("heading").innerHTML = "Welcome Back!";
-      document.getElementById("para").innerHTML =
-        "Great to have you back. Sign in with your credenntials.";
       document.getElementById("switch").innerHTML = "Sign Up";
     }
   };
@@ -26,9 +22,6 @@ export const Loginpage = () => {
         <div id="mainFrame">
           <div id="content">
             <h1 id="heading">Welcome Back!</h1>
-            <p id="para">
-              Great to have you back. Sign in with your credenntials.
-            </p>
             <div id="switchmode">
               <p>New to community? Click the button below</p>
               <button id="switch" onClick={() => Switch()}>

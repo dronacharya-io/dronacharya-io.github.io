@@ -10,13 +10,13 @@
 }
 
 #mainFrame {
-  margin-top: 75px;
+  margin-top: 4.688rem;
   display: flex;
   width: 70vw;
   height: 70vh;
   flex-direction: row;
-  box-shadow: 0 0 10px 0 grey;
-  border-radius: 5px;
+  box-shadow: 0 0 0.625rem 0 grey;
+  border-radius: 0.313rem;
 }
 
 #content {
@@ -27,18 +27,19 @@
   justify-content: center;
   background-color: rgb(90, 194, 90);
   color: white;
-  border-radius: 5px 0 0 5px;
+  border-radius: 0.313rem 0 0 0.313rem;
   background-image: url("./images/73Z_2108.w023.n001.896B.p1.896.jpg");
   background-size: cover;
 }
 
 #content h1 {
-  margin: 79px;
+  margin: 80px;
+  font-size: 2em;
 }
 
 #content p {
-  margin-top: 5px;
-  margin-bottom: 20px;
+  margin-top: 0.313rem;
+  margin-bottom: 1.25rem;
 }
 
 form {
@@ -54,7 +55,7 @@ form {
   align-items: center;
   box-sizing: border-box;
   background-color: white;
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 0.313rem 0.313rem 0;
 }
 
 #register {
@@ -76,9 +77,9 @@ form {
 }
 
 input {
-  margin: 10px 0;
+  margin: 0.625rem 0;
   width: 50%;
-  padding: 10px 20px 10px 10px;
+  padding: 0.625rem 1.25rem 0.625rem 0.625rem;
   font-weight: bold;
   box-sizing: border-box;
 }
@@ -90,7 +91,7 @@ input {
 #switchmode button {
   width: 40%;
   align-self: center;
-  margin: 0 0 10px 0;
+  margin: 0 0 0.625rem 0;
   color: white;
   border: none;
   background-color: #475bee;
@@ -99,24 +100,24 @@ input {
 button {
   cursor: pointer;
   width: inherit;
-  margin: 10px 0;
-  padding: 10px 50px;
+  margin: 0.625rem 0;
+  padding: 0.625rem 3.125rem;
   background-color: transparent;
-  border-radius: 6px;
+  border-radius: 0.375rem;
   transition: all 0.3s ease 0s;
   outline: none;
   font-weight: bold;
   color: #475bee;
 }
 #switchmode button:hover {
-  box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
-    0 0 42px rgb(76, 0, 255), 0 0 82px rgb(64, 0, 255), 0 0 92px rgb(64, 0, 255),
-    0 0 102px rgb(25, 0, 255);
+  box-shadow: 0 0 0.438rem #fff, 0 0 0.625rem #fff, 0 0 1.313rem #fff,
+    0 0 2.625rem rgb(76, 0, 255), 0 0 5.125rem rgb(64, 0, 255),
+    0 0 5.75rem rgb(64, 0, 255), 0 0 6.375rem rgb(25, 0, 255);
   color: #fff;
-  border-radius: 25px;
+  border-radius: 1.563rem;
 }
 
 form button:hover {
   color: black;
-  border-radius: 25px;
+  border-radius: 1.563rem;
 }
