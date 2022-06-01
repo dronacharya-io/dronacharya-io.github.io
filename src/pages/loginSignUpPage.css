@@ -68,14 +68,11 @@ form {
   background-color: white;
 }
 
-#title-l {
+#title-l,
+#title-r {
   position: relative;
   top: 0%;
   color: #475bee;
-}
-
-#title-r {
-  position: relative;
 }
 
 input {
