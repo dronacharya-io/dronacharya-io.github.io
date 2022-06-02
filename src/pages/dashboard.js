@@ -1,12 +1,13 @@
 import "./dashboard.css";
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/navbar.js";
+import ProfileTab from "../components/profile.js";
 
 export const Dashboard = () => {
   return (
     <>
-      <div id="navbar">
-        <Navbar />
+      <div id="abc">
+        <h1>hello</h1>
       </div>
     </>
   );

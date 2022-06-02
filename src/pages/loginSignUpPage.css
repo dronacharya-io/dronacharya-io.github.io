@@ -94,7 +94,12 @@ input {
   margin: 0 0 0.625rem 0;
   color: white;
   border: none;
-  background-color: #475bee;
+  background-image: linear-gradient(
+    to right,
+    #f6d365 0%,
+    #fda085 51%,
+    #f6d365 100%
+  );
 }
 
 button {
@@ -102,22 +107,23 @@ button {
   width: inherit;
   margin: 0.625rem 0;
   padding: 0.625rem 3.125rem;
-  background-color: transparent;
-  border-radius: 0.375rem;
+  background-color: #6d7eff;
+  border-radius: 1.563rem;
   transition: all 0.3s ease 0s;
   outline: none;
   font-weight: bold;
-  color: #475bee;
+  color: #ffffff;
+  border: none;
 }
 #switchmode button:hover {
-  box-shadow: 0 0 0.438rem #fff, 0 0 0.625rem #fff, 0 0 1.313rem #fff,
-    0 0 2.625rem rgb(76, 0, 255), 0 0 5.125rem rgb(64, 0, 255),
-    0 0 5.75rem rgb(64, 0, 255), 0 0 6.375rem rgb(25, 0, 255);
-  color: #fff;
+  box-shadow: 0 0 0.038rem #fff, 0 0 0.225rem #fff, 0 0 0.913rem #fff;
+  color: #ffffff;
   border-radius: 1.563rem;
 }
 
 form button:hover {
-  color: black;
+  color: white;
   border-radius: 1.563rem;
+  background-color: #475bee;
+  border: none;
 }

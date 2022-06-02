@@ -1,0 +1,87 @@
+#profileButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 5rem;
+  right: 0;
+  width: auto;
+  border-radius: 2rem 0 0 2rem;
+  margin: 0;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  z-index: 100;
+}
+
+#outerTab {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  z-index: 0;
+}
+
+#iconTab {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-top: 1rem;
+}
+
+.icons {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0.5rem;
+}
+
+#profileImage {
+  background-image: url("./icons/people.png");
+  background-size: cover;
+  height: 15rem;
+  width: 13rem;
+  margin: 0 5rem 0.5rem 5rem;
+}
+
+#username {
+  font-weight: bolder;
+}
+
+#stats {
+  display: flex;
+  height: 10rem;
+}
+
+#enrolled {
+  background-color: #fef7ec;
+  margin: 1rem 1rem 1rem 2.5rem;
+  width: 8rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: #faaf3b;
+}
+
+#std {
+  background-color: #eaf8f2;
+  margin: 1rem 2.5rem 1rem 1rem;
+  width: 8rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: #23b574;
+}
+
+.stats-p,
+.stats-h {
+  margin: 5px 0 0 0;
+  justify-self: center;
+  display: block;
+}
+
+.stats-icon {
+  margin: 1rem 0 0 1rem;
+}
+
+#classes {
+  height: auto;
+  text-align: left;
+  padding-left: 2.5rem;
+}
