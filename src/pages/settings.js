@@ -1,11 +1,10 @@
-import "./dashboard.css";
 import React, { useState } from "react";
 
-export const Dashboard = () => {
+export const Settings = () => {
   return (
     <>
       <div id="abc">
-        <h1>Dashboard</h1>
+        <h1>Settings</h1>
       </div>
     </>
   );

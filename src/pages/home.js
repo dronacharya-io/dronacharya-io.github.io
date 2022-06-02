@@ -3,17 +3,29 @@ import React, { useState } from "react";
 import { Dashboard } from "./dashboard.js";
 import Navbar from "../components/navbar.js";
 import ProfileTab from "../components/profile.js";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Classroom } from "./classroom.js";
+import { Settings } from "./settings.js";
+import { Scorecard } from "./scorecard.js";
+import { Quiz } from "./quiz.js";
 
 export const Home = () => {
+  const [page, setPage] = useState(1);
+
+  const PullValue = (value) => {
+    setPage(value);
+  };
   return (
     <>
       <div id="mainBody">
         <div id="navbar">
-          <Navbar />
+          <Navbar func={PullValue} />
         </div>
-        <div id="remPart">
-          <Dashboard />
+        <div className="remPart">
+          {page === 1 && <Dashboard />}
+          {page === 2 && <Classroom />}
+          {page === 3 && <Settings />}
+          {page === 4 && <Scorecard />}
+          {page === 5 && <Quiz />}
         </div>
         <div id="profile">
           <ProfileTab />

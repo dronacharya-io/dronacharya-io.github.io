@@ -36,3 +36,8 @@ a {
   background-color: #496aff;
   color: white;
 }
+
+#darkmode:hover {
+  background-color: #000000;
+  color: white;
+}
