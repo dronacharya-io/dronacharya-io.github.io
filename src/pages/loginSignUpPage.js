@@ -2,9 +2,18 @@ import "./loginSignUpPage.css";
 import React, { useState } from "react";
 import Login from "../components/login";
 import Register from "../components/register";
+import { useNavigate } from "react-router-dom";
 
-export const Loginpage = () => {
+export const Loginpage = (props) => {
   const [toggle, setToggle] = useState(true);
+
+  let navigate = useNavigate();
+
+  const routeChange = () => {
+    const path = "/home";
+    navigate(path);
+  };
+
   const Switch = () => {
     setToggle(!toggle);
     if (toggle) {
@@ -29,8 +38,10 @@ export const Loginpage = () => {
               </button>
             </div>
           </div>
-          {toggle && <Login />}
-          {!toggle && <Register />}
+          {toggle && (
+            <Login PullData={props.PullData} routeChange={routeChange} />
+          )}
+          {!toggle && <Register routeChange={routeChange} />}
         </div>
       </div>
     </>

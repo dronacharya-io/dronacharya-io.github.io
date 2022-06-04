@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Login = () => {
+const Login = (props) => {
   const [loginData, setLoginData] = useState({ username: "", password: "" });
   const handleChange = (e) => {
     const name = e.target.name;
@@ -11,7 +11,10 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (loginData.username && loginData.password) {
-      console.log(loginData);
+      props.PullData(loginData);
+      props.routeChange();
+    } else {
+      alert("fill all values");
     }
   };
 

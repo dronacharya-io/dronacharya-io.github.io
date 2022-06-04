@@ -7,8 +7,9 @@ import { Classroom } from "./classroom.js";
 import { Settings } from "./settings.js";
 import { Scorecard } from "./scorecard.js";
 import { Quiz } from "./quiz.js";
+import StickyBox from "react-sticky-box";
 
-export const Home = () => {
+export const Home = (props) => {
   const [page, setPage] = useState(1);
 
   const PullValue = (value) => {
@@ -18,7 +19,9 @@ export const Home = () => {
     <>
       <div id="mainBody">
         <div id="navbar">
-          <Navbar func={PullValue} />
+          <StickyBox offsetTop={0} offsetBottom={0}>
+            <Navbar func={PullValue} />
+          </StickyBox>
         </div>
         <div className="remPart">
           {page === 1 && <Dashboard />}
@@ -28,7 +31,9 @@ export const Home = () => {
           {page === 5 && <Quiz />}
         </div>
         <div id="profile">
-          <ProfileTab />
+          <StickyBox offsetTop={0} offsetBottom={0}>
+            <ProfileTab {...props} />
+          </StickyBox>
         </div>
       </div>
     </>

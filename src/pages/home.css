@@ -9,5 +9,5 @@
 }
 
 .remPart {
-  flex-grow: 1;
+  width: -webkit-fill-available;
 }

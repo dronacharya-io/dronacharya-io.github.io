@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
-const Register = () => {
+const Register = (props) => {
   const [registerData, setRegisterData] = useState({
     username: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
+
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -18,10 +19,11 @@ const Register = () => {
     if (
       registerData.username &&
       registerData.email &&
-      registerData.password &&
-      registerData.confirmPassword
+      registerData.password === registerData.confirmPassword
     ) {
-      console.log(registerData);
+      props.routeChange();
+    } else {
+      alert("fill all values");
     }
   };
 

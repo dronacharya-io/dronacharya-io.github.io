@@ -6,7 +6,7 @@ import { SiGoogleclassroom, SiGooglescholar } from "react-icons/si";
 import { MdOutlineClass } from "react-icons/md";
 import { BsFillPersonFill } from "react-icons/bs";
 
-const ProfileTab = () => {
+const ProfileTab = (props) => {
   const [profileTab, setProfileTab] = useState(true);
 
   const Disable = () => {

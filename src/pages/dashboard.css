@@ -1,5 +1,67 @@
-#abc {
-  height: 100vh;
-  width: inherit;
+#dashboardCover {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: rgba(131, 93, 255, 0.434);
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#searchbar {
+  display: flex;
+  width: 20%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px rgb(149, 115, 252);
+  border-radius: 2rem;
+  padding: 0.2rem;
+  color: rgb(149, 115, 252);
+}
+
+#searchInput {
+  width: 90%;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0 0 0 1rem;
+  font-size: 1rem;
+  background-color: transparent;
+}
+::placeholder {
+  color: rgb(149, 115, 252);
+}
+
+.search-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: rgb(149, 115, 252);
+}
+
+#createQuiz {
   margin: 0;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+}
+
+#upcomingTests {
+  margin-top: 2rem;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 17rem;
+  height: 20rem;
+  background-color: white;
+  border-radius: 2rem;
+  margin: 2rem 1.75rem;
 }
