@@ -1,6 +1,7 @@
 import "./dashboard.css";
 import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
+import StickyBox from "react-sticky-box";
 
 export const Dashboard = () => {
   return (
@@ -26,7 +27,6 @@ export const Dashboard = () => {
         <div id="upcomingTests">
           <h1>Upcoming Tests</h1>
           <div className="cards">
-            <div className="card" />
             <div className="card" />
             <div className="card" />
             <div className="card" />
