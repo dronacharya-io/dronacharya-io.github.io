@@ -1,0 +1,19 @@
+#q-mainBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(131, 93, 255, 0.434);
+  width: 100%;
+  height: 100%;
+}
+
+.Quiz {
+  width: 25%;
+  box-sizing: border-box;
+  padding: 10% 0%;
+  margin: 0 5%;
+  background-color: white;
+  border-radius: 1rem;
+  color: black;
+  font-size: 1.5rem;
+}
