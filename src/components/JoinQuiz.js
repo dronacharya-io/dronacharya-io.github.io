@@ -6,11 +6,12 @@ const JoinQuiz = (props) => {
   const [counter, setCounter] = useState(0);
   const [submission, setSubmission] = useState({ submittedAns: "" });
   const TakeAnswer = () => {
-    if (counter < 4) {
+    if (props.data[counter + 1]) {
       setCounter(counter + 1);
     } else {
       alert("Test Submitted!");
     }
+    console.log(props.data);
   };
 
   return (
