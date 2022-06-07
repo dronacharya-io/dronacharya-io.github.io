@@ -2,6 +2,7 @@ import "./quiz.css";
 import React, { useState } from "react";
 import CreateQuiz from "../components/CreateQuiz";
 import JoinQuiz from "../components/JoinQuiz";
+import Data from "./data";
 
 export const Quiz = () => {
   const [createQuiz, setCreateQuiz] = useState(false);
@@ -34,7 +35,7 @@ export const Quiz = () => {
       {joinQuiz && !createQuiz && (
         <div id="q-mainBody">
           <div id="attempt-section">
-            <JoinQuiz function={Toggle} />
+            <JoinQuiz function={Toggle} data={Data} />
           </div>
         </div>
       )}

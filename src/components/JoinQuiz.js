@@ -1,34 +1,39 @@
 import "./joinQuiz.css";
-import React from "react";
+import React, { useState } from "react";
 import { IoArrowBack } from "react-icons/io5";
 
 const JoinQuiz = (props) => {
+  const [counter, setCounter] = useState(0);
+  const [submission, setSubmission] = useState({ submittedAns: "" });
+  const TakeAnswer = () => {
+    if (counter < 4) {
+      setCounter(counter + 1);
+    } else {
+      alert("Test Submitted!");
+    }
+  };
+
   return (
     <>
       <IoArrowBack className="back-icon" onClick={props.function} />
       <div id="question">
-        <p>
-          this is a
-          questionsf,jvhlsdhbvsdbvvdsbkjkkkkkkkjk.,dbfkjbsjvb;slkkv;jsdbvvlkDAkvjbsbdk;vjvbsdvbdvsdjjlsd
-          kj
-          dddddddddddddddddddddddddddddddddddddsdbvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvkajghjh
-          oihwroigh ?.sjbvkja KJDbcADJkvjcbaSLC dklkva l/avaocad ak c dkc
-        </p>
+        <p>{props.data[counter].question}</p>
       </div>
       <div id="options">
         <div className="option">
-          <p>Asmdhvkhsdbvbk.bsdkj/bk/sdv kjbkjgksbkvbvs</p>
+          <p>{props.data[counter].optionA}</p>
         </div>
         <div className="option">
-          <p>Bakdfhglisksb;vgiugiug foug foff sfuish/f</p>
+          <p>{props.data[counter].optionB}</p>
         </div>
         <div className="option">
-          <p>cSBMBDk. vkjbaDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDbcl</p>
+          <p>{props.data[counter].optionC}</p>
         </div>
         <div className="option">
-          <p>Dkrrhgiubskviujbks;9gr owrhhow</p>
+          <p>{props.data[counter].optionD}</p>
         </div>
       </div>
+      <button onClick={() => TakeAnswer()}>Next</button>
     </>
   );
 };
