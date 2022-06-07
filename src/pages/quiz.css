@@ -17,3 +17,13 @@
   color: black;
   font-size: 1.5rem;
 }
+
+
+#attempt-section {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 5vh 0 0 0;
+  padding: 2rem;
+}

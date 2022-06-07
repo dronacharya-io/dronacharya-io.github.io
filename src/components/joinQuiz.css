@@ -1,0 +1,19 @@
+#question {
+    padding: 1rem;
+    word-wrap: break-all;
+    text-align: center;
+    padding: 2%;
+    margin: 2%;
+}
+
+#options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.option {
+    word-wrap: break-word;
+    width: 40%;
+    margin: 2%;
+}
