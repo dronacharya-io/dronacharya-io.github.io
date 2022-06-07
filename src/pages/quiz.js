@@ -7,6 +7,11 @@ export const Quiz = () => {
   const [createQuiz, setCreateQuiz] = useState(false);
   const [joinQuiz, setJoinQuiz] = useState(false);
 
+  const Toggle = () => {
+    setCreateQuiz(false);
+    setJoinQuiz(false);
+  };
+
   return (
     <>
       {!createQuiz && !joinQuiz && (
@@ -22,14 +27,14 @@ export const Quiz = () => {
       {createQuiz && !joinQuiz && (
         <div id="q-mainBody">
           <div id="question-section">
-            <CreateQuiz />
+            <CreateQuiz function={Toggle} />
           </div>
         </div>
       )}
       {joinQuiz && !createQuiz && (
         <div id="q-mainBody">
           <div id="attempt-section">
-            <JoinQuiz />
+            <JoinQuiz function={Toggle} />
           </div>
         </div>
       )}

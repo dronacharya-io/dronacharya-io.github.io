@@ -1,6 +1,8 @@
+import "./createQuiz.css";
 import React, { useState } from "react";
+import { IoArrowBack } from "react-icons/io5";
 
-const CreateQuiz = () => {
+const CreateQuiz = (props) => {
   const [question, setQuestion] = useState({
     Question: "",
     optionA: "",
@@ -34,6 +36,7 @@ const CreateQuiz = () => {
 
   return (
     <>
+      <IoArrowBack className="back-icon" onClick={props.function} />
       <div>
         <form className="form">
           <div className="form-control">

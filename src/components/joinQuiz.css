@@ -1,6 +1,5 @@
 #question {
-    padding: 1rem;
-    word-wrap: break-all;
+    word-break: break-all;
     text-align: center;
     padding: 2%;
     margin: 2%;
@@ -16,4 +15,11 @@
     word-wrap: break-word;
     width: 40%;
     margin: 2%;
+}
+
+.back-icon {
+    position: absolute;
+    top: 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
 }

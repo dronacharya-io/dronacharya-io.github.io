@@ -1,9 +1,11 @@
 import "./joinQuiz.css";
 import React from "react";
+import { IoArrowBack } from "react-icons/io5";
 
-const JoinQuiz = () => {
+const JoinQuiz = (props) => {
   return (
     <>
+      <IoArrowBack className="back-icon" onClick={props.function} />
       <div id="question">
         <p>
           this is a
