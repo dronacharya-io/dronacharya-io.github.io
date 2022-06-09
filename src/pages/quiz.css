@@ -15,7 +15,7 @@
   border-radius: 1rem;
   color: black;
   font-size: 1.5rem;
-  box-shadow: 0 0 0.5rem 0rem lightgray;
+  border: solid 1px rgb(233 233 233);
 }
 
 
@@ -31,5 +31,5 @@
 
 
 .Quiz:hover {
-  box-shadow: 0 0 1.5rem 0rem lightgray;
+  box-shadow: 0 0 1.5rem 0rem rgb(233 233 233);
 }
