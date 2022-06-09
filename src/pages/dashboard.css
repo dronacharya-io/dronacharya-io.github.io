@@ -16,7 +16,7 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  border: solid 2px grey;
+  border: solid 2px rgb(233 233 233);
   border-radius: 2rem;
   padding: 0.2rem;
 }
@@ -32,13 +32,13 @@
 }
 
 ::placeholder {
-  color: grey;
+  color: rgb(233 233 233);
 }
 
 .search-icon {
   width: 1.5rem;
   height: 1.5rem;
-  color: grey;
+  color: rgb(233 233 233);
 }
 
 #createQuiz {
