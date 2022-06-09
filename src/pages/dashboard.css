@@ -4,18 +4,6 @@
   padding: 2rem;
 }
 
-#header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#createQuiz {
-  margin: 0;
-  height: 2.5rem;
-  border-radius: 0.5rem;
-}
-
 #upcomingTests {
   margin-top: 2rem;
 }

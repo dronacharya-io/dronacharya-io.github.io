@@ -16,7 +16,7 @@ const ProfileTab = (props) => {
   return (
     <>
       <button id="profileButton" onClick={() => Disable()}>
-        <BsFillPersonFill className="icon" />
+        <BsFillPersonFill className="icon" id="profile-icon" />
       </button>
       {profileTab && (
         <div id="outerTab">
