@@ -5,6 +5,7 @@ import { VscBell, VscBellDot } from "react-icons/vsc";
 import { SiGoogleclassroom, SiGooglescholar } from "react-icons/si";
 import { MdOutlineClass } from "react-icons/md";
 import { BsFillPersonFill } from "react-icons/bs";
+import { AiOutlineSearch } from "react-icons/ai";
 
 const ProfileTab = (props) => {
   const [profileTab, setProfileTab] = useState(true);
@@ -23,22 +24,23 @@ const ProfileTab = (props) => {
             <IoMailOutline className="icons" />
             <VscBell className="icons" />
           </div>
-          <div id="profileImage" />
-          <div id="username">Hi User!</div>
-          <div id="stats">
-            <div id="enrolled">
-              <SiGooglescholar className="stats-icon" />
-              <p className="stats-p">Enrolled Classes</p>
-              <h1 className="stats-h">7</h1>
-            </div>
-            <div id="std">
-              <MdOutlineClass className="stats-icon" />
-              <p className="stats-p">Standard</p>
-              <h1 className="stats-h">11</h1>
-            </div>
+          <div id="searchbar">
+            <AiOutlineSearch
+              className="search-icon"
+              onClick={() =>
+                console.log(document.getElementById("searchInput").value)
+              }
+            />
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search.."
+              autoComplete="off"
+            />
           </div>
-          <div id="classes">
-            <h1>To-Do List:</h1>
+          <div id="profileImage" />
+          <div id="username">
+            <p>Hello Priyansh!</p>
           </div>
         </div>
       )}

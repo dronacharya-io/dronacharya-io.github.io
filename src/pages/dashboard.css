@@ -10,37 +10,6 @@
   align-items: center;
 }
 
-#searchbar {
-  display: flex;
-  width: 20%;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  border: solid 2px rgb(233 233 233);
-  border-radius: 2rem;
-  padding: 0.2rem;
-}
-
-#searchInput {
-  width: 90%;
-  border: 0;
-  outline: 0;
-  padding: 0;
-  margin: 0 0 0 1rem;
-  font-size: 1rem;
-  background-color: transparent;
-}
-
-::placeholder {
-  color: rgb(233 233 233);
-}
-
-.search-icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  color: rgb(233 233 233);
-}
-
 #createQuiz {
   margin: 0;
   height: 2.5rem;
