@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  background-color: rgba(131, 93, 255, 0.434);
 }
 
 #header {
@@ -17,10 +16,9 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  border: solid 2px rgb(149, 115, 252);
+  border: solid 2px grey;
   border-radius: 2rem;
   padding: 0.2rem;
-  color: rgb(149, 115, 252);
 }
 
 #searchInput {
@@ -32,14 +30,15 @@
   font-size: 1rem;
   background-color: transparent;
 }
+
 ::placeholder {
-  color: rgb(149, 115, 252);
+  color: grey;
 }
 
 .search-icon {
   width: 1.5rem;
   height: 1.5rem;
-  color: rgb(149, 115, 252);
+  color: grey;
 }
 
 #createQuiz {
@@ -62,6 +61,12 @@
   width: 17rem;
   height: 20rem;
   background-color: white;
-  border-radius: 2rem;
+  border-radius: 1rem;
   margin: 2rem 1.75rem;
+  box-shadow: 0 0 0.5rem 0rem lightgray;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0 0 1.5rem 0rem lightgray;
 }

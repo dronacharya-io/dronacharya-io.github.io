@@ -1,5 +1,5 @@
 import "./navbar.css";
-import React, { useState } from "react";
+import React from "react";
 import { AiOutlineHome, AiOutlineQuestionCircle } from "react-icons/ai";
 import { SiGoogleclassroom, SiDarkreader } from "react-icons/si";
 import { IoSettingsOutline, IoStatsChartOutline } from "react-icons/io5";
@@ -19,7 +19,11 @@ const Navbar = (props) => {
           <div className="iconCover 1" onClick={() => PassValue(1)}>
             <AiOutlineHome className="icon" />
           </div>
-          <div className="iconCover 2" onClick={() => PassValue(2)}>
+          <div
+            className="iconCover 2"
+            id="classroom"
+            onClick={() => PassValue(2)}
+          >
             <SiGoogleclassroom className="icon" />
           </div>
           <div className="iconCover 3" onClick={() => PassValue(3)}>
