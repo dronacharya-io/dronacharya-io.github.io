@@ -13,7 +13,7 @@ const Navbar = (props) => {
     <>
       <div id="tab">
         <a id="logo" href="#">
-          <p>Quiz.io</p>
+          <p>Q.io</p>
         </a>
         <div id="iconStart">
           <div className="iconCover 1" onClick={() => PassValue(1)}>
