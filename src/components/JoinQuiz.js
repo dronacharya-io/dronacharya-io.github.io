@@ -4,14 +4,32 @@ import { IoArrowBack } from "react-icons/io5";
 
 const JoinQuiz = (props) => {
   const [counter, setCounter] = useState(0);
-  const [submission, setSubmission] = useState({ submittedAns: "" });
+  const [submission, setSubmission] = useState("");
+  const [submissions, setSubmissions] = useState([]);
+
   const TakeAnswer = () => {
+    handleSubmit();
     if (props.data[counter + 1]) {
       setCounter(counter + 1);
     } else {
       alert("Test Submitted!");
     }
-    console.log(props.data);
+  };
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setSubmission({ value });
+  };
+
+  const handleSubmit = () => {
+    const newSubmission = {
+      ...submission,
+      id: new Date().getTime().toString(),
+    };
+    setSubmissions([...submissions, newSubmission]);
+    setSubmission("");
+
+    console.log(submissions);
   };
 
   return (
@@ -34,6 +52,13 @@ const JoinQuiz = (props) => {
           <p>{props.data[counter].optionD}</p>
         </div>
       </div>
+      <input
+        type="text"
+        id="submittedAns"
+        name="submittedAns"
+        value={submission}
+        onChange={handleChange}
+      />
       <button onClick={() => TakeAnswer()}>Next</button>
     </>
   );
