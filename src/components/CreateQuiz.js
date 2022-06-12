@@ -36,10 +36,10 @@ const CreateQuiz = (props) => {
 
   return (
     <>
-      <IoArrowBack className="back-icon" onClick={props.function} />
+      <IoArrowBack className="back-icon-c" onClick={props.function} />
       <div>
-        <form className="form">
-          <div className="form-control">
+        <form className="form" id="form-c">
+          <div className="form-control Question">
             <label htmlFor="Question">Question : </label>
             <input
               type="text"
@@ -49,7 +49,7 @@ const CreateQuiz = (props) => {
               onChange={handleChange}
             />
           </div>
-          <div className="form-control">
+          <div className="form-control option">
             <label htmlFor="optionA">option A : </label>
             <input
               type="text"
@@ -59,7 +59,7 @@ const CreateQuiz = (props) => {
               onChange={handleChange}
             />
           </div>
-          <div className="form-control">
+          <div className="form-control option">
             <label htmlFor="optionB">option B : </label>
             <input
               type="text"
@@ -69,7 +69,7 @@ const CreateQuiz = (props) => {
               onChange={handleChange}
             />
           </div>
-          <div className="form-control">
+          <div className="form-control option">
             <label htmlFor="optionC">option C : </label>
             <input
               type="text"
@@ -79,7 +79,7 @@ const CreateQuiz = (props) => {
               onChange={handleChange}
             />
           </div>
-          <div className="form-control">
+          <div className="form-control option">
             <label htmlFor="optionD">option D : </label>
             <input
               type="text"
@@ -89,7 +89,7 @@ const CreateQuiz = (props) => {
               onChange={handleChange}
             />
           </div>
-          <div className="form-control">
+          <div className="form-control correctAns">
             <label htmlFor="correctAns">Correct Ans : </label>
             <input
               type="text"
@@ -99,9 +99,11 @@ const CreateQuiz = (props) => {
               onChange={handleChange}
             />
           </div>
-          <button type="submit" className="btn" onClick={handleSubmit}>
-            add question
-          </button>
+          <div id="submit-btn">
+            <button type="submit" className="btn" onClick={handleSubmit}>
+              add question
+            </button>
+          </div>
         </form>
       </div>
       {questions.map((question) => {

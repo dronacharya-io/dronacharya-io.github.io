@@ -17,6 +17,26 @@
     margin: 2%;
 }
 
+#answer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    margin: 0.625rem 2rem 0;
+    width: 50%;
+    padding: 0.625rem 1.25rem 0.625rem 0.625rem;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+button {
+    width: 50%;
+    align-self: center;
+    border-radius: 0.5rem;
+}
+
 .back-icon {
     position: absolute;
     top: 1.5rem;

@@ -1,0 +1,38 @@
+#form-c {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Question {
+    width: 100%;
+}
+
+.option {
+    width: 50%;
+}
+
+.correctAns {
+    width: 100%;
+}
+
+.back-icon-c {
+    position: absolute;
+    top: 2.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    left: 8.5rem;
+}
+
+.btn {
+    justify-self: center;
+    width: 80%;
+    border-radius: 0.5rem;
+}
+
+#submit-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

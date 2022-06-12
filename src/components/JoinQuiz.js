@@ -52,13 +52,16 @@ const JoinQuiz = (props) => {
           <p>{props.data[counter].optionD}</p>
         </div>
       </div>
-      <input
-        type="text"
-        id="submittedAns"
-        name="submittedAns"
-        value={submission}
-        onChange={handleChange}
-      />
+      <div id="answer">
+        <p>answer</p>
+        <input
+          type="text"
+          id="submittedAns"
+          name="submittedAns"
+          value={submission}
+          onChange={handleChange}
+        />
+      </div>
       <button onClick={() => TakeAnswer()}>Next</button>
     </>
   );

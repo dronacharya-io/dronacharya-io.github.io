@@ -19,11 +19,7 @@ const Navbar = (props) => {
           <div className="iconCover 1" onClick={() => PassValue(1)}>
             <AiOutlineHome className="icon" />
           </div>
-          <div
-            className="iconCover 2"
-            id="classroom"
-            onClick={() => PassValue(2)}
-          >
+          <div className="iconCover 2" onClick={() => PassValue(2)}>
             <SiGoogleclassroom className="icon" />
           </div>
           <div className="iconCover 3" onClick={() => PassValue(3)}>
@@ -32,9 +28,14 @@ const Navbar = (props) => {
           <div className="iconCover 4" onClick={() => PassValue(4)}>
             <IoStatsChartOutline className="icon" />
           </div>
-          <div className="iconCover 5" onClick={() => PassValue(5)}>
+          <div
+            className="iconCover 5"
+            id="quiz-icon"
+            onClick={() => PassValue(5)}
+          >
             <AiOutlineQuestionCircle className="icon" />
           </div>
+          <hr />
           <div
             id="darkmode"
             className="iconCover 6"

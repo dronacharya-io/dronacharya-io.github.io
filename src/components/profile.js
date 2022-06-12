@@ -39,8 +39,9 @@ const ProfileTab = (props) => {
             />
           </div>
           <div id="profileImage" />
-          <div id="username">
+          <div id="firstname">
             <p>Hello Priyansh!</p>
+            <p>64 classmates</p>
           </div>
         </div>
       )}

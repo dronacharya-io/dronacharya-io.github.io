@@ -27,12 +27,12 @@ a {
   align-items: center;
   justify-content: center;
   margin: 1rem 1.25rem;
+  color: grey;
 }
 
 .icon {
   width: 1.5rem;
   height: 1.5rem;
-  color: grey;
 }
 
 .iconCover:hover {
@@ -42,6 +42,14 @@ a {
 
 .icon:hover {
   color: white;
+}
+
+hr {
+  width: 2.5rem;
+  margin-left: 1.5rem;
+  height: 1px;
+  background-color: rgb(233 233 233);
+  border: none;
 }
 
 #darkmode:hover {
