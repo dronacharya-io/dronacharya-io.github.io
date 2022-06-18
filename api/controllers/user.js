@@ -34,10 +34,6 @@ export const getUser = async (req, res, next) => {
 };
 
 export const getUsers = async (req, res, next) => {
-  const failed = true;
-
-  if (failed) return next(createError(401, " you are not authenticated!"));
-
   try {
     const users = await User.find();
     res.status(200).json(users);
