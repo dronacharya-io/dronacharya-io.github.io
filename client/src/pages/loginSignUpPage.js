@@ -38,9 +38,7 @@ export const Loginpage = (props) => {
               </button>
             </div>
           </div>
-          {toggle && (
-            <Login PullData={props.PullData} routeChange={routeChange} />
-          )}
+          {toggle && <Login routeChange={routeChange} />}
           {!toggle && <Register routeChange={routeChange} />}
         </div>
       </div>

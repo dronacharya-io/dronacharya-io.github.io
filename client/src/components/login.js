@@ -11,7 +11,6 @@ const Login = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (loginData.username && loginData.password) {
-      props.PullData(loginData);
       props.routeChange();
     } else {
       alert("fill all values");
