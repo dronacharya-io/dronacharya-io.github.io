@@ -12,6 +12,7 @@ const Login = (props) => {
     e.preventDefault();
     if (loginData.username && loginData.password) {
       props.routeChange();
+      // console.log(loginData.username+" "+loginData.password);
     } else {
       alert("fill all values");
     }
