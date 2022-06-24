@@ -22,6 +22,8 @@
   margin: 2rem 1.75rem;
   border: solid 0.5px rgb(233 233 233);
   cursor: pointer;
+  box-sizing: border-box;
+  padding: 1rem;
 }
 
 .card:hover {
