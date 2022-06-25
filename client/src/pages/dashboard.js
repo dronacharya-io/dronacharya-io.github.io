@@ -1,7 +1,7 @@
 import "./dashboard.css";
 import React from "react";
 import Card from "./Cards";
-import CardDetails from "./cardDetails";
+import CardDetails from "../components/cardDetails";
 
 export const Dashboard = () => {
   return (
