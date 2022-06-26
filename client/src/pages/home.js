@@ -9,7 +9,7 @@ import { Scorecard } from "./scorecard.js";
 import { Quiz } from "./quiz.js";
 import StickyBox from "react-sticky-box";
 
-export const Home = (props) => {
+export const Home = () => {
   const [page, setPage] = useState(1);
 
   const PullValue = (value) => {
@@ -32,7 +32,7 @@ export const Home = (props) => {
         </div>
         <div id="profile">
           <StickyBox offsetTop={0} offsetBottom={0}>
-            <ProfileTab {...props} />
+            <ProfileTab />
           </StickyBox>
         </div>
       </div>

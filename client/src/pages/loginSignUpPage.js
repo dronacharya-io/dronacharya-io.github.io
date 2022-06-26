@@ -4,12 +4,16 @@ import Login from "../components/login";
 import Register from "../components/register";
 import { useNavigate } from "react-router-dom";
 
-export const Loginpage = (props) => {
+export const Loginpage = () => {
   const [toggle, setToggle] = useState(true);
 
   let navigate = useNavigate();
 
-  const routeChange = () => {
+  const routeChange1 = () => {
+    const path = "/home";
+    navigate(path);
+  };
+  const routeChange2 = () => {
     const path = "/home";
     navigate(path);
   };
@@ -38,11 +42,10 @@ export const Loginpage = (props) => {
               </button>
             </div>
           </div>
-          {toggle && <Login routeChange={routeChange} />}
-          {!toggle && <Register routeChange={routeChange} />}
+          {toggle && <Login routeChange={routeChange1} />}
+          {!toggle && <Register routeChange={routeChange2} />}
         </div>
       </div>
     </>
   );
 };
-
