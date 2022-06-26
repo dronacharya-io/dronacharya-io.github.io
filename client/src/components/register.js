@@ -2,26 +2,31 @@ import React, { useState } from "react";
 
 const Register = (props) => {
   const [registerData, setRegisterData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
+    username: undefined,
+    email: undefined,
+    password: undefined,
+    confirmPassword: undefined,
   });
 
   const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setRegisterData({ ...registerData, [name]: value });
+    setRegisterData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleClick = (e) => {
     e.preventDefault();
     if (
       registerData.username &&
       registerData.email &&
       registerData.password === registerData.confirmPassword
     ) {
-      props.routeChange();
+      dispatch({ type: "LOGIN_START" });
+    try {
+      const res = await axios.post("/auth/register", JSON.stringify(registerData));
+      dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
+      navigate("/home");
+    } catch (err) {
+      dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
+    }
     } else {
       alert("fill all values");
     }
@@ -36,8 +41,6 @@ const Register = (props) => {
             placeholder="Username"
             type="text"
             id="username"
-            required={true}
-            value={registerData.username}
             name="username"
             onChange={handleChange}
           />
@@ -47,8 +50,6 @@ const Register = (props) => {
             placeholder="Email"
             type="text"
             id="email"
-            required={true}
-            value={registerData.email}
             name="email"
             onChange={handleChange}
           />
@@ -58,8 +59,6 @@ const Register = (props) => {
             placeholder="Password"
             type="password"
             id="password"
-            required={true}
-            value={registerData.password}
             name="password"
             onChange={handleChange}
           />
@@ -69,14 +68,12 @@ const Register = (props) => {
             placeholder="Confirm Password"
             type="Password"
             id="confirmPassword"
-            required={true}
-            value={registerData.confirmPassword}
             name="confirmPassword"
             onChange={handleChange}
           />
         </div>
         <div>
-          <button type="submit" onClick={handleSubmit}>
+          <button type="submit" onClick={handleClick}>
             Sign Up
           </button>
         </div>
