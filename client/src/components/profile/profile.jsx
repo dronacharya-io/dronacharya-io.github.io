@@ -5,7 +5,7 @@ import { VscBell, VscBellDot } from "react-icons/vsc";
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiOutlineSearch } from "react-icons/ai";
 import { AuthContext } from "../../context/AuthContext";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ProfileTab = () => {
   const [profileTab, setProfileTab] = useState(true);
