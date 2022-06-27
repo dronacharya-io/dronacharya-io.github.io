@@ -1,7 +1,7 @@
 import "./quiz.css";
 import React, { useState } from "react";
 import CreateQuiz from "../../components/createQuiz/CreateQuiz";
-import JoinQuiz from "../../components/JoinQuiz";
+import JoinQuiz from "../../components/joinQuiz/JoinQuiz";
 import Data from "../data";
 
 export const Quiz = () => {

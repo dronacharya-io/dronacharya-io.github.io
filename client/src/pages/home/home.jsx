@@ -1,7 +1,7 @@
 import "./home.css";
 import React, { useState } from "react";
-import { Dashboard } from "./dashboard.jsx";
-import Navbar from "../../components/navbar.jsx";
+import { Dashboard } from "../dashboard/dashboard.jsx";
+import Navbar from "../../components/navbar/navbar.jsx";
 import ProfileTab from "../../components/profile/profile.jsx";
 import { Classroom } from "../classroom/classroom.jsx";
 import { Settings } from "../settings/settings.jsx";

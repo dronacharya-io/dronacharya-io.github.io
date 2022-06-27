@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   background-color: whitesmoke;
-  background-image: url("./images/2352.jpg");
+  background-image: url("../images/2352.jpg");
   background-size: cover;
 }
 
@@ -28,7 +28,7 @@
   background-color: rgb(90, 194, 90);
   color: white;
   border-radius: 0.313rem 0 0 0.313rem;
-  background-image: url("./images/73Z_2108.w023.n001.896B.p1.896.jpg");
+  background-image: url("../images/73Z_2108.w023.n001.896B.p1.896.jpg");
   background-size: cover;
 }
 
@@ -94,12 +94,10 @@ input {
   margin: 0 0 0.625rem 0;
   color: white;
   border: none;
-  background-image: linear-gradient(
-    to right,
-    #f6d365 0%,
-    #fda085 51%,
-    #f6d365 100%
-  );
+  background-image: linear-gradient(to right,
+      #f6d365 0%,
+      #fda085 51%,
+      #f6d365 100%);
 }
 
 button {
@@ -115,6 +113,7 @@ button {
   color: #ffffff;
   border: none;
 }
+
 #switchmode button:hover {
   box-shadow: 0 0 0.038rem #fff, 0 0 0.225rem #fff, 0 0 0.913rem #fff;
   color: #ffffff;
