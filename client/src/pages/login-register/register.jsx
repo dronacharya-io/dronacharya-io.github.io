@@ -11,7 +11,7 @@ const Register = () => {
     confirmPassword: undefined,
   });
 
-  const { dispatch } = useContext(AuthContext);
+  const { loading, error, dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -91,9 +91,10 @@ const Register = () => {
                 />
               </div>
               <div>
-                <button type="submit" onClick={handleClick}>
+                <button disabled={loading} type="submit" onClick={handleClick}>
                   Sign Up
                 </button>
+                {error && <span>{error.message}</span>}
               </div>
             </form>
           </div>
