@@ -13,9 +13,7 @@ const Navbar = (props) => {
   return (
     <>
       <div id="tab">
-        <Link to="/" id="logo">
-          <p>Q.io</p>
-        </Link>
+        <span id="logo">Q.io</span>
         <div id="iconStart">
           <div className="iconCover 1" onClick={() => PassValue(1)}>
             <AiOutlineHome className="icon" />
