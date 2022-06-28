@@ -3,7 +3,7 @@ import {
   updateQuiz,
   deleteQuiz,
   getQuiz,
-  getQuizes,
+  getQuizzes,
   createQuiz,
   countBySubject,
   countByType,
@@ -19,7 +19,7 @@ router.delete("/:id", verifyUser, deleteQuiz);
 //GET
 router.get("/:id", verifyUser, getQuiz);
 //GETALL
-router.get("/", verifyUser, getQuizes);
+router.get("/", verifyUser, getQuizzes);
 //CREATE
 router.post("/", verifyUser, createQuiz);
 //COUNT

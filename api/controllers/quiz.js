@@ -28,10 +28,10 @@ export const getQuiz = async (req, res, next) => {
     next(err);
   }
 };
-export const getQuizes = async (req, res, next) => {
+export const getQuizzes = async (req, res, next) => {
   try {
-    const quizes = await Quiz.find();
-    res.status(200).json(quizes);
+    const quizzes = await Quiz.find();
+    res.status(200).json(quizzes);
   } catch (err) {
     next(err);
   }

@@ -24,12 +24,12 @@ const CreateQuiz = (props) => {
       const newQuestion = { ...question, id: new Date().getTime().toString() };
       setQuestions([...questions, newQuestion]);
       setQuestion({
-        Question: "",
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        optionD: "",
-        correctAns: "",
+        Question: undefined,
+        optionA: undefined,
+        optionB: undefined,
+        optionC: undefined,
+        optionD: undefined,
+        correctAns: undefined,
       });
     }
   };
@@ -45,7 +45,6 @@ const CreateQuiz = (props) => {
               type="text"
               id="Question"
               name="Question"
-              value={question.Question}
               onChange={handleChange}
             />
           </div>
@@ -55,7 +54,6 @@ const CreateQuiz = (props) => {
               type="text"
               id="optionA"
               name="optionA"
-              value={question.optionA}
               onChange={handleChange}
             />
           </div>
@@ -65,7 +63,6 @@ const CreateQuiz = (props) => {
               type="text"
               id="optionB"
               name="optionB"
-              value={question.optionB}
               onChange={handleChange}
             />
           </div>
@@ -75,7 +72,6 @@ const CreateQuiz = (props) => {
               type="text"
               id="optionC"
               name="optionC"
-              value={question.optionC}
               onChange={handleChange}
             />
           </div>
@@ -85,7 +81,6 @@ const CreateQuiz = (props) => {
               type="text"
               id="optionD"
               name="optionD"
-              value={question.optionD}
               onChange={handleChange}
             />
           </div>
@@ -95,7 +90,6 @@ const CreateQuiz = (props) => {
               type="text"
               id="correctAns"
               name="correctAns"
-              value={question.correctAns}
               onChange={handleChange}
             />
           </div>
@@ -112,10 +106,10 @@ const CreateQuiz = (props) => {
         return (
           <div key={id} className="item">
             <h4>{Question}</h4>
-            {!(optionA === "") && <p>{optionA}</p>}
-            {!(optionB === "") && <p>{optionB}</p>}
-            {!(optionC === "") && <p>{optionC}</p>}
-            {!(optionD === "") && <p>{optionD}</p>}
+            {!(optionA === undefined) && <p>{optionA}</p>}
+            {!(optionB === undefined) && <p>{optionB}</p>}
+            {!(optionC === undefined) && <p>{optionC}</p>}
+            {!(optionD === undefined) && <p>{optionD}</p>}
             <p>{correctAns}</p>
           </div>
         );
