@@ -1,119 +1,53 @@
 import "./createQuiz.css";
 import React, { useState } from "react";
 import { IoArrowBack } from "react-icons/io5";
+import { GoSettings } from "react-icons/go";
+import QuizSettings from "../quizSettings/quizSettings";
+import QuestionCard from "../questionBuilderCard/questionBuilderCard";
+import QuestionVisualiserCard from "../questionVisualiserCard/questionVisualiserCard";
 
 const CreateQuiz = (props) => {
-  const [question, setQuestion] = useState({
-    Question: "",
-    optionA: "",
-    optionB: "",
-    optionC: "",
-    optionD: "",
-    correctAns: "",
-  });
   const [questions, setQuestions] = useState([]);
+  const [settingsTab, setSettingsTab] = useState(false);
 
-  const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setQuestion({ ...question, [name]: value });
+  const Disable = () => {
+    setSettingsTab(!settingsTab);
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (question.Question && question.correctAns) {
-      const newQuestion = { ...question, id: new Date().getTime().toString() };
-      setQuestions([...questions, newQuestion]);
-      setQuestion({
-        Question: undefined,
-        optionA: undefined,
-        optionB: undefined,
-        optionC: undefined,
-        optionD: undefined,
-        correctAns: undefined,
-      });
-    }
+
+  const addQuestion = (x) => {
+    setQuestions([...questions, x]);
+  };
+
+  const [output, setOutput] = useState([]);
+  const show = (x) => {
+    setOutput(x);
+    console.log(output);
+    Disable();
   };
 
   return (
     <>
-      <IoArrowBack className="back-icon-c" onClick={props.function} />
-      <div>
-        <form className="form" id="form-c">
-          <div className="form-control Question">
-            <label htmlFor="Question">Question : </label>
-            <input
-              type="text"
-              id="Question"
-              name="Question"
-              onChange={handleChange}
-            />
+      <button id="settingsButton" onClick={() => Disable()}>
+        <GoSettings className="icon" id="settings-icon" />
+      </button>
+      {settingsTab && <QuizSettings func={show} />}
+      {!settingsTab && (
+        <>
+          <IoArrowBack className="back-icon-c" onClick={props.function} />
+          <div>
+            <QuestionCard addQuestion={addQuestion} />
           </div>
-          <div className="form-control option">
-            <label htmlFor="optionA">option A : </label>
-            <input
-              type="text"
-              id="optionA"
-              name="optionA"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-control option">
-            <label htmlFor="optionB">option B : </label>
-            <input
-              type="text"
-              id="optionB"
-              name="optionB"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-control option">
-            <label htmlFor="optionC">option C : </label>
-            <input
-              type="text"
-              id="optionC"
-              name="optionC"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-control option">
-            <label htmlFor="optionD">option D : </label>
-            <input
-              type="text"
-              id="optionD"
-              name="optionD"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-control correctAns">
-            <label htmlFor="correctAns">Correct Ans : </label>
-            <input
-              type="text"
-              id="correctAns"
-              name="correctAns"
-              onChange={handleChange}
-            />
-          </div>
-          <div id="submit-btn">
-            <button type="submit" className="btn" onClick={handleSubmit}>
-              add question
-            </button>
-          </div>
-        </form>
-      </div>
-      {questions.map((question) => {
-        const { id, Question, optionA, optionB, optionC, optionD, correctAns } =
-          question;
-        return (
-          <div key={id} className="item">
-            <h4>{Question}</h4>
-            {!(optionA === undefined) && <p>{optionA}</p>}
-            {!(optionB === undefined) && <p>{optionB}</p>}
-            {!(optionC === undefined) && <p>{optionC}</p>}
-            {!(optionD === undefined) && <p>{optionD}</p>}
-            <p>{correctAns}</p>
-          </div>
-        );
-      })}
+          {questions.map((question) => {
+            return (
+              <>
+                <div key={question.id}>
+                  <QuestionVisualiserCard {...question} />
+                </div>
+              </>
+            );
+          })}
+        </>
+      )}
     </>
   );
 };

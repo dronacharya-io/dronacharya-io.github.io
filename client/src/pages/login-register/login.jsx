@@ -62,7 +62,11 @@ const Login = () => {
                 />
               </div>
               <div>
-                <button disabled={loading} onClick={handleClick}>
+                <button
+                  disabled={loading}
+                  className="buttons"
+                  onClick={handleClick}
+                >
                   Login
                 </button>
                 {error && <span>{error.message}</span>}

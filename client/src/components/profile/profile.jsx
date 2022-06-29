@@ -15,7 +15,7 @@ const ProfileTab = () => {
   };
 
   const navigate = useNavigate();
-  const { user } = useContext(AuthContext);
+  const { user, dispatch } = useContext(AuthContext);
   return (
     <>
       <button id="profileButton" onClick={() => Disable()}>
@@ -48,6 +48,14 @@ const ProfileTab = () => {
                 <p>Hello {user.username}!</p>
                 <p>64 classmates</p>
               </div>
+              <button
+                onClick={() => {
+                  dispatch({ type: "LOGOUT" });
+                }}
+                className="navButton logout"
+              >
+                Logout
+              </button>
             </>
           ) : (
             <>

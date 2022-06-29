@@ -85,3 +85,13 @@
 #firstname p {
   font-size: large;
 }
+
+.navButton {
+  border-radius: 5px;
+  width: 50%;
+}
+
+.logout {
+  position: relative;
+  top: 45%;
+}

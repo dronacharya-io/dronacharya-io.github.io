@@ -91,7 +91,12 @@ const Register = () => {
                 />
               </div>
               <div>
-                <button disabled={loading} type="submit" onClick={handleClick}>
+                <button
+                  disabled={loading}
+                  className="buttons"
+                  type="submit"
+                  onClick={handleClick}
+                >
                   Sign Up
                 </button>
                 {error && <span>{error.message}</span>}

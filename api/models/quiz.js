@@ -6,11 +6,6 @@ const QuizSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    quizType: {
-      type: String,
-      required: true,
-      dafault: "Option-Based",
-    },
     subject: {
       type: String,
       required: true,
@@ -47,7 +42,7 @@ const QuizSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    endTime: {
+    runTime: {
       type: Number,
       required: true,
     },

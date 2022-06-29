@@ -100,7 +100,7 @@ input {
       #f6d365 100%);
 }
 
-button {
+.buttons {
   cursor: pointer;
   width: inherit;
   margin: 0.625rem 0;
