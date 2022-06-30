@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { AiOutlineHome, AiOutlineQuestionCircle } from "react-icons/ai";
 import { SiGoogleclassroom, SiDarkreader } from "react-icons/si";
 import { IoSettingsOutline, IoStatsChartOutline } from "react-icons/io5";
+import CopyRight from "./copyRight/copyright";
 
 const Navbar = (props) => {
   const PassValue = (value) => {
@@ -41,6 +42,13 @@ const Navbar = (props) => {
             onClick={() => PassValue(6)}
           >
             <SiDarkreader className="icon" />
+          </div>
+          <br />
+          <div
+            id="copyright"
+            className="iconeCover 7"
+          >
+            {CopyRight()}
           </div>
         </div>
       </div>
