@@ -84,6 +84,7 @@ const QuizSettings = (props) => {
           name="timePerQuestion"
           id="timePerQuestion"
           type="number"
+          min={1}
           onChange={handleChange}
         />
       </article>
