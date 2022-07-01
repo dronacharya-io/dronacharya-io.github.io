@@ -1,6 +1,5 @@
 import "./navbar.css";
 import React from "react";
-import { Link } from "react-router-dom";
 import { AiOutlineHome, AiOutlineQuestionCircle } from "react-icons/ai";
 import { SiGoogleclassroom, SiDarkreader } from "react-icons/si";
 import { IoSettingsOutline, IoStatsChartOutline } from "react-icons/io5";
@@ -44,10 +43,7 @@ const Navbar = (props) => {
             <SiDarkreader className="icon" />
           </div>
           <br />
-          <div
-            id="copyright"
-            className="iconeCover 7"
-          >
+          <div id="copyright" className="iconeCover 7">
             {CopyRight()}
           </div>
         </div>
