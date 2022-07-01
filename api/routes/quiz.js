@@ -5,8 +5,6 @@ import {
   getQuiz,
   getQuizzes,
   createQuiz,
-  countBySubject,
-  countByType,
 } from "../controllers/quiz.js";
 import { verifyUser } from "../utils/verifyToken.js";
 
@@ -23,7 +21,7 @@ router.get("/", verifyUser, getQuizzes);
 //CREATE
 router.post("/", verifyUser, createQuiz);
 //COUNT
-router.get("/countBySubject", countBySubject);
-router.get("/countByType", countByType);
+// router.get("/countBySubject", countBySubject);
+// router.get("/countByType", countByType);
 
 export default router;

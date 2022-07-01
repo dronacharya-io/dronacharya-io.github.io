@@ -1,4 +1,5 @@
 import "./createQuiz.css";
+import axios from "axios";
 import React, { useState } from "react";
 import { IoArrowBack } from "react-icons/io5";
 import { GoSettings } from "react-icons/go";
@@ -25,6 +26,18 @@ const CreateQuiz = (props) => {
     Disable();
   };
 
+  const handleCreate = async (e) => {
+    e.preventDefault();
+    try {
+      let quiz = output;
+      quiz = { ...quiz, questions: questions };
+      console.log(quiz);
+      await axios.post("/quizzes", quiz);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
       <button id="settingsButton" onClick={() => Disable()}>
@@ -36,6 +49,11 @@ const CreateQuiz = (props) => {
           <IoArrowBack className="back-icon-c" onClick={props.function} />
           <div>
             <QuestionCard addQuestion={addQuestion} />
+          </div>
+          <div>
+            <button className="btn" onClick={handleCreate}>
+              add quiz
+            </button>
           </div>
           {questions.map((question) => {
             return (

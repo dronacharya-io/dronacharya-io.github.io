@@ -47,31 +47,31 @@ export const createQuiz = async (req, res, next) => {
     next(err);
   }
 };
-export const countBySubject = async (req, res, next) => {
-  const subjects = req.query.subjects.split(",");
-  try {
-    const list = await Promise.all(
-      subjects.map((subject) => {
-        return Quiz.countDocuments({ subject: subject });
-      })
-    );
-    res.status(200).json(list);
-  } catch (err) {
-    next(err);
-  }
-};
-export const countByType = async (req, res, next) => {
-  try {
-    const optionCount = await Quiz.countDocuments({ type: "Option-Based" });
-    const writtenCount = await Quiz.countDocuments({ type: "Written" });
-    const mixedCount = await Quiz.countDocuments({ type: "Mixed" });
+// export const countBySubject = async (req, res, next) => {
+//   const subjects = req.query.subjects.split(",");
+//   try {
+//     const list = await Promise.all(
+//       subjects.map((subject) => {
+//         return Quiz.countDocuments({ subject: subject });
+//       })
+//     );
+//     res.status(200).json(list);
+//   } catch (err) {
+//     next(err);
+//   }
+// };
+// export const countByType = async (req, res, next) => {
+//   try {
+//     const optionCount = await Quiz.countDocuments({ type: "Option-Based" });
+//     const writtenCount = await Quiz.countDocuments({ type: "Written" });
+//     const mixedCount = await Quiz.countDocuments({ type: "Mixed" });
 
-    res.status(200).json([
-      { type: "Option-Based", count: optionCount },
-      { type: "Written", count: writtenCount },
-      { type: "Mixed", count: mixedCount },
-    ]);
-  } catch (err) {
-    next(err);
-  }
-};
+//     res.status(200).json([
+//       { type: "Option-Based", count: optionCount },
+//       { type: "Written", count: writtenCount },
+//       { type: "Mixed", count: mixedCount },
+//     ]);
+//   } catch (err) {
+//     next(err);
+//   }
+// };

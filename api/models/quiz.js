@@ -39,11 +39,11 @@ const QuizSchema = new mongoose.Schema(
       required: true,
     },
     startTime: {
-      type: Number,
+      type: String,
       required: true,
     },
     runTime: {
-      type: Number,
+      type: String,
       required: true,
     },
   },
