@@ -3,12 +3,10 @@ import React, { useState } from "react";
 const QuestionCard = (props) => {
   const [question, setQuestion] = useState({
     Question: undefined,
-    optionA: undefined,
-    optionB: undefined,
-    optionC: undefined,
-    optionD: undefined,
+    options: [],
     correctAns: undefined,
   });
+  const [option, setOption] = useState(undefined);
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -21,19 +19,24 @@ const QuestionCard = (props) => {
       props.addQuestion(newQuestion);
       setQuestion({
         Question: undefined,
-        optionA: undefined,
-        optionB: undefined,
-        optionC: undefined,
-        optionD: undefined,
+        options: [],
         correctAns: undefined,
       });
       document.getElementById("Question").value = "";
-      document.getElementById("optionA").value = "";
-      document.getElementById("optionB").value = "";
-      document.getElementById("optionC").value = "";
-      document.getElementById("optionD").value = "";
+      document.getElementsById("option").value = "";
       document.getElementById("correctAns").value = "";
     }
+  };
+
+  let i = 1;
+  const addOption = (e) => {
+    e.preventDefault();
+    setQuestion({
+      ...question,
+      options: [...question.options, ([i] = option)],
+    });
+    console.log(question.options);
+    i++;
   };
 
   return (
@@ -48,41 +51,21 @@ const QuestionCard = (props) => {
             onChange={handleChange}
           />
         </div>
+        {question.options.map((option, i) => {
+          return <p key={i}>{option}</p>;
+        })}
         <div className="form-control option">
-          <label htmlFor="optionA">option A : </label>
+          <label htmlFor="option">option: </label>
           <input
             type="text"
-            id="optionA"
-            name="optionA"
-            onChange={handleChange}
+            id="option"
+            name="option"
+            className="options"
+            onChange={(e) => setOption(e.target.value)}
           />
-        </div>
-        <div className="form-control option">
-          <label htmlFor="optionB">option B : </label>
-          <input
-            type="text"
-            id="optionB"
-            name="optionB"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="form-control option">
-          <label htmlFor="optionC">option C : </label>
-          <input
-            type="text"
-            id="optionC"
-            name="optionC"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="form-control option">
-          <label htmlFor="optionD">option D : </label>
-          <input
-            type="text"
-            id="optionD"
-            name="optionD"
-            onChange={handleChange}
-          />
+          <button onClick={addOption} className="btn">
+            +
+          </button>
         </div>
         <div className="form-control correctAns">
           <label htmlFor="correctAns">Correct Ans : </label>
