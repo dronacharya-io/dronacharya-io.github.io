@@ -59,7 +59,7 @@ const CreateQuiz = (props) => {
             return (
               <>
                 <div key={question.id}>
-                  <QuestionVisualiserCard {...question} />
+                  <QuestionVisualiserCard question={question} />
                 </div>
               </>
             );
