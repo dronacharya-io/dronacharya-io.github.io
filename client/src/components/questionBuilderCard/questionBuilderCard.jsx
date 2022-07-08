@@ -6,7 +6,7 @@ const QuestionCard = (props) => {
     options: [],
     correctAns: undefined,
   });
-  const [option, setOption] = useState(undefined);
+  const [option, setOption] = useState({ value: undefined });
   const [options, setOptions] = useState([]);
   const handleChange = (e) => {
     const name = e.target.name;
@@ -31,30 +31,9 @@ const QuestionCard = (props) => {
 
   const addOption = (e) => {
     e.preventDefault();
-    if (options.includes(option.trim())) {
-      alert(
-        "`" +
-          option +
-          "`" +
-          " and " +
-          "`" +
-          option.trim() +
-          "`" +
-          " look similar do you want to force add this as a new option"
-      );
-    } else {
-      if (option !== undefined && option !== "") {
-        setOptions([...options, option]);
-        document.getElementById("option").value = null;
-        setOption(undefined);
-      }
-    }
-    console.log({ ...options });
-  };
-
-  const forceAdd = (e) => {
-    if (option !== undefined && option !== "") {
-      setOptions([...options, option]);
+    if (option.value !== undefined && option.value !== "") {
+      const newOption = { ...option, id: new Date().getTime().toString() };
+      setOptions([...options, newOption]);
       document.getElementById("option").value = null;
       setOption(undefined);
     }
@@ -62,13 +41,13 @@ const QuestionCard = (props) => {
 
   const handleOption = (e) => {
     e.preventDefault();
-    setOption(e.target.value);
+    setOption({ value: e.target.value });
   };
 
-  const removeOption = (index) => {
-    const copy = option;
-    const removeElement = copy.splice(index, 1);
-    setOptions(copy);
+  const removeOption = (id) => {
+    setOptions((options) => {
+      return options.filter((option) => option.id !== id);
+    });
   };
 
   return (
@@ -119,12 +98,11 @@ const QuestionCard = (props) => {
 const List = ({ options, removeOption }) => {
   return (
     <>
-      {options.map((option, i) => {
+      {options.map((option) => {
         return (
           <SingleOption
-            key={i}
-            {...option}
-            {...i}
+            key={option.id}
+            option={option}
             removeOption={removeOption}
           />
         );
@@ -133,11 +111,12 @@ const List = ({ options, removeOption }) => {
   );
 };
 
-const SingleOption = ({ option, i, removeOption }) => {
+const SingleOption = (props) => {
+  const { id, value } = props.option;
   return (
     <div className="option">
-      <h4>{option}</h4>
-      <button onClick={() => removeOption(i)}>remove</button>
+      <h4>{value}</h4>
+      <button onClick={() => props.removeOption(id)}>remove</button>
     </div>
   );
 };
