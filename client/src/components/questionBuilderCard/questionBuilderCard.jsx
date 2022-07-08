@@ -7,6 +7,7 @@ const QuestionCard = (props) => {
     correctAns: undefined,
   });
   const [option, setOption] = useState(undefined);
+  const [options, setOptions] = useState([]);
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -14,7 +15,8 @@ const QuestionCard = (props) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (question.Question && question.correctAns) {
+    setQuestion({ ...question, options: options });
+    if (question.Question && question.correctAns && question.options) {
       const newQuestion = { ...question, id: new Date().getTime().toString() };
       props.addQuestion(newQuestion);
       setQuestion({
@@ -23,20 +25,50 @@ const QuestionCard = (props) => {
         correctAns: undefined,
       });
       document.getElementById("Question").value = "";
-      document.getElementsById("option").value = "";
       document.getElementById("correctAns").value = "";
     }
   };
 
-  let i = 1;
   const addOption = (e) => {
     e.preventDefault();
-    setQuestion({
-      ...question,
-      options: [...question.options, ([i] = option)],
-    });
-    console.log(question.options);
-    i++;
+    if (options.includes(option.trim())) {
+      alert(
+        "`" +
+          option +
+          "`" +
+          " and " +
+          "`" +
+          option.trim() +
+          "`" +
+          " look similar do you want to force add this as a new option"
+      );
+    } else {
+      if (option !== undefined && option !== "") {
+        setOptions([...options, option]);
+        document.getElementById("option").value = null;
+        setOption(undefined);
+      }
+    }
+    console.log({ ...options });
+  };
+
+  const forceAdd = (e) => {
+    if (option !== undefined && option !== "") {
+      setOptions([...options, option]);
+      document.getElementById("option").value = null;
+      setOption(undefined);
+    }
+  };
+
+  const handleOption = (e) => {
+    e.preventDefault();
+    setOption(e.target.value);
+  };
+
+  const removeOption = (index) => {
+    const copy = option;
+    const removeElement = copy.splice(index, 1);
+    setOptions(copy);
   };
 
   return (
@@ -51,9 +83,7 @@ const QuestionCard = (props) => {
             onChange={handleChange}
           />
         </div>
-        {question.options.map((option, i) => {
-          return <p key={i}>{option}</p>;
-        })}
+        <List options={options} removeOption={removeOption} />
         <div className="form-control option">
           <label htmlFor="option">option: </label>
           <input
@@ -61,7 +91,7 @@ const QuestionCard = (props) => {
             id="option"
             name="option"
             className="options"
-            onChange={(e) => setOption(e.target.value)}
+            onChange={handleOption}
           />
           <button onClick={addOption} className="btn">
             +
@@ -83,6 +113,32 @@ const QuestionCard = (props) => {
         </div>
       </form>
     </>
+  );
+};
+
+const List = ({ options, removeOption }) => {
+  return (
+    <>
+      {options.map((option, i) => {
+        return (
+          <SingleOption
+            key={i}
+            {...option}
+            {...i}
+            removeOption={removeOption}
+          />
+        );
+      })}
+    </>
+  );
+};
+
+const SingleOption = ({ option, i, removeOption }) => {
+  return (
+    <div className="option">
+      <h4>{option}</h4>
+      <button onClick={() => removeOption(i)}>remove</button>
+    </div>
   );
 };
 
