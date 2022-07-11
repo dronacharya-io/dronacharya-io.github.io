@@ -4,7 +4,7 @@ import { IoMailOutline, IoMailUnreadOutline } from "react-icons/io5";
 import { VscBell, VscBellDot } from "react-icons/vsc";
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiOutlineSearch } from "react-icons/ai";
-import { AuthContext } from "../../context/AuthContext";
+import { useUserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const ProfileTab = () => {
@@ -15,7 +15,7 @@ const ProfileTab = () => {
   };
 
   const navigate = useNavigate();
-  const { user, dispatch } = useContext(AuthContext);
+  const { user, logOut } = useUserAuth();
   return (
     <>
       <button id="profileButton" onClick={() => Disable()}>
@@ -45,12 +45,12 @@ const ProfileTab = () => {
             <>
               <div id="profileImage" />
               <div id="firstname">
-                <p>Hello {user.username}!</p>
+                <p>Hello {user.email}!</p>
                 <p>64 classmates</p>
               </div>
               <button
                 onClick={() => {
-                  dispatch({ type: "LOGOUT" });
+                  logOut();
                 }}
                 className="navButton logout"
               >
@@ -65,7 +65,7 @@ const ProfileTab = () => {
               >
                 Register
               </button>
-              <button onClick={() => navigate("/login")} className="navButton">
+              <button onClick={() => navigate("/")} className="navButton">
                 Login
               </button>
             </>

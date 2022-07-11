@@ -1,34 +1,47 @@
 import axios from "axios";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
+// import { AuthContext } from "../../context/AuthContext";
+import { useUserAuth } from "../../context/AuthContext";
+import { GoogleButton } from "react-google-button";
 import "./loginSignUpPage.css";
 
 const Login = () => {
-  const [credentials, setCredentials] = useState({
-    username: undefined,
-    password: undefined,
-  });
-
-  const { loading, error, dispatch } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { user, logIn, googleSignIn } = useUserAuth();
 
   const navigate = useNavigate();
-
-  const handleChange = (e) => {
-    setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
-  };
-
   const handleClick = async (e) => {
+    // e.preventDefault();
+    // dispatch({ type: "LOGIN_START" });
+    // try {
+    //   const res = await axios.post("/auth/login", credentials);
+    //   dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
+    //   navigate("/");
+    // } catch (err) {
+    //   dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
+    // }
     e.preventDefault();
-    dispatch({ type: "LOGIN_START" });
+    // setError("");
     try {
-      const res = await axios.post("/auth/login", credentials);
-      dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
-      navigate("/");
+      await logIn(email, password);
+      console.log(user);
+      navigate("/home");
     } catch (err) {
-      dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
+      console.log(err.message);
     }
   };
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      await googleSignIn();
+      navigate("/home");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <>
       <div id="outerCover">
@@ -47,10 +60,10 @@ const Login = () => {
             <form>
               <div>
                 <input
-                  placeholder="Username"
-                  type="text"
-                  id="username"
-                  onChange={handleChange}
+                  placeholder="Email"
+                  type="email"
+                  id="email"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div>
@@ -58,18 +71,25 @@ const Login = () => {
                   placeholder="Password"
                   type="password"
                   id="password"
-                  onChange={handleChange}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <div>
                 <button
-                  disabled={loading}
+                  // disabled={loading}
                   className="buttons"
                   onClick={handleClick}
                 >
                   Login
                 </button>
-                {error && <span>{error.message}</span>}
+                {/* {error && <span>{error.message}</span>} */}
+                <div>
+                  <GoogleButton
+                    className="g-btn"
+                    type="dark"
+                    onClick={handleGoogleSignIn}
+                  />
+                </div>
               </div>
             </form>
           </div>
