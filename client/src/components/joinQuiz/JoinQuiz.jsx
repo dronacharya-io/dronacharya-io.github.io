@@ -4,30 +4,37 @@ import { IoArrowBack } from "react-icons/io5";
 
 const JoinQuiz = (props) => {
   const [counter, setCounter] = useState(0);
-  const [submission, setSubmission] = useState({ submittedAns: "" });
+  const [submission, setSubmission] = useState({ submittedAns: undefined });
   const [submissions, setSubmissions] = useState([]);
   const [score, setScore] = useState(0);
 
   const TakeAnswer = () => {
     handleSubmit();
+    let { correctAns } = props.data[counter];
+    let { submittedAns } = submissions[counter];
+    if (correctAns === submittedAns) {
+      setScore(score + 1);
+      console.log("correct");
+    }
     if (props.data[counter + 1]) {
       setCounter(counter + 1);
-      if (
-        props.data[counter - 1].correctAns ===
-        submissions[counter - 1].submittedAns
-      ) {
-        setScore(score + 1);
-      }
-    } else {
-      alert("Test Submitted!");
-      console.log(score);
     }
+    if (!props.data[counter + 1]) {
+      let { correctAns } = props.data[counter];
+      let { submittedAns } = submissions[counter];
+      if (correctAns === submittedAns) {
+        setScore(score + 1);
+        console.log("correct");
+      }
+      alert("Test Submitted!");
+    }
+    console.log(score);
   };
 
   const handleChange = (e) => {
-    const name = e.target.name;
     const value = e.target.value;
-    setSubmission({ [name]: value });
+    setSubmission({ submittedAns: value });
+    document.getElementById("submittedAns").val("");
   };
 
   const handleSubmit = () => {
@@ -36,29 +43,31 @@ const JoinQuiz = (props) => {
       id: new Date().getTime().toString(),
     };
     setSubmissions([...submissions, newSubmission]);
-    setSubmission({ submittedAns: "" });
+    setSubmission({ submittedAns: undefined });
 
     console.log(submissions);
   };
+
+  const { Question, optionA, optionB, optionC, optionD } = props.data[counter];
 
   return (
     <>
       <IoArrowBack className="back-icon" onClick={props.function} />
       <div id="question">
-        <p>{props.data[counter].question}</p>
+        <p>{Question}</p>
       </div>
       <div id="options">
         <div className="option">
-          <p>{props.data[counter].optionA}</p>
+          <p>{optionA}</p>
         </div>
         <div className="option">
-          <p>{props.data[counter].optionB}</p>
+          <p>{optionB}</p>
         </div>
         <div className="option">
-          <p>{props.data[counter].optionC}</p>
+          <p>{optionC}</p>
         </div>
         <div className="option">
-          <p>{props.data[counter].optionD}</p>
+          <p>{optionD}</p>
         </div>
       </div>
       <div id="answer">
@@ -67,7 +76,6 @@ const JoinQuiz = (props) => {
           type="text"
           id="submittedAns"
           name="submittedAns"
-          value={submission.submittedAns}
           onChange={handleChange}
         />
       </div>

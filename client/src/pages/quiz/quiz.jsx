@@ -1,12 +1,27 @@
 import "./quiz.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CreateQuiz from "../../components/createQuiz/CreateQuiz";
 import JoinQuiz from "../../components/joinQuiz/JoinQuiz";
-import Data from "../data";
+import axios from "axios";
+// import Data from "../data";
 
 export const Quiz = () => {
   const [createQuiz, setCreateQuiz] = useState(false);
   const [joinQuiz, setJoinQuiz] = useState(false);
+  const [Data, setData] = useState([]);
+
+  useEffect(() => {
+    async function fetch() {
+      try {
+        const x = await axios.get("/quizzes/62bd64c9119504ec9af5309d");
+        const { data } = x;
+        setData(data.questions);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetch();
+  }, []);
 
   const Toggle = () => {
     setCreateQuiz(false);
