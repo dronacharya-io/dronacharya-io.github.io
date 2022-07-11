@@ -1,7 +1,6 @@
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { AuthContext } from "../../context/AuthContext";
 import { useUserAuth } from "../../context/AuthContext";
 import { GoogleButton } from "react-google-button";
 import "./loginSignUpPage.css";
@@ -9,27 +8,18 @@ import "./loginSignUpPage.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { user, logIn, googleSignIn } = useUserAuth();
+  const [error, setError] = useState("");
+  const { logIn, googleSignIn } = useUserAuth();
 
   const navigate = useNavigate();
   const handleClick = async (e) => {
-    // e.preventDefault();
-    // dispatch({ type: "LOGIN_START" });
-    // try {
-    //   const res = await axios.post("/auth/login", credentials);
-    //   dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
-    //   navigate("/");
-    // } catch (err) {
-    //   dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
-    // }
     e.preventDefault();
-    // setError("");
+    setError("");
     try {
       await logIn(email, password);
-      console.log(user);
       navigate("/home");
     } catch (err) {
-      console.log(err.message);
+      setError(err.message);
     }
   };
   const handleGoogleSignIn = async (e) => {
@@ -37,8 +27,8 @@ const Login = () => {
     try {
       await googleSignIn();
       navigate("/home");
-    } catch (error) {
-      console.log(error.message);
+    } catch (err) {
+      setError(error.message);
     }
   };
 
@@ -75,14 +65,10 @@ const Login = () => {
                 />
               </div>
               <div>
-                <button
-                  // disabled={loading}
-                  className="buttons"
-                  onClick={handleClick}
-                >
+                <button className="buttons" onClick={handleClick}>
                   Login
                 </button>
-                {/* {error && <span>{error.message}</span>} */}
+                {error && <span>{error.message}</span>}
                 <div>
                   <GoogleButton
                     className="g-btn"
