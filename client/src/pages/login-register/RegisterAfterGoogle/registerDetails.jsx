@@ -33,3 +33,5 @@ function RegisterDetails(props){
         </>
     )
 }
+
+export default RegisterDetails;
