@@ -15,7 +15,12 @@ const userAuthContext = createContext();
 export function UserAuthContextProvider({ children }) {
   const [user, setUser] = useState({});
 
-  function logIn(email, password) {
+  async function logIn(email, password) {
+    const res = await axios.post("/auth/login", {
+      email: email,
+      password: password,
+    });
+    console.log(res);
     return signInWithEmailAndPassword(auth, email, password);
   }
   async function signUp(username, email, password) {

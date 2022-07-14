@@ -18,10 +18,6 @@ const Login = () => {
     setError("");
     try {
       await logIn(email, password);
-      const res = await axios.post("/auth/login", {
-        email: email,
-        password: password,
-      });
       console.log(res);
       navigate("/home");
     } catch (err) {
