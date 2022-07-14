@@ -1,7 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-// import { AuthContext } from "../../context/AuthContext";
 import { useUserAuth } from "../../context/AuthContext";
 
 const Register = () => {
@@ -11,9 +10,10 @@ const Register = () => {
     password: undefined,
     confirmPassword: undefined,
   });
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  // const { loading, error, dispatch } = useContext(AuthContext);
-  const { user, signUp } = useUserAuth();
+  const { signUp } = useUserAuth();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -22,30 +22,17 @@ const Register = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    // if (
-    //   registerData.username &&
-    //   registerData.email &&
-    //   registerData.password === registerData.confirmPassword
-    // ) {
-    //   dispatch({ type: "LOGIN_START" });
-    //   try {
-    //     const res = await axios.post("/auth/register", registerData);
-    //     dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
-    //     navigate("/");
-    //   } catch (err) {
-    //     dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
-    //   }
-    // } else {
-    //   alert("fill all values");
-    // }
-    e.preventDefault();
-    // setError("");
     try {
-      await signUp(registerData.email, registerData.password);
-      axios.post("/auth/register", registerData);
+      setLoading(true);
+      await signUp(
+        registerData.username,
+        registerData.email,
+        registerData.password
+      );
       navigate("/");
+      setLoading(false);
     } catch (err) {
-      console.log(err.message);
+      setError(err.message);
     }
   };
 
@@ -57,7 +44,7 @@ const Register = () => {
             <h1 id="heading">Hi There!</h1>
             <div id="switchmode">
               <p>New to community? Click the button below</p>
-              <button id="switch" onClick={() => navigate("/login")}>
+              <button id="switch" onClick={() => navigate("/")}>
                 Sign In
               </button>
             </div>
@@ -103,14 +90,14 @@ const Register = () => {
               </div>
               <div>
                 <button
-                  // disabled={loading}
+                  disabled={loading}
                   className="buttons"
                   type="submit"
                   onClick={handleClick}
                 >
                   Sign Up
                 </button>
-                {/* {error && <span>{error.message}</span>} */}
+                {error && <span>{error.message}</span>}
               </div>
             </form>
           </div>

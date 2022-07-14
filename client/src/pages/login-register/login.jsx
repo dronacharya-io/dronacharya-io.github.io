@@ -10,6 +10,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const { logIn, googleSignIn } = useUserAuth();
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
   const handleClick = async (e) => {
@@ -17,6 +18,11 @@ const Login = () => {
     setError("");
     try {
       await logIn(email, password);
+      const res = await axios.post("/auth/login", {
+        email: email,
+        password: password,
+      });
+      console.log(res);
       navigate("/home");
     } catch (err) {
       setError(err.message);
@@ -65,7 +71,11 @@ const Login = () => {
                 />
               </div>
               <div>
-                <button className="buttons" onClick={handleClick}>
+                <button
+                  disabled={loading}
+                  className="buttons"
+                  onClick={handleClick}
+                >
                   Login
                 </button>
                 {error && <span>{error.message}</span>}
