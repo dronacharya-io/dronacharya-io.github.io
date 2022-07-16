@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import CreateQuiz from "../../components/createQuiz/CreateQuiz";
 import JoinQuiz from "../../components/joinQuiz/JoinQuiz";
 import axios from "axios";
-// import Data from "../data";
 
 export const Quiz = () => {
   const [createQuiz, setCreateQuiz] = useState(false);
@@ -13,7 +12,9 @@ export const Quiz = () => {
   useEffect(() => {
     async function fetch() {
       try {
-        const x = await axios.get("/quizzes/62bd64c9119504ec9af5309d");
+        const x = await axios.get(
+          "http://localhost:8800/api/quizzes/attemptQuiz/62d27b197b51940c017aece7"
+        );
         const { data } = x;
         setData(data.questions);
       } catch (err) {

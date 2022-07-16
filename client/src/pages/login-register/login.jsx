@@ -18,7 +18,6 @@ const Login = () => {
     setError("");
     try {
       await logIn(email, password);
-      console.log(res);
       navigate("/home");
     } catch (err) {
       setError(err.message);

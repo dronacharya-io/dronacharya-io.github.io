@@ -1,11 +1,9 @@
 import "./profile.css";
-import React, { useContext, useState } from "react";
-import { IoMailOutline, IoMailUnreadOutline } from "react-icons/io5";
-import { VscBell, VscBellDot } from "react-icons/vsc";
+import React, { useState } from "react";
+import { IoMailOutline } from "react-icons/io5";
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useUserAuth } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
 
 const ProfileTab = () => {
   const [profileTab, setProfileTab] = useState(true);
@@ -14,8 +12,11 @@ const ProfileTab = () => {
     setProfileTab(!profileTab);
   };
 
-  const navigate = useNavigate();
-  const { user, logOut } = useUserAuth();
+  const { user, logOut, googleSignIn } = useUserAuth();
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    await googleSignIn();
+  };
   return (
     <>
       <button id="profileButton" onClick={() => Disable()}>
@@ -25,7 +26,6 @@ const ProfileTab = () => {
         <div id="outerTab">
           <div id="iconTab">
             <IoMailOutline className="icons" />
-            <VscBell className="icons" />
           </div>
           <div id="searchbar">
             <AiOutlineSearch
@@ -43,9 +43,9 @@ const ProfileTab = () => {
           </div>
           {user ? (
             <>
-              <div id="profileImage" />
+              <img src={user.photoURL} alt="profile" id="profileImage" />
               <div id="firstname">
-                <p>Hello {user.email}!</p>
+                <p>Hello {user.displayName}!</p>
                 <p>64 classmates</p>
               </div>
               <button
@@ -59,14 +59,8 @@ const ProfileTab = () => {
             </>
           ) : (
             <>
-              <button
-                onClick={() => navigate("/register")}
-                className="navButton"
-              >
-                Register
-              </button>
-              <button onClick={() => navigate("/")} className="navButton">
-                Login
+              <button onClick={handleGoogleSignIn} className="navButton">
+                Login/SignUp
               </button>
             </>
           )}

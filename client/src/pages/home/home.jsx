@@ -1,5 +1,6 @@
 import "./home.css";
-import React, { useState } from "react";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Dashboard } from "../dashboard/dashboard.jsx";
 import Navbar from "../../components/navbar/navbar.jsx";
 import ProfileTab from "../../components/profile/profile.jsx";
@@ -10,32 +11,31 @@ import { Quiz } from "../quiz/quiz.jsx";
 import StickyBox from "react-sticky-box";
 
 export const Home = () => {
-  const [page, setPage] = useState(1);
-
-  const PullValue = (value) => {
-    setPage(value);
-  };
   return (
     <>
-      <div id="mainBody">
-        <div id="navbar">
-          <StickyBox offsetTop={0} offsetBottom={0}>
-            <Navbar func={PullValue} />
-          </StickyBox>
+      <BrowserRouter>
+        <div id="mainBody">
+          <div id="navbar">
+            <StickyBox offsetTop={0} offsetBottom={0}>
+              <Navbar />
+            </StickyBox>
+          </div>
+          <div className="remPart">
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/classroom" element={<Classroom />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/scorecard" element={<Scorecard />} />
+              <Route path="/quiz" element={<Quiz />} />
+            </Routes>
+          </div>
+          <div id="profile">
+            <StickyBox offsetTop={0} offsetBottom={0}>
+              <ProfileTab />
+            </StickyBox>
+          </div>
         </div>
-        <div className="remPart">
-          {page === 1 && <Dashboard />}
-          {page === 2 && <Classroom />}
-          {page === 3 && <Settings />}
-          {page === 4 && <Scorecard />}
-          {page === 5 && <Quiz />}
-        </div>
-        <div id="profile">
-          <StickyBox offsetTop={0} offsetBottom={0}>
-            <ProfileTab />
-          </StickyBox>
-        </div>
-      </div>
+      </BrowserRouter>
     </>
   );
 };

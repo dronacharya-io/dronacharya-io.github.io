@@ -4,33 +4,32 @@ import { AiOutlineHome, AiOutlineQuestionCircle } from "react-icons/ai";
 import { SiGoogleclassroom, SiDarkreader } from "react-icons/si";
 import { IoSettingsOutline, IoStatsChartOutline } from "react-icons/io5";
 import CopyRight from "./copyRight/copyright";
+import { useNavigate } from "react-router-dom";
 
-const Navbar = (props) => {
-  const PassValue = (value) => {
-    props.func(value);
-  };
+const Navbar = () => {
+  const navigate = useNavigate();
 
   return (
     <>
       <div id="tab">
         <span id="logo">Q.io</span>
         <div id="iconStart">
-          <div className="iconCover 1" onClick={() => PassValue(1)}>
+          <div className="iconCover 1" onClick={() => navigate("/")}>
             <AiOutlineHome className="icon" />
           </div>
-          <div className="iconCover 2" onClick={() => PassValue(2)}>
+          <div className="iconCover 2" onClick={() => navigate("/classroom")}>
             <SiGoogleclassroom className="icon" />
           </div>
-          <div className="iconCover 3" onClick={() => PassValue(3)}>
+          <div className="iconCover 3" onClick={() => navigate("/settings")}>
             <IoSettingsOutline className="icon" />
           </div>
-          <div className="iconCover 4" onClick={() => PassValue(4)}>
+          <div className="iconCover 4" onClick={() => navigate("/scorecard")}>
             <IoStatsChartOutline className="icon" />
           </div>
           <div
             className="iconCover 5"
             id="quiz-icon"
-            onClick={() => PassValue(5)}
+            onClick={() => navigate("/quiz")}
           >
             <AiOutlineQuestionCircle className="icon" />
           </div>
@@ -38,7 +37,7 @@ const Navbar = (props) => {
           <div
             id="darkmode"
             className="iconCover 6"
-            onClick={() => PassValue(6)}
+            // onClick={}
           >
             <SiDarkreader className="icon" />
           </div>
