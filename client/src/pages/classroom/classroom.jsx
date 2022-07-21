@@ -1,10 +1,19 @@
 import React from "react";
+import { useUserAuth } from "../../context/AuthContext";
 
 export const Classroom = () => {
+  const { user } = useUserAuth();
+
   return (
     <>
       <div id="abc">
-        <h1>Classroom</h1>
+        {user.userData.quizzesCreated.map((quiz, i) => {
+          return (
+            <>
+              <p key={i}>{quiz.name}</p>
+            </>
+          );
+        })}
       </div>
     </>
   );

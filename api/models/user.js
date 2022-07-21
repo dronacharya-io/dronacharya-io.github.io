@@ -16,6 +16,14 @@ const UserSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    quizzesCreated: {
+      type: Array,
+      default: [],
+    },
+    quizzesSubmitted: {
+      type: Array,
+      default: [],
+    },
   },
   { timestamps: true }
 );

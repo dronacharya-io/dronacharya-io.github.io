@@ -7,7 +7,7 @@ const QuestionVisualiserCard = (props) => {
         {options.map((option) => {
           return (
             <>
-              <p>{option}</p>
+              <p key={option.id}>{option.value}</p>
             </>
           );
         })}

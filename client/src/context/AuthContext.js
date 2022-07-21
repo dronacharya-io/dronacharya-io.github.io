@@ -22,11 +22,11 @@ export function UserAuthContextProvider({ children }) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentuser) => {
-      console.log("Auth", currentuser);
       try {
         const res = await axios.post("http://localhost:8800/api/auth/login", {
           email: currentuser.email,
         });
+        currentuser = { ...currentuser, userData: res.data.details };
       } catch {
         try {
           const registerData = {
@@ -41,6 +41,7 @@ export function UserAuthContextProvider({ children }) {
           console.log(err);
         }
       }
+      console.log("Auth", currentuser);
       setUser(currentuser);
     });
 

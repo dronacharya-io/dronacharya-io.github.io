@@ -3,7 +3,6 @@ import React, { useState } from "react";
 const QuestionCard = (props) => {
   const [question, setQuestion] = useState({
     Question: undefined,
-    options: [],
     correctAns: undefined,
   });
   const [option, setOption] = useState({ value: undefined });
@@ -21,7 +20,6 @@ const QuestionCard = (props) => {
       props.addQuestion(newQuestion);
       setQuestion({
         Question: undefined,
-        options: [],
         correctAns: undefined,
       });
       document.getElementById("Question").value = "";

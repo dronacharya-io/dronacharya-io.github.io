@@ -19,6 +19,7 @@ export const verifyToken = (req, res, next) => {
 //Verify the user.
 //If verification successful then execute the script defined by calling the function.
 export const verifyUser = (req, res, next) => {
+  console.log(req.user);
   verifyToken(req, res, next, () => {
     if (req.user.id === req.params.id || req.user.isAdmin) {
       next();

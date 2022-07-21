@@ -6,10 +6,13 @@ import { GoSettings } from "react-icons/go";
 import QuizSettings from "../quizSettings/quizSettings";
 import QuestionCard from "../questionBuilderCard/questionBuilderCard";
 import QuestionVisualiserCard from "../questionVisualiserCard/questionVisualiserCard";
+import { useUserAuth } from "../../context/AuthContext";
 
 const CreateQuiz = (props) => {
   const [questions, setQuestions] = useState([]);
   const [settingsTab, setSettingsTab] = useState(false);
+
+  const { user } = useUserAuth();
 
   const Disable = () => {
     setSettingsTab(!settingsTab);
@@ -32,7 +35,21 @@ const CreateQuiz = (props) => {
       let quiz = output;
       quiz = { ...quiz, questions: questions };
       console.log(quiz);
-      await axios.post("/quizzes", quiz);
+      const res = await axios.post("http://localhost:8800/api/quizzes", quiz);
+      const url =
+        "http://localhost:8800/api/users/updateUser/" +
+        user.userData._id.toString();
+      console.log(url);
+      const arr = user.userData.quizzesCreated;
+      arr.push({
+        id: res.data.details._id,
+        name: res.data.details.quizname,
+        startDate: res.data.details.startDate,
+        runTime: res.data.details.runTime,
+      });
+      console.log(arr);
+      await axios.put(url, { quizzesCreated: arr });
+      console.log({ quizzesCreated: arr });
     } catch (err) {
       console.log(err);
     }
