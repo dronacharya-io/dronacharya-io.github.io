@@ -12,6 +12,37 @@ const ProfileTab = () => {
     setProfileTab(!profileTab);
   };
 
+  const today = new Date();
+  const weekday = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  var Today =
+    weekday[today.getDay()] +
+    ", " +
+    today.getDate() +
+    " " +
+    months[today.getMonth()];
+
   const { user, logOut, googleSignIn } = useUserAuth();
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
@@ -25,6 +56,7 @@ const ProfileTab = () => {
       {profileTab && (
         <div id="outerTab">
           <div id="iconTab">
+            <h4 id="today">{Today}</h4>
             <IoMailOutline className="icons" />
           </div>
           <div id="searchbar">
@@ -46,7 +78,6 @@ const ProfileTab = () => {
               <img src={user.photoURL} alt="profile" id="profileImage" />
               <div id="firstname">
                 <p>Hello {user.displayName}!</p>
-                <p>64 classmates</p>
               </div>
               <button
                 onClick={() => {

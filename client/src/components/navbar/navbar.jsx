@@ -5,9 +5,14 @@ import { SiGoogleclassroom, SiDarkreader } from "react-icons/si";
 import { IoSettingsOutline, IoStatsChartOutline } from "react-icons/io5";
 import CopyRight from "./copyRight/copyright";
 import { useNavigate } from "react-router-dom";
+import { ThemeContext } from "../../App";
+import { useContext } from "react";
 
 const Navbar = () => {
   const navigate = useNavigate();
+
+  const useThemeContext = useContext(ThemeContext);
+  const { toggleTheme } = useThemeContext;
 
   return (
     <>
@@ -34,15 +39,11 @@ const Navbar = () => {
             <AiOutlineQuestionCircle className="icon" />
           </div>
           <hr />
-          <div
-            id="darkmode"
-            className="iconCover 6"
-            // onClick={}
-          >
+          <div id="darkmode" className="iconCover 6" onClick={toggleTheme}>
             <SiDarkreader className="icon" />
           </div>
           <br />
-          <div id="copyright" className="iconeCover 7">
+          <div id="copyright" className="7">
             {CopyRight()}
           </div>
         </div>

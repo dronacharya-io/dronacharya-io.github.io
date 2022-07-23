@@ -1,13 +1,27 @@
-#tab {
+#light #tab {
   display: flex;
   flex-direction: column;
   height: 100vh;
   border-right: solid 1px rgb(233 233 233);
 }
 
-#logo {
+#dark #tab {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border-right: solid 1px rgb(233 233 233);
+  background-color: #171515;
+}
+
+#light #logo {
   font-size: 1.5rem;
   color: black;
+  margin-top: 1rem;
+}
+
+#dark #logo {
+  font-size: 1.5rem;
+  color: whitesmoke;
   margin-top: 1rem;
 }
 
@@ -19,7 +33,7 @@ a {
   margin-top: 8.5rem;
 }
 
-.iconCover {
+#light .iconCover {
   width: 3rem;
   height: 3rem;
   border-radius: 2rem;
@@ -28,6 +42,38 @@ a {
   justify-content: center;
   margin: 1rem 1.25rem;
   color: grey;
+}
+
+#dark .iconCover {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 1.25rem;
+  color: whitesmoke;
+}
+
+#light #copyright {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 1.25rem;
+}
+
+#dark #copyright {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 1.25rem;
+  color: whitesmoke;
 }
 
 .icon {
@@ -40,10 +86,6 @@ a {
   color: white;
 }
 
-.icon:hover {
-  color: white;
-}
-
 hr {
   width: 2.5rem;
   margin-left: 1.5rem;
@@ -52,7 +94,12 @@ hr {
   border: none;
 }
 
-#darkmode:hover {
-  background-color: #000000;
+#light #darkmode:hover {
+  background-color: #171515;
   color: white;
+}
+
+#dark #darkmode:hover {
+  background-color: white;
+  color: #171515;
 }

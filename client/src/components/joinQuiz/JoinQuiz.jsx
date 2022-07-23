@@ -1,6 +1,8 @@
 import "./joinQuiz.css";
 import React, { useState } from "react";
 import { IoArrowBack } from "react-icons/io5";
+import axios from "axios";
+import { useUserAuth } from "../../context/AuthContext";
 
 const JoinQuiz = (props) => {
   const [counter, setCounter] = useState(0);
@@ -8,7 +10,9 @@ const JoinQuiz = (props) => {
   const [submissions, setSubmissions] = useState([]);
   const [score, setScore] = useState(0);
 
-  const TakeAnswer = () => {
+  const { user } = useUserAuth();
+
+  const TakeAnswer = async () => {
     handleSubmit();
     let { correctAns } = props.data[counter];
     let { submittedAns } = submissions[counter];
@@ -25,6 +29,34 @@ const JoinQuiz = (props) => {
       if (correctAns === submittedAns) {
         setScore(score + 1);
         console.log("correct");
+      }
+      try {
+        const url =
+          "http://localhost:8800/api/users/updateUser/" +
+          user.userData._id.toString();
+        console.log(url);
+        const arr = user.userData.quizzesSubmitted;
+        const isFound = arr.some((element) => {
+          if (element.id === props.quizDetails._id) {
+            return true;
+          }
+          return false;
+        });
+        if (isFound) {
+          alert("quiz already attempted");
+        } else {
+          arr.push({
+            id: props.quizDetails._id,
+            name: props.quizDetails.quizname,
+            startDate: props.quizDetails.startDate,
+            submissions: submissions,
+          });
+          console.log(arr);
+          await axios.put(url, { quizzesSubmitted: arr });
+          console.log({ quizzesSubmitted: arr });
+        }
+      } catch (err) {
+        console.log(err.message);
       }
       alert("Test Submitted!");
     }
@@ -48,27 +80,24 @@ const JoinQuiz = (props) => {
     console.log(submissions);
   };
 
-  const { Question, optionA, optionB, optionC, optionD } = props.data[counter];
+  const { id, Question, options } = props.data[counter];
 
   return (
     <>
       <IoArrowBack className="back-icon" onClick={props.function} />
-      <div id="question">
+      <div id="question" key={id}>
         <p>{Question}</p>
       </div>
       <div id="options">
-        <div className="option">
-          <p>{optionA}</p>
-        </div>
-        <div className="option">
-          <p>{optionB}</p>
-        </div>
-        <div className="option">
-          <p>{optionC}</p>
-        </div>
-        <div className="option">
-          <p>{optionD}</p>
-        </div>
+        {options.map((option, i) => {
+          return (
+            <>
+              <div className="option" key={i}>
+                <p>{option.value}</p>
+              </div>
+            </>
+          );
+        })}
       </div>
       <div id="answer">
         <p>answer</p>

@@ -1,13 +1,25 @@
+import { createContext, useState } from "react";
 import "./App.css";
 import { Home } from "./pages/home/home.jsx";
 
+export const ThemeContext = createContext(null);
+
 function App() {
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === "light" ? "dark" : "light"));
+    console.log(theme);
+  };
+
   return (
-    <div className="App">
-      <div id="body">
-        <Home />
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <div className="App" id={theme}>
+        <div id="body">
+          <Home />
+        </div>
       </div>
-    </div>
+    </ThemeContext.Provider>
   );
 }
 

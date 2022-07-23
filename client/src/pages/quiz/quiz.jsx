@@ -8,15 +8,22 @@ export const Quiz = () => {
   const [createQuiz, setCreateQuiz] = useState(false);
   const [joinQuiz, setJoinQuiz] = useState(false);
   const [Data, setData] = useState([]);
+  const [quizDetails, setQuizDetails] = useState(undefined);
 
   useEffect(() => {
     async function fetch() {
       try {
         const x = await axios.get(
-          "http://localhost:8800/api/quizzes/attemptQuiz/62d27b197b51940c017aece7"
+          "http://localhost:8800/api/quizzes/attemptQuiz/62dbeb5d306a72aaa510d8c5"
         );
         const { data } = x;
         setData(data.questions);
+        setQuizDetails({
+          id: data._id,
+          name: data.quizname,
+          startDate: data.startDate,
+        });
+        console.log(quizDetails);
       } catch (err) {
         console.log(err);
       }
@@ -51,7 +58,7 @@ export const Quiz = () => {
       {joinQuiz && !createQuiz && (
         <div id="q-mainBody">
           <div id="attempt-section">
-            <JoinQuiz function={Toggle} data={Data} />
+            <JoinQuiz function={Toggle} data={Data} quizDetails={quizDetails} />
           </div>
         </div>
       )}

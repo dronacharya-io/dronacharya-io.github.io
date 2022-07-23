@@ -11,13 +11,13 @@ import { verifyUser } from "../utils/verifyToken.js";
 const router = express.Router();
 
 //UPDATE
-router.put("/updateQuiz/:id", verifyUser, updateQuiz);
+router.put("/updateQuiz/:id", updateQuiz);
 //DELETE
-router.delete("/deleteQuiz/:id", verifyUser, deleteQuiz);
+router.delete("/deleteQuiz/:id", deleteQuiz);
 //GET
 router.get("/attemptQuiz/:id", getQuiz);
 //GETALL
-router.get("/getquizzes", verifyUser, getQuizzes);
+router.get("/getquizzes", getQuizzes);
 //CREATE
 router.post("/", createQuiz);
 //COUNT

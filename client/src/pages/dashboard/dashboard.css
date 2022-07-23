@@ -1,11 +1,23 @@
-#dashboardCover {
+#light #dashboardCover {
   display: flex;
   flex-direction: column;
   padding: 2rem;
 }
 
-#upcomingTests {
+#dark #dashboardCover {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #171515;
+}
+
+#light #upcomingTests {
   margin-bottom: 1rem;
+}
+
+#dark #upcomingTests {
+  margin-bottom: 1rem;
+  color: white;
 }
 
 .cards {
