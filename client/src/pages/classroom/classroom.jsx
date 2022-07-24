@@ -1,20 +1,19 @@
 import React from "react";
 import { useUserAuth } from "../../context/AuthContext";
+import UserQuizCard from "./quizCard";
 
 export const Classroom = () => {
   const { user } = useUserAuth();
 
   return (
-    <>
-      <div id="abc">
+      <div className="cards">
         {user.userData.quizzesCreated.map((quiz, i) => {
           return (
-            <>
-              <p key={i}>{quiz.name}</p>
-            </>
+              <div>
+                <UserQuizCard key={i} quizName={quiz.name} runTime={quiz.runTime} startDate={quiz.startDate}/>
+              </div>
           );
         })}
-      </div>
-    </>
+      </div> 
   );
 };
