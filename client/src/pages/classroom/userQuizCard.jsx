@@ -12,7 +12,7 @@ function UserQuizCard(props){
     },[])
 
     return(
-        <div className="card" style={{backgroundColor: props.startDate < currentDate || props.runTime < currentTime ? "#E0E0E0" : props.startDate > currentDate || props.currentTime > currentTime ? "#A4EBF3" : props.startDate === currentDate  ? "green" : "black" }}>
+        <div className="card" style={{backgroundColor: props.startDate < currentDate && props.runTime < currentTime ? "#E0E0E0" : props.startDate > currentDate || props.runTime > currentTime ? "#A4EBF3" : props.startDate === currentDate && props.runTime < currentTime  ? "#E0E0E0" : "white" }}>
             <div style={{width : "15rem",height:"15rem"}}>
                 <img src="https://picsum.photos/seed/picsum/240/240" />
             </div>
