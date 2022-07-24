@@ -1,6 +1,6 @@
 import React from "react";
 import { useUserAuth } from "../../context/AuthContext";
-import UserQuizCard from "./quizCard";
+import UserQuizCard from "./userQuizCard";
 
 export const Classroom = () => {
   const { user } = useUserAuth();
