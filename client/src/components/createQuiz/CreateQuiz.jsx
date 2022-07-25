@@ -45,6 +45,7 @@ const CreateQuiz = (props) => {
         id: res.data.details._id,
         name: res.data.details.quizname,
         startDate: res.data.details.startDate,
+        startTime: res.data.details.startTime,
         runTime: res.data.details.runTime,
       });
       console.log(arr);
