@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 
 function UserQuizCard(props){
-    const [currentDate, setCurrentDate] = useState(new Date().getFullYear() + "-" +"0"+ (new Date().getMonth()+1)+"-"+ new Date().getDate() );
+    const [zero, setZero] = useState("0");
+    const [currentDate, setCurrentDate] = useState(new Date().getFullYear() + "-" +zero+ (new Date().getMonth()+1)+"-"+ new Date().getDate() );
     const [currentTime, setCurrentTime] = useState(new Date().getHours()+":"+new Date().getMinutes())
-    console.log(currentTime)
-    useEffect(()=>{
+    
+    useEffect(()=>{ 
         setInterval(()=>{
-            setCurrentDate(new Date().getFullYear() + "-" +"0"+ (new Date().getMonth()+1)+"-"+ new Date().getDate())
+            setCurrentDate(new Date().getFullYear() + "-" +zero+ (new Date().getMonth()+1)+"-"+ new Date().getDate())
             setCurrentTime(new Date().getHours()+":"+new Date().getMinutes())
+            if((new Date().getMonth()+1) > 9){
+                setZero("")
+            } 
         },1000)
     },[])
 
