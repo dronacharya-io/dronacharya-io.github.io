@@ -7,11 +7,11 @@ function UserQuizCard(props){
     
     useEffect(()=>{ 
         setInterval(()=>{
-            setCurrentDate(new Date().getFullYear() + "-" +zero+ (new Date().getMonth()+1)+"-"+ new Date().getDate())
-            setCurrentTime(new Date().getHours()+":"+new Date().getMinutes())
             if((new Date().getMonth()+1) > 9){
                 setZero("")
-            } 
+            }
+            setCurrentDate(new Date().getFullYear() + "-" +zero+ (new Date().getMonth()+1)+"-"+ new Date().getDate())
+            setCurrentTime(new Date().getHours()+":"+new Date().getMinutes()) 
         },1000)
     },[])
 
