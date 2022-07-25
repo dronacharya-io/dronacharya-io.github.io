@@ -28,12 +28,13 @@
 
 .card {
   width: 17rem;
-  height: 20rem;
+  height: 21rem;
   background-color: white;
   border-radius: 1rem;
   margin: 2rem 1.75rem;
   border: solid 0.5px rgb(233 233 233);
   cursor: pointer;
+  display: grid;
   box-sizing: border-box;
   padding: 1rem;
 }
@@ -41,4 +42,6 @@
 .card:hover {
   box-shadow: 0 0 1.5rem 0rem rgb(233 233 233);
   border: none;
+  transition: border ,box-shadow;
+  transition-duration: 0.5s;
 }
