@@ -6,13 +6,13 @@ import QuizSettings from "../quizSettings/quizSettings";
 import QuestionCard from "../questionBuilderCard/questionBuilderCard";
 import QuestionVisualiserCard from "../questionVisualiserCard/questionVisualiserCard";
 import { useUserAuth } from "../../context/AuthContext";
-import Button from '@mui/material/Button';
-import "../questionBuilderCard/Css/questionBuilderCard.css"
-import Zoom from '@mui/material/Zoom';
-import SettingsIcon from '@mui/icons-material/Settings';
+import Button from "@mui/material/Button";
+import "../questionBuilderCard/Css/questionBuilderCard.css";
+import Zoom from "@mui/material/Zoom";
+import SettingsIcon from "@mui/icons-material/Settings";
 
 const CreateQuiz = (props) => {
-  const [button, setButton] = useState(false);
+  const [button, setButton] = useState(true);
   const [questions, setQuestions] = useState([]);
   const [settingsTab, setSettingsTab] = useState(false);
 
@@ -62,8 +62,13 @@ const CreateQuiz = (props) => {
 
   return (
     <>
-      <Button variant="contained" startIcon={<SettingsIcon className="icon" id="settings-icon" />}  id="settingsButton" onClick={() => Disable()}>
-            Quiz Settings
+      <Button
+        variant="contained"
+        startIcon={<SettingsIcon className="icon" id="settings-icon" />}
+        id="settingsButton"
+        onClick={() => Disable()}
+      >
+        Quiz Settings
       </Button>
       {settingsTab && <QuizSettings func={show} />}
       {!settingsTab && (
@@ -72,13 +77,20 @@ const CreateQuiz = (props) => {
           <div>
             <QuestionCard setButton={setButton} addQuestion={addQuestion} />
           </div>
-          {button && (<div>
-            <Zoom in={true}>
-              <Button id="addQuizButton" variant="contained" color="success" onClick={handleCreate}>
-                add quiz
-              </Button>
-            </Zoom>
-          </div>)}
+          {button && (
+            <div>
+              <Zoom in={true}>
+                <Button
+                  id="addQuizButton"
+                  variant="contained"
+                  color="success"
+                  onClick={handleCreate}
+                >
+                  add quiz
+                </Button>
+              </Zoom>
+            </div>
+          )}
           {questions.map((question) => {
             return (
               <>
