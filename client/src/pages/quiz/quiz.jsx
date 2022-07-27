@@ -14,7 +14,7 @@ export const Quiz = () => {
     async function fetch() {
       try {
         const x = await axios.get(
-          "http://localhost:8800/api/quizzes/attemptQuiz/62dbeb5d306a72aaa510d8c5"
+          "http://localhost:8800/api/quizzes/attemptQuiz/62dfff4479ffb3e09169f098"
         );
         const { data } = x;
         setData(data.questions);

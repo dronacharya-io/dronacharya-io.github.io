@@ -1,10 +1,12 @@
 import React from "react";
+import { useUserAuth } from "../../context/AuthContext.js";
 
 export const Settings = () => {
+  const { user } = useUserAuth();
   return (
     <>
       <div id="abc">
-        <h1>Settings</h1>
+        {user ? <p>{user.userData.username}</p> : <p> loading </p>}
       </div>
     </>
   );
