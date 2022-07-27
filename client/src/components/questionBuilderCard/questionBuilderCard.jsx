@@ -101,7 +101,7 @@ const QuestionCard = (props) => {
                 </Zoom>
             </div>
             <List options={options} removeOption={removeOption} />
-            <div className="form-control correctAns">
+            {/* <div className="form-control correctAns">
               <textarea
                 type="text"
                 id="correctAns"
@@ -110,7 +110,7 @@ const QuestionCard = (props) => {
                 onChange={handleChange}
                 rows={1}
               />
-            </div>
+            </div> */}
           </div>)}
       </form>
       
