@@ -6,13 +6,8 @@ import { useUserAuth } from "../../context/AuthContext.js";
 export const Settings = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
-    createdAt: undefined,
     email: undefined,
-    quizzesCreated: undefined,
-    quizzesSubmitted: undefined,
-    updatedAt: undefined,
     username: undefined,
-    __v: undefined,
     _id: 0,
   });
   const { user } = useUserAuth();

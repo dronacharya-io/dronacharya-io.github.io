@@ -8,7 +8,6 @@ export const Classroom = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
     quizzesCreated: [{ quiz: { quizName: "null", startDate: 0, runTime: 0 } }],
-    _id: 0,
   });
 
   useEffect(() => {
