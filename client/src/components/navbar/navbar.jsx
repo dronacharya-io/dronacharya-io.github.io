@@ -34,7 +34,7 @@ const Navbar = () => {
           <div
             className="iconCover 5"
             id="quiz-icon"
-            onClick={() => navigate("/quiz")}
+            onClick={() => navigate("/aboutUs")}
           >
             <AiOutlineQuestionCircle className="icon" />
           </div>

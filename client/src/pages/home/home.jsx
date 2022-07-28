@@ -1,7 +1,7 @@
 import "./home.css";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Dashboard } from "../dashboard/dashboard.jsx";
+import { AboutUs } from "../About us/aboutUs.jsx";
 import Navbar from "../../components/navbar/navbar.jsx";
 import ProfileTab from "../../components/profile/profile.jsx";
 import { Classroom } from "../classroom/classroom.jsx";
@@ -24,11 +24,11 @@ export const Home = () => {
           </div>
           <div className="remPart">
             <Routes>
-              <Route path="/" element={<Dashboard />} />
+              <Route path="/" element={<Quiz />} />
               <Route path="/classroom" element={<Classroom />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/scorecard" element={<Scorecard />} />
-              <Route path="/quiz" element={<Quiz />} />
+              <Route path="/aboutUs" element={<AboutUs />} />
             </Routes>
           </div>
           <div id="profile">

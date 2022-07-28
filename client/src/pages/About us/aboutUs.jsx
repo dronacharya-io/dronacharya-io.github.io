@@ -1,9 +1,9 @@
-import "./dashboard.css";
+import "./aboutUs.css";
 import React from "react";
 import Card from "../../components/cards/Cards";
 import CardDetails from "../../components/cards/cardDetails";
 
-export const Dashboard = () => {
+export const AboutUs = () => {
   return (
     <>
       <div id="dashboardCover">

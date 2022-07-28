@@ -9,27 +9,32 @@ export const Quiz = () => {
   const [joinQuiz, setJoinQuiz] = useState(false);
   const [Data, setData] = useState([]);
   const [quizDetails, setQuizDetails] = useState(undefined);
+  const [quizCode, setQuizCode] = useState(false);
+  const [id, setId] = useState();
 
-  useEffect(() => {
-    async function fetch() {
-      try {
-        const x = await axios.get(
-          "http://localhost:8800/api/quizzes/attemptQuiz/62dfff4479ffb3e09169f098"
-        );
-        const { data } = x;
-        setData(data.questions);
-        setQuizDetails({
-          id: data._id,
-          name: data.quizname,
-          startDate: data.startDate,
-        });
-        console.log(quizDetails);
-      } catch (err) {
-        console.log(err);
-      }
+  const handleChange = (e) => {
+    setId(e.target.value);
+  };
+
+  const fetch = async () => {
+    try {
+      const x = await axios.get(
+        "http://localhost:8800/api/quizzes/attemptQuiz/" + id
+      );
+      const { data } = x;
+      setData(data.questions);
+      setQuizDetails({
+        id: data._id,
+        name: data.quizname,
+        startDate: data.startDate,
+      });
+      console.log(quizDetails);
+      setQuizCode(false);
+      setJoinQuiz(true);
+    } catch (err) {
+      console.log(err);
     }
-    fetch();
-  }, []);
+  };
 
   const Toggle = () => {
     setCreateQuiz(false);
@@ -38,12 +43,18 @@ export const Quiz = () => {
 
   return (
     <>
-      {!createQuiz && !joinQuiz && (
+      {!createQuiz && !joinQuiz && !quizCode && (
         <div id="q-mainBody">
           <button className="Quiz" onClick={() => setCreateQuiz(true)}>
             Create a Quiz
           </button>
-          <button className="Quiz" onClick={() => setJoinQuiz(true)}>
+          <button
+            className="Quiz"
+            onClick={() => {
+              setQuizCode(true);
+              console.log("called");
+            }}
+          >
             Join a Quiz
           </button>
         </div>
@@ -55,11 +66,17 @@ export const Quiz = () => {
           </div>
         </div>
       )}
-      {joinQuiz && !createQuiz && (
+      {joinQuiz && !createQuiz && !quizCode && (
         <div id="q-mainBody">
           <div id="attempt-section">
             <JoinQuiz function={Toggle} data={Data} quizDetails={quizDetails} />
           </div>
+        </div>
+      )}
+      {!createQuiz && !joinQuiz && quizCode && (
+        <div>
+          <input placeholder="quiz id" onChange={handleChange} />
+          <button onClick={fetch}>submit</button>
         </div>
       )}
     </>

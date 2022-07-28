@@ -18,6 +18,7 @@ const QuestionCard = (props) => {
   const AddQuetionText = "Add Question";
   const [option, setOption] = useState({ value: undefined });
   const [options, setOptions] = useState([]);
+
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -114,10 +115,6 @@ const QuestionCard = (props) => {
                   onClick={addOption}
                   id="AddOptionButton"
                 >
-                  {/* <Button
-                    
-                    size="large"
-                  ></Button> */}
                   <AddIcon />
                 </Fab>
               </Zoom>
