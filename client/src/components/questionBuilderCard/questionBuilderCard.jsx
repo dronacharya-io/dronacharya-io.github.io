@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import AddIcon from '@mui/icons-material/Add';
-import DeleteIcon from '@mui/icons-material/Delete';
-import Zoom from '@mui/material/Zoom';
-import IconButton from '@mui/material/IconButton';
-import "./Css/questionBuilderCard.css"
-import Button from '@mui/material/Button';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
+import AddIcon from "@mui/icons-material/Add";
+import DeleteIcon from "@mui/icons-material/Delete";
+import Zoom from "@mui/material/Zoom";
+import IconButton from "@mui/material/IconButton";
+import "./Css/questionBuilderCard.css";
+import Button from "@mui/material/Button";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
 
 const QuestionCard = (props) => {
   const [question, setQuestion] = useState({
@@ -13,10 +13,9 @@ const QuestionCard = (props) => {
     correctAns: undefined,
   });
 
-
-  const [showElements, setShowElements] = useState(false)
-  const [row, setRow] = useState("1")
-  const AddQuetionText = "Add Question"
+  const [showElements, setShowElements] = useState(false);
+  const [row, setRow] = useState("1");
+  const AddQuetionText = "Add Question";
   const [option, setOption] = useState({ value: undefined });
   const [options, setOptions] = useState([]);
   const handleChange = (e) => {
@@ -67,7 +66,10 @@ const QuestionCard = (props) => {
       <form className="form" id="form-c">
         <div className="form-control Question">
           <textarea
-            onClick={()=>{setRow("2"); setShowElements(true)}}
+            onClick={() => {
+              setRow("2");
+              setShowElements(true);
+            }}
             type="text"
             id="Question"
             name="Question"
@@ -77,31 +79,45 @@ const QuestionCard = (props) => {
           />
         </div>
         {showElements && (
-            <div >
-              <Zoom in={true}>
-                <Button  onClick={handleSubmit} size="medium" variant="contained" type="submit" id="addQuestionButton"  aria-label="add">
-                    {`${AddQuetionText}`}
-                </Button>
-              </Zoom>
-            <div>
-            <Zoom in={true} >
-              <textarea
-                type="text"
-                id="option"
-                name="option"
-                className="options"
-                placeholder="Options.."
-                rows={1}
-                onChange={handleOption}
-              />
+          <div>
+            <Zoom in={true}>
+              <Button
+                onClick={handleSubmit}
+                size="medium"
+                variant="contained"
+                type="submit"
+                id="addQuestionButton"
+                aria-label="add"
+              >
+                {`${AddQuetionText}`}
+              </Button>
             </Zoom>
-                <Zoom in={true} style={{ transitionDelay: true ? '250ms' : '0ms' }}>
-                  <Button onClick={addOption} id="AddOptionButton"   startIcon={<AddCircleIcon/>} size="large">
-                  </Button>
-                </Zoom>
+            <div>
+              <Zoom in={true}>
+                <textarea
+                  type="text"
+                  id="option"
+                  name="option"
+                  className="options"
+                  placeholder="Options.."
+                  rows={1}
+                  onChange={handleOption}
+                />
+              </Zoom>
+              <Zoom
+                in={true}
+                style={{ transitionDelay: true ? "250ms" : "0ms" }}
+              >
+                <Button
+                  onClick={addOption}
+                  id="AddOptionButton"
+                  startIcon={<AddCircleIcon />}
+                  size="large"
+                ></Button>
+              </Zoom>
             </div>
             <List options={options} removeOption={removeOption} />
-            {/* <div className="form-control correctAns">
+            <div className="form-control correctAns">
               <textarea
                 type="text"
                 id="correctAns"
@@ -110,10 +126,10 @@ const QuestionCard = (props) => {
                 onChange={handleChange}
                 rows={1}
               />
-            </div> */}
-          </div>)}
+            </div>
+          </div>
+        )}
       </form>
-      
     </div>
   );
 };
@@ -139,11 +155,15 @@ const SingleOption = (props) => {
   return (
     <div className="option">
       <h4>{value}</h4>
-        <Zoom in={true}>
-          <IconButton className="DeleteButton" onClick={() => props.removeOption(id)} aria-label="delete">
-            <DeleteIcon/>
-          </IconButton>
-        </Zoom>
+      <Zoom in={true}>
+        <IconButton
+          className="DeleteButton"
+          onClick={() => props.removeOption(id)}
+          aria-label="delete"
+        >
+          <DeleteIcon />
+        </IconButton>
+      </Zoom>
     </div>
   );
 };
