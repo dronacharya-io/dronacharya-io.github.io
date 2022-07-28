@@ -5,7 +5,7 @@ import Zoom from "@mui/material/Zoom";
 import IconButton from "@mui/material/IconButton";
 import "./Css/questionBuilderCard.css";
 import Button from "@mui/material/Button";
-import AddCircleIcon from "@mui/icons-material/AddCircle";
+import { Fab } from "@mui/material";
 
 const QuestionCard = (props) => {
   const [question, setQuestion] = useState({
@@ -108,12 +108,18 @@ const QuestionCard = (props) => {
                 in={true}
                 style={{ transitionDelay: true ? "250ms" : "0ms" }}
               >
-                <Button
+                <Fab
+                  color="primary"
+                  size="small"
                   onClick={addOption}
                   id="AddOptionButton"
-                  startIcon={<AddCircleIcon />}
-                  size="large"
-                ></Button>
+                >
+                  {/* <Button
+                    
+                    size="large"
+                  ></Button> */}
+                  <AddIcon />
+                </Fab>
               </Zoom>
             </div>
             <List options={options} removeOption={removeOption} />

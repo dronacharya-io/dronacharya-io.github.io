@@ -1,4 +1,4 @@
-#addQuestionButton{
+#addQuestionButton {
     width: auto;
     height: auto;
     position: relative;
@@ -7,23 +7,23 @@
     letter-spacing: 1.2px;
 }
 
-.DeleteButton{
+.DeleteButton {
     width: auto;
     height: auto;
 }
 
-#AddOptionButton{
-    width:36px;
-    height: 60px;
+#AddOptionButton {
+    /* width:36px;
+    height: 60px; */
     position: relative;
     border: none;
     border-radius: 100%;
     left: 220px;
     bottom: 110px;
-    
+
 }
 
-#Question{
+#Question {
     width: 100%;
     border: none;
     padding: 4px;
@@ -41,11 +41,7 @@
     box-shadow: 0 1px 5px rgb(207, 207, 207);
 }
 
-#ParentDiv{
-    /* box-shadow: 0 1px 5px rgb(138, 137, 137); */
-}
-
-#option{
+#option {
     width: 1rem;
     border: none;
     padding: 1px;
@@ -65,8 +61,8 @@
     box-shadow: 0 1px 5px rgb(207, 207, 207);
 }
 
-#correctAns{
-        width: 1rem;
+#correctAns {
+    width: 1rem;
     border: none;
     padding: 1px;
     outline: none;
@@ -83,12 +79,13 @@
     box-shadow: 0 1px 5px rgb(207, 207, 207);
 
 }
-#addQuizButton{
+
+#addQuizButton {
     letter-spacing: 1.2px;
     inline-size: 300px;
 }
 
-#settingsButton{
+#settingsButton {
     position: absolute;
     bottom: 670px;
     left: 100px;

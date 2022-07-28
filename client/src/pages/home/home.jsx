@@ -9,8 +9,10 @@ import { Settings } from "../settings/settings.jsx";
 import { Scorecard } from "../scorecard/scorecard.jsx";
 import { Quiz } from "../quiz/quiz.jsx";
 import StickyBox from "react-sticky-box";
+import { useUserAuth } from "../../context/AuthContext";
 
 export const Home = () => {
+  const { user } = useUserAuth();
   return (
     <>
       <BrowserRouter>
