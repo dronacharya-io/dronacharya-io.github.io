@@ -6,6 +6,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Badge from '@mui/material/Badge';
+import Skeleton from '@mui/material/Skeleton';
+import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
+
 
 function UserQuizCard(props){
     const [zero, setZero] = useState("0");
@@ -37,38 +41,58 @@ function UserQuizCard(props){
     console.log(runTime)
 
     return(
-       <>
+       <> 
+            
             <Card sx={{ maxWidth: 345 }} className="card" >
-                
-                {props.startDate >= currentDate  ? ( <div> <Button  color="success" style={{ letterSpacing : "5px" }}>
+                { !props.loading ? props.startDate >= currentDate  ? ( <div> <Button  color="success" style={{ letterSpacing : "5px" }}>
                     Live 
                 </Button> <Badge badgeContent=" " color="success" variant="dot"></Badge> </div>) : (<Button style={{ letterSpacing : "2px" }} disabled>
                     Quiz Ended
-                </Button>)}
-                <CardMedia 
+                </Button>) : (<Skeleton variant="circular" width={40} height={40} />)}
+                { !props.loading ? <CardMedia 
                     components="img"
                     alt="quizImg"
                     height="2400"
                     image={tempImage}
-                />
+                /> :  <Skeleton
+                        animation="wave"
+                        height="100%"
+                        width="100%"
+                        style={{ marginBottom: 6 }}
+                    /> }
                 <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    {props.quizName}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    {props.startDate}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    {props.runTime}
-                </Typography>
+                {!props.loading ? 
+                    <Typography gutterBottom variant="h5" component="div">
+                        {props.quizName} 
+                    </Typography>
+                        : 
+                        <Skeleton variant="text" />
+                }
+                    {!props.loading ? <Typography variant="body2" color="text.secondary">
+                        {props.startDate}
+                    </Typography> : <Skeleton height={20} width="50%"  />}
+
+                    {!props.loading ? <Typography variant="body2" color="text.secondary">
+                        {props.runTime}
+                    </Typography> : <Skeleton height={20} width="50%"  />}
                 </CardContent>
                 <CardActions>
-                    <Button size="small">Share</Button>
-                    <Button size="small">Edit</Button>
+                    { !props.loading ?<Button size="small">Share</Button> : <Skeleton height={40} width="50%"  /> }
+                    { !props.loading ?  <Button size="small">Edit</Button> : <Skeleton height={40} width="50%"  />}
                 </CardActions>
-            </Card>
+            </Card>  
         </>
     )
 }
 
 export default UserQuizCard;
+
+
+
+<Box sx={{ pt: 0.5 }}>
+<Stack spacing={1}>
+    <Skeleton variant="text" />
+    <Skeleton variant="circular" width={40} height={40} />
+    <Skeleton variant="rectangular" width={200} height={200} />
+</Stack>
+</Box>

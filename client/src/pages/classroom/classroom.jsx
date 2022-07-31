@@ -3,6 +3,7 @@ import axios from "axios";
 import { useUserAuth } from "../../context/AuthContext";
 import UserQuizCard from "./userQuizCard";
 
+
 export const Classroom = () => {
   const { user } = useUserAuth();
   const [loading, setLoading] = useState(false);
@@ -32,22 +33,20 @@ export const Classroom = () => {
 
   return (
     <div className="cards">
-      {loading ? (
-        <p>loading</p>
-      ) : (
-        data.quizzesCreated?.map((quiz, i) => {
+        {data.quizzesCreated?.map((quiz, i) => {
           return (
             <div>
               <UserQuizCard
                 key={i}
+                loading={loading}
                 quizName={quiz.name}
                 runTime={quiz.runTime}
                 startDate={quiz.startDate}
-              />
+                />
             </div>
           );
         })
-      )}
+      }
     </div>
   );
 };
