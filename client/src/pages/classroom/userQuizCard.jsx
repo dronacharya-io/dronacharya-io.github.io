@@ -41,15 +41,14 @@ function UserQuizCard(props){
     console.log(runTime)
 
     return(
-       <> 
-            
+       <>
             <Card sx={{ maxWidth: 345 }} className="card" >
                 { !props.loading ? props.startDate >= currentDate  ? ( <div> <Button  color="success" style={{ letterSpacing : "5px" }}>
                     Live 
                 </Button> <Badge badgeContent=" " color="success" variant="dot"></Badge> </div>) : (<Button style={{ letterSpacing : "2px" }} disabled>
                     Quiz Ended
                 </Button>) : (<Skeleton variant="circular" width={40} height={40} />)}
-                { !props.loading ? <CardMedia 
+                { !props.loading  ? <CardMedia 
                     components="img"
                     alt="quizImg"
                     height="2400"
@@ -61,18 +60,18 @@ function UserQuizCard(props){
                         style={{ marginBottom: 6 }}
                     /> }
                 <CardContent>
-                {!props.loading ? 
+                {!props.loading && props.quizName ? 
                     <Typography gutterBottom variant="h5" component="div">
                         {props.quizName} 
                     </Typography>
                         : 
                         <Skeleton variant="text" />
                 }
-                    {!props.loading ? <Typography variant="body2" color="text.secondary">
+                    {!props.loading && props.startDate ? <Typography variant="body2" color="text.secondary">
                         {props.startDate}
                     </Typography> : <Skeleton height={20} width="50%"  />}
 
-                    {!props.loading ? <Typography variant="body2" color="text.secondary">
+                    {!props.loading && props.runTime ? <Typography variant="body2" color="text.secondary">
                         {props.runTime}
                     </Typography> : <Skeleton height={20} width="50%"  />}
                 </CardContent>
