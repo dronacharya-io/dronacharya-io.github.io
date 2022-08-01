@@ -33,7 +33,16 @@ export const Settings = () => {
 
   return (
     <>
-      <div id="abc">{loading ? <p>loading</p> : <p>{data._id}</p>}</div>
+      <div id="abc">
+        {loading ? (
+          <p>loading</p>
+        ) : (
+          <>
+            <img src={user.photoURL} alt="profile" id="profileImage" />
+            <p>{user.displayName}</p>
+          </>
+        )}
+      </div>
     </>
   );
 };
