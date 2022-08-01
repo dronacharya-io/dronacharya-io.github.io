@@ -40,6 +40,7 @@ export const Settings = () => {
           <>
             <img src={user.photoURL} alt="profile" id="profileImage" />
             <p>{user.displayName}</p>
+            <p>{data.email}</p>
           </>
         )}
       </div>
