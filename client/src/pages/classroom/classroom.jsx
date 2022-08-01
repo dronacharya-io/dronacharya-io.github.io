@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useUserAuth } from "../../context/AuthContext";
-import UserQuizCard from "./userQuizCard";
-
+import { UserQuizCard, CardSkeleton } from "./userQuizCard";
 
 export const Classroom = () => {
   const { user } = useUserAuth();
@@ -33,7 +32,17 @@ export const Classroom = () => {
 
   return (
     <div className="cards">
-        {data.quizzesCreated?.map((quiz, i) => {
+      {loading ? (
+        <>
+          <CardSkeleton />
+          <CardSkeleton />
+          <CardSkeleton />
+          <CardSkeleton />
+          <CardSkeleton />
+          <CardSkeleton />
+        </>
+      ) : (
+        data.quizzesCreated?.map((quiz, i) => {
           return (
             <div>
               <UserQuizCard
@@ -42,12 +51,11 @@ export const Classroom = () => {
                 quizName={quiz.name}
                 runTime={quiz.runTime}
                 startDate={quiz.startDate}
-                /> 
+              />
             </div>
           );
         })
-      }
+      )}
     </div>
   );
 };
-
