@@ -2,7 +2,7 @@ import "./createQuiz.css";
 import axios from "axios";
 import React, { useState } from "react";
 import { IoArrowBack } from "react-icons/io5";
-import QuizSettings from "../quizSettings/quizSettings";
+import QuizSetting from "../quizSettings/quizsetting";
 import QuestionCard from "../questionBuilderCard/questionBuilderCard";
 import QuestionVisualiserCard from "../questionVisualiserCard/questionVisualiserCard";
 import { useUserAuth } from "../../context/AuthContext";
@@ -64,25 +64,18 @@ const CreateQuiz = () => {
 
   return (
     <>
-      <Button
-        variant="contained"
-        startIcon={<SettingsIcon className="icon" id="settings-icon" />}
-        id="settingsButton"
-        onClick={() => Disable()}
-      >
-        Quiz Settings
-      </Button>
-      {settingsTab && <QuizSettings func={show} />}
-      {!settingsTab && (
+      <QuizSetting func={show}/>
+      {(
         <>
           <IoArrowBack
             className="back-icon-c"
             onClick={() => navigate("../")}
           />
+          
           <div>
             <QuestionCard setButton={setButton} addQuestion={addQuestion} />
           </div>
-          {button && (
+          {true && (
             <div>
               <Zoom in={true}>
                 <Button

@@ -16,6 +16,7 @@ export const Quiz = () => {
   };
 
   return (
+<<<<<<< Updated upstream
     <div className="body">
       <ReactTypingEffect
         className="typing"
@@ -52,6 +53,13 @@ export const Quiz = () => {
             </h1>
           );
         }}
+=======
+    <>
+      <TypeAnimation
+        cursor={true}
+        sequence={["namaste" + user.displayName]}
+        wrapper="h2"
+>>>>>>> Stashed changes
       />
       <div id="q-mainBody">
         <button className="Quiz" onClick={() => navigate("/createQuiz")}>
