@@ -10,6 +10,7 @@ import { Scorecard } from "../scorecard/scorecard.jsx";
 import { Quiz } from "../quiz/quiz.jsx";
 import StickyBox from "react-sticky-box";
 import { useUserAuth } from "../../context/AuthContext";
+import TypeAnimation from "react-type-animation";
 
 export const Home = () => {
   const { user } = useUserAuth();
@@ -23,6 +24,11 @@ export const Home = () => {
             </StickyBox>
           </div>
           <div className="remPart">
+            <TypeAnimation
+              cursor={false}
+              sequence={["namaste" + user.displayName, ""]}
+              wrapper="h2"
+            />
             <Routes>
               <Route path="/" element={<Quiz />} />
               <Route path="/classroom" element={<Classroom />} />
