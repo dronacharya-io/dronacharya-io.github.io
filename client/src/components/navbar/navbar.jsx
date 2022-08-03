@@ -21,30 +21,43 @@ const Navbar = () => {
     <>
       <div id="tab">
         <span id="logo">
-          <img src={Logo} style={{width:"3rem", height:"3rem"}} />
+          <img src={Logo} style={{width:"3rem", height:"3rem"}} onClick={()=>{navigate("/")}} />
         </span>
         <div id="iconStart">
-          <div  onClick={() => navigate("/")}>
-          <Tooltip title="Home"> 
-            <AiOutlineHome className="icon" />
+          <Tooltip title="Home" placement="right"  disableFocusListener disableTouchListener arrow>
+            <IconButton className="iconCover 1"  onClick={() => navigate("/")}>
+              <AiOutlineHome className="icon"  />
+            </IconButton>
           </Tooltip>
-          </div>
-          <div className="iconCover 2" onClick={() => navigate("/classroom")}>
-            <SiGoogleclassroom className="icon" />
-          </div>
-          <div className="iconCover 3" onClick={() => navigate("/settings")}>
-            <IoSettingsOutline className="icon" />
-          </div>
-          <div className="iconCover 4" onClick={() => navigate("/scorecard")}>
-            <IoStatsChartOutline className="icon" />
-          </div>
-          <div
-            className="iconCover 5"
-            id="quiz-icon"
-            onClick={() => navigate("/aboutUs")}
-          >
-            <AiOutlineQuestionCircle className="icon" />
-          </div>
+         
+          <Tooltip title="Classroom" placement="right"  disableFocusListener disableTouchListener arrow>
+            <IconButton className="iconCover 2"  onClick={() => navigate("/classroom")}>
+              <SiGoogleclassroom className="icon" />
+            </IconButton>
+          </Tooltip>
+         
+         
+          <Tooltip title="Settings" placement="right"  disableFocusListener disableTouchListener arrow>
+            <IconButton className="iconCover 3"  onClick={() => navigate("/settings")}>
+              <IoSettingsOutline className="icon" />
+            </IconButton>
+          </Tooltip>
+            
+  
+          
+          <Tooltip title="Score Card" placement="right"  disableFocusListener disableTouchListener arrow>
+            <IconButton className="iconCover 4"  onClick={() => navigate("/scorecard")}>
+              <IoStatsChartOutline className="icon" />
+            </IconButton>
+          </Tooltip>
+         
+         
+          <Tooltip title="Explore" placement="right"  disableFocusListener disableTouchListener arrow>
+            <IconButton className="iconCover 5"  onClick={() => navigate("/aboutUs")}> 
+              <AiOutlineQuestionCircle className="icon" />
+            </IconButton>
+          </Tooltip>
+         
           <hr />
           <div id="darkmode" className="iconCover 6" onClick={toggleTheme}>
             <SiDarkreader className="icon" />
