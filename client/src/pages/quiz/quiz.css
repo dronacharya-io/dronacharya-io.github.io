@@ -1,20 +1,39 @@
+#dark .body {
+  background-color: #222B45;
+  height: 100%;
+}
+
 .typing {
   display: flex;
   margin-left: 2rem;
 }
 
-#light h1 {
-  font-family: 'Dancing Script', cursive;
+#light .namaste {
+  color: black;
+  font-size: 5rem;
+  margin-top: 3rem;
+}
+
+#dark .namaste {
+  color: white;
+  font-size: 5rem;
+  margin-top: 3rem;
+}
+
+#light .body h1 {
   color: #FF9800;
   font-size: 5rem;
   margin-top: 3rem;
 }
 
-#dark h1 {
-  font-family: 'Dancing Script', cursive;
+#dark .body h1 {
   color: #FFE102;
   font-size: 5rem;
   margin-top: 3rem;
+}
+
+.cursor {
+  font-size: 2rem;
 }
 
 #q-mainBody {

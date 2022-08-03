@@ -16,7 +16,7 @@ export const Quiz = () => {
   };
 
   return (
-    <>
+    <div className="body">
       <ReactTypingEffect
         className="typing"
         text={["Namaste, " + user.displayName]}
@@ -36,10 +36,10 @@ export const Quiz = () => {
                   return (
                     <span
                       key={key}
+                      className={i === 0 ? "namaste" : ""}
                       style={
                         i === 0
                           ? {
-                              color: "black",
                               fontFamily: "Dancing Script",
                             }
                           : { fontFamily: "Dancing Script" }
@@ -64,6 +64,6 @@ export const Quiz = () => {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };

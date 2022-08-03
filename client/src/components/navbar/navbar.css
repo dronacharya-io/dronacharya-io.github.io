@@ -10,7 +10,7 @@
   flex-direction: column;
   height: 100vh;
   border-right: solid 1px rgb(233 233 233);
-  background-color: #171515;
+  background-color: #222B45;
 }
 
 #light #logo {
@@ -95,11 +95,11 @@ hr {
 }
 
 #light #darkmode:hover {
-  background-color: #171515;
+  background-color: #222B45;
   color: white;
 }
 
 #dark #darkmode:hover {
   background-color: white;
-  color: #171515;
+  color: #222B45;
 }
