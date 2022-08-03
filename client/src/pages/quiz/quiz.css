@@ -1,3 +1,10 @@
+h1 {
+  font-family: 'Dancing Script', cursive;
+  color: #377dff;
+  font-size: 5rem;
+  margin-top: 3rem;
+}
+
 #q-mainBody {
   display: flex;
   align-items: center;
