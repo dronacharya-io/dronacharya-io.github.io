@@ -22,7 +22,9 @@ export const Classroom = () => {
       } catch (err) {
         setData(err);
       }
-      setTimeout(()=>{setLoading(false)},1000);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
     }
 
     return () => {
@@ -39,20 +41,22 @@ export const Classroom = () => {
           <CardSkeleton />
         </>
       ) : (
-        data.quizzesCreated?.map((quiz, i) => {
-          return (
-            <div>
-              <UserQuizCard
-                key={i}
-                id={quiz.id}
-                loading={loading}
-                quizName={quiz.name}
-                runTime={quiz.runTime}
-                startDate={quiz.startDate}
-              />
-            </div>
-          );
-        })
+        data.quizzesCreated
+          ?.map((quiz, i) => {
+            return (
+              <div>
+                <UserQuizCard
+                  key={i}
+                  id={quiz.id}
+                  loading={loading}
+                  quizName={quiz.name}
+                  runTime={quiz.runTime}
+                  startDate={quiz.startDate}
+                />
+              </div>
+            );
+          })
+          .reverse()
       )}
     </div>
   );
