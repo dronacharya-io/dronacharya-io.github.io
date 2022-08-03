@@ -7,6 +7,9 @@ import CopyRight from "./copyRight/copyright";
 import { useNavigate } from "react-router-dom";
 import { ThemeContext } from "../../App";
 import { useContext } from "react";
+import Logo from "../../pages/images/logo.webp";
+import Tooltip from '@mui/material/Tooltip';
+import IconButton from '@mui/material/IconButton';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -17,10 +20,14 @@ const Navbar = () => {
   return (
     <>
       <div id="tab">
-        <span id="logo">Q.io</span>
+        <span id="logo">
+          <img src={Logo} style={{width:"3rem", height:"3rem"}} />
+        </span>
         <div id="iconStart">
-          <div className="iconCover 1" onClick={() => navigate("/")}>
+          <div  onClick={() => navigate("/")}>
+          <Tooltip title="Home"> 
             <AiOutlineHome className="icon" />
+          </Tooltip>
           </div>
           <div className="iconCover 2" onClick={() => navigate("/classroom")}>
             <SiGoogleclassroom className="icon" />
