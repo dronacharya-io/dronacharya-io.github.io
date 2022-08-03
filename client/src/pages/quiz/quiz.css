@@ -3,9 +3,16 @@
   margin-left: 2rem;
 }
 
-h1 {
+#light h1 {
   font-family: 'Dancing Script', cursive;
-  color: #377dff;
+  color: #FF9800;
+  font-size: 5rem;
+  margin-top: 3rem;
+}
+
+#dark h1 {
+  font-family: 'Dancing Script', cursive;
+  color: #FFE102;
   font-size: 5rem;
   margin-top: 3rem;
 }
