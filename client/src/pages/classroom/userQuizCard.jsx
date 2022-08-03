@@ -7,8 +7,9 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Badge from "@mui/material/Badge";
 import Skeleton from "@mui/material/Skeleton";
-import Stack from "@mui/material/Stack";
+import Popper from "@mui/material/Popper";
 import Box from "@mui/material/Box";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 export function UserQuizCard(props) {
   const [zero, setZero] = useState("0");
@@ -24,7 +25,15 @@ export function UserQuizCard(props) {
     new Date().getHours() + ":" + new Date().getMinutes()
   );
   const tempImage = "https://picsum.photos/seed/picsum/240/240";
-  const [runTime, setRunTime] = useState(0);
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(anchorEl ? null : event.currentTarget);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? "simple-popper" : undefined;
 
   useEffect(() => {
     setInterval(() => {
@@ -46,8 +55,6 @@ export function UserQuizCard(props) {
 
     setInterval(() => {}, 60000);
   }, []);
-
-  console.log(runTime);
 
   return (
     <>
@@ -83,7 +90,16 @@ export function UserQuizCard(props) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Share</Button>
+          <CopyToClipboard text={props.id}>
+            <Button size="small" onClick={handleClick}>
+              Share
+            </Button>
+          </CopyToClipboard>
+          <Popper id={id} open={open} anchorEl={anchorEl}>
+            <Box sx={{ border: 1, p: 1, bgcolor: "background.paper" }}>
+              Code Copied!
+            </Box>
+          </Popper>
           <Button size="small">Edit</Button>
         </CardActions>
       </Card>

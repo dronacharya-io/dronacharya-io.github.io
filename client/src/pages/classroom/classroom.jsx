@@ -47,6 +47,7 @@ export const Classroom = () => {
             <div>
               <UserQuizCard
                 key={i}
+                id={quiz.id}
                 loading={loading}
                 quizName={quiz.name}
                 runTime={quiz.runTime}
