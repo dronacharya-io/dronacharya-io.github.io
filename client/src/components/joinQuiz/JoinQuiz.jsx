@@ -1,30 +1,64 @@
 import "./joinQuiz.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IoArrowBack } from "react-icons/io5";
 import axios from "axios";
 import { useUserAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
-const JoinQuiz = (props) => {
+const JoinQuiz = () => {
+  const navigate = useNavigate();
+
   const [counter, setCounter] = useState(0);
   const [submission, setSubmission] = useState({ submittedAns: undefined });
   const [submissions, setSubmissions] = useState([]);
   const [score, setScore] = useState(0);
+  const [Data, setData] = useState();
+  const [quizDetails, setQuizDetails] = useState(undefined);
+  const [loading, setLoading] = useState(true);
 
   const { user } = useUserAuth();
+  const urlParams = new URLSearchParams(window.location.search);
+  console.log(urlParams.get("id"));
+
+  useEffect(() => {
+    setLoading(true);
+    async function fetch() {
+      try {
+        const x = await axios.get(
+          "http://localhost:8800/api/quizzes/attemptQuiz/" + urlParams.get("id")
+        );
+        console.log(x);
+        const { data } = x;
+        setData(data.questions);
+        setQuizDetails({
+          id: data._id,
+          name: data.quizname,
+          startDate: data.startDate,
+        });
+        console.log(quizDetails);
+      } catch (err) {
+        console.log(err);
+      }
+      setLoading(false);
+    }
+    return () => {
+      fetch();
+    };
+  }, []);
 
   const TakeAnswer = async () => {
     handleSubmit();
-    let { correctAns } = props.data[counter];
+    let { correctAns } = Data[counter];
     let { submittedAns } = submissions[counter];
     if (correctAns === submittedAns) {
       setScore(score + 1);
       console.log("correct");
     }
-    if (props.data[counter + 1]) {
+    if (Data[counter + 1]) {
       setCounter(counter + 1);
     }
-    if (!props.data[counter + 1]) {
-      let { correctAns } = props.data[counter];
+    if (!Data[counter + 1]) {
+      let { correctAns } = Data[counter];
       let { submittedAns } = submissions[counter];
       if (correctAns === submittedAns) {
         setScore(score + 1);
@@ -37,7 +71,7 @@ const JoinQuiz = (props) => {
         console.log(url);
         const arr = user.userData.quizzesSubmitted;
         const isFound = arr.some((element) => {
-          if (element.id === props.quizDetails._id) {
+          if (element.id === quizDetails._id) {
             return true;
           }
           return false;
@@ -46,9 +80,9 @@ const JoinQuiz = (props) => {
           alert("quiz already attempted");
         } else {
           arr.push({
-            id: props.quizDetails._id,
-            name: props.quizDetails.quizname,
-            startDate: props.quizDetails.startDate,
+            id: quizDetails._id,
+            name: quizDetails.quizname,
+            startDate: quizDetails.startDate,
             submissions: submissions,
           });
           console.log(arr);
@@ -80,35 +114,39 @@ const JoinQuiz = (props) => {
     console.log(submissions);
   };
 
-  const { id, Question, options } = props.data[counter];
-
   return (
     <>
-      <IoArrowBack className="back-icon" onClick={props.function} />
-      <div id="question" key={id}>
-        <p>{Question}</p>
-      </div>
-      <div id="options">
-        {options.map((option, i) => {
-          return (
-            <>
-              <div className="option" key={i}>
-                <p>{option.value}</p>
-              </div>
-            </>
-          );
-        })}
-      </div>
-      <div id="answer">
-        <p>answer</p>
-        <input
-          type="text"
-          id="submittedAns"
-          name="submittedAns"
-          onChange={handleChange}
-        />
-      </div>
-      <button onClick={() => TakeAnswer()}>Next</button>
+      {loading ? (
+        <p>loading</p>
+      ) : (
+        <>
+          <IoArrowBack className="back-icon" onClick={() => navigate("../")} />
+          <div id="question" key={Data[counter].id}>
+            <p>{Data[counter].Question}</p>
+          </div>
+          <div id="options">
+            {Data[counter].options.map((option, i) => {
+              return (
+                <>
+                  <div className="option" key={i}>
+                    <p>{option.value}</p>
+                  </div>
+                </>
+              );
+            })}
+          </div>
+          <div id="answer">
+            <p>answer</p>
+            <input
+              type="text"
+              id="submittedAns"
+              name="submittedAns"
+              onChange={handleChange}
+            />
+          </div>
+          <button onClick={() => TakeAnswer()}>Next</button>
+        </>
+      )}
     </>
   );
 };

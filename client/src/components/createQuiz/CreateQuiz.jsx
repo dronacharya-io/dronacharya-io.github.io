@@ -10,12 +10,14 @@ import Button from "@mui/material/Button";
 import "../questionBuilderCard/Css/questionBuilderCard.css";
 import Zoom from "@mui/material/Zoom";
 import SettingsIcon from "@mui/icons-material/Settings";
+import { useNavigate } from "react-router-dom";
 
-const CreateQuiz = (props) => {
+const CreateQuiz = () => {
   const [button, setButton] = useState(true);
   const [questions, setQuestions] = useState([]);
   const [settingsTab, setSettingsTab] = useState(false);
 
+  const navigate = useNavigate();
   const { user } = useUserAuth();
 
   const Disable = () => {
@@ -73,7 +75,10 @@ const CreateQuiz = (props) => {
       {settingsTab && <QuizSettings func={show} />}
       {!settingsTab && (
         <>
-          <IoArrowBack className="back-icon-c" onClick={props.function} />
+          <IoArrowBack
+            className="back-icon-c"
+            onClick={() => navigate("../")}
+          />
           <div>
             <QuestionCard setButton={setButton} addQuestion={addQuestion} />
           </div>

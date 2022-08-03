@@ -9,6 +9,8 @@ import { Settings } from "../settings/settings.jsx";
 import { Scorecard } from "../scorecard/scorecard.jsx";
 import { Quiz } from "../quiz/quiz.jsx";
 import StickyBox from "react-sticky-box";
+import JoinQuiz from "../../components/joinQuiz/JoinQuiz";
+import CreateQuiz from "../../components/createQuiz/CreateQuiz";
 
 export const Home = () => {
   return (
@@ -23,6 +25,8 @@ export const Home = () => {
           <div className="remPart">
             <Routes>
               <Route path="/" element={<Quiz />} />
+              <Route path="/createQuiz" element={<CreateQuiz />} />
+              <Route path="/joinQuiz" element={<JoinQuiz />} />
               <Route path="/classroom" element={<Classroom />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/scorecard" element={<Scorecard />} />

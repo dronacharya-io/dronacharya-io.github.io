@@ -17,7 +17,6 @@ export const Classroom = () => {
         const res = await axios.get(
           "http://localhost:8800/api/users/getUser/" + user.userData._id
         );
-        console.log(res);
         setData(res.data);
       } catch (err) {
         setData(err);

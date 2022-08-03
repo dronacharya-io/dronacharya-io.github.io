@@ -34,6 +34,8 @@ export function UserQuizCard(props) {
 
   const open = Boolean(anchorEl);
   const id = open ? "simple-popper" : undefined;
+  const currentBaseURL =
+    window.location.href.split("classroom")[0] + "joinQuiz/?id=";
 
   useEffect(() => {
     setInterval(() => {
@@ -90,14 +92,14 @@ export function UserQuizCard(props) {
           </Typography>
         </CardContent>
         <CardActions>
-          <CopyToClipboard text={props.id}>
+          <CopyToClipboard text={currentBaseURL + props.id}>
             <Button size="small" onClick={handleClick}>
               Share
             </Button>
           </CopyToClipboard>
           <Popper id={id} open={open} anchorEl={anchorEl}>
             <Box sx={{ border: 1, p: 1, bgcolor: "background.paper" }}>
-              Code Copied!
+              Link Copied!
             </Box>
           </Popper>
           <Button size="small">Edit</Button>
@@ -110,8 +112,8 @@ export function UserQuizCard(props) {
 export const CardSkeleton = () => {
   return (
     <Card className="card">
-      <Button  disabled>
-        <Skeleton  width={200} height={40} />
+      <Button disabled>
+        <Skeleton width={200} height={40} />
       </Button>
       <Skeleton height={100} width="100%" />
       <CardContent>
