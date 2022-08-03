@@ -110,8 +110,8 @@ export function UserQuizCard(props) {
 export const CardSkeleton = () => {
   return (
     <Card className="card">
-      <Button style={{ letterSpacing: "2px" }} disabled>
-        <Skeleton variant="circular" width={40} height={40} />
+      <Button  disabled>
+        <Skeleton  width={200} height={40} />
       </Button>
       <Skeleton height={100} width="100%" />
       <CardContent>
