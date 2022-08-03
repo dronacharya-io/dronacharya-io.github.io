@@ -7,6 +7,9 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Badge from "@mui/material/Badge";
 import Skeleton from "@mui/material/Skeleton";
+import Popper from "@mui/material/Popper";
+import Box from "@mui/material/Box";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 export function UserQuizCard(props) {
   const [zero, setZero] = useState("0");
