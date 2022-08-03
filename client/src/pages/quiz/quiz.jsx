@@ -18,10 +18,11 @@ export const Quiz = () => {
   return (
     <>
       <ReactTypingEffect
+        className="typing"
         text={["Namaste, " + user.displayName]}
         cursorRenderer={(cursor) => <h1>{cursor}</h1>}
-        speed={50}
-        eraseSpeed={50}
+        speed={100}
+        eraseSpeed={100}
         displayTextRenderer={(text, i) => {
           return (
             <h1>
