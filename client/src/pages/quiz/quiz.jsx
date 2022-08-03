@@ -3,8 +3,12 @@ import React, { useState, useEffect } from "react";
 import CreateQuiz from "../../components/createQuiz/CreateQuiz";
 import JoinQuiz from "../../components/joinQuiz/JoinQuiz";
 import axios from "axios";
+import { useUserAuth } from "../../context/AuthContext";
+import TypeAnimation from "react-type-animation";
 
 export const Quiz = () => {
+  const { user } = useUserAuth();
+
   const [createQuiz, setCreateQuiz] = useState(false);
   const [joinQuiz, setJoinQuiz] = useState(false);
   const [Data, setData] = useState([]);
@@ -44,22 +48,29 @@ export const Quiz = () => {
   return (
     <>
       {!createQuiz && !joinQuiz && !quizCode && (
-        <div id="q-mainBody">
-          <button className="Quiz" onClick={() => setCreateQuiz(true)}>
-            Create a Quiz
-          </button>
-          <button
-            className="Quiz"
-            onClick={() => {
-              setQuizCode(true);
-              console.log("called");
-            }}
-          >
-            Join a Quiz
-          </button>
-        </div>
+        <>
+          <TypeAnimation
+            cursor={true}
+            sequence={["namaste" + user.displayName]}
+            wrapper="h2"
+          />
+          <div id="q-mainBody">
+            <button className="Quiz" onClick={() => setCreateQuiz(true)}>
+              Create a Quiz
+            </button>
+            <button
+              className="Quiz"
+              onClick={() => {
+                setQuizCode(true);
+                console.log("called");
+              }}
+            >
+              Join a Quiz
+            </button>
+          </div>
+        </>
       )}
-      {createQuiz && !joinQuiz && (
+      {createQuiz && !joinQuiz && !quizCode && (
         <div id="q-mainBody">
           <div id="question-section">
             <CreateQuiz function={Toggle} />
