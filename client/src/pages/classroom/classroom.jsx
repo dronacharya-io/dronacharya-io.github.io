@@ -11,8 +11,8 @@ export const Classroom = () => {
   });
 
   useEffect(() => {
+    setLoading(true);
     async function Fetch() {
-      setLoading(true);
       try {
         const res = await axios.get(
           "http://localhost:8800/api/users/getUser/" + user.userData._id
@@ -22,7 +22,7 @@ export const Classroom = () => {
       } catch (err) {
         setData(err);
       }
-      setLoading(false);
+      setTimeout(()=>{setLoading(false)},1000);
     }
 
     return () => {
@@ -34,9 +34,6 @@ export const Classroom = () => {
     <div className="cards">
       {loading ? (
         <>
-          <CardSkeleton />
-          <CardSkeleton />
-          <CardSkeleton />
           <CardSkeleton />
           <CardSkeleton />
           <CardSkeleton />

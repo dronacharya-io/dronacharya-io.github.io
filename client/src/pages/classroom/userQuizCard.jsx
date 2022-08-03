@@ -7,9 +7,6 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Badge from "@mui/material/Badge";
 import Skeleton from "@mui/material/Skeleton";
-import Popper from "@mui/material/Popper";
-import Box from "@mui/material/Box";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 
 export function UserQuizCard(props) {
   const [zero, setZero] = useState("0");
@@ -110,9 +107,22 @@ export function UserQuizCard(props) {
 export const CardSkeleton = () => {
   return (
     <Card className="card">
-      <Skeleton variant="circular" width={40} height={40} />
+      <Button style={{ letterSpacing: "2px" }} disabled>
+        <Skeleton variant="circular" width={40} height={40} />
+      </Button>
       <Skeleton height={100} width="100%" />
-      <Skeleton height={40} width="50%" />
+      <CardContent>
+        <Skeleton height={40} width="70%" />
+        <Skeleton variant="text" width="30%" />
+      </CardContent>
+      <CardActions>
+        <Button size="small">
+          <Skeleton height={40} width="50%" />
+        </Button>
+        <Button size="small">
+          <Skeleton height={40} width="50%" />
+        </Button>
+      </CardActions>
     </Card>
   );
 };
