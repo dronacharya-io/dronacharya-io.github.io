@@ -9,11 +9,9 @@ import { useUserAuth } from "../../context/AuthContext";
 import Button from "@mui/material/Button";
 import "../questionBuilderCard/Css/questionBuilderCard.css";
 import Zoom from "@mui/material/Zoom";
-import SettingsIcon from "@mui/icons-material/Settings";
 import { useNavigate } from "react-router-dom";
 
 const CreateQuiz = () => {
-  const [button, setButton] = useState(true);
   const [questions, setQuestions] = useState([]);
   const [settingsTab, setSettingsTab] = useState(false);
 
@@ -57,6 +55,8 @@ const CreateQuiz = () => {
       console.log(arr);
       await axios.put(url, { quizzesCreated: arr });
       console.log({ quizzesCreated: arr });
+      const redirectURL = "../" + "classroom";
+      navigate(redirectURL);
     } catch (err) {
       console.log(err);
     }
@@ -64,16 +64,16 @@ const CreateQuiz = () => {
 
   return (
     <>
-      <QuizSetting func={show}/>
-      {(
+      <QuizSetting func={show} />
+      {
         <>
           <IoArrowBack
             className="back-icon-c"
             onClick={() => navigate("../")}
           />
-          
+
           <div>
-            <QuestionCard setButton={setButton} addQuestion={addQuestion} />
+            <QuestionCard addQuestion={addQuestion} />
           </div>
           {true && (
             <div>
@@ -99,7 +99,7 @@ const CreateQuiz = () => {
             );
           })}
         </>
-      )}
+      }
     </>
   );
 };
