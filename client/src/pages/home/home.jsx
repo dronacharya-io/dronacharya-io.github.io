@@ -26,7 +26,7 @@ export const Home = () => {
           <div className="remPart">
             <TypeAnimation
               cursor={false}
-              sequence={["namaste" + user.displayName, ""]}
+              sequence={["namaste" + user.displayName]}
               wrapper="h2"
             />
             <Routes>
