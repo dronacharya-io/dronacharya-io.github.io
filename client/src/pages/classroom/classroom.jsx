@@ -22,7 +22,8 @@ export const Classroom = () => {
       } catch (err) {
         setData(err);
       }
-      setLoading(false);
+      setTimeout(()=>{setLoading(false)},1500);
+      
     }
 
     return () => {
@@ -34,9 +35,6 @@ export const Classroom = () => {
     <div className="cards">
       {loading ? (
         <>
-          <CardSkeleton />
-          <CardSkeleton />
-          <CardSkeleton />
           <CardSkeleton />
           <CardSkeleton />
           <CardSkeleton />
