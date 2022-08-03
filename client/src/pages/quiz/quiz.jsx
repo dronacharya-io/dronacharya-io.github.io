@@ -18,7 +18,7 @@ export const Quiz = () => {
     <>
       <TypeAnimation
         cursor={true}
-        sequence={["namaste" + user.displayName]}
+        sequence={["namaste" + user.displayName.split(" ")[0]]}
         wrapper="h2"
       />
       <div id="q-mainBody">
