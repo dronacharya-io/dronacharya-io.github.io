@@ -37,6 +37,7 @@ export function UserAuthContextProvider({ children }) {
             "http://localhost:8800/api/auth/register",
             registerData
           );
+          currentuser = { ...currentuser, userData: res.data.details };
         } catch (err) {
           console.log(err);
         }

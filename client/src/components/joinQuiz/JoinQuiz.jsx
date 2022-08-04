@@ -15,6 +15,7 @@ const JoinQuiz = () => {
   const [Data, setData] = useState();
   const [quizDetails, setQuizDetails] = useState(undefined);
   const [loading, setLoading] = useState(true);
+  const [attendies, setAttendies] = useState();
 
   const { user } = useUserAuth();
   const urlParams = new URLSearchParams(window.location.search);
@@ -24,6 +25,7 @@ const JoinQuiz = () => {
     setLoading(true);
     async function fetch() {
       try {
+        console.log("called");
         const x = await axios.get(
           "http://localhost:8800/api/quizzes/attemptQuiz/" + urlParams.get("id")
         );
@@ -35,7 +37,18 @@ const JoinQuiz = () => {
           name: data.quizname,
           startDate: data.startDate,
         });
+        setAttendies(data.attendies);
         console.log(quizDetails);
+        const arr = x.data.attendies;
+        const isFound = arr.some((element) => {
+          if (element.id === user.userData._id) {
+            return true;
+          }
+          return false;
+        });
+        if (isFound) {
+          alert("quiz already attempted");
+        }
       } catch (err) {
         console.log(err);
       }
@@ -70,25 +83,24 @@ const JoinQuiz = () => {
           user.userData._id.toString();
         console.log(url);
         const arr = user.userData.quizzesSubmitted;
-        const isFound = arr.some((element) => {
-          if (element.id === quizDetails._id) {
-            return true;
-          }
-          return false;
+        arr.push({
+          ...quizDetails,
+          submissions: submissions,
         });
-        if (isFound) {
-          alert("quiz already attempted");
-        } else {
-          arr.push({
-            id: quizDetails._id,
-            name: quizDetails.quizname,
-            startDate: quizDetails.startDate,
-            submissions: submissions,
-          });
-          console.log(arr);
-          await axios.put(url, { quizzesSubmitted: arr });
-          console.log({ quizzesSubmitted: arr });
-        }
+        console.log(arr);
+        await axios.put(url, { quizzesSubmitted: arr });
+        console.log({ quizzesSubmitted: arr });
+      } catch (err) {
+        console.log(err.message);
+      }
+      try {
+        attendies.push({
+          [user.userData._id]: user.displayName,
+        });
+        await axios.put(
+          "http://localhost:8800/api/quizzes/updateQuiz/" + urlParams.get("id"),
+          { attendies: attendies }
+        );
       } catch (err) {
         console.log(err.message);
       }

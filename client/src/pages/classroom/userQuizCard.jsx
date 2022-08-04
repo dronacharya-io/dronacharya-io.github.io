@@ -10,8 +10,12 @@ import Skeleton from "@mui/material/Skeleton";
 import Popper from "@mui/material/Popper";
 import Box from "@mui/material/Box";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import axios from "axios";
+import { useUserAuth } from "../../context/AuthContext";
 
 export function UserQuizCard(props) {
+  const { user } = useUserAuth();
+
   const [zero, setZero] = useState("0");
   const [currentDate, setCurrentDate] = useState(
     new Date().getFullYear() +
@@ -30,6 +34,20 @@ export function UserQuizCard(props) {
 
   const handleClick = (event) => {
     setAnchorEl(anchorEl ? null : event.currentTarget);
+  };
+
+  const handleDelete = async () => {
+    await axios.delete(
+      "http://localhost:8800/api/quizzes/deleteQuiz/" + props.id
+    );
+    let arr = user.userData.quizzesCreated;
+    arr = arr.filter((element) => {
+      return element.id !== props.id;
+    });
+    await axios.put(
+      "http://localhost:8800/api/users/updateUser/" + user.userData._id,
+      { quizzesCreated: arr }
+    );
   };
 
   const open = Boolean(anchorEl);
@@ -102,7 +120,9 @@ export function UserQuizCard(props) {
               Link Copied!
             </Box>
           </Popper>
-          <Button size="small">Edit</Button>
+          <Button size="small" onClick={handleDelete}>
+            Delete Quiz
+          </Button>
         </CardActions>
       </Card>
     </>

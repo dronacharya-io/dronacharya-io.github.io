@@ -4,8 +4,10 @@ import { IoMailOutline } from "react-icons/io5";
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useUserAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const ProfileTab = () => {
+  const navigate = useNavigate();
   const [profileTab, setProfileTab] = useState(true);
 
   const Disable = () => {
@@ -82,6 +84,7 @@ const ProfileTab = () => {
               <button
                 onClick={() => {
                   logOut();
+                  navigate("../");
                 }}
                 className="navButton logout"
               >

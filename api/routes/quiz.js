@@ -6,7 +6,6 @@ import {
   getQuizzes,
   createQuiz,
 } from "../controllers/quiz.js";
-import { verifyUser } from "../utils/verifyToken.js";
 
 const router = express.Router();
 

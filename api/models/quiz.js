@@ -46,6 +46,10 @@ const QuizSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    attendies: {
+      type: Array,
+      default: [],
+    },
   },
   { timestamps: true }
 );
