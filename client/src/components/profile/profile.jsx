@@ -10,7 +10,6 @@ const ProfileTab = () => {
   const navigate = useNavigate();
   const [profileTab, setProfileTab] = useState(true);
   const { user, logOut, googleSignIn } = useUserAuth();
-  const username = user.displayName?.split(" ")[0];
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
     await googleSignIn();
@@ -82,8 +81,11 @@ const ProfileTab = () => {
               <div id="firstname">
                 <p>
                   Hello{" "}
-                  {username?.slice(0, 1).toUpperCase() +
-                    username?.slice(1, username?.length).toLowerCase()}
+                  {user.displayName?.split(" ")[0]?.slice(0, 1).toUpperCase() +
+                    user.displayName
+                      ?.split(" ")[0]
+                      ?.slice(1, user.displayName?.split(" ")[0]?.length)
+                      .toLowerCase()}
                   !
                 </p>
               </div>

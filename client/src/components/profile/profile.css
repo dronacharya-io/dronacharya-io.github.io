@@ -1,3 +1,7 @@
+* {
+  font-family: 'Roboto', sans-serif
+}
+
 #profileButton {
   display: flex;
   justify-content: center;
@@ -27,16 +31,22 @@
   height: 100vh;
   z-index: 0;
   width: 22.5rem;
-  border-left: solid 1px rgb(233 233 233);
   background-color: #1d2238;
 }
 
-#iconTab {
+#light #iconTab {
   display: flex;
   align-items: center;
   justify-content: end;
   padding: 0.5rem 0;
   border-bottom: solid 1px rgb(233 233 233);
+}
+
+#dark #iconTab {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 0.5rem 0;
 }
 
 #light #today {
