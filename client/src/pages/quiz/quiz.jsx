@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { useUserAuth } from "../../context/AuthContext";
 import ReactTypingEffect from "react-typing-effect";
 import { useNavigate } from "react-router-dom";
-import { fontFamily } from "@mui/system";
 
 export const Quiz = () => {
   const { user } = useUserAuth();

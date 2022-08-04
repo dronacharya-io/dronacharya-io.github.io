@@ -15,6 +15,11 @@ export const Settings = () => {
   });
 
   async function deleteAccount() {
+    user.userData.quizzesCreated.filter(async (quiz) => {
+      await axios.delete(
+        "http://localhost:8800/api/quizzes/deleteQuiz/" + quiz.id
+      );
+    });
     await axios.delete(
       "http://localhost:8800/api/users/deleteUser/" + user.userData._id
     );
