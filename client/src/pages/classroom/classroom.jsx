@@ -13,8 +13,8 @@ export const Classroom = () => {
   const [data, setData] = useState({
     quizzesCreated: [{ quiz: { quizName: "null", startDate: 0, runTime: 0 } }],
   });
-   
-  const navigate = useNavigate();  
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
@@ -35,13 +35,6 @@ export const Classroom = () => {
     };
   }, []);
 
-
-// if(data.quizzesCreated.length === 0){
-//   setNoQuizzes(true);
-//   console.log(noQuizzes);
-// }
- 
-
   return (
     <div className="cards">
       {loading ? (
@@ -50,7 +43,7 @@ export const Classroom = () => {
           <CardSkeleton />
           <CardSkeleton />
         </>
-      ) : data.quizzesCreated.length > 0  ? (
+      ) : data.quizzesCreated.length > 0 ? (
         data.quizzesCreated
           ?.map((quiz, i) => {
             return (
@@ -64,29 +57,43 @@ export const Classroom = () => {
                   startDate={quiz.startDate}
                 />
               </div>
-            ) ;
+            );
           })
           .reverse()
-      ) :
-          <div>
-           <div style={{position:"relative", top:"12rem", left:"20rem"}}>
-            <img style={{width:"400px", height:"400px"}} src={NoQuizzesLogo} />
-           </div>
-           <div style={{position:"relative", right:"15rem",bottom:"12rem" }} >
-            <h2 style={{color: "#0d47a1", marginTop:"5rem"}} >Looks like you have'nt created any<span style={{color:"#DBBE01"}} > Quiz</span> yet.</h2>
+      ) : (
+        <div>
+          <div style={{ position: "relative", top: "12rem", left: "20rem" }}>
+            <img
+              style={{ width: "400px", height: "400px" }}
+              src={NoQuizzesLogo}
+            />
+          </div>
+          <div
+            style={{ position: "relative", right: "15rem", bottom: "12rem" }}
+          >
+            <h2 style={{ color: "#0d47a1", marginTop: "5rem" }}>
+              Looks like you have'nt created any
+              <span style={{ color: "#DBBE01" }}> Quiz</span> yet.
+            </h2>
             <Zoom in={true}>
-            <Button
-                  id="addQuizButton"
-                  variant="contained"
-                  style={{backgroundColor:"#DBBE01",marginTop:"4rem", width:"150px", height:"40px",letterSpacing:'2px'}}
-                  onClick={() => navigate("/createQuiz")}
-                >
-                  Create Quiz
-                </Button>
+              <Button
+                id="addQuizButton"
+                variant="contained"
+                style={{
+                  backgroundColor: "#DBBE01",
+                  marginTop: "4rem",
+                  width: "150px",
+                  height: "40px",
+                  letterSpacing: "2px",
+                }}
+                onClick={() => navigate("/createQuiz")}
+              >
+                Create Quiz
+              </Button>
             </Zoom>
-           </div>
-          </div> 
-      }
+          </div>
+        </div>
+      )}
     </div>
   );
 };
