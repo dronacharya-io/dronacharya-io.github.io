@@ -35,6 +35,7 @@
   align-items: center;
   justify-content: end;
   padding: 0.5rem 0;
+  margin-bottom: 4rem;
   border-bottom: solid 1px rgb(233 233 233);
 }
 
@@ -43,6 +44,7 @@
   align-items: center;
   justify-content: end;
   padding: 0.5rem 0;
+  margin-bottom: 4rem;
 }
 
 #light #today {

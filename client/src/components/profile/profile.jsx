@@ -61,7 +61,7 @@ const ProfileTab = () => {
             <h4 id="today">{Today}</h4>
             <IoMailOutline className="icons" />
           </div>
-          <div id="searchbar">
+          {/* <div id="searchbar">
             <AiOutlineSearch
               className="search-icon"
               onClick={() =>
@@ -74,7 +74,7 @@ const ProfileTab = () => {
               placeholder="Search.."
               autoComplete="off"
             />
-          </div>
+          </div> */}
           {user ? (
             <>
               <img src={user.photoURL} alt="profile" id="profileImage" />
