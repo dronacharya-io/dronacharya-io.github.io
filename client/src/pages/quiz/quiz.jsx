@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import { useUserAuth } from "../../context/AuthContext";
 import ReactTypingEffect from "react-typing-effect";
 import { useNavigate } from "react-router-dom";
-import Button from '@mui/material/Button';
-import AddBoxIcon from '@mui/icons-material/AddBox';
-import TextField from '@mui/material/TextField';
-import Input from '@mui/material/Input';
+import Button from "@mui/material/Button";
+import AddBoxIcon from "@mui/icons-material/AddBox";
+import TextField from "@mui/material/TextField";
+import Input from "@mui/material/Input";
 
 export const Quiz = () => {
   const { user } = useUserAuth();
@@ -18,9 +18,8 @@ export const Quiz = () => {
     setId(e.target.value);
   };
 
-
   return (
-    <div className="body" style={{marginTop:"3rem"}}>
+    <div className="body">
       <ReactTypingEffect
         className="typing"
         text={[
@@ -63,27 +62,38 @@ export const Quiz = () => {
           );
         }}
       />
-      <div style={{margin:"5rem 15rem 0rem 2rem"}}>
-        <p style={{fontSize:"1.5rem", textAlign:"justify", lineHeight:"2rem", letterSpacing:'0.8px' }}>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
-        standard dummy text ever since the 1500s, when an unknown printer 
-        took a galley of type PageMaker including versions of Lorem Ipsum.
-        </p>
-      </div>
-      <div id="q-mainBody">
-        <Button variant="contained" 
-        id="CreateQuizButton" 
-        
-        onClick={() => navigate("/createQuiz")}>
-        <AddBoxIcon style={{position:"relative",right:"1rem", height:"28px"}} />
-           Create Test
-        </Button>
-        
-        <TextField id="joinquiztextfield CreateQuizButton" placeholder="Enter a code" onChange={handleChange} style={{width:"25rem", position:"absolute", borderColor: '#ffb74d', fontSize:"3000px"}} />
-        
-        <Button id="joinquizbutton" onClick={() => navigate("/joinQuiz/?id=" + id)}>
-          Join
-        </Button>
+      <div id="centerContent">
+        <div id="homePageText">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type
+          PageMaker including versions of Lorem Ipsum.
+        </div>
+        <div id="q-mainBody">
+          <Button
+            variant="contained"
+            id="CreateQuizButton"
+            onClick={() => navigate("/createQuiz")}
+          >
+            <AddBoxIcon
+              style={{ position: "relative", right: "1rem", height: "28px" }}
+            />
+            Create Test
+          </Button>
+
+          <TextField
+            id="joinquiztextfield"
+            placeholder="Enter a code"
+            onChange={handleChange}
+          />
+
+          <Button
+            id="joinquizbutton"
+            onClick={() => navigate("/joinQuiz/?id=" + id)}
+          >
+            Join
+          </Button>
+        </div>
       </div>
     </div>
   );
