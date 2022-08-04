@@ -72,26 +72,11 @@ export const Classroom = () => {
             style={{ position: "relative", right: "2rem", top: "2rem" }}
           >
             <h2 style={{ color: "#377dff", marginTop: "5rem" }}>
-              Looks like you have'nt created any
+              Looks like you haven't created any
               <span style={{ color: "#ffb74d" }}> Quiz</span> yet.
             </h2>
             <Zoom in={true}>
               <div>
-
-              <Button
-                id="addQuizButton"
-                variant="contained"
-                style={{
-                  backgroundColor: "#ffb74d",
-                  marginTop: "4rem",
-                  width: "150px",
-                  height: "40px",
-                  letterSpacing: "2px",
-                }}
-                onClick={() => navigate("/createQuiz")}
-              >
-                Create Quiz
-              </Button>
               <Button
                 id="joinQuizButton"
                 variant="contained"
@@ -105,7 +90,7 @@ export const Classroom = () => {
                 }}
                 onClick={() => navigate("/")}
               >
-                Join Quiz
+                Get Started
               </Button>
               </div>
             </Zoom>
