@@ -18,7 +18,13 @@ export const Quiz = () => {
     <div className="body">
       <ReactTypingEffect
         className="typing"
-        text={[user ? "Namaste, " + user.displayName : "Namaste"]}
+        text={[
+          user
+            ? "Namaste, " +
+              user.displayName?.slice(0, 1).toUpperCase() +
+              user.displayName?.slice(1, user.displayName?.length).toLowerCase()
+            : "Namaste",
+        ]}
         cursorRenderer={(cursor) => <h1>{cursor}</h1>}
         speed={100}
         eraseSpeed={100}

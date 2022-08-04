@@ -9,6 +9,12 @@ import { useNavigate } from "react-router-dom";
 const ProfileTab = () => {
   const navigate = useNavigate();
   const [profileTab, setProfileTab] = useState(true);
+  const { user, logOut, googleSignIn } = useUserAuth();
+  const username = user.displayName?.split(" ")[0];
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    await googleSignIn();
+  };
 
   const Disable = () => {
     setProfileTab(!profileTab);
@@ -45,11 +51,6 @@ const ProfileTab = () => {
     " " +
     months[today.getMonth()];
 
-  const { user, logOut, googleSignIn } = useUserAuth();
-  const handleGoogleSignIn = async (e) => {
-    e.preventDefault();
-    await googleSignIn();
-  };
   return (
     <>
       <button id="profileButton" onClick={() => Disable()}>
@@ -79,7 +80,12 @@ const ProfileTab = () => {
             <>
               <img src={user.photoURL} alt="profile" id="profileImage" />
               <div id="firstname">
-                <p>Hello {user.displayName}!</p>
+                <p>
+                  Hello{" "}
+                  {username?.slice(0, 1).toUpperCase() +
+                    username?.slice(1, username?.length).toLowerCase()}
+                  !
+                </p>
               </div>
               <button
                 onClick={() => {
