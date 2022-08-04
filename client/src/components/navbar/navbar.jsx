@@ -17,21 +17,22 @@ const Navbar = () => {
   const useThemeContext = useContext(ThemeContext);
   const { toggleTheme } = useThemeContext;
 
+ 
   return (
     <>
       <div id="tab">
         <span id="logo">
           <img src={Logo} style={{width:"3rem", height:"3rem"}} onClick={()=>{navigate("/")}} />
         </span>
-        <div id="iconStart">
+        <div id="iconStart" sx={{ "&:hover": { backgroundColor:"#ffb74d" } }}>
           <Tooltip title="Home" placement="right"  disableFocusListener disableTouchListener arrow>
-            <IconButton className="iconCover 1"  onClick={() => navigate("/")}>
+            <IconButton className="iconCover 1"  sx={{ "&:hover": { backgroundColor:"#ffb74d" } }} onClick={() => navigate("/")}>
               <AiOutlineHome className="icon"  />
             </IconButton>
           </Tooltip>
          
           <Tooltip title="My Quizzes" placement="right"  disableFocusListener disableTouchListener arrow>
-            <IconButton className="iconCover 2"  onClick={() => navigate("/classroom")}>
+            <IconButton className="iconCover 2"   onClick={() => navigate("/classroom")}>
               <SiGoogleclassroom className="icon" />
             </IconButton>
           </Tooltip>

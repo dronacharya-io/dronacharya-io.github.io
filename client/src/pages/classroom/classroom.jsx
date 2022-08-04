@@ -96,6 +96,63 @@ export const Classroom = () => {
           <CardSkeleton />
           <CardSkeleton />
         </>
+<<<<<<< Updated upstream
+=======
+      ) : data.quizzesCreated.length > 0 ? (
+        data.quizzesCreated
+          ?.map((quiz, i) => {
+            return (
+              <div>
+                <UserQuizCard
+                  key={i}
+                  id={quiz.id}
+                  loading={loading}
+                  quizName={quiz.name}
+                  runTime={quiz.runTime}
+                  startDate={quiz.startDate}
+                />
+              </div>
+            );
+          })
+          .reverse()
+      ) : (
+        <div>
+          <div style={{ position: "relative", top: "5rem", right: "2rem" }}>
+            <img
+              style={{ width: "400px", height: "400px" }}
+              src={NoQuizzesLogo}
+            />
+          </div>
+          <div
+            style={{ position: "relative", right: "2rem", top: "2rem" }}
+          >
+            <h2 style={{ color: "#377dff", marginTop: "5rem" }}>
+              Looks like you haven't created any
+              <span style={{ color: "#ffb74d" }}> Quiz</span> yet.
+            </h2>
+            <Zoom in={true}>
+              <div>
+              <Button
+                id="getStartedButton"
+                variant="contained"
+                style={{
+                  backgroundColor: "#ffb74d",
+                  marginTop: "4rem",
+                  left:'20px',
+                  width: "auto",
+                  height: "40px",
+                  letterSpacing: "2px",
+                }}
+                onClick={() => navigate("/")}
+              >
+                Get Started
+              </Button>
+              </div>
+            </Zoom>
+
+          </div>
+        </div>
+>>>>>>> Stashed changes
       )}
     </div>
   );
