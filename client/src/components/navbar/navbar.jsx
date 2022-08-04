@@ -30,7 +30,7 @@ const Navbar = () => {
             </IconButton>
           </Tooltip>
          
-          <Tooltip title="Classroom" placement="right"  disableFocusListener disableTouchListener arrow>
+          <Tooltip title="My Quizzes" placement="right"  disableFocusListener disableTouchListener arrow>
             <IconButton className="iconCover 2"  onClick={() => navigate("/classroom")}>
               <SiGoogleclassroom className="icon" />
             </IconButton>

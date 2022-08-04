@@ -62,25 +62,27 @@ export const Classroom = () => {
           .reverse()
       ) : (
         <div>
-          <div style={{ position: "relative", top: "12rem", left: "20rem" }}>
+          <div style={{ position: "relative", top: "5rem", right: "2rem" }}>
             <img
               style={{ width: "400px", height: "400px" }}
               src={NoQuizzesLogo}
             />
           </div>
           <div
-            style={{ position: "relative", right: "15rem", bottom: "12rem" }}
+            style={{ position: "relative", right: "2rem", top: "2rem" }}
           >
-            <h2 style={{ color: "#0d47a1", marginTop: "5rem" }}>
+            <h2 style={{ color: "#377dff", marginTop: "5rem" }}>
               Looks like you have'nt created any
-              <span style={{ color: "#DBBE01" }}> Quiz</span> yet.
+              <span style={{ color: "#ffb74d" }}> Quiz</span> yet.
             </h2>
             <Zoom in={true}>
+              <div>
+
               <Button
                 id="addQuizButton"
                 variant="contained"
                 style={{
-                  backgroundColor: "#DBBE01",
+                  backgroundColor: "#ffb74d",
                   marginTop: "4rem",
                   width: "150px",
                   height: "40px",
@@ -90,7 +92,24 @@ export const Classroom = () => {
               >
                 Create Quiz
               </Button>
+              <Button
+                id="joinQuizButton"
+                variant="contained"
+                style={{
+                  backgroundColor: "#ffb74d",
+                  marginTop: "4rem",
+                  left:'20px',
+                  width: "150px",
+                  height: "40px",
+                  letterSpacing: "2px",
+                }}
+                onClick={() => navigate("/")}
+              >
+                Join Quiz
+              </Button>
+              </div>
             </Zoom>
+
           </div>
         </div>
       )}
