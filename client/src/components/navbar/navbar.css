@@ -81,9 +81,9 @@ a {
   height: 1.5rem;
 }
 
-.iconCover:hover {
-  background-color: #006CFF;
-  color: white;
+.icon:hover {
+  color: #006CFF;
+  /* color: white; */
 }
 
 hr {
