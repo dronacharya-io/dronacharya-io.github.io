@@ -1,0 +1,16 @@
+#dark .cards {
+    height: 100%;
+    width: 100%;
+    background-color: #222B45;
+}
+
+#dark .para {
+    color: #ffffff;
+    margin-top: 5rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#dark .para span {
+    color: #2196f3;
+}

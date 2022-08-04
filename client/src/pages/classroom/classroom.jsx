@@ -1,3 +1,4 @@
+import "./classroom.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useUserAuth } from "../../context/AuthContext";
@@ -64,10 +65,10 @@ export const Classroom = () => {
               />
             </div>
             <div style={{ position: "relative", right: "2rem", top: "2rem" }}>
-              <h2 style={{ color: "#377dff", marginTop: "5rem" }}>
+              <p className="para">
                 Looks like you haven't created any
-                <span style={{ color: "#ffb74d" }}> Quiz</span> yet.
-              </h2>
+                <span> Quiz</span> yet.
+              </p>
               <Zoom in={true}>
                 <div>
                   <Button
