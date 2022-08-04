@@ -26,20 +26,19 @@ const Navbar = () => {
         </span>
         <div id="iconStart" >
           <Tooltip title="Home"  placement="right"  disableFocusListener disableTouchListener arrow>
-            <IconButton className="iconCover 1"  sx={{ "&:hover": { backgroundColor:"#ffb74d" } }} onClick={() => navigate("/")}>
+            <IconButton className="iconCover 1"  sx={{ "&:hover": { backgroundColor:"white" } }} onClick={() => navigate("/")}>
               <AiOutlineHome className="icon"  />
             </IconButton>
           </Tooltip>
          
           <Tooltip title="My Quizzes" placement="right"  disableFocusListener disableTouchListener arrow>
-            <IconButton className="iconCover 2" sx={{ "&:hover": { backgroundColor:"#ffb74d" } }}  onClick={() => navigate("/classroom")}>
+            <IconButton className="iconCover 2" sx={{ "&:hover": { backgroundColor:"white" } }}  onClick={() => navigate("/classroom")}>
               <SiGoogleclassroom className="icon" />
             </IconButton>
           </Tooltip>
          
-         
           <Tooltip title="Settings" placement="right"  disableFocusListener disableTouchListener arrow>
-            <IconButton className="iconCover 3" sx={{ "&:hover": { backgroundColor:"#ffb74d" } }} onClick={() => navigate("/settings")}>
+            <IconButton className="iconCover 3" sx={{ "&:hover": { backgroundColor:"white" } }} onClick={() => navigate("/settings")}>
               <IoSettingsOutline className="icon" />
             </IconButton>
           </Tooltip>
@@ -47,14 +46,14 @@ const Navbar = () => {
   
           
           <Tooltip title="Score Card" placement="right"  disableFocusListener disableTouchListener arrow>
-            <IconButton className="iconCover 4" sx={{ "&:hover": { backgroundColor:"#ffb74d" } }} onClick={() => navigate("/scorecard")}>
+            <IconButton className="iconCover 4" sx={{ "&:hover": { backgroundColor:"white" } }} onClick={() => navigate("/scorecard")}>
               <IoStatsChartOutline className="icon" />
             </IconButton>
           </Tooltip>
          
          
           <Tooltip title="Explore" placement="right"  disableFocusListener disableTouchListener arrow>
-            <IconButton className="iconCover 5" sx={{ "&:hover": { backgroundColor:"#ffb74d" } }} onClick={() => navigate("/aboutUs")}> 
+            <IconButton className="iconCover 5" sx={{ "&:hover": { backgroundColor:"white" } }} onClick={() => navigate("/aboutUs")}> 
               <AiOutlineQuestionCircle className="icon" />
             </IconButton>
           </Tooltip>
