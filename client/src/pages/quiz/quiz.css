@@ -71,3 +71,25 @@
 .Quiz:hover {
   box-shadow: 0 0 1.5rem 0rem rgb(233 233 233);
 }
+#CreateQuizButton{
+    background-color: #ffb74d;
+    margin-right: 6rem;
+    margin-left: 2rem;
+    width: 16rem;
+    height: 4rem;
+    letter-spacing: 0.8px;
+    font-size:1.3rem;
+    position:absolute;
+    left : 6rem;
+}
+
+#joinquizbutton{
+  width: 5rem;
+  letter-spacing: 2px;
+  height: 4rem;
+  margin-left:0.5rem ;
+  color: #ffb74d;
+  position:absolute;
+  right:40rem;
+}
+
