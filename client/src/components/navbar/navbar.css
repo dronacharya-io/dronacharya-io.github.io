@@ -9,7 +9,6 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  border-right: solid 1px rgb(233 233 233);
   background-color: #1d2238;
 }
 
@@ -102,4 +101,3 @@ hr {
   background-color: white;
   color: #222B45;
 }
-

@@ -4,11 +4,22 @@
     background-color: #222B45;
 }
 
+#light .para {
+    color: #000000;
+    margin-top: 5rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
 #dark .para {
     color: #ffffff;
     margin-top: 5rem;
     font-size: 2rem;
     text-align: center;
+}
+
+#light .para span {
+    color: #2196f3;
 }
 
 #dark .para span {
