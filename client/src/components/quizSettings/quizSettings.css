@@ -9,6 +9,22 @@ label {
 }
  */
 
-
+#quizSettingButton{
+    box-sizing: border-box;
+    background-color: #ffb74d;
+    width: 15rem;
+    height: 4rem;
+    letter-spacing: 0.8px;
+    font-size: 1.3rem;
+    margin-right: 2rem;
+  }
+  
+  #centerContent {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin-top: 10rem;
+    margin-left: 6rem;
+}  
 
     
