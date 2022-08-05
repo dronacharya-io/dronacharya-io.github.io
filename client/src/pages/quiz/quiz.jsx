@@ -9,9 +9,6 @@ import TextField from "@mui/material/TextField";
 import Lottie from "react-lottie";
 import animationData from "../../lotties/circle-animation.json";
 import { styled } from "@mui/material/styles";
-import Input from "@mui/material/Input";
-import { alpha, styled } from "@mui/material/styles";
-import InputBase from "@mui/material/InputBase";
 
 export const Quiz = () => {
   const { user } = useUserAuth();
