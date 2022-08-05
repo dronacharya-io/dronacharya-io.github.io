@@ -10,6 +10,7 @@ import { useContext } from "react";
 import Logo from "../../pages/images/logo.webp";
 import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
+import { Button } from "@mui/material";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -87,7 +88,7 @@ const Navbar = () => {
           >
             <IconButton
               className="iconCover 4"
-              sx={{ "&:hover": { backgroundColor: "white" } }}
+              sx={{ "&:hover": { backgroundColor: "white" }}}
               onClick={() => navigate("/scorecard")}
             >
               <IoStatsChartOutline className="icon" />
@@ -111,9 +112,11 @@ const Navbar = () => {
           </Tooltip>
 
           <hr />
-          <div id="darkmode" className="iconCover 6" onClick={toggleTheme}>
-            <SiDarkreader className="icon" />
-          </div>
+          
+            <IconButton id="darkmode" onClick={toggleTheme} className="iconCover 6">
+              <SiDarkreader className="icon" />
+            </IconButton>
+          
           <br />
           <div id="copyright" className="7">
             {CopyRight()}

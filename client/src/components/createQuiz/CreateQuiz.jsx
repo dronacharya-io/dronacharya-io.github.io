@@ -75,13 +75,14 @@ const CreateQuiz = () => {
 
   return (
     <>
-      <QuizSetting func={show} />
-      {
-        <>
-          <IoArrowBack
-            className="back-icon-c"
-            onClick={() => navigate("../")}
-          />
+      <div >  
+        <QuizSetting func={show} />
+        {
+          <>
+            <IoArrowBack
+              className="back-icon-c"
+              onClick={() => navigate("../")}
+            />
 
           <div>
             <QuestionCard addQuestion={addQuestion} />
@@ -104,10 +105,7 @@ const CreateQuiz = () => {
             return (
               <>
                 <div key={question.id}>
-                  <QuestionVisualiserCard
-                    question={question}
-                    editQuestion={editQuestion}
-                  />
+                  <QuestionVisualiserCard question={question} />
                 </div>
               </>
             );

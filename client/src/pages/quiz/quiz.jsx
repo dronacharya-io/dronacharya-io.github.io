@@ -131,6 +131,7 @@ export const Quiz = () => {
                 placeholder="Paste a Test ID"
                 onChange={handleChange}
                 value={id}
+                InputLabelProps={{id :"textField__"}}
                 label="Paste Test id here!"
                 focused
               />
