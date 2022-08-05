@@ -8,6 +8,7 @@ import AddBoxIcon from "@mui/icons-material/AddBox";
 import TextField from "@mui/material/TextField";
 import Lottie from "react-lottie";
 import animationData from "../../lotties/circle-animation.json";
+import { styled } from "@mui/material/styles";
 
 export const Quiz = () => {
   const { user } = useUserAuth();
@@ -27,6 +28,26 @@ export const Quiz = () => {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+
+  const CssTextField = styled(TextField)({
+    "& label.Mui-focused": {
+      color: "#FF9800",
+    },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "green",
+    },
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: "red",
+      },
+      "&:hover fieldset": {
+        borderColor: "yellow",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "#FF9800",
+      },
+    },
+  });
 
   return (
     <div className="bodyWithAnimation">
@@ -107,6 +128,21 @@ export const Quiz = () => {
               Join
             </Button>
           </div>
+          <CssTextField
+            id=""
+            placeholder="Paste a Test ID"
+            onChange={handleChange}
+            value={id}
+            label="Paste Test id here!"
+            focused
+          />
+
+          <Button
+            id="joinquizbutton"
+            onClick={() => navigate("/joinQuiz/?id=" + id)}
+          >
+            Join
+          </Button>
         </div>
       </div>
       <div id="animation">
