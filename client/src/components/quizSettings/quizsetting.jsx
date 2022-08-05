@@ -10,6 +10,7 @@ import InputLabel from "@mui/material/InputLabel";
 import Checkbox from "@mui/material/Checkbox";
 import SettingsIcon from "@mui/icons-material/Settings";
 
+
 const QuizSetting = (props) => {
   const [values, setValues] = useState({
     quizname: undefined,
@@ -30,7 +31,8 @@ const QuizSetting = (props) => {
   useEffect(() => {
     setTimeout(() => {
       setDrawerOpen(true);
-    }, 1000);
+      setAlertStatus(true);
+    }, 100);
   }, []);
 
   const today = new Date();
@@ -68,6 +70,8 @@ const QuizSetting = (props) => {
     setDrawerOpen(false);
   };
 
+ 
+
   const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
@@ -83,8 +87,15 @@ const QuizSetting = (props) => {
           id="quizSettingButton"
         >
           <SettingsIcon />
-          Quiz Settings
+          Settings
         </Button>
+
+        <Snackbar open={alertStatus} autoHideDuration={300000} onClose={()=>{setAlertStatus(false)}}>
+          <Alert id="alert" onClose={()=>{setAlertStatus(false)}} severity="warning" sx={{ width: '100%' }}>
+            Please fill details regarding your test.
+          </Alert>
+        </Snackbar>
+    
         <SwipeableDrawer
           anchor="top"
           open={isDrawerOpen}
@@ -99,7 +110,12 @@ const QuizSetting = (props) => {
             textAlign="center"
             id="background"
           >
+          <div id="img-div">
+            
+
+          </div>
             <Box
+              id="form"
               component="form"
               sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
               noValidate
