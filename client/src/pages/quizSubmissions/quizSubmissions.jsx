@@ -2,9 +2,11 @@ import React from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const QuizSubmissions = () => {
   const [data, setData] = useState();
+  const navigate = useNavigate();
 
   const urlParams = new URLSearchParams(window.location.search);
   console.log(urlParams.get("id"));
@@ -30,7 +32,18 @@ const QuizSubmissions = () => {
       {data?.map((attendie) => {
         return (
           <>
-            <p>{attendie.userName}</p>
+            <button
+              onClick={() =>
+                navigate(
+                  "../quizScore?quizId=" +
+                    urlParams.get("id") +
+                    "&userId=" +
+                    attendie.userId
+                )
+              }
+            >
+              {attendie.userName}
+            </button>
           </>
         );
       })}

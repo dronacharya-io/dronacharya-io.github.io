@@ -81,10 +81,7 @@ const JoinQuiz = () => {
           user.userData._id.toString();
         console.log(url);
         const arr = user.userData.quizzesSubmitted;
-        arr.push({
-          ...quizDetails,
-          submissions: submissions,
-        });
+        arr.push(quizDetails);
         console.log(arr);
         await axios.put(url, { quizzesSubmitted: arr });
         console.log({ quizzesSubmitted: arr });
