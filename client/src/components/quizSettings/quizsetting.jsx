@@ -5,10 +5,10 @@ import Box from "@mui/material/Box";
 import MuiAlert from "@mui/material/Alert";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import { Snackbar } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
 import Checkbox from "@mui/material/Checkbox";
 import SettingsIcon from "@mui/icons-material/Settings";
-
 
 const QuizSetting = (props) => {
   const [values, setValues] = useState({
@@ -69,8 +69,6 @@ const QuizSetting = (props) => {
     setDrawerOpen(false);
   };
 
- 
-
   const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
@@ -89,12 +87,25 @@ const QuizSetting = (props) => {
           Settings
         </Button>
 
-        <Snackbar open={alertStatus} autoHideDuration={300000} onClose={()=>{setAlertStatus(false)}}>
-          <Alert id="alert" onClose={()=>{setAlertStatus(false)}} severity="warning" sx={{ width: '100%' }}>
+        <Snackbar
+          open={alertStatus}
+          autoHideDuration={300000}
+          onClose={() => {
+            setAlertStatus(false);
+          }}
+        >
+          <Alert
+            id="alert"
+            onClose={() => {
+              setAlertStatus(false);
+            }}
+            severity="warning"
+            sx={{ width: "100%" }}
+          >
             Please fill details regarding your test.
           </Alert>
         </Snackbar>
-    
+
         <SwipeableDrawer
           anchor="top"
           open={isDrawerOpen}
@@ -109,10 +120,7 @@ const QuizSetting = (props) => {
             textAlign="center"
             id="background"
           >
-          <div id="img-div">
-            
-
-          </div>
+            <div id="img-div"></div>
             <Box
               id="form"
               component="form"
