@@ -10,7 +10,6 @@ import InputLabel from "@mui/material/InputLabel";
 import Checkbox from "@mui/material/Checkbox";
 import SettingsIcon from "@mui/icons-material/Settings";
 
-
 const QuizSetting = (props) => {
   const [values, setValues] = useState({
     quizname: props.quizDetails?.quizname,
@@ -116,26 +115,23 @@ const QuizSetting = (props) => {
         >
           <Box
             p={2}
-            sx={{ width: "auto", height: "600px" }}
+            sx={{ width: "auto", height: "auto" }}
             role="presentation"
             textAlign="center"
             id="background"
           >
-          <div id="img-div">
-            
-
-          </div>
+            <div id="img-div"></div>
             <Box
               id="form"
               component="form"
-              sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+              sx={{ "& .MuiTextField-root": { m: 0, width: "25ch" } }}
               noValidate
               autoComplete="off"
             >
               <div>
                 <InputLabel htmlFor="component-simple">Quiz name</InputLabel>
                 <TextField
-                  style={{ width: "50rem" }}
+                  style={{ width: "auto" }}
                   required
                   id="quizname"
                   label="Quiz name"
@@ -159,7 +155,7 @@ const QuizSetting = (props) => {
                   />
 
                   <InputLabel htmlFor="component-simple">
-                    Check if* Quiz is MCQ type.
+                    Check if Quiz is MCQ type.
                     <Checkbox
                       name="isMcq"
                       id="isMcq"

@@ -8,7 +8,7 @@ label {
     margin: .4rem 0;
 }
  */
- #quizSettingButton{
+#quizSettingButton {
   position: absolute;
   top: 2.5rem;
   height: 1.5rem;
@@ -17,48 +17,45 @@ label {
 }
 
 
-#light #quizSettingButton{
-    background-color: #ffb74d;
-    margin-top: 4rem;
-    width: 150px;
-    height: 40px;
-    letter-spacing: 2px;
-  }
+#light #quizSettingButton {
+  background-color: #ffb74d;
+  margin-top: 4rem;
+  width: 150px;
+  height: 40px;
+  letter-spacing: 2px;
+}
 
-  #dark #quizSettingButton{
-    background-color: #FFEA41;
-    color: #151a30;
-    margin-top: 4rem;
-    width: 150px;
-    height: 40px;
-    letter-spacing: 2px;
-  }
+#dark #quizSettingButton {
+  background-color: #FFEA41;
+  color: #151a30;
+  margin-top: 4rem;
+  width: 150px;
+  height: 40px;
+  letter-spacing: 2px;
+}
 
-  
-#centerContent {
-    display: flex;
-    flex-direction: row;
-    width: auto;
-    margin-top: 10rem;
-    margin-left: 6rem;
-    flex-flow: column wrap;
-}  
-
-#alert{
+#alert {
   width: 100%;
   font-size: larger;
 }
 
-#form{
+#form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 60%;
 }
 
-#img-div{
-  background-color: #151a30;
+#background {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  /* margin-top: 1rem;
+  margin-left: 1rem; */
+}
+
+#img-div {
   width: 20rem;
-  height: 40rem;
+  background-color: #151a30;
 }
-
