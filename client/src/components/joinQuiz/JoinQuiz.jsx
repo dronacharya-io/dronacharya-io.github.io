@@ -16,6 +16,7 @@ const JoinQuiz = () => {
   const [quizDetails, setQuizDetails] = useState(undefined);
   const [loading, setLoading] = useState(true);
   const [attendies, setAttendies] = useState();
+  const [index, setIndex] = useState(0);
 
   const { user } = useUserAuth();
   const urlParams = new URLSearchParams(window.location.search);
@@ -60,20 +61,17 @@ const JoinQuiz = () => {
   }, []);
 
   const TakeAnswer = async () => {
+    Data[index + 1] ? setIndex(index + 1) : setIndex(index);
     handleSubmit();
-    let { correctAns } = Data[counter];
-    let { submittedAns } = submissions[counter];
-    if (correctAns === submittedAns) {
+    if (Data[index].correctAns === submissions[index].submittedAns) {
       setScore(score + 1);
       console.log("correct");
     }
-    if (Data[counter + 1]) {
-      setCounter(counter + 1);
+    if (Data[index + 1]) {
+      setCounter(index + 1);
     }
-    if (!Data[counter + 1]) {
-      let { correctAns } = Data[counter];
-      let { submittedAns } = submissions[counter];
-      if (correctAns === submittedAns) {
+    if (!Data[index + 1]) {
+      if (Data[index].correctAns === submissions[index].submittedAns) {
         setScore(score + 1);
         console.log("correct");
       }
@@ -95,7 +93,7 @@ const JoinQuiz = () => {
       }
       try {
         attendies.push({
-          [user.userData._id]: user.displayName,
+          [user.userData._id + " " + user.displayName]: submissions,
         });
         await axios.put(
           "http://localhost:8800/api/quizzes/updateQuiz/" + urlParams.get("id"),
@@ -133,11 +131,29 @@ const JoinQuiz = () => {
       ) : (
         <>
           <IoArrowBack className="back-icon" onClick={() => navigate("../")} />
-          <div id="question" key={Data[counter].id}>
-            <p>{Data[counter].Question}</p>
+          <div>
+            {Data.map((question, i) => {
+              const { id } = question;
+              return (
+                <>
+                  <button
+                    className="questionLocator"
+                    onClick={() => {
+                      setIndex(i);
+                    }}
+                    id={id}
+                  >
+                    {i}
+                  </button>
+                </>
+              );
+            })}
+          </div>
+          <div id="question" key={Data[index].id}>
+            <p>{Data[index].Question}</p>
           </div>
           <div id="options">
-            {Data[counter].options.map((option, i) => {
+            {Data[index].options.map((option, i) => {
               return (
                 <>
                   <div className="option" key={i}>
