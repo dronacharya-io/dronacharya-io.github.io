@@ -117,6 +117,7 @@ const JoinQuiz = () => {
     const newSubmission = {
       ...submission,
       id: new Date().getTime().toString(),
+      qid: Data[index].id,
     };
     setSubmissions([...submissions, newSubmission]);
     setSubmission({ submittedAns: undefined });
