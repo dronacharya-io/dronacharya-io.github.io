@@ -22,14 +22,15 @@ const QuestionVisualiserCard = (props) => {
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    setQuestion({ [name]: value });
+    setQuestion({ ...question, [name]: value });
+    console.log(question);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setQuestion({ ...question, options: Options });
     console.log(question);
-    if (question.Question && question.correctAns && question.Options) {
+    if (question.Question && question.correctAns && question.options) {
       const newQuestion = {
         ...question,
         id: id,
@@ -55,7 +56,7 @@ const QuestionVisualiserCard = (props) => {
 
   const removeOption = (id) => {
     setOptions((options) => {
-      return Options.filter((option) => option.id !== id);
+      return options.filter((option) => option.id !== id);
     });
   };
   return (
