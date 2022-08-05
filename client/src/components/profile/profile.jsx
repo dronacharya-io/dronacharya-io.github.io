@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const ProfileTab = () => {
   const navigate = useNavigate();
-  const [profileTab, setProfileTab] = useState(true);
+  const [profileTab, setProfileTab] = useState(false);
   const { user, logOut, googleSignIn } = useUserAuth();
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
@@ -61,20 +61,6 @@ const ProfileTab = () => {
             <h4 id="today">{Today}</h4>
             <IoMailOutline className="icons" />
           </div>
-          {/* <div id="searchbar">
-            <AiOutlineSearch
-              className="search-icon"
-              onClick={() =>
-                console.log(document.getElementById("searchInput").value)
-              }
-            />
-            <input
-              type="text"
-              id="searchInput"
-              placeholder="Search.."
-              autoComplete="off"
-            />
-          </div> */}
           {user ? (
             <>
               <img src={user.photoURL} alt="profile" id="profileImage" />

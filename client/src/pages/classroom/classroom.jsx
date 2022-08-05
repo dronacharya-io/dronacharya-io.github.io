@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useUserAuth } from "../../context/AuthContext";
 import { UserQuizCard, CardSkeleton } from "./userQuizCard";
-import NoQuizzesLogo from "../../pages/images/noqiuzzes.png";
 import Button from "@mui/material/Button";
 import Zoom from "@mui/material/Zoom";
 import { useNavigate } from "react-router-dom";
@@ -82,14 +81,6 @@ export const Classroom = () => {
                   <Button
                     id="joinQuizButton"
                     variant="contained"
-                    style={{
-                      backgroundColor: "#ffb74d",
-                      marginTop: "4rem",
-                      left: "20px",
-                      width: "150px",
-                      height: "40px",
-                      letterSpacing: "2px",
-                    }}
                     onClick={() => navigate("/")}
                   >
                     Get Started
