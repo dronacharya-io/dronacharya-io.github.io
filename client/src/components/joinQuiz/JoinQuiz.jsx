@@ -93,7 +93,9 @@ const JoinQuiz = () => {
       }
       try {
         attendies.push({
-          [user.userData._id + " " + user.displayName]: submissions,
+          userId: user.userData._id,
+          userName: user.displayName,
+          submissions: submissions,
         });
         await axios.put(
           "http://localhost:8800/api/quizzes/updateQuiz/" + urlParams.get("id"),

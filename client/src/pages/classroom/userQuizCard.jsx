@@ -39,7 +39,7 @@ export function UserQuizCard(props) {
   };
 
   const handleEdit = async () => {
-    navigate("../editQuiz/?id=" + props.id);
+    navigate("../editQuiz?id=" + props.id);
   };
 
   const handleDelete = async () => {
@@ -103,7 +103,9 @@ export function UserQuizCard(props) {
           height="2400"
           image={tempImage}
         />
-        <CardContent>
+        <CardContent
+          onClick={() => navigate("../quizSubmissions?id=" + props.id)}
+        >
           <Typography gutterBottom variant="h5" component="div">
             {props.quizName}
           </Typography>
