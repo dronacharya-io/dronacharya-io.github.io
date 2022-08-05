@@ -7,6 +7,9 @@ import Button from "@mui/material/Button";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import TextField from "@mui/material/TextField";
 import Input from "@mui/material/Input";
+import { alpha, styled } from '@mui/material/styles';
+import InputBase from '@mui/material/InputBase';
+import { borderColor } from "@mui/system";
 
 export const Quiz = () => {
   const { user } = useUserAuth();
@@ -18,6 +21,26 @@ export const Quiz = () => {
     setId(e.target.value);
   };
 
+  const CssTextField = styled(TextField)({
+    '& label.Mui-focused': {
+      color: '#FF9800',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'green',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'red',
+      },
+      '&:hover fieldset': {
+        borderColor: 'yellow',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: '#FF9800',
+      },
+    },
+  });
+ 
   return (
     <div className="body">
       <ReactTypingEffect
@@ -81,11 +104,16 @@ export const Quiz = () => {
             Create Test
           </Button>
 
-          <TextField
-            id="joinquiztextfield"
-            placeholder="Enter a code"
+          <CssTextField
+            id=""
+            placeholder="Paste a Test ID"
             onChange={handleChange}
+            value={id}
+            label="Paste Test id here!"
+            focused
           />
+
+          
 
           <Button
             id="joinquizbutton"

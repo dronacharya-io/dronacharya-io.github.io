@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import InputLabel from "@mui/material/InputLabel";
 import Checkbox from "@mui/material/Checkbox";
-import FormBackgroundLogo from "../../pages/images/formbackgroundimg.jpg";
+
 
 const QuizSetting = (props) => {
   const [values, setValues] = useState({
