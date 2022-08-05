@@ -152,6 +152,7 @@
   font-size: 1rem;
   box-sizing: border-box;
   border-color: #FFEA41;
+  
 }
 
 #light #joinquizbutton {
@@ -181,3 +182,6 @@
   z-index: 1;
 }
 
+#textField__{
+  color:"black" !important;
+}
