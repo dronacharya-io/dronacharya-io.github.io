@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import InputLabel from "@mui/material/InputLabel";
 import Checkbox from "@mui/material/Checkbox";
-import SettingsIcon from '@mui/icons-material/Settings';
+import SettingsIcon from "@mui/icons-material/Settings";
 
 const QuizSetting = (props) => {
   const [values, setValues] = useState({
@@ -22,7 +22,7 @@ const QuizSetting = (props) => {
     startTime: undefined,
     runTime: undefined,
   });
-  
+
   const [isDrawerOpen, setDrawerOpen] = useState(false);
 
   useEffect(() => {
@@ -67,154 +67,163 @@ const QuizSetting = (props) => {
   };
   return (
     <>
-    <div id="centerContent">
-
-      <Button
-        variant="contained"
-        onClick={() => {
-          setDrawerOpen(true);
-          
-        }}
-        id="quizSettingButton"
-      > <SettingsIcon/>
-        Quiz Settings
-      </Button>
-      <SwipeableDrawer
-        anchor="top"
-        open={isDrawerOpen}
-        onClose={() => {
-          setDrawerOpen(false);
-        }}
-        
-      >
-        <Box
-          p={2}
-          sx={{ width: "auto", height: "600px" }}
-          role="presentation"
-          textAlign="center"
-          id="background"
+      <div id="centerContent">
+        <Button
+          variant="contained"
+          onClick={() => {
+            setDrawerOpen(true);
+          }}
+          id="quizSettingButton"
+        >
+          {" "}
+          <SettingsIcon />
+          Quiz Settings
+        </Button>
+        <SwipeableDrawer
+          anchor="top"
+          open={isDrawerOpen}
+          onClose={() => {
+            setDrawerOpen(false);
+          }}
         >
           <Box
-            component="form"
-            sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
-            noValidate
-            autoComplete="off"
+            p={2}
+            sx={{ width: "auto", height: "600px" }}
+            role="presentation"
+            textAlign="center"
+            id="background"
           >
-            <div>
-              <InputLabel htmlFor="component-simple">Quiz name</InputLabel>
-              <TextField
-                style={{ width: "50rem" }}
-                required
-                id="quizname"
-                label="Quiz name"
-                placeholder="Quizname"
-                name="quizname"
-                onChange={handleChange}
-              />
-
-              <div style={{ position: "relative" }}>
-                <InputLabel htmlFor="component-simple">Subject</InputLabel>
-
+            <Box
+              component="form"
+              sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+              noValidate
+              autoComplete="off"
+            >
+              <div>
+                <InputLabel htmlFor="component-simple">Quiz name</InputLabel>
                 <TextField
+                  style={{ width: "50rem" }}
                   required
-                  id="subject"
-                  label="Subject"
-                  placeholder="subject"
-                  name="subject"
+                  id="quizname"
+                  label="Quiz name"
+                  placeholder="Quizname"
+                  name="quizname"
+                  value={values.quizname}
                   onChange={handleChange}
                 />
 
-                <InputLabel htmlFor="component-simple">
-                  Check if* Quiz is MCQ type.
-                  <Checkbox
-                    name="isMcq"
-                    id="isMcq"
-                    type="checkbox"
-                    onChange={handleCheckbox}
-                    defaultChecked
-                    color="success"
+                <div style={{ position: "relative" }}>
+                  <InputLabel htmlFor="component-simple">Subject</InputLabel>
+
+                  <TextField
+                    required
+                    id="subject"
+                    label="Subject"
+                    placeholder="subject"
+                    name="subject"
+                    value={values.subject}
+                    onChange={handleChange}
                   />
-                </InputLabel>
-                <InputLabel htmlFor="component-simple">
-                  Specify Time per question
-                </InputLabel>
-                <TextField
-                  required
-                  type="number"
-                  id="timePerQuestion"
-                  name="timePerQuestion"
-                  label="Time Per Question"
-                  placeholder="Time Per Questiont"
-                  onChange={handleChange}
-                />
-              </div>
 
-              <div style={{ position: "relative" }}></div>
-              <article>
-                <label>Positive Marking: </label>
-                <input
-                  name="positiveMarking"
-                  id="positiveMarking"
-                  type="number"
-                  min={1}
-                  onChange={handleChange}
-                />
-              </article>
-              <article>
-                <label>Is there a negative marking: </label>
-                <input
-                  name="isNegative"
-                  id="isNegative"
-                  type="checkbox"
-                  onChange={handleCheckbox}
-                />
-              </article>
-              <article id="checkbox" style={{ visibility: "hidden" }}>
-                <label>Negative Marking: </label>
-                <input
-                  name="negativeMarking"
-                  id="negativeMarking"
-                  type="number"
-                  min={1}
-                  onChange={handleChange}
-                />
-              </article>
-              <article>
-                <label>Start Date: </label>
-                <input
-                  name="startDate"
-                  id="startDate"
-                  type="date"
-                  min={curDate}
-                  onChange={handleChange}
-                />
-              </article>
-              <article>
-                <label>Start-Time: </label>
-                <input
-                  name="startTime"
-                  id="startTime"
-                  type="time"
-                  onChange={handleChange}
-                />
-              </article>
-              <article>
-                <label>Run-Time: </label>
-                <input
-                  name="runTime"
-                  id="runTime"
-                  type="time"
-                  onChange={handleChange}
-                />
-              </article>
-              <Button variant="contained" onClick={handleClick}>
-                "Add Settings"
-              </Button>
-            </div>
+                  <InputLabel htmlFor="component-simple">
+                    Check if* Quiz is MCQ type.
+                    <Checkbox
+                      name="isMcq"
+                      id="isMcq"
+                      type="checkbox"
+                      onChange={handleCheckbox}
+                      defaultChecked={values.isMcq}
+                      color="success"
+                    />
+                  </InputLabel>
+                  <InputLabel htmlFor="component-simple">
+                    Specify Time per question
+                  </InputLabel>
+                  <TextField
+                    required
+                    type="number"
+                    id="timePerQuestion"
+                    name="timePerQuestion"
+                    label="Time Per Question"
+                    value={values.timePerQuestion}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div style={{ position: "relative" }}></div>
+                <article>
+                  <label>Positive Marking: </label>
+                  <input
+                    name="positiveMarking"
+                    id="positiveMarking"
+                    type="number"
+                    min={1}
+                    value={values.positiveMarking}
+                    onChange={handleChange}
+                  />
+                </article>
+                <article>
+                  <label>Is there a negative marking: </label>
+                  <input
+                    name="isNegative"
+                    id="isNegative"
+                    type="checkbox"
+                    defaultChecked={values.isNegative}
+                    onChange={handleCheckbox}
+                  />
+                </article>
+                <article
+                  id="checkbox"
+                  style={{ visibility: !values.isNegative ? "hidden" : "" }}
+                >
+                  <label>Negative Marking: </label>
+                  <input
+                    name="negativeMarking"
+                    id="negativeMarking"
+                    type="number"
+                    min={0}
+                    value={values.negativeMarking}
+                    onChange={handleChange}
+                  />
+                </article>
+                <article>
+                  <label>Start Date: </label>
+                  <input
+                    name="startDate"
+                    id="startDate"
+                    type="date"
+                    min={curDate}
+                    value={values.startDate}
+                    onChange={handleChange}
+                  />
+                </article>
+                <article>
+                  <label>Start-Time: </label>
+                  <input
+                    name="startTime"
+                    id="startTime"
+                    type="time"
+                    value={values.startTime}
+                    onChange={handleChange}
+                  />
+                </article>
+                <article>
+                  <label>Run-Time: </label>
+                  <input
+                    name="runTime"
+                    id="runTime"
+                    type="time"
+                    value={values.runTime}
+                    onChange={handleChange}
+                  />
+                </article>
+                <Button variant="contained" onClick={handleClick}>
+                  "Add Settings"
+                </Button>
+              </div>
+            </Box>
           </Box>
-        </Box>
-      </SwipeableDrawer>
-    </div>
+        </SwipeableDrawer>
+      </div>
     </>
   );
 };

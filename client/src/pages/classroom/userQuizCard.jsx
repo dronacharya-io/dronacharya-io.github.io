@@ -12,9 +12,11 @@ import Box from "@mui/material/Box";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import axios from "axios";
 import { useUserAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export function UserQuizCard(props) {
   const { user } = useUserAuth();
+  const navigate = useNavigate();
 
   const [zero, setZero] = useState("0");
   const [currentDate, setCurrentDate] = useState(
@@ -34,6 +36,10 @@ export function UserQuizCard(props) {
 
   const handleClick = (event) => {
     setAnchorEl(anchorEl ? null : event.currentTarget);
+  };
+
+  const handleEdit = async () => {
+    navigate("../editQuiz/?id=" + props.id);
   };
 
   const handleDelete = async () => {
@@ -120,6 +126,9 @@ export function UserQuizCard(props) {
               Link Copied!
             </Box>
           </Popper>
+          <Button size="small" onClick={handleEdit}>
+            Edit Quiz
+          </Button>
           <Button size="small" onClick={handleDelete}>
             Delete Quiz
           </Button>

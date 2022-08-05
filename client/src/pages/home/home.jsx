@@ -11,6 +11,7 @@ import { Quiz } from "../quiz/quiz.jsx";
 import StickyBox from "react-sticky-box";
 import JoinQuiz from "../../components/joinQuiz/JoinQuiz";
 import CreateQuiz from "../../components/createQuiz/CreateQuiz";
+import EditQuiz from "../../components/editQuiz/editQuiz";
 
 export const Home = () => {
   return (
@@ -27,6 +28,7 @@ export const Home = () => {
               <Route path="/" element={<Quiz />} />
               <Route path="/createQuiz" element={<CreateQuiz />} />
               <Route path="/joinQuiz" element={<JoinQuiz />} />
+              <Route path="/editQuiz" element={<EditQuiz />} />
               <Route path="/classroom" element={<Classroom />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/scorecard" element={<Scorecard />} />

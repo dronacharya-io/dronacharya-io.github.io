@@ -26,6 +26,17 @@ const CreateQuiz = () => {
     setQuestions([...questions, x]);
   };
 
+  const editQuestion = (x) => {
+    const arr = questions.filter((question) => {
+      if (question.id === x.id) {
+        return x;
+      } else {
+        return question;
+      }
+    });
+    setQuestions(arr);
+  };
+
   const [output, setOutput] = useState([]);
   const show = (x) => {
     setOutput(x);
@@ -93,7 +104,10 @@ const CreateQuiz = () => {
             return (
               <>
                 <div key={question.id}>
-                  <QuestionVisualiserCard question={question} />
+                  <QuestionVisualiserCard
+                    question={question}
+                    editQuestion={editQuestion}
+                  />
                 </div>
               </>
             );

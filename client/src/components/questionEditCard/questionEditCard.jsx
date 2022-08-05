@@ -27,9 +27,8 @@ const QuestionVisualiserCard = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setQuestion({ ...question, options: Options });
-    console.log(question);
-    if (question.Question && question.correctAns && question.Options) {
+    setQuestion({ ...question, options: options });
+    if (question.Question && question.correctAns && question.options) {
       const newQuestion = {
         ...question,
         id: id,
@@ -42,9 +41,9 @@ const QuestionVisualiserCard = (props) => {
     e.preventDefault();
     if (option.value !== undefined && option.value !== "") {
       const newOption = { ...option, id: new Date().getTime().toString() };
-      console.log(newOption);
-      setOptions([...Options, newOption]);
-      console.log(Options);
+      setOptions([...options, newOption]);
+      document.getElementById("option").value = null;
+      setOption(undefined);
     }
   };
 
@@ -55,7 +54,7 @@ const QuestionVisualiserCard = (props) => {
 
   const removeOption = (id) => {
     setOptions((options) => {
-      return Options.filter((option) => option.id !== id);
+      return options.filter((option) => option.id !== id);
     });
   };
   return (
@@ -67,7 +66,6 @@ const QuestionVisualiserCard = (props) => {
               onClick={() => {
                 setRow("2");
                 setShowElements(true);
-                console.log(question);
               }}
               type="text"
               id="Question"
@@ -170,4 +168,4 @@ const SingleOption = (props) => {
   );
 };
 
-export default QuestionVisualiserCard;
+export default QuestionEditCard;
