@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import InputLabel from "@mui/material/InputLabel";
 import Checkbox from "@mui/material/Checkbox";
+import FormBackgroundLogo from "../../pages/images/formbackgroundimg.jpg";
 
 const QuizSetting = (props) => {
   const [values, setValues] = useState({
@@ -28,7 +29,6 @@ const QuizSetting = (props) => {
     setTimeout(() => {
       setDrawerOpen(true);
     }, 1000);
-    setHeight("800px");
   }, []);
 
   const today = new Date();
@@ -82,12 +82,14 @@ const QuizSetting = (props) => {
         onClose={() => {
           setDrawerOpen(false);
         }}
+        
       >
         <Box
           p={2}
-          sx={{ width: "auto", height: { height } }}
+          sx={{ width: "auto", height: "600px" }}
           role="presentation"
           textAlign="center"
+          id="background"
         >
           <Box
             component="form"
@@ -203,9 +205,7 @@ const QuizSetting = (props) => {
                 />
               </article>
               <Button variant="contained" onClick={handleClick}>
-                {height === "800px"
-                  ? "Add Settings and Close Tab"
-                  : "Update Settings"}
+                "Add Settings"
               </Button>
             </div>
           </Box>
