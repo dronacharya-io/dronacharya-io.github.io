@@ -10,9 +10,6 @@ import Lottie from "react-lottie";
 import animationData from "../../lotties/circle-animation.json";
 import { styled } from "@mui/material/styles";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import { color } from "@mui/system";
-import { lightGreen } from "@mui/material/colors";
 
 export const Quiz = () => {
   const { user } = useUserAuth();
@@ -131,8 +128,8 @@ export const Quiz = () => {
                 placeholder="Paste a Test ID"
                 onChange={handleChange}
                 value={id}
-                InputLabelProps={{id :"textField__"}}
-                label="Paste Test id here!"
+                InputLabel={{className:"test"}}
+                label="Paste Test id here!" 
                 focused
               />
             </ThemeProvider>

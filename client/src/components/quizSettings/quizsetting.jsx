@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./quizSettings.css";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Box from "@mui/material/Box";
-import { Drawer } from "@mui/material";
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import InputLabel from "@mui/material/InputLabel";
@@ -24,6 +25,7 @@ const QuizSetting = (props) => {
   });
 
   const [isDrawerOpen, setDrawerOpen] = useState(false);
+  const [alertStatus, setAlertStatus] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -65,8 +67,14 @@ const QuizSetting = (props) => {
     props.func(values);
     setDrawerOpen(false);
   };
+
+  const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+
   return (
     <>
+<<<<<<< Updated upstream
       <div id="centerContent">
         <Button
           variant="contained"
@@ -85,6 +93,34 @@ const QuizSetting = (props) => {
           onClose={() => {
             setDrawerOpen(false);
           }}
+=======
+    <div id="centerContent">
+
+      <Button
+        variant="contained"
+        onClick={() => {
+          setDrawerOpen(true);
+          
+        }}
+        id="quizSettingButton"
+      > <SettingsIcon/> 
+        
+      </Button>
+      <SwipeableDrawer
+        anchor="top"
+        open={isDrawerOpen}
+        onClose={() => {
+          setDrawerOpen(false);
+        }}
+        
+      >
+        <Box
+          p={2}
+          sx={{ width: "auto", height: "600px" }}
+          role="presentation"
+          textAlign="center"
+          id="background"
+>>>>>>> Stashed changes
         >
           <Box
             p={2}
