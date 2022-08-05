@@ -10,6 +10,24 @@
   margin: 0;
   padding: 0.5rem 0.5rem 0.5rem 1rem;
   z-index: 100;
+  background-color: #FF9800;
+  border: none;
+}
+
+#dark #profileButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 8rem;
+  right: 0;
+  width: auto;
+  border-radius: 2rem 0 0 2rem;
+  margin: 0;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  z-index: 100;
+  background-color: #FFE102;
+  border: none;
 }
 
 #light #outerTab {
@@ -58,7 +76,11 @@
 }
 
 #profile-icon {
-  color: rgb(128 128 128);
+  color: white;
+}
+
+#dark #profile-icon {
+  color:#151a30;
 }
 
 #light .icons {

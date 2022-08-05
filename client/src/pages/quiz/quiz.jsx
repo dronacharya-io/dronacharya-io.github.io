@@ -9,6 +9,10 @@ import TextField from "@mui/material/TextField";
 import Lottie from "react-lottie";
 import animationData from "../../lotties/circle-animation.json";
 import { styled } from "@mui/material/styles";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import { color } from "@mui/system";
+import { lightGreen } from "@mui/material/colors";
 
 export const Quiz = () => {
   const { user } = useUserAuth();
@@ -48,6 +52,13 @@ export const Quiz = () => {
       },
     },
   });
+
+  const darkTheme = createTheme({
+    palette: {
+      mode: "dark",
+    },
+  });
+  
 
   return (
     <div className="bodyWithAnimation">
@@ -114,15 +125,16 @@ export const Quiz = () => {
               />
               Create Test
             </Button>
-
-            <CssTextField
-              id="joinquiztextfeild"
-              placeholder="Paste a Test ID"
-              onChange={handleChange}
-              value={id}
-              label="Paste Test id here!"
-              focused
-            />
+            <ThemeProvider theme={darkTheme} >
+              <CssTextField
+                id="joinquiztextfeild"
+                placeholder="Paste a Test ID"
+                onChange={handleChange}
+                value={id}
+                label="Paste Test id here!"
+                focused
+              />
+            </ThemeProvider>
 
             <Button
               id="joinquizbutton"
