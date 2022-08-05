@@ -7,6 +7,8 @@ import NoQuizzesLogo from "../../pages/images/noqiuzzes.png";
 import Button from "@mui/material/Button";
 import Zoom from "@mui/material/Zoom";
 import { useNavigate } from "react-router-dom";
+import Lottie from "react-lottie";
+import animationData from "../../lotties/notfound.json";
 
 export const Classroom = () => {
   const { user } = useUserAuth();
@@ -36,6 +38,15 @@ export const Classroom = () => {
     };
   }, []);
 
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <div className="cards">
       {!loading ? (
@@ -59,10 +70,7 @@ export const Classroom = () => {
         ) : (
           <div>
             <div style={{ position: "relative", top: "5rem", right: "2rem" }}>
-              <img
-                style={{ width: "400px", height: "400px" }}
-                src={NoQuizzesLogo}
-              />
+              <Lottie options={defaultOptions} height={400} width={400} />
             </div>
             <div style={{ position: "relative", right: "2rem", top: "2rem" }}>
               <p className="para">
