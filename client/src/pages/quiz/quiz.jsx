@@ -115,10 +115,13 @@ export const Quiz = () => {
               Create Test
             </Button>
 
-            <TextField
-              id="joinquiztextfield"
-              placeholder="Enter a code"
+            <CssTextField
+              id="joinquiztextfeild"
+              placeholder="Paste a Test ID"
               onChange={handleChange}
+              value={id}
+              label="Paste Test id here!"
+              focused
             />
 
             <Button
@@ -128,21 +131,6 @@ export const Quiz = () => {
               Join
             </Button>
           </div>
-          <CssTextField
-            id=""
-            placeholder="Paste a Test ID"
-            onChange={handleChange}
-            value={id}
-            label="Paste Test id here!"
-            focused
-          />
-
-          <Button
-            id="joinquizbutton"
-            onClick={() => navigate("/joinQuiz/?id=" + id)}
-          >
-            Join
-          </Button>
         </div>
       </div>
       <div id="animation">
