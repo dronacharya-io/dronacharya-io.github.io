@@ -37,7 +37,7 @@ label {
   
 #centerContent {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: auto;
     margin-top: 10rem;
     margin-left: 6rem;
@@ -52,6 +52,8 @@ label {
 #form{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #img-div{

@@ -8,7 +8,7 @@ import TextField from "@mui/material/TextField";
 import InputLabel from "@mui/material/InputLabel";
 import Checkbox from "@mui/material/Checkbox";
 import SettingsIcon from "@mui/icons-material/Settings";
-
+import Snackbar from '@mui/material/Snackbar';
 
 const QuizSetting = (props) => {
   const [values, setValues] = useState({
@@ -110,7 +110,7 @@ const QuizSetting = (props) => {
             id="background"
           >
           <div id="img-div">
-            
+
 
           </div>
             <Box
