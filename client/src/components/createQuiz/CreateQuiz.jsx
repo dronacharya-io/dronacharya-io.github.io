@@ -75,43 +75,37 @@ const CreateQuiz = () => {
 
   return (
     <>
-      <div >  
+      <div>
         <QuizSetting func={show} />
-        {
-          <>
-            <IoArrowBack
-              className="back-icon-c"
-              onClick={() => navigate("../")}
-            />
 
+        <IoArrowBack className="back-icon-c" onClick={() => navigate("../")} />
+        <div>
+          <QuestionCard addQuestion={addQuestion} />
+        </div>
+        {true && (
           <div>
-            <QuestionCard addQuestion={addQuestion} />
+            <Zoom in={true}>
+              <Button
+                id="addQuizButton"
+                variant="contained"
+                color="success"
+                onClick={handleCreate}
+              >
+                add quiz
+              </Button>
+            </Zoom>
           </div>
-          {true && (
-            <div>
-              <Zoom in={true}>
-                <Button
-                  id="addQuizButton"
-                  variant="contained"
-                  color="success"
-                  onClick={handleCreate}
-                >
-                  add quiz
-                </Button>
-              </Zoom>
-            </div>
-          )}
-          {questions.map((question) => {
-            return (
-              <>
-                <div key={question.id}>
-                  <QuestionVisualiserCard question={question} />
-                </div>
-              </>
-            );
-          })}
-        </>
-      }
+        )}
+        {questions.map((question) => {
+          return (
+            <>
+              <div key={question.id}>
+                <QuestionVisualiserCard question={question} />
+              </div>
+            </>
+          );
+        })}
+      </div>
     </>
   );
 };
