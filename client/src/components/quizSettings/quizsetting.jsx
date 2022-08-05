@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import InputLabel from "@mui/material/InputLabel";
 import Checkbox from "@mui/material/Checkbox";
-
+import SettingsIcon from '@mui/icons-material/Settings';
 
 const QuizSetting = (props) => {
   const [values, setValues] = useState({
@@ -22,7 +22,7 @@ const QuizSetting = (props) => {
     startTime: undefined,
     runTime: undefined,
   });
-  const [height, setHeight] = useState("800px");
+  
   const [isDrawerOpen, setDrawerOpen] = useState(false);
 
   useEffect(() => {
@@ -67,13 +67,16 @@ const QuizSetting = (props) => {
   };
   return (
     <>
+    <div id="centerContent">
+
       <Button
         variant="contained"
         onClick={() => {
           setDrawerOpen(true);
-          setHeight("600px");
+          
         }}
-      >
+        id="quizSettingButton"
+      > <SettingsIcon/>
         Quiz Settings
       </Button>
       <SwipeableDrawer
@@ -211,6 +214,7 @@ const QuizSetting = (props) => {
           </Box>
         </Box>
       </SwipeableDrawer>
+    </div>
     </>
   );
 };
