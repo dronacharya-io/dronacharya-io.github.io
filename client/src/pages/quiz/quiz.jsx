@@ -6,16 +6,12 @@ import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import TextField from "@mui/material/TextField";
-<<<<<<< Updated upstream
 import Lottie from "react-lottie";
 import animationData from "../../lotties/circle-animation.json";
 import { styled } from "@mui/material/styles";
-=======
 import Input from "@mui/material/Input";
-import { alpha, styled } from '@mui/material/styles';
-import InputBase from '@mui/material/InputBase';
-
->>>>>>> Stashed changes
+import { alpha, styled } from "@mui/material/styles";
+import InputBase from "@mui/material/InputBase";
 
 export const Quiz = () => {
   const { user } = useUserAuth();
