@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./quizSettings.css";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Box from "@mui/material/Box";
-import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -13,16 +12,16 @@ import SettingsIcon from "@mui/icons-material/Settings";
 
 const QuizSetting = (props) => {
   const [values, setValues] = useState({
-    quizname: undefined,
-    subject: undefined,
-    isMcq: true,
-    timePerQuestion: 15,
-    isNegative: false,
-    positiveMarking: 1,
-    negativeMarking: 0,
-    startDate: undefined,
-    startTime: undefined,
-    runTime: undefined,
+    quizname: props.quizDetails?.quizname,
+    subject: props.quizDetails?.subject,
+    isMcq: props.quizDetails?.isMcq,
+    timePerQuestion: props.quizDetails?.timePerQuestion,
+    isNegative: props.quizDetails?.isNegative,
+    positiveMarking: props.quizDetails?.positiveMarking,
+    negativeMarking: props.quizDetails?.negativeMarking,
+    startDate: props.quizDetails?.startDate,
+    startTime: props.quizDetails?.startTime,
+    runTime: props.quizDetails?.runTime,
   });
 
   const [isDrawerOpen, setDrawerOpen] = useState(false);
