@@ -12,6 +12,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import Lottie from "react-lottie";
 import animationData from "../../lotties/spaceman.json";
 import RocketData from "../../lotties/fillformalert.json";
+import Stars from "../../lotties/stars.json";
 
 const QuizSetting = (props) => {
   const [values, setValues] = useState({
@@ -92,6 +93,15 @@ const QuizSetting = (props) => {
     },
   };
 
+  const stars = {
+    loop: true,
+    autoplay: true,
+    animationData : Stars,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <>
       <div id="centerContent">
@@ -140,8 +150,12 @@ const QuizSetting = (props) => {
             id="background"
           >
             <div id="img-div">
-              <Lottie options={spaceMan} height={550} width={500} />
-             
+              <div id="stars">
+                <Lottie options={stars} height={350} width={480} />
+              </div>
+              <div id="img-div2">
+                <Lottie options={spaceMan} height={350} width={500} />
+              </div>
             </div>
             <Box
               id="form"

@@ -56,8 +56,7 @@ label {
 }
 
 #img-div {
-  width: 30rem;
-  background-color: #151a30;
+  width: 30rem; 
 }
 
 #addSettingButton{
@@ -78,3 +77,11 @@ label {
   position: relative;
   top:18px;
 }
+
+#img-div2{
+  position: relative;
+  bottom: 190px;
+  z-index: 9999;
+}
+
+
