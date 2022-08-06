@@ -40,6 +40,7 @@ label {
 }
 
 #form {
+  box-shadow: 0 2px 10px rgb(70, 56, 14);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -128,4 +129,8 @@ label {
   position: relative;
   top: 2px;
   letter-spacing: 1.5px;
+}
+
+#img-div{
+  box-shadow: 0 1px 5px rgb(207, 207, 207);
 }
