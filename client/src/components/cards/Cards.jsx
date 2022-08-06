@@ -11,7 +11,7 @@ export default function Card(props){
 
     return(
         <>
-            <Cards sx={{ maxWidth: 345 }} className="card" >
+            <Cards sx={{ maxWidth: 345 }} id="card" >
                 <CardMedia 
                     components="img"
                     alt="quizImg"
@@ -19,16 +19,16 @@ export default function Card(props){
                     image={props.img}
                 />
                 <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography style={{color:"white"}} gutterBottom variant="h5" component="div">
                     {props.topic}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography style={{color:"white"}} variant="body2" color="text.secondary">
                     {props.startDate}
                 </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small">Share</Button>
-                    <Button size="small">Learn More</Button>
+                    <Button variant="outlined" style={{color:"white" , borderColor:"white"}} size="small">Share</Button>
+                    <Button variant="outlined" style={{color:"white" , borderColor:"white"}} size="small">Learn</Button>
                 </CardActions>
             </Cards>
         </>

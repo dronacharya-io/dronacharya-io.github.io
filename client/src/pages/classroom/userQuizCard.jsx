@@ -13,6 +13,9 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import axios from "axios";
 import { useUserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import DeleteIcon from '@mui/icons-material/Delete';
+import CreateIcon from '@mui/icons-material/Create';
+import ReplyIcon from '@mui/icons-material/Reply';
 
 export function UserQuizCard(props) {
   const { user } = useUserAuth();
@@ -83,13 +86,14 @@ export function UserQuizCard(props) {
 
   return (
     <>
-      <Card sx={{ maxWidth: 345 }} className="card">
+      <Card sx={{ maxWidth: 345 }} id="card">
         {props.startDate >= currentDate ? (
           <div>
             <Button color="success" style={{ letterSpacing: "5px" }}>
               Live
             </Button>
             <Badge badgeContent=" " color="success" variant="dot"></Badge>
+     
           </div>
         ) : (
           <Button style={{ letterSpacing: "2px" }} disabled>
@@ -119,8 +123,8 @@ export function UserQuizCard(props) {
         </CardContent>
         <CardActions>
           <CopyToClipboard text={currentBaseURL + props.id}>
-            <Button size="small" onClick={handleClick}>
-              Share
+            <Button id="button" variant="contained" size="small" onClick={handleClick}>
+              <ReplyIcon/>
             </Button>
           </CopyToClipboard>
           <Popper id={id} open={open} anchorEl={anchorEl}>
@@ -128,11 +132,11 @@ export function UserQuizCard(props) {
               Link Copied!
             </Box>
           </Popper>
-          <Button size="small" onClick={handleEdit}>
-            Edit Quiz
+          <Button id="button" variant="contained" size="small" onClick={handleEdit}>
+              <CreateIcon/>
           </Button>
-          <Button size="small" onClick={handleDelete}>
-            Delete Quiz
+          <Button id="button" variant="contained" size="small" onClick={handleDelete}>
+            <DeleteIcon />
           </Button>
         </CardActions>
       </Card>
@@ -142,7 +146,7 @@ export function UserQuizCard(props) {
 
 export const CardSkeleton = () => {
   return (
-    <Card className="card">
+    <Card id="card">
       <Button disabled>
         <Skeleton width={200} height={40} />
       </Button>
@@ -162,3 +166,6 @@ export const CardSkeleton = () => {
     </Card>
   );
 };
+
+
+//css of this card is in aboutUs.css in aboutUs folder
