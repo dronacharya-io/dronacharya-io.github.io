@@ -4,7 +4,6 @@ import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Box from "@mui/material/Box";
 import MuiAlert from "@mui/material/Alert";
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
 import { Snackbar } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
 import Checkbox from "@mui/material/Checkbox";
@@ -12,7 +11,10 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import Lottie from "react-lottie";
 import animationData from "../../lotties/spaceman.json";
 import RocketData from "../../lotties/fillformalert.json";
-import Stars from "../../lotties/stars.json";
+import Sparkles from "../../lotties/stars.json";
+import Zoom from "@mui/material/Zoom";
+import spaceManTwo from "../../lotties/spaceman2.json"; 
+import sunAnimation from "../../lotties/sun.json"; 
 
 const QuizSetting = (props) => {
   const [values, setValues] = useState({
@@ -92,15 +94,33 @@ const QuizSetting = (props) => {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-
-  const stars = {
+  const sparkles = {
     loop: true,
     autoplay: true,
-    animationData : Stars,
+    animationData : Sparkles,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+
+  const spaceman2 = {
+    loop: true,
+    autoplay: true,
+    animationData : spaceManTwo,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  
+  const sun = {
+    loop: true,
+    autoplay: true,
+    animationData : sunAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+ 
 
   return (
     <>
@@ -149,12 +169,32 @@ const QuizSetting = (props) => {
             textAlign="center"
             id="background"
           >
+          
             <div id="img-div">
-              <div id="stars">
-                <Lottie options={stars} height={350} width={480} />
+              <div id="sparkles">
+                <Lottie options={sparkles} height={1200} width={480} />
               </div>
+              <div id="img-div1">
+              <Zoom in={true} style={{ transitionDelay: true? '800ms' : '0ms' }}>
+                <div>
+                  <Lottie options={sun} height={200} width={200} />  
+                </div>
+              </Zoom>
+              </div>
+              
               <div id="img-div2">
-                <Lottie options={spaceMan} height={350} width={500} />
+              <Zoom in={true} style={{ transitionDelay: true? '600ms' : '0ms' }}>
+                <div>
+                  <Lottie options={spaceMan} height={450} width={500} />  
+                </div>
+              </Zoom>
+              </div>
+              <div id="img-div3">
+              <Zoom in={true} style={{ transitionDelay: true? '600ms' : '0ms' }}>
+                <div>
+                  <Lottie options={spaceman2} height={450} width={500} /> 
+                </div>
+              </Zoom>
               </div>
             </div>
             <Box
@@ -165,130 +205,168 @@ const QuizSetting = (props) => {
               autoComplete="off"
             >
               <div>
-                <InputLabel htmlFor="component-simple">Quiz name</InputLabel>
-                <TextField
-                  style={{ width: "auto" }}
-                  required
-                  id="quizname"
-                  label="Quiz name"
-                  placeholder="Quizname"
-                  name="quizname"
-                  value={values.quizname}
-                  onChange={handleChange}
-                />
+              <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
+                <div>
+                  <InputLabel id="inputLabel">Test name</InputLabel>
+                    <textarea
+                      row="1"
+                      style={{ width: "auto" }}
+                      required
+                      id="quizname"
+                      label="Required"
+                      name="quizname"
+                      value={values.quizname}
+                      onChange={handleChange}
+                    />
+                </div>
+              </Zoom>
 
                 <div style={{ position: "relative" }}>
-                  <InputLabel htmlFor="component-simple">Subject</InputLabel>
-
-                  <TextField
-                    required
-                    id="subject"
-                    label="Subject"
-                    placeholder="subject"
-                    name="subject"
-                    value={values.subject}
-                    onChange={handleChange}
-                  />
-
-                  <InputLabel htmlFor="component-simple">
-                    Check if Quiz is MCQ type.
-                    <Checkbox
-                      name="isMcq"
-                      id="isMcq"
-                      type="checkbox"
-                      onChange={handleCheckbox}
-                      defaultChecked={values.isMcq}
-                      color="success"
+                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
+                  <div>  
+                    <InputLabel id="inputLabel">Subject</InputLabel>
+                    <textarea
+                      required
+                      id="subject"
+                      label="Required"
+                      name="subject"
+                      value={values.subject}
+                      onChange={handleChange}
                     />
-                  </InputLabel>
-                  <InputLabel htmlFor="component-simple">
-                    Specify Time per question
-                  </InputLabel>
-                  <TextField
-                    required
-                    type="number"
-                    id="timePerQuestion"
-                    name="timePerQuestion"
-                    label="Time Per Question"
-                    value={values.timePerQuestion}
-                    onChange={handleChange}
-                  />
+                  </div>
+                </Zoom>
+                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
+                  <div>
+                    <InputLabel id="inputLabel" htmlFor="component-simple">
+                      Check if Test is MCQ type.
+                      <Checkbox
+                        name="isMcq"
+                        id="isMcq"
+                        type="checkbox"
+                        onChange={handleCheckbox}
+                        defaultChecked={values.isMcq}
+                        color="success"
+                      />
+                    </InputLabel>
+                  </div>
+                </Zoom>
+                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
+                  <div>
+                    <InputLabel id="inputLabel">Time per Question</InputLabel>
+                    <input
+                      required
+                      type="number"
+                      id="timePerQuestion"
+                      name="timePerQuestion"
+                      label="Required"
+                      value={values.timePerQuestion}
+                      onChange={handleChange}
+                    />
+                  </div>
+                </Zoom>
                 </div>
                 <div style={{ position: "relative" }}></div>
-                <article>
-                  <label>Positive Marking: </label>
-                  <input
-                    name="positiveMarking"
-                    id="positiveMarking"
-                    type="number"
-                    min={1}
-                    value={values.positiveMarking}
-                    onChange={handleChange}
-                  />
-                </article>
-                <article>
-                  <label>Is there a negative marking: </label>
-                  <input
-                    name="isNegative"
-                    id="isNegative"
-                    type="checkbox"
-                    defaultChecked={values.isNegative}
-                    onChange={handleCheckbox}
-                  />
-                </article>
-                <article
-                  id="checkbox"
-                  style={{ visibility: !values.isNegative ? "hidden" : "" }}
-                >
-                  <label>Negative Marking: </label>
-                  <input
-                    name="negativeMarking"
-                    id="negativeMarking"
-                    type="number"
-                    min={0}
-                    value={values.negativeMarking}
-                    onChange={handleChange}
-                  />
-                </article>
-                <article>
-                  <label>Start Date: </label>
-                  <input
-                    name="startDate"
-                    id="startDate"
-                    type="date"
-                    min={curDate}
-                    value={values.startDate}
-                    onChange={handleChange}
-                  />
-                </article>
-                <article>
-                  <label>Start-Time: </label>
-                  <input
-                    name="startTime"
-                    id="startTime"
-                    type="time"
-                    value={values.startTime}
-                    onChange={handleChange}
-                  />
-                </article>
-                <article>
-                  <label>Run-Time: </label>
-                  <input
-                    name="runTime"
-                    id="runTime"
-                    type="time"
-                    value={values.runTime}
-                    onChange={handleChange}
-                  />
-                </article>
-                <div id="rocketAndSubmitButtonContainer" >
-                  <Button id="addSettingButton" variant="contained" onClick={handleClick}>
-                  Add Settings
-                  </Button>
-                  <div id="rocket">
-                    <Lottie options={spaceRocket} height={40} width={40} />
+                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
+                  <div>
+                  <article>
+                    <InputLabel id="inputLabel">Positive marking</InputLabel>
+                    <input
+                      name="positiveMarking"
+                      id="positiveMarking"
+                      label="Required"
+                      type="number"
+                      min={1}
+                      value={values.positiveMarking}
+                      onChange={handleChange}
+                    />
+                  </article>
                   </div>
-                </div>
+                </Zoom>
+                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
+                  <div>
+                  <article>
+                    <InputLabel id="inputLabel">Is there a negative marking: </InputLabel>
+                    <Checkbox
+                      name="isNegative"
+                      id="isNegative"
+                      type="checkbox"
+                      defaultChecked={values.isNegative}
+                      onChange={handleCheckbox}
+                    />
+                  </article>
+                  </div>
+                </Zoom>
+                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
+                  <div>
+                      <article
+                        id="checkbox"
+                        style={{ visibility: !values.isNegative ? "hidden" : "" }}
+                      >
+                      <InputLabel id="inputLabel">Specify negative marking</InputLabel>
+                        <input
+                          name="negativeMarking"
+                          id="negativeMarking"
+                          type="number"
+                          min={0}
+                          value={values.negativeMarking}
+                          onChange={handleChange}
+                        />
+                      </article>
+                  </div>
+                </Zoom>
+                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
+                  <div>
+                    <article>
+                      <InputLabel id="inputLabel">Start Date: </InputLabel>
+                      <input
+                        name="startDate"
+                        id="startDate"
+                        type="date"
+                        min={curDate}
+                        value={values.startDate}
+                        onChange={handleChange}
+                      />
+                    </article>
+                  </div>
+                </Zoom>
+                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
+                  <div>
+                  <article>
+                    <InputLabel id="inputLabel">Start-Time: </InputLabel>
+                    <input
+                      name="startTime"
+                      id="startTime"
+                      type="time"
+                      value={values.startTime}
+                      onChange={handleChange}
+                    />
+                  </article>
+                  </div>
+                </Zoom>
+                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
+                  <div>
+                    <article>
+                      <InputLabel id="inputLabel">Run-Time: </InputLabel>
+                      <input
+                        name="runTime"
+                        id="runTime"
+                        type="time"
+                        value={values.runTime}
+                        onChange={handleChange}
+                      />
+                    </article>
+                  </div>
+                </Zoom>
+                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
+                  <div id="rocketAndSubmitButtonContainer" >
+                    <Button id="addSettingButton" variant="contained" onClick={handleClick}>
+                    Add Settings
+                    </Button>
+                    <div id="rocket">
+                      <Lottie options={spaceRocket} height={40} width={40} />
+                    </div>
+                  </div>
+                </Zoom>
               </div>
             </Box>
           </Box>

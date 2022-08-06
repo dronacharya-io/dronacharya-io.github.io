@@ -52,7 +52,7 @@ export const Quiz = () => {
 
   const darkTheme = createTheme({
     palette: {
-      mode: "dark",
+      mode: "light"||"dark",
     },
   });
   

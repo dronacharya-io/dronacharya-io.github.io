@@ -136,7 +136,7 @@
   margin-right: 2rem;
 }
 
-#light #joinquiztextfield {
+#light #joinquiztextfeild{
   width: 20rem;
   height: 4rem;
   letter-spacing: 0.8px;
@@ -145,7 +145,7 @@
   border-color: #ffb74d;
 }
 
-#dark #joinquiztextfield {
+#dark #joinquiztextfeild {
   width: 20rem;
   height: 4rem;
   letter-spacing: 0.8px;
@@ -183,5 +183,5 @@
 }
 
 #textField__{
-  color:"black" !important;
+  color: #FF9800;
 }

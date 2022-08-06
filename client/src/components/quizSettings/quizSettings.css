@@ -43,20 +43,24 @@ label {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #ffb74d;
   align-items: center;
-  width: 60%;
+  width: 50%;
 }
 
 #background {
   display: flex;
   flex-direction: row;
   width: auto;
+  justify-content: center;
   /* margin-top: 1rem;
   margin-left: 1rem; */
 }
 
 #img-div {
-  width: 30rem; 
+  width: 30rem;
+  position: relative;
+  height: 0px;
 }
 
 #addSettingButton{
@@ -75,13 +79,53 @@ label {
 
 #rocketAndSubmitButtonContainer{
   position: relative;
-  top:18px;
+  top:90px;
 }
 
 #img-div2{
   position: relative;
-  bottom: 190px;
-  z-index: 9999;
+  bottom: 1170px;
+  
 }
 
+#sparkles{
+  position: relative;
+}
 
+#quizname ,#subject,#timePerQuestion, #positiveMarking, #negativeMarking,#startDate,#startTime,#runTime{
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+  background: #eee;
+  position: relative;
+  width: 38rem;
+  margin: 1rem auto 1.25rem auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(207, 207, 207);
+  border: none;
+}
+
+#img-div3{
+  position: relative;
+  bottom: 1200px;
+}
+
+#img-div1{
+  position: relative;
+  bottom: 1150px;
+  right: 100px;
+}
+
+#inputLabel{
+  color:white;
+  font-size: large;
+  position: relative;
+  top: 2px;
+  letter-spacing: 1.5px;
+}

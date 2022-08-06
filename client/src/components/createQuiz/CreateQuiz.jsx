@@ -92,7 +92,7 @@ const CreateQuiz = () => {
                 color="success"
                 onClick={handleCreate}
               >
-                add quiz
+                Add Test
               </Button>
             </Zoom>
           </div>
