@@ -9,6 +9,9 @@ import { Snackbar } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
 import Checkbox from "@mui/material/Checkbox";
 import SettingsIcon from "@mui/icons-material/Settings";
+import Lottie from "react-lottie";
+import animationData from "../../lotties/spaceman.json";
+import RocketData from "../../lotties/fillformalert.json";
 
 const QuizSetting = (props) => {
   const [values, setValues] = useState({
@@ -72,6 +75,22 @@ const QuizSetting = (props) => {
   const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
+  const spaceMan = {
+    loop: true,
+    autoplay: true,
+    animationData : animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const spaceRocket = {
+    loop: true,
+    autoplay: true,
+    animationData : RocketData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   return (
     <>
@@ -120,7 +139,10 @@ const QuizSetting = (props) => {
             textAlign="center"
             id="background"
           >
-            <div id="img-div"></div>
+            <div id="img-div">
+              <Lottie options={spaceMan} height={550} width={500} />
+             
+            </div>
             <Box
               id="form"
               component="form"
@@ -245,9 +267,14 @@ const QuizSetting = (props) => {
                     onChange={handleChange}
                   />
                 </article>
-                <Button variant="contained" onClick={handleClick}>
-                  "Add Settings"
-                </Button>
+                <div id="rocketAndSubmitButtonContainer" >
+                  <Button id="addSettingButton" variant="contained" onClick={handleClick}>
+                  Add Settings
+                  </Button>
+                  <div id="rocket">
+                    <Lottie options={spaceRocket} height={40} width={40} />
+                  </div>
+                </div>
               </div>
             </Box>
           </Box>

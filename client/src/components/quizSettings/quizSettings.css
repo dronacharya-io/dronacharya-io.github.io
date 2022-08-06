@@ -56,6 +56,25 @@ label {
 }
 
 #img-div {
-  width: 20rem;
+  width: 30rem;
   background-color: #151a30;
+}
+
+#addSettingButton{
+  background-color: #ffb74d;
+  width:fit-content;
+  z-index: 9999;
+  letter-spacing: 1px;
+}
+
+#rocket{
+  display: flex;
+  position: relative;
+  right: 6rem;
+  bottom: 2rem;
+}
+
+#rocketAndSubmitButtonContainer{
+  position: relative;
+  top:18px;
 }
