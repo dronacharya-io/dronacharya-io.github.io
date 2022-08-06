@@ -37,6 +37,7 @@ const JoinQuiz = () => {
           id: data._id,
           name: data.quizname,
           startDate: data.startDate,
+          runTime: data.runTime,
         });
         setAttendies(data.attendies);
         console.log(quizDetails);
