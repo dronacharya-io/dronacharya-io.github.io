@@ -14,10 +14,11 @@ const QuizScore = () => {
           "http://localhost:8800/api/quizzes/attemptQuiz/" +
             urlParams.get("quizId")
         );
-        var data = res.data.attendies.filter((x) => {
-          return x.userId === urlParams.get("userId");
-        });
-        setReport(data);
+        setReport(
+          res.data.attendies.filter((x) => {
+            return x.userId === urlParams.get("userId");
+          })
+        );
         console.log(report);
       } catch (err) {
         console.log(err.message);
@@ -31,7 +32,17 @@ const QuizScore = () => {
   return (
     <>
       {report?.map((unit) => {
-        return <p>{unit.submissions.id}</p>;
+        return (
+          <>
+            {unit.submissions.map((submission) => {
+              return (
+                <>
+                  <p>{submission.submittedAns}</p>
+                </>
+              );
+            })}
+          </>
+        );
       })}
     </>
   );
