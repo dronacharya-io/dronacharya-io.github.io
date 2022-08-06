@@ -208,8 +208,7 @@ const QuizSetting = (props) => {
               <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
                 <div>
                   <InputLabel id="inputLabel">Test name</InputLabel>
-                    <textarea
-                      row="1"
+                    <input
                       style={{ width: "auto" }}
                       required
                       id="quizname"
@@ -225,7 +224,8 @@ const QuizSetting = (props) => {
                 <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
                   <div>  
                     <InputLabel id="inputLabel">Subject</InputLabel>
-                    <textarea
+                    <input
+                      
                       required
                       id="subject"
                       label="Required"
