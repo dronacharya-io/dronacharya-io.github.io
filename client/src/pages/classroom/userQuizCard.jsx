@@ -17,7 +17,6 @@ import { useNavigate } from "react-router-dom";
 export function UserQuizCard(props) {
   const { user } = useUserAuth();
   const navigate = useNavigate();
-
   const [zero, setZero] = useState("0");
   const [currentDate, setCurrentDate] = useState(
     new Date().getFullYear() +
@@ -109,12 +108,13 @@ export function UserQuizCard(props) {
           <Typography gutterBottom variant="h5" component="div">
             {props.quizName}
           </Typography>
+
           <Typography variant="body2" color="text.secondary">
             {props.startDate}
           </Typography>
 
           <Typography variant="body2" color="text.secondary">
-            {props.runTime}
+            { props.attendance || props.runTime }
           </Typography>
         </CardContent>
         <CardActions>

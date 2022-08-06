@@ -18,6 +18,7 @@ const QuizSubmissions = () => {
           "http://localhost:8800/api/quizzes/attemptQuiz/" + urlParams.get("id")
         );
         setData(res.data.attendies);
+        
       } catch (err) {
         console.log(err.message);
       }
