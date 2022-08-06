@@ -13,8 +13,8 @@ import animationData from "../../lotties/spaceman.json";
 import RocketData from "../../lotties/fillformalert.json";
 import Sparkles from "../../lotties/stars.json";
 import Zoom from "@mui/material/Zoom";
-import spaceManTwo from "../../lotties/spaceman2.json"; 
-import sunAnimation from "../../lotties/sun.json"; 
+import spaceManTwo from "../../lotties/spaceman2.json";
+import sunAnimation from "../../lotties/sun.json";
 
 const QuizSetting = (props) => {
   const [values, setValues] = useState({
@@ -81,7 +81,7 @@ const QuizSetting = (props) => {
   const spaceMan = {
     loop: true,
     autoplay: true,
-    animationData : animationData,
+    animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -89,7 +89,7 @@ const QuizSetting = (props) => {
   const spaceRocket = {
     loop: true,
     autoplay: true,
-    animationData : RocketData,
+    animationData: RocketData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -97,7 +97,7 @@ const QuizSetting = (props) => {
   const sparkles = {
     loop: true,
     autoplay: true,
-    animationData : Sparkles,
+    animationData: Sparkles,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -106,21 +106,20 @@ const QuizSetting = (props) => {
   const spaceman2 = {
     loop: true,
     autoplay: true,
-    animationData : spaceManTwo,
+    animationData: spaceManTwo,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-  
+
   const sun = {
     loop: true,
     autoplay: true,
-    animationData : sunAnimation,
+    animationData: sunAnimation,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
- 
 
   return (
     <>
@@ -161,6 +160,8 @@ const QuizSetting = (props) => {
           onClose={() => {
             setDrawerOpen(false);
           }}
+          style={{ backgroundColor: "#151a30" }}
+          className="drawerBody"
         >
           <Box
             p={2}
@@ -169,32 +170,40 @@ const QuizSetting = (props) => {
             textAlign="center"
             id="background"
           >
-          
             <div id="img-div">
               <div id="sparkles">
                 <Lottie options={sparkles} height={1200} width={480} />
               </div>
               <div id="img-div1">
-              <Zoom in={true} style={{ transitionDelay: true? '800ms' : '0ms' }}>
-                <div>
-                  <Lottie options={sun} height={200} width={200} />  
-                </div>
-              </Zoom>
+                <Zoom
+                  in={true}
+                  style={{ transitionDelay: true ? "800ms" : "0ms" }}
+                >
+                  <div>
+                    <Lottie options={sun} height={200} width={200} />
+                  </div>
+                </Zoom>
               </div>
-              
+
               <div id="img-div2">
-              <Zoom in={true} style={{ transitionDelay: true? '600ms' : '0ms' }}>
-                <div>
-                  <Lottie options={spaceMan} height={450} width={500} />  
-                </div>
-              </Zoom>
+                <Zoom
+                  in={true}
+                  style={{ transitionDelay: true ? "600ms" : "0ms" }}
+                >
+                  <div>
+                    <Lottie options={spaceMan} height={450} width={500} />
+                  </div>
+                </Zoom>
               </div>
               <div id="img-div3">
-              <Zoom in={true} style={{ transitionDelay: true? '600ms' : '0ms' }}>
-                <div>
-                  <Lottie options={spaceman2} height={450} width={500} /> 
-                </div>
-              </Zoom>
+                <Zoom
+                  in={true}
+                  style={{ transitionDelay: true ? "600ms" : "0ms" }}
+                >
+                  <div>
+                    <Lottie options={spaceman2} height={450} width={500} />
+                  </div>
+                </Zoom>
               </div>
             </div>
             <Box
@@ -205,9 +214,12 @@ const QuizSetting = (props) => {
               autoComplete="off"
             >
               <div>
-              <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
-                <div>
-                  <InputLabel id="inputLabel">Test name</InputLabel>
+                <Zoom
+                  in={true}
+                  style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                >
+                  <div>
+                    <InputLabel id="inputLabel">Test name</InputLabel>
                     <input
                       style={{ width: "auto" }}
                       required
@@ -217,104 +229,128 @@ const QuizSetting = (props) => {
                       value={values.quizname}
                       onChange={handleChange}
                     />
-                </div>
-              </Zoom>
+                  </div>
+                </Zoom>
 
                 <div style={{ position: "relative" }}>
-                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
-                  <div>  
-                    <InputLabel id="inputLabel">Subject</InputLabel>
-                    <input
-                      
-                      required
-                      id="subject"
-                      label="Required"
-                      name="subject"
-                      value={values.subject}
-                      onChange={handleChange}
-                    />
-                  </div>
-                </Zoom>
-                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
-                  <div>
-                    <InputLabel id="inputLabel" htmlFor="component-simple">
-                      Check if Test is MCQ type.
-                      <Checkbox
-                        name="isMcq"
-                        id="isMcq"
-                        type="checkbox"
-                        onChange={handleCheckbox}
-                        defaultChecked={values.isMcq}
-                        color="success"
+                  <Zoom
+                    in={true}
+                    style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                  >
+                    <div>
+                      <InputLabel id="inputLabel">Subject</InputLabel>
+                      <input
+                        required
+                        id="subject"
+                        label="Required"
+                        name="subject"
+                        value={values.subject}
+                        onChange={handleChange}
                       />
-                    </InputLabel>
-                  </div>
-                </Zoom>
-                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
-                  <div>
-                    <InputLabel id="inputLabel">Time per Question</InputLabel>
-                    <input
-                      required
-                      type="number"
-                      id="timePerQuestion"
-                      name="timePerQuestion"
-                      label="Required"
-                      value={values.timePerQuestion}
-                      onChange={handleChange}
-                    />
-                  </div>
-                </Zoom>
+                    </div>
+                  </Zoom>
+                  <Zoom
+                    in={true}
+                    style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                  >
+                    <div>
+                      <InputLabel id="inputLabel" htmlFor="component-simple">
+                        Check if Test is MCQ type.
+                        <Checkbox
+                          name="isMcq"
+                          id="isMcq"
+                          type="checkbox"
+                          onChange={handleCheckbox}
+                          defaultChecked={values.isMcq}
+                          color="success"
+                        />
+                      </InputLabel>
+                    </div>
+                  </Zoom>
+                  <Zoom
+                    in={true}
+                    style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                  >
+                    <div>
+                      <InputLabel id="inputLabel">Time per Question</InputLabel>
+                      <input
+                        required
+                        type="number"
+                        id="timePerQuestion"
+                        name="timePerQuestion"
+                        label="Required"
+                        value={values.timePerQuestion}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </Zoom>
                 </div>
                 <div style={{ position: "relative" }}></div>
-                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
+                <Zoom
+                  in={true}
+                  style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                >
                   <div>
-                  <article>
-                    <InputLabel id="inputLabel">Positive marking</InputLabel>
-                    <input
-                      name="positiveMarking"
-                      id="positiveMarking"
-                      label="Required"
-                      type="number"
-                      min={1}
-                      value={values.positiveMarking}
-                      onChange={handleChange}
-                    />
-                  </article>
+                    <article>
+                      <InputLabel id="inputLabel">Positive marking</InputLabel>
+                      <input
+                        name="positiveMarking"
+                        id="positiveMarking"
+                        label="Required"
+                        type="number"
+                        min={1}
+                        value={values.positiveMarking}
+                        onChange={handleChange}
+                      />
+                    </article>
                   </div>
                 </Zoom>
-                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
+                <Zoom
+                  in={true}
+                  style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                >
                   <div>
-                  <article>
-                    <InputLabel id="inputLabel">Is there a negative marking: </InputLabel>
-                    <Checkbox
-                      name="isNegative"
-                      id="isNegative"
-                      type="checkbox"
-                      defaultChecked={values.isNegative}
-                      onChange={handleCheckbox}
-                    />
-                  </article>
+                    <article>
+                      <InputLabel id="inputLabel">
+                        Is there a negative marking:{" "}
+                      </InputLabel>
+                      <Checkbox
+                        name="isNegative"
+                        id="isNegative"
+                        type="checkbox"
+                        defaultChecked={values.isNegative}
+                        onChange={handleCheckbox}
+                      />
+                    </article>
                   </div>
                 </Zoom>
-                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
+                <Zoom
+                  in={true}
+                  style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                >
                   <div>
-                      <article
-                        id="checkbox"
-                        style={{ visibility: !values.isNegative ? "hidden" : "" }}
-                      >
-                      <InputLabel id="inputLabel">Specify negative marking</InputLabel>
-                        <input
-                          name="negativeMarking"
-                          id="negativeMarking"
-                          type="number"
-                          min={0}
-                          value={values.negativeMarking}
-                          onChange={handleChange}
-                        />
-                      </article>
+                    <article
+                      id="checkbox"
+                      style={{ visibility: !values.isNegative ? "hidden" : "" }}
+                    >
+                      <InputLabel id="inputLabel">
+                        Specify negative marking
+                      </InputLabel>
+                      <input
+                        name="negativeMarking"
+                        id="negativeMarking"
+                        type="number"
+                        min={0}
+                        value={values.negativeMarking}
+                        onChange={handleChange}
+                      />
+                    </article>
                   </div>
                 </Zoom>
-                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
+                <Zoom
+                  in={true}
+                  style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                >
                   <div>
                     <article>
                       <InputLabel id="inputLabel">Start Date: </InputLabel>
@@ -329,21 +365,27 @@ const QuizSetting = (props) => {
                     </article>
                   </div>
                 </Zoom>
-                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
+                <Zoom
+                  in={true}
+                  style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                >
                   <div>
-                  <article>
-                    <InputLabel id="inputLabel">Start-Time: </InputLabel>
-                    <input
-                      name="startTime"
-                      id="startTime"
-                      type="time"
-                      value={values.startTime}
-                      onChange={handleChange}
-                    />
-                  </article>
+                    <article>
+                      <InputLabel id="inputLabel">Start-Time: </InputLabel>
+                      <input
+                        name="startTime"
+                        id="startTime"
+                        type="time"
+                        value={values.startTime}
+                        onChange={handleChange}
+                      />
+                    </article>
                   </div>
                 </Zoom>
-                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
+                <Zoom
+                  in={true}
+                  style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                >
                   <div>
                     <article>
                       <InputLabel id="inputLabel">Run-Time: </InputLabel>
@@ -357,10 +399,17 @@ const QuizSetting = (props) => {
                     </article>
                   </div>
                 </Zoom>
-                <Zoom in={true} style={{ transitionDelay: true? '300ms' : '0ms' }}>
-                  <div id="rocketAndSubmitButtonContainer" >
-                    <Button id="addSettingButton" variant="contained" onClick={handleClick}>
-                    Add Settings
+                <Zoom
+                  in={true}
+                  style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                >
+                  <div id="rocketAndSubmitButtonContainer">
+                    <Button
+                      id="addSettingButton"
+                      variant="contained"
+                      onClick={handleClick}
+                    >
+                      Add Settings
                     </Button>
                     <div id="rocket">
                       <Lottie options={spaceRocket} height={40} width={40} />

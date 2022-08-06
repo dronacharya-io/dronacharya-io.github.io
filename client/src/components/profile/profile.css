@@ -14,7 +14,7 @@
   border: none;
 }
 
-#dark #profileButton{
+#dark #profileButton {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,7 +72,7 @@
 
 #dark #today {
   margin-right: 1.5rem;
-  color: rgb(128 128 128);
+  color: #808080;
 }
 
 #profile-icon {
@@ -80,7 +80,7 @@
 }
 
 #dark #profile-icon {
-  color:#151a30;
+  color: #151a30;
 }
 
 #light .icons {
@@ -102,7 +102,7 @@
   margin: 2.5rem;
   justify-content: center;
   align-items: center;
-  border: solid 2px rgb(128 128 128);
+  border: solid 2px #808080;
   border-radius: 2rem;
   padding: 0.2rem;
 }
@@ -120,7 +120,7 @@
 .search-icon {
   width: 1.5rem;
   height: 1.5rem;
-  color: rgb(128 128 128);
+  color: #808080;
 }
 
 #profileImage {
@@ -144,7 +144,7 @@
 
 #dark #firstname p {
   font-size: large;
-  color: rgb(128 128 128);
+  color: #808080;
 }
 
 .navButton {
@@ -152,7 +152,14 @@
   width: 50%;
 }
 
-.logout {
+#light .logout {
+  color: #FF9800;
+  position: relative;
+  top: 45%;
+}
+
+#dark .logout {
+  color: #FFE102;
   position: relative;
   top: 45%;
 }

@@ -1,6 +1,6 @@
 import "./createQuiz.css";
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoArrowBack } from "react-icons/io5";
 import QuizSetting from "../quizSettings/quizsetting";
 import QuestionCard from "../questionBuilderCard/questionBuilderCard";
@@ -16,7 +16,7 @@ const CreateQuiz = () => {
   const [settingsTab, setSettingsTab] = useState(false);
 
   const navigate = useNavigate();
-  const { user } = useUserAuth();
+  const { user, googleSignIn } = useUserAuth();
 
   const Disable = () => {
     setSettingsTab(!settingsTab);
@@ -47,6 +47,9 @@ const CreateQuiz = () => {
 
   const handleCreate = async (e) => {
     e.preventDefault();
+    if (!user) {
+      googleSignIn();
+    }
     try {
       let quiz = output;
       quiz = { ...quiz, questions: questions };
@@ -76,40 +79,47 @@ const CreateQuiz = () => {
 
   return (
     <>
-      <div>
-        <QuizSetting func={show} />
-
-        <IoArrowBack className="back-icon-c" onClick={() => navigate("../")} />
+      {user ? (
         <div>
-          <QuestionCard addQuestion={addQuestion} />
-        </div>
-        {true && (
+          <QuizSetting func={show} />
+
+          <IoArrowBack
+            className="back-icon-c"
+            onClick={() => navigate("../")}
+          />
           <div>
-            <Zoom in={true}>
-              <Button
-                id="addQuizButton"
-                variant="contained"
-                color="success"
-                onClick={handleCreate}
-              >
-                Add Test
-              </Button>
-            </Zoom>
+            <QuestionCard addQuestion={addQuestion} />
           </div>
-        )}
-        {questions.map((question) => {
-          return (
-            <>
-              <div key={question.id}>
-                <QuestionVisualiserCard
-                  question={question}
-                  editQuestion={editQuestion}
-                />
-              </div>
-            </>
-          );
-        })}
-      </div>
+          {true && (
+            <div>
+              <Zoom in={true}>
+                <Button
+                  id="addQuizButton"
+                  variant="contained"
+                  color="success"
+                  onClick={handleCreate}
+                >
+                  Add Test
+                </Button>
+              </Zoom>
+            </div>
+          )}
+          {questions.map((question) => {
+            return (
+              <>
+                <div key={question.id}>
+                  <QuestionVisualiserCard
+                    question={question}
+                    editQuestion={editQuestion}
+                  />
+                </div>
+              </>
+            );
+          })}
+        </div>
+      ) : (
+        <button onClick={() => googleSignIn()}>Login</button>
+      )}
     </>
   );
 };

@@ -1,13 +1,3 @@
-/* label {
-    display: block;
-    font: 1rem 'Fira Sans', sans-serif;
-}
-
-input,
-label {
-    margin: .4rem 0;
-}
- */
 #quizSettingButton {
   position: absolute;
   top: 2.5rem;
@@ -15,7 +5,6 @@ label {
   width: 1.5rem;
   left: 8.5rem;
 }
-
 
 #light #quizSettingButton {
   background-color: #ffb74d;
@@ -54,47 +43,61 @@ label {
   flex-direction: row;
   width: auto;
   justify-content: center;
-  /* margin-top: 1rem;
-  margin-left: 1rem; */
+}
+
+#dark #background {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  justify-content: center;
+  background-color: #151a30;
 }
 
 #img-div {
   width: 30rem;
   position: relative;
   height: 0px;
+  box-shadow: 0 1px 5px rgb(207, 207, 207);
 }
 
-#addSettingButton{
+#addSettingButton {
   background-color: #ffb74d;
-  width:fit-content;
+  width: fit-content;
   z-index: 9999;
   letter-spacing: 1px;
 }
 
-#rocket{
+#rocket {
   display: flex;
   position: relative;
   right: 6rem;
   bottom: 2rem;
 }
 
-#rocketAndSubmitButtonContainer{
+#rocketAndSubmitButtonContainer {
   position: relative;
-  top:90px;
+  top: 90px;
 }
 
-#img-div2{
+#img-div2 {
   position: relative;
   bottom: 1170px;
-  
+
 }
 
-#sparkles{
+#sparkles {
   position: relative;
 }
 
-#quizname ,#subject,#timePerQuestion, #positiveMarking, #negativeMarking,#startDate,#startTime,#runTime{
-  
+#quizname,
+#subject,
+#timePerQuestion,
+#positiveMarking,
+#negativeMarking,
+#startDate,
+#startTime,
+#runTime {
+
   border: none;
   padding: 4px;
   outline: none;
@@ -112,25 +115,21 @@ label {
   border: none;
 }
 
-#img-div3{
+#img-div3 {
   position: relative;
   bottom: 1200px;
 }
 
-#img-div1{
+#img-div1 {
   position: relative;
   bottom: 1150px;
   right: 100px;
 }
 
-#inputLabel{
-  color:white;
+#inputLabel {
+  color: white;
   font-size: large;
   position: relative;
   top: 2px;
   letter-spacing: 1.5px;
-}
-
-#img-div{
-  box-shadow: 0 1px 5px rgb(207, 207, 207);
 }

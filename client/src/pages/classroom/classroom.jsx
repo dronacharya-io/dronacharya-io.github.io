@@ -10,7 +10,7 @@ import Lottie from "react-lottie";
 import animationData from "../../lotties/notfound.json";
 
 export const Classroom = () => {
-  const { user } = useUserAuth();
+  const { user, googleSignIn } = useUserAuth();
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
     quizzesCreated: [{ quiz: { quizName: "null", startDate: 0, runTime: 0 } }],
@@ -20,6 +20,9 @@ export const Classroom = () => {
 
   useEffect(() => {
     setLoading(true);
+    if (!user) {
+      googleSignIn();
+    }
     async function Fetch() {
       try {
         const res = await axios.get(
@@ -47,56 +50,66 @@ export const Classroom = () => {
   };
 
   return (
-    <div className="cards">
-      {!loading ? (
-        data.quizzesCreated.length > 0 ? (
-          data.quizzesCreated
-            ?.map((quiz, i) => {
-              return (
-                <div>
-                  <UserQuizCard
-                    key={i}
-                    id={quiz.id}
-                    loading={loading}
-                    quizName={quiz.name}
-                    runTime={quiz.runTime}
-                    startDate={quiz.startDate}
-                  />
+    <>
+      {user ? (
+        <div className="cards">
+          {!loading ? (
+            data.quizzesCreated.length > 0 ? (
+              data.quizzesCreated
+                ?.map((quiz, i) => {
+                  return (
+                    <div>
+                      <UserQuizCard
+                        key={i}
+                        id={quiz.id}
+                        loading={loading}
+                        quizName={quiz.name}
+                        runTime={quiz.runTime}
+                        startDate={quiz.startDate}
+                      />
+                    </div>
+                  );
+                })
+                .reverse()
+            ) : (
+              <div>
+                <div
+                  style={{ position: "relative", top: "5rem", right: "2rem" }}
+                >
+                  <Lottie options={defaultOptions} height={400} width={400} />
                 </div>
-              );
-            })
-            .reverse()
-        ) : (
-          <div>
-            <div style={{ position: "relative", top: "5rem", right: "2rem" }}>
-              <Lottie options={defaultOptions} height={400} width={400} />
-            </div>
-            <div style={{ position: "relative", right: "2rem", top: "2rem" }}>
-              <p className="para">
-                Looks like you haven't created any
-                <span> Quiz</span> yet.
-              </p>
-              <Zoom in={true}>
-                <div>
-                  <Button
-                    id="joinQuizButton"
-                    variant="contained"
-                    onClick={() => navigate("/")}
-                  >
-                    Get Started
-                  </Button>
+                <div
+                  style={{ position: "relative", right: "2rem", top: "2rem" }}
+                >
+                  <p className="para">
+                    Looks like you haven't created any
+                    <span> Quiz</span> yet.
+                  </p>
+                  <Zoom in={true}>
+                    <div>
+                      <Button
+                        id="joinQuizButton"
+                        variant="contained"
+                        onClick={() => navigate("/")}
+                      >
+                        Get Started
+                      </Button>
+                    </div>
+                  </Zoom>
                 </div>
-              </Zoom>
-            </div>
-          </div>
-        )
+              </div>
+            )
+          ) : (
+            <>
+              <CardSkeleton />
+              <CardSkeleton />
+              <CardSkeleton />
+            </>
+          )}
+        </div>
       ) : (
-        <>
-          <CardSkeleton />
-          <CardSkeleton />
-          <CardSkeleton />
-        </>
+        <button onClick={() => googleSignIn()}>Login</button>
       )}
-    </div>
+    </>
   );
 };

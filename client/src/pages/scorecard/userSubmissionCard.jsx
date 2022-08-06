@@ -7,18 +7,9 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Badge from "@mui/material/Badge";
 import Skeleton from "@mui/material/Skeleton";
-import Popper from "@mui/material/Popper";
-import Box from "@mui/material/Box";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import axios from "axios";
-import { useUserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import DeleteIcon from "@mui/icons-material/Delete";
-import CreateIcon from "@mui/icons-material/Create";
-import ReplyIcon from "@mui/icons-material/Reply";
 
-export function UserQuizCard(props) {
-  const { user } = useUserAuth();
+export function UserSubmissionCard(props) {
   const navigate = useNavigate();
   const [zero, setZero] = useState("0");
   const [currentDate, setCurrentDate] = useState(
@@ -40,30 +31,6 @@ export function UserQuizCard(props) {
     setAnchorEl(anchorEl ? null : event.currentTarget);
   };
 
-  const handleEdit = async () => {
-    navigate("../editQuiz?id=" + props.id);
-  };
-
-  const handleDelete = async () => {
-    await axios.delete(
-      "http://localhost:8800/api/quizzes/deleteQuiz/" + props.id
-    );
-    let arr1 = user.userData.quizzesCreated;
-    arr1 = arr1.filter((element) => {
-      return element.id !== props.id;
-    });
-    let arr2 = user.userData.quizzesSubmitted;
-    arr2 = arr2.filter((element) => {
-      return element.id !== props.id;
-    });
-    await axios.put(
-      "http://localhost:8800/api/users/updateUser/" + user.userData._id,
-      { quizzesCreated: arr1, quizzesSubmitted: arr2 }
-    );
-  };
-
-  const open = Boolean(anchorEl);
-  const id = open ? "simple-popper" : undefined;
   const currentBaseURL =
     window.location.href.split("classroom")[0] + "joinQuiz/?id=";
 
@@ -150,39 +117,6 @@ export function UserQuizCard(props) {
             {props.attendance || props.runTime}
           </Typography>
         </CardContent>
-        <CardActions>
-          <CopyToClipboard text={currentBaseURL + props.id}>
-            <Button
-              id="button"
-              variant="contained"
-              size="small"
-              onClick={handleClick}
-            >
-              <ReplyIcon />
-            </Button>
-          </CopyToClipboard>
-          <Popper id={id} open={open} anchorEl={anchorEl}>
-            <Box sx={{ border: 1, p: 1, bgcolor: "background.paper" }}>
-              Link Copied!
-            </Box>
-          </Popper>
-          <Button
-            id="button"
-            variant="contained"
-            size="small"
-            onClick={handleEdit}
-          >
-            <CreateIcon />
-          </Button>
-          <Button
-            id="button"
-            variant="contained"
-            size="small"
-            onClick={handleDelete}
-          >
-            <DeleteIcon />
-          </Button>
-        </CardActions>
       </Card>
     </>
   );

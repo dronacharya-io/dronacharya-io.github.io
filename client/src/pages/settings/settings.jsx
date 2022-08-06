@@ -1,11 +1,13 @@
+import "./settings.css";
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useUserAuth } from "../../context/AuthContext.js";
 import { useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
 
 export const Settings = () => {
-  const { user, logOut } = useUserAuth();
+  const { user, logOut, googleSignIn } = useUserAuth();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
@@ -33,7 +35,6 @@ export const Settings = () => {
       try {
         const res = await axios.get(
           "http://localhost:8800/api/users/getUser/" + user.userData._id
-          
         );
         console.log(res);
         setData(res.data);
@@ -50,24 +51,36 @@ export const Settings = () => {
 
   return (
     <>
-      <div id="abc">
-        {loading ? (
-          <p>loading</p>
-        ) : (
-          <>
-            <img src={user.photoURL} alt="profile" id="profileImage" />
-            <p>{user.displayName}</p>
-            <p>{data.email}</p>
-            <button
-              onClick={() => {
-                deleteAccount();
-              }}
-            >
-              Delete Account
-            </button>
-          </>
-        )}
-      </div>
+      {user ? (
+        <div id="settingsBody">
+          {loading ? (
+            <p>loading</p>
+          ) : (
+            <>
+              <img
+                src={user.photoURL}
+                alt="profile"
+                id="settingsProfileImage"
+              />
+              <div id="settingsData">
+                <p>{user.displayName}</p>
+                <p>{data.email}</p>
+                <Button
+                  onClick={() => {
+                    deleteAccount();
+                  }}
+                  variant="outlined"
+                  color="error"
+                >
+                  Delete Account
+                </Button>
+              </div>
+            </>
+          )}
+        </div>
+      ) : (
+        <Button onClick={() => googleSignIn()}>Login</Button>
+      )}
     </>
   );
 };

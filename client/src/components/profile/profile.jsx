@@ -2,7 +2,7 @@ import "./profile.css";
 import React, { useState } from "react";
 import { IoMailOutline } from "react-icons/io5";
 import { BsFillPersonFill } from "react-icons/bs";
-import { AiOutlineSearch } from "react-icons/ai";
+import Button from "@mui/material/Button";
 import { useUserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -75,7 +75,7 @@ const ProfileTab = () => {
                   !
                 </p>
               </div>
-              <button
+              <Button
                 onClick={() => {
                   logOut();
                   navigate("../");
@@ -83,7 +83,7 @@ const ProfileTab = () => {
                 className="navButton logout"
               >
                 Logout
-              </button>
+              </Button>
             </>
           ) : (
             <>

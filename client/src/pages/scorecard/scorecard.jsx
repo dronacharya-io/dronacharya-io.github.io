@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useUserAuth } from "../../context/AuthContext";
-import { UserQuizCard, CardSkeleton } from "../classroom/userQuizCard";
+import { UserSubmissionCard } from "./userSubmissionCard";
 
 export const Scorecard = () => {
-  const { user } = useUserAuth();
+  const { user, googleSignIn } = useUserAuth();
   const [submissionsData, setSubmitionsData] = useState([]);
   console.log(user);
 
@@ -27,24 +27,30 @@ export const Scorecard = () => {
 
   return (
     <>
-      <h1>Scorecard</h1>
-      <div className="cards">
-        {submissionsData
-          ?.map((quiz, i) => {
-            return (
-              <>
-                <UserQuizCard
-                  key={i}
-                  quizName={quiz.name}
-                  id={quiz.id}
-                  runTime={quiz.runTime}
-                  startDate={quiz.startDate}
-                />
-              </>
-            );
-          })
-          .reverse()}
-      </div>
+      {user ? (
+        <>
+          <h1>Scorecard</h1>
+          <div className="cards">
+            {submissionsData
+              ?.map((quiz, i) => {
+                return (
+                  <>
+                    <UserSubmissionCard
+                      key={i}
+                      quizName={quiz.name}
+                      id={quiz.id}
+                      runTime={quiz.runTime}
+                      startDate={quiz.startDate}
+                    />
+                  </>
+                );
+              })
+              .reverse()}
+          </div>
+        </>
+      ) : (
+        <button onClick={() => googleSignIn()}>Login</button>
+      )}
     </>
   );
 };

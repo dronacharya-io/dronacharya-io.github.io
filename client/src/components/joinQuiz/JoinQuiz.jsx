@@ -18,7 +18,7 @@ const JoinQuiz = () => {
   const [attendies, setAttendies] = useState();
   const [index, setIndex] = useState(0);
 
-  const { user } = useUserAuth();
+  const { user, googleSignIn } = useUserAuth();
   const urlParams = new URLSearchParams(window.location.search);
   console.log(urlParams.get("id"));
 
@@ -127,54 +127,63 @@ const JoinQuiz = () => {
 
   return (
     <>
-      {loading ? (
-        <p>loading</p>
-      ) : (
+      {user ? (
         <>
-          <IoArrowBack className="back-icon" onClick={() => navigate("../")} />
-          <div>
-            {Data.map((question, i) => {
-              const { id } = question;
-              return (
-                <>
-                  <button
-                    className="questionLocator"
-                    onClick={() => {
-                      setIndex(i);
-                    }}
-                    id={id}
-                  >
-                    {i}
-                  </button>
-                </>
-              );
-            })}
-          </div>
-          <div id="question" key={Data[index].id}>
-            <p>{Data[index].Question}</p>
-          </div>
-          <div id="options">
-            {Data[index].options.map((option, i) => {
-              return (
-                <>
-                  <div className="option" key={i}>
-                    <p>{option.value}</p>
-                  </div>
-                </>
-              );
-            })}
-          </div>
-          <div id="answer">
-            <p>answer</p>
-            <input
-              type="text"
-              id="submittedAns"
-              name="submittedAns"
-              onChange={handleChange}
-            />
-          </div>
-          <button onClick={() => TakeAnswer()}>Next</button>
+          {loading ? (
+            <p>loading</p>
+          ) : (
+            <>
+              <IoArrowBack
+                className="back-icon"
+                onClick={() => navigate("../")}
+              />
+              <div>
+                {Data.map((question, i) => {
+                  const { id } = question;
+                  return (
+                    <>
+                      <button
+                        className="questionLocator"
+                        onClick={() => {
+                          setIndex(i);
+                        }}
+                        id={id}
+                      >
+                        {i}
+                      </button>
+                    </>
+                  );
+                })}
+              </div>
+              <div id="question" key={Data[index].id}>
+                <p>{Data[index].Question}</p>
+              </div>
+              <div id="options">
+                {Data[index].options.map((option, i) => {
+                  return (
+                    <>
+                      <div className="option" key={i}>
+                        <p>{option.value}</p>
+                      </div>
+                    </>
+                  );
+                })}
+              </div>
+              <div id="answer">
+                <p>answer</p>
+                <input
+                  type="text"
+                  id="submittedAns"
+                  name="submittedAns"
+                  onChange={handleChange}
+                />
+              </div>
+              <button onClick={() => TakeAnswer()}>Next</button>
+            </>
+          )}
         </>
+      ) : (
+        <button onClick={() => googleSignIn()}>Login</button>
       )}
     </>
   );

@@ -44,3 +44,15 @@
     height: 40px;
     letter-spacing: 2px;
 }
+
+#dark .quizData {
+    color: white;
+}
+
+#dark .quizStatusLive {
+    color: greenyellow;
+}
+
+#dark .quizStatusEnded {
+    color: #808080;
+}

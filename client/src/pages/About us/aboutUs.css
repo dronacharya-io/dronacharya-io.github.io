@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  background-color: #222B45 ;
+  background-color: #222B45;
 }
 
 #light #upcomingTests {
@@ -41,25 +41,26 @@
 #card:hover {
   box-shadow: 0 0 1.5rem 0rem rgb(233 233 233);
   border: none;
-  transition: border ;
+  transition: border;
   transition-duration: 0.5s;
 }
 
-#dark #card{
+#dark #card {
   background-color: #1d2238;
-  border-color:#1d2238;
-} 
+  border-color: #1d2238;
+}
 
-#dark #card:hover{
-  box-shadow: 0 0 0.7rem 0rem 	#131723;
+#dark #card:hover {
+  box-shadow: 0 0 0.7rem 0rem #151a30;
   border-radius: 0px;
 }
 
-#light #button{
+#light #button {
   background-color: #ffb74d;
-  color:white;
+  color: white;
 }
 
-#dark #button{
-
+#dark #button {
+  background-color: #FFEA41;
+  color: #151a30;
 }
