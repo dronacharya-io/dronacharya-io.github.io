@@ -83,6 +83,7 @@
     justify-content: center;
     position: absolute;
     height: 0;
+    letter-spacing: 1px;
 }
 
 #dark #title{
