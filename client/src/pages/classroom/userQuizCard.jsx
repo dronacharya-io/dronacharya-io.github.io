@@ -117,14 +117,9 @@ export function UserQuizCard(props) {
             Quiz Ended
           </Button>
         )}
-        <CardMedia
-          components="img"
-          alt="quizImg"
-          height="2400"
-          image={tempImage}
-        />
         <CardContent
           onClick={() => navigate("../quizSubmissions?id=" + props.id)}
+          id="cardContent"
         >
           <Typography
             gutterBottom
@@ -151,15 +146,15 @@ export function UserQuizCard(props) {
             {props.attendance || props.runTime}
           </Typography>
         </CardContent>
-        <CardActions>
-        <Tooltip
+        <CardActions id="cardActions">
+          <Tooltip
             title="Share Link"
             placement="left"
             disableFocusListener
             disableTouchListener
             arrow
           >
-            <div>
+            <div className="cardActionsIcon">
               <CopyToClipboard text={currentBaseURL + props.id}>
                 <Button
                   id="button"
@@ -184,16 +179,16 @@ export function UserQuizCard(props) {
             disableTouchListener
             arrow
           >
-              <div>
-                <Button
-                  id="button"
-                  size="small"
-                  variant="outlined"
-                  onClick={handleEdit}
-                >
-                  <CreateIcon />
-                </Button>
-              </div>
+            <div className="cardActionsIcon">
+              <Button
+                id="button"
+                size="small"
+                variant="outlined"
+                onClick={handleEdit}
+              >
+                <CreateIcon />
+              </Button>
+            </div>
           </Tooltip>
           <Tooltip
             title="Delete"
@@ -202,7 +197,7 @@ export function UserQuizCard(props) {
             disableTouchListener
             arrow
           >
-            <div>
+            <div className="cardActionsIcon">
               <Button
                 id="button"
                 size="small"
@@ -211,7 +206,7 @@ export function UserQuizCard(props) {
               >
                 <DeleteIcon />
               </Button>
-            </div> 
+            </div>
           </Tooltip>
         </CardActions>
       </Card>
