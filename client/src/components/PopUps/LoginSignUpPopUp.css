@@ -1,7 +1,7 @@
 #light #loginPopUp{
     display: flex;
-    background-color: white; /*background color should be white*/
-    width: 40rem;
+    background-color: #ffb74d; /*background color should be white*/
+    width: 45rem;
     height: 30rem;
     justify-content: center;
     justify-self: center;
@@ -13,7 +13,7 @@
 #dark #loginPopUp{
  display: flex;
  background-color: #1d2238;
- width: 40rem;
+ width: 45rem;
  height: 30rem;
  justify-content: center;
  justify-self: center;
@@ -23,14 +23,15 @@
 }
 
 #light #loginButton{
- width: 150px;
+ width: 200px;
  letter-spacing: 3px;
- color: #ffb74d;
- border-color: #ffb74d;
+ color: white;
+ border-color: white;
+
 }
 
 #dark #loginButton{
- width: 150px;
+ width: 200px;
  letter-spacing: 3px;
  border-color: #FFEA41;
  color: #FFEA41;
@@ -50,22 +51,10 @@
     height: 100%;
 }
 
-#images{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    left: 170px;
-}
 
-#giraf{
-    position: relative;
-    top: 20rem;
-    height: 10px;
-}
 
 #sparkle{
     position: absolute;
-   
 }
 
 #loginButtondiv{
@@ -76,4 +65,48 @@
 
 #backgroundSpankle{
     position: absolute;
+}
+
+#astronaut{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    height: 0;
+    margin-top: 9rem;
+    margin-right:29rem ;
+}
+
+#light #title{
+    margin-top: 3rem;
+    color:white;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    height: 0;
+}
+
+#dark #title{
+    color:white;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    height: 0;
+    letter-spacing: 1px;
+}
+
+#atronautTwo{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    height: 0;
+    margin-left:29rem ;
+}
+
+#atronautThree{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    margin-top: 4rem;
+    height: 0;
 }
