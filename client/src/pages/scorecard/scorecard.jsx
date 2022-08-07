@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useUserAuth } from "../../context/AuthContext";
 import { UserSubmissionCard } from "./userSubmissionCard";
+import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp";
 
 export const Scorecard = () => {
   const { user, googleSignIn } = useUserAuth();
@@ -49,7 +50,7 @@ export const Scorecard = () => {
           </div>
         </>
       ) : (
-        <button onClick={() => googleSignIn()}>Login</button>
+        <LoginSignUpPopUp/>
       )}
     </>
   );

@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import Card from "../../components/cards/Cards";
 import CardDetails from "../../components/cards/cardDetails";
 import { useUserAuth } from "../../context/AuthContext";
+import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp";
 
 export const AboutUs = () => {
   const { user, googleSignIn } = useUserAuth();
@@ -22,7 +23,7 @@ export const AboutUs = () => {
           </div>
         </div>
       ) : (
-        <button onClick={() => googleSignIn()}>Login</button>
+        <LoginSignUpPopUp/>
       )}
     </>
   );

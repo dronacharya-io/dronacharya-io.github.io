@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useUserAuth } from "../../context/AuthContext.js";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
+import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp";
 
 export const Settings = () => {
   const { user, logOut, googleSignIn } = useUserAuth();
@@ -79,7 +80,7 @@ export const Settings = () => {
           )}
         </div>
       ) : (
-        <Button onClick={() => googleSignIn()}>Login</Button>
+        <LoginSignUpPopUp/>
       )}
     </>
   );
