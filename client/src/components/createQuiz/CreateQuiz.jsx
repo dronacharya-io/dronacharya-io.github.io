@@ -71,7 +71,7 @@ const CreateQuiz = () => {
       console.log(arr);
       await axios.put(url, { quizzesCreated: arr });
       console.log({ quizzesCreated: arr });
-      const redirectURL = "../" + "classroom";
+      const redirectURL = "../classroom";
       navigate(redirectURL);
     } catch (err) {
       console.log(err);
@@ -119,7 +119,7 @@ const CreateQuiz = () => {
           })}
         </div>
       ) : (
-        <LoginSignUpPopUp/>
+        <LoginSignUpPopUp />
       )}
     </>
   );

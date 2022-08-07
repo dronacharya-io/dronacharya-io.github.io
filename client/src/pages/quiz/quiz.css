@@ -140,7 +140,7 @@
   letter-spacing: 1px;
 }
 
-#light #joinquiztextfeild{
+#light #joinquiztextfeild {
   width: 20rem;
   height: 4rem;
   letter-spacing: 0.8px;
@@ -156,7 +156,7 @@
   font-size: 1rem;
   box-sizing: border-box;
   border-color: #FFEA41;
-  
+
 }
 
 #light #joinquizbutton {
@@ -178,14 +178,15 @@
 }
 
 #animation {
-  z-index: 0;
-  width: 20rem;
+  z-index: -10;
+  width: 10rem;
 }
 
-#outerTab {
+#outerTab,
+#profileButton {
   z-index: 1;
 }
 
-#textField__{
+#textField__ {
   color: #FF9800;
 }

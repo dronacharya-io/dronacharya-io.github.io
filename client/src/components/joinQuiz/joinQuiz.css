@@ -37,9 +37,26 @@ button {
     border-radius: 0.5rem;
 }
 
+#joinQuizHeader {
+    display: flex;
+    height: 3rem;
+    align-items: center;
+}
+
 .back-icon {
-    position: absolute;
-    top: 1.5rem;
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 2rem;
+    width: 2rem;
+    margin: 0.5rem;
+}
+
+#navigationTab {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.questionLocator {
+    width: 2rem;
+    height: 2rem;
+    margin: 0.5rem;
 }

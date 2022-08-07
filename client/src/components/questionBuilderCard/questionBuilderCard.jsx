@@ -6,11 +6,14 @@ import IconButton from "@mui/material/IconButton";
 import "./Css/questionBuilderCard.css";
 import Button from "@mui/material/Button";
 import { Fab } from "@mui/material";
+import Checkbox from "@mui/material/Checkbox";
+import InputLabel from "@mui/material/InputLabel";
 
 const QuestionCard = (props) => {
   const [question, setQuestion] = useState({
     Question: undefined,
     correctAns: undefined,
+    isWrittenType: false,
   });
 
   const [showElements, setShowElements] = useState(false);
@@ -18,6 +21,7 @@ const QuestionCard = (props) => {
   const AddQuetionText = "Add Question";
   const [option, setOption] = useState({ value: undefined });
   const [options, setOptions] = useState([]);
+  const [IsWrittenType, setIsWrittenType] = useState(false);
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -27,17 +31,26 @@ const QuestionCard = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setQuestion({ ...question, options: options });
-    if (question.Question && question.correctAns && question.options) {
+    setQuestion({
+      ...question,
+      options: options,
+      isWrittenType: IsWrittenType,
+    });
+    if (
+      (question.Question && question.correctAns && question.options) ||
+      (question.Question && question.isWrittenType)
+    ) {
       const newQuestion = { ...question, id: new Date().getTime().toString() };
       props.addQuestion(newQuestion);
       setQuestion({
         Question: undefined,
         correctAns: undefined,
+        isWrittenType: false,
       });
 
       document.getElementById("Question").value = "";
       document.getElementById("correctAns").value = "";
+      setIsWrittenType(false);
     }
   };
 
@@ -95,41 +108,65 @@ const QuestionCard = (props) => {
             </Zoom>
             <div>
               <Zoom in={true}>
-                <textarea
-                  type="text"
-                  id="option"
-                  name="option"
-                  className="options"
-                  placeholder="Options.."
-                  rows={1}
-                  onChange={handleOption}
-                />
+                <div>
+                  <InputLabel>
+                    Is answer written Type
+                    <Checkbox
+                      value={IsWrittenType}
+                      onClick={() => setIsWrittenType(!IsWrittenType)}
+                      id="IsWrittenType"
+                    />
+                  </InputLabel>
+                </div>
               </Zoom>
-              <Zoom
-                in={true}
-                style={{ transitionDelay: true ? "250ms" : "0ms" }}
-              >
-                <Fab
-                  color="primary"
-                  size="small"
-                  onClick={addOption}
-                  id="AddOptionButton"
-                >
-                  <AddIcon />
-                </Fab>
-              </Zoom>
+              {!IsWrittenType ? (
+                <>
+                  <Zoom in={true}>
+                    <textarea
+                      type="text"
+                      id="option"
+                      name="option"
+                      className="options"
+                      placeholder="Options.."
+                      rows={1}
+                      onChange={handleOption}
+                    />
+                  </Zoom>
+                  <Zoom
+                    in={true}
+                    style={{ transitionDelay: true ? "250ms" : "0ms" }}
+                  >
+                    <Fab
+                      color="primary"
+                      size="small"
+                      onClick={addOption}
+                      id="AddOptionButton"
+                    >
+                      <AddIcon />
+                    </Fab>
+                  </Zoom>
+                </>
+              ) : (
+                <></>
+              )}
             </div>
-            <List options={options} removeOption={removeOption} />
-            <div className="form-control correctAns">
-              <textarea
-                type="text"
-                id="correctAns"
-                name="correctAns"
-                placeholder="Type correct answer..."
-                onChange={handleChange}
-                rows={1}
-              />
-            </div>
+            {!IsWrittenType ? (
+              <>
+                <List options={options} removeOption={removeOption} />
+                <div className="form-control correctAns">
+                  <textarea
+                    type="text"
+                    id="correctAns"
+                    name="correctAns"
+                    placeholder="Type correct answer..."
+                    onChange={handleChange}
+                    rows={1}
+                  />
+                </div>
+              </>
+            ) : (
+              <></>
+            )}
           </div>
         )}
       </form>

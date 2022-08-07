@@ -4,6 +4,9 @@ import { IoArrowBack } from "react-icons/io5";
 import axios from "axios";
 import { useUserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import LoginSignUpPopUp from "../PopUps/LoginSignUpPopUp.jsx";
 
 const JoinQuiz = () => {
   const navigate = useNavigate();
@@ -51,6 +54,7 @@ const JoinQuiz = () => {
           if (element.id === user.userData._id) {
             return true;
           }
+          return false;
         });
         setIsFound(IsFound);
       } catch (err) {
@@ -150,36 +154,42 @@ const JoinQuiz = () => {
             <p>loading</p>
           ) : (
             <>
-              <IoArrowBack
-                className="back-icon"
-                onClick={() => navigate("../")}
+              <div id="joinQuizHeader">
+                <IoArrowBack
+                  className="back-icon"
+                  onClick={() => navigate("../")}
+                />
+                <div id="navigationTab">
+                  {Data.map((question, i) => {
+                    const { id } = question;
+                    return (
+                      <>
+                        <Button
+                          variant="outlined"
+                          className="questionLocator"
+                          onClick={() => {
+                            setIndex(i);
+                          }}
+                          id={id}
+                        >
+                          {i}
+                        </Button>
+                      </>
+                    );
+                  })}
+                </div>
+              </div>
+              <TextField
+                id="question"
+                key={Data[index].id}
+                value={Data[index].Question}
               />
-              <div>
-                {Data.map((question, i) => {
-                  const { id } = question;
-                  return (
-                    <>
-                      <button
-                        className="questionLocator"
-                        onClick={() => {
-                          setIndex(i);
-                        }}
-                        id={id}
-                      >
-                        {i}
-                      </button>
-                    </>
-                  );
-                })}
-              </div>
-              <div id="question" key={Data[index].id}>
-                <p>{Data[index].Question}</p>
-              </div>
               <div id="options">
                 {Data[index].options.map((option, i) => {
                   return (
                     <>
                       <div className="option" key={i}>
+                        <p>option {i + 1}</p>
                         <p>{option.value}</p>
                       </div>
                     </>
@@ -188,19 +198,21 @@ const JoinQuiz = () => {
               </div>
               <div id="answer">
                 <p>answer</p>
-                <input
+                <TextField
                   type="text"
                   id="submittedAns"
                   name="submittedAns"
                   onChange={handleChange}
                 />
               </div>
-              <button onClick={() => TakeAnswer()}>Next</button>
+              <Button variant="outlined" onClick={() => TakeAnswer()}>
+                Next
+              </Button>
             </>
           )}
         </>
       ) : (
-        <button onClick={() => googleSignIn()}>Login</button>
+        <LoginSignUpPopUp />
       )}
     </>
   );
