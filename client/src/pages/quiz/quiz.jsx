@@ -113,12 +113,12 @@ export const Quiz = () => {
           </div>
           <div id="q-mainBody">
             <Button
-              variant="contained"
+              variant="outlined"
               id="CreateQuizButton"
               onClick={() => navigate("/createQuiz")}
             >
               <AddBoxIcon
-                style={{ position: "relative", right: "1rem", height: "28px" }}
+                style={{ position: "relative", right: "1rem", height: "28px"}}
               />
               Create Test
             </Button>

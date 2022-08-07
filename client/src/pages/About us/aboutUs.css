@@ -56,11 +56,11 @@
 }
 
 #light #button {
-  background-color: #ffb74d;
-  color: white;
+  color: #ffb74d;
+  border-color:#ffb74d;
 }
 
 #dark #button {
-  background-color: #FFEA41;
-  color: #151a30;
+  border-color: #FFEA41;
+  color: #FFEA41;
 }

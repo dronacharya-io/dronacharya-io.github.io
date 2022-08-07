@@ -125,7 +125,7 @@ const QuizSetting = (props) => {
     <>
       <div id="centerContent">
         <Button
-          variant="contained"
+          variant="outlined"
           onClick={() => {
             setDrawerOpen(true);
           }}

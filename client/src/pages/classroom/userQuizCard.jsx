@@ -16,6 +16,7 @@ import { useNavigate } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CreateIcon from "@mui/icons-material/Create";
 import ReplyIcon from "@mui/icons-material/Reply";
+import Tooltip from "@mui/material/Tooltip";
 
 export function UserQuizCard(props) {
   const { user } = useUserAuth();
@@ -151,37 +152,67 @@ export function UserQuizCard(props) {
           </Typography>
         </CardContent>
         <CardActions>
-          <CopyToClipboard text={currentBaseURL + props.id}>
-            <Button
-              id="button"
-              variant="contained"
-              size="small"
-              onClick={handleClick}
-            >
-              <ReplyIcon />
-            </Button>
-          </CopyToClipboard>
+        <Tooltip
+            title="Share Link"
+            placement="left"
+            disableFocusListener
+            disableTouchListener
+            arrow
+          >
+            <div>
+              <CopyToClipboard text={currentBaseURL + props.id}>
+                <Button
+                  id="button"
+                  size="small"
+                  variant="outlined"
+                  onClick={handleClick}
+                >
+                  <ReplyIcon />
+                </Button>
+              </CopyToClipboard>
+            </div>
+          </Tooltip>
           <Popper id={id} open={open} anchorEl={anchorEl}>
             <Box sx={{ border: 1, p: 1, bgcolor: "background.paper" }}>
               Link Copied!
             </Box>
           </Popper>
-          <Button
-            id="button"
-            variant="contained"
-            size="small"
-            onClick={handleEdit}
+          <Tooltip
+            title="Edit"
+            placement="bottom"
+            disableFocusListener
+            disableTouchListener
+            arrow
           >
-            <CreateIcon />
-          </Button>
-          <Button
-            id="button"
-            variant="contained"
-            size="small"
-            onClick={handleDelete}
+              <div>
+                <Button
+                  id="button"
+                  size="small"
+                  variant="outlined"
+                  onClick={handleEdit}
+                >
+                  <CreateIcon />
+                </Button>
+              </div>
+          </Tooltip>
+          <Tooltip
+            title="Delete"
+            placement="right"
+            disableFocusListener
+            disableTouchListener
+            arrow
           >
-            <DeleteIcon />
-          </Button>
+            <div>
+              <Button
+                id="button"
+                size="small"
+                variant="outlined"
+                onClick={handleDelete}
+              >
+                <DeleteIcon />
+              </Button>
+            </div> 
+          </Tooltip>
         </CardActions>
       </Card>
     </>

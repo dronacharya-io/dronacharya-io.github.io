@@ -76,6 +76,7 @@ const ProfileTab = () => {
                 </p>
               </div>
               <Button
+                variant="outlined"
                 onClick={() => {
                   logOut();
                   navigate("../");

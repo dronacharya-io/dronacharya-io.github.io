@@ -95,7 +95,7 @@ const CreateQuiz = () => {
               <Zoom in={true}>
                 <Button
                   id="addQuizButton"
-                  variant="contained"
+                  variant="outlined"
                   color="success"
                   onClick={handleCreate}
                 >

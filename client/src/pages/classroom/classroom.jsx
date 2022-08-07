@@ -89,7 +89,7 @@ export const Classroom = () => {
                     <div>
                       <Button
                         id="joinQuizButton"
-                        variant="contained"
+                        variant="outlined"
                         onClick={() => navigate("/")}
                       >
                         Get Started
@@ -108,7 +108,9 @@ export const Classroom = () => {
           )}
         </div>
       ) : (
-        <button onClick={() => googleSignIn()}>Login</button>
+        <div id="loginPopUp">
+            <button onClick={() => googleSignIn()}>Login</button>
+        </div>
       )}
     </>
   );

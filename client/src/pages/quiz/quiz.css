@@ -116,24 +116,28 @@
 
 
 #light #CreateQuizButton {
+  border-color: #FFEA41;
   box-sizing: border-box;
   background-color: #ffb74d;
+  color: white;
   width: 15rem;
   height: 4rem;
   letter-spacing: 0.8px;
   font-size: 1.3rem;
   margin-right: 2rem;
+  letter-spacing: 1px;
 }
 
 #dark #CreateQuizButton {
   box-sizing: border-box;
-  background-color: #FFEA41;
-  color: #151a30;
+  border-color: #FFEA41;
+  color: #FFEA41;
   width: 15rem;
   height: 4rem;
   letter-spacing: 0.8px;
   font-size: 1.3rem;
   margin-right: 2rem;
+  letter-spacing: 1px;
 }
 
 #light #joinquiztextfeild{

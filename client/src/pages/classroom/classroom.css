@@ -27,6 +27,8 @@
 }
 
 #light #joinQuizButton {
+    color: white;
+    border-color: #ffb74d;
     background-color: #ffb74d;
     margin-top: 4rem;
     left: 20px;
@@ -36,8 +38,8 @@
 }
 
 #dark #joinQuizButton {
-    background-color: #FFEA41;
-    color: #151a30;
+    border-color: #FFEA41;
+    color: #FFEA41;
     margin-top: 4rem;
     left: 20px;
     width: 150px;

@@ -8,17 +8,19 @@
 
 #light #quizSettingButton {
   background-color: #ffb74d;
+  color:white;
+  border-color: #ffb74d;
   margin-top: 4rem;
-  width: 150px;
+  width: auto;
   height: 40px;
   letter-spacing: 2px;
 }
 
 #dark #quizSettingButton {
-  background-color: #FFEA41;
-  color: #151a30;
+  border-color: #FFEA41;
+  color: #FFEA41;
   margin-top: 4rem;
-  width: 150px;
+  width: auto;
   height: 40px;
   letter-spacing: 2px;
 }

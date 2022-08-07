@@ -153,13 +153,20 @@
 }
 
 #light .logout {
-  color: #FF9800;
+  background-color: #ffb74d;
+  color: white;
   position: relative;
+  border-color: #ffb74d;
   top: 45%;
+  width: fit-content;
+  letter-spacing: 1.5px;
 }
 
 #dark .logout {
+  border-color: #FFE102;
   color: #FFE102;
   position: relative;
   top: 45%;
+  width:fit-content;
+  letter-spacing: 1.5px;
 }
