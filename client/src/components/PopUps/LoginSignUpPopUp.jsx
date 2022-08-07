@@ -114,7 +114,7 @@ const LoginSignUpPopUp = () => {
                       
                             <div >
                                 <div id="sparkle">
-                                    <Lottie options={click} height={37} width={150} />
+                                    <Lottie options={click} height={37} width={198} />
                                 </div>
 
                                 <div>
