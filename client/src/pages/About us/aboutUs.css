@@ -33,7 +33,10 @@
   margin: 2rem 1.75rem;
   border: solid 0.5px rgb(233 233 233);
   cursor: pointer;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
   padding: 1rem;
 }
@@ -57,10 +60,30 @@
 
 #light #button {
   color: #ffb74d;
-  border-color:#ffb74d;
+  border-color: #ffb74d;
 }
 
 #dark #button {
   border-color: #FFEA41;
   color: #FFEA41;
+}
+
+#cardContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  height: 5rem;
+}
+
+#cardActions {
+  align-self: center;
+}
+
+.cardActionsIcon {
+  margin: 0 0.2rem
 }

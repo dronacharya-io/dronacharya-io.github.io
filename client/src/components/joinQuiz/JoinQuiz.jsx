@@ -17,6 +17,9 @@ const JoinQuiz = () => {
   const [loading, setLoading] = useState(true);
   const [attendies, setAttendies] = useState();
   const [index, setIndex] = useState(0);
+  const [isFound, setIsFound] = useState(false);
+  const [positiveMarking, setPositiveMarking] = useState(0);
+  const [negativeMarking, setNegativeMarking] = useState(0);
 
   const { user, googleSignIn } = useUserAuth();
   const urlParams = new URLSearchParams(window.location.search);
@@ -40,17 +43,16 @@ const JoinQuiz = () => {
           runTime: data.runTime,
         });
         setAttendies(data.attendies);
+        setPositiveMarking(data.positiveMarking);
+        setNegativeMarking(data.negativeMarking);
         console.log(quizDetails);
         const arr = x.data.attendies;
-        const isFound = arr.some((element) => {
+        const IsFound = arr.some((element) => {
           if (element.id === user.userData._id) {
             return true;
           }
-          return false;
         });
-        if (isFound) {
-          alert("quiz already attempted");
-        }
+        setIsFound(IsFound);
       } catch (err) {
         console.log(err);
       }
@@ -65,44 +67,59 @@ const JoinQuiz = () => {
     Data[index + 1] ? setIndex(index + 1) : setIndex(index);
     handleSubmit();
     if (Data[index].correctAns === submissions[index].submittedAns) {
-      setScore(score + 1);
+      setScore(score + positiveMarking);
       console.log("correct");
+    }
+    if (Data[index].correctAns !== submissions[index].submittedAns) {
+      setScore(score - negativeMarking);
+      console.log("wrong");
     }
     if (Data[index + 1]) {
       setCounter(index + 1);
     }
     if (!Data[index + 1]) {
       if (Data[index].correctAns === submissions[index].submittedAns) {
-        setScore(score + 1);
+        setScore(score + positiveMarking);
         console.log("correct");
       }
-      try {
-        const url =
-          "http://localhost:8800/api/users/updateUser/" +
-          user.userData._id.toString();
-        console.log(url);
-        const arr = user.userData.quizzesSubmitted;
-        arr.push(quizDetails);
-        console.log(arr);
-        await axios.put(url, { quizzesSubmitted: arr });
-        console.log({ quizzesSubmitted: arr });
-      } catch (err) {
-        console.log(err.message);
+      if (Data[index].correctAns !== submissions[index].submittedAns) {
+        setScore(score - negativeMarking);
+        console.log("wrong");
       }
-      try {
-        attendies.push({
-          userId: user.userData._id,
-          userName: user.displayName,
-          submissions: submissions,
-        });
-        await axios.put(
-          "http://localhost:8800/api/quizzes/updateQuiz/" + urlParams.get("id"),
-          { attendies: attendies }
-        );
-      } catch (err) {
-        console.log(err.message);
+      if (!isFound) {
+        try {
+          const url =
+            "http://localhost:8800/api/users/updateUser/" +
+            user.userData._id.toString();
+          console.log(url);
+          const arr = user.userData.quizzesSubmitted;
+          arr.push(quizDetails);
+          console.log(arr);
+          await axios.put(url, { quizzesSubmitted: arr });
+          console.log({ quizzesSubmitted: arr });
+        } catch (err) {
+          console.log(err.message);
+        }
+        try {
+          attendies.push({
+            userId: user.userData._id,
+            userName: user.displayName,
+            submissions: submissions,
+            score: score,
+          });
+          await axios.put(
+            "http://localhost:8800/api/quizzes/updateQuiz/" +
+              urlParams.get("id"),
+            { attendies: attendies }
+          );
+        } catch (err) {
+          console.log(err.message);
+        }
+        alert("Test Submitted!");
+        navigate("../scorecard");
+      } else {
+        alert("Test already attempted!");
       }
-      alert("Test Submitted!");
     }
     console.log(score);
   };
