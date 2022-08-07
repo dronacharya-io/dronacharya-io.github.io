@@ -8,9 +8,10 @@ import Zoom from "@mui/material/Zoom";
 import { useNavigate } from "react-router-dom";
 import Lottie from "react-lottie";
 import animationData from "../../lotties/notfound.json";
+import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp"
 
 export const Classroom = () => {
-  const { user, googleSignIn } = useUserAuth();
+  const { user} = useUserAuth();
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
     quizzesCreated: [{ quiz: { quizName: "null", startDate: 0, runTime: 0 } }],
@@ -20,9 +21,6 @@ export const Classroom = () => {
 
   useEffect(() => {
     setLoading(true);
-    if (!user) {
-      googleSignIn();
-    }
     async function Fetch() {
       try {
         const res = await axios.get(
@@ -108,9 +106,7 @@ export const Classroom = () => {
           )}
         </div>
       ) : (
-        <div id="loginPopUp">
-            <button onClick={() => googleSignIn()}>Login</button>
-        </div>
+          <LoginSignUpPopUp/>
       )}
     </>
   );
