@@ -88,9 +88,9 @@ const ProfileTab = () => {
             </>
           ) : (
             <>
-              <button onClick={handleGoogleSignIn} className="navButton">
+              <Button variant="outlined" className="navButton logout" onClick={handleGoogleSignIn} >
                 Login/SignUp
-              </button>
+              </Button>
             </>
           )}
         </div>
