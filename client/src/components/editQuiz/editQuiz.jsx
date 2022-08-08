@@ -15,6 +15,7 @@ const EditQuiz = () => {
   const [settingsTab, setSettingsTab] = useState(false);
   const [loading, setLoading] = useState(true);
   const [quizDetails, setQuizDetails] = useState();
+  const [isOwner, setIsOwner] = useState(false);
 
   const navigate = useNavigate();
   const { user } = useUserAuth();
@@ -54,10 +55,12 @@ const EditQuiz = () => {
       try {
         console.log("called");
         const x = await axios.get(
-          "http://localhost:8800/api/quizzes/attemptQuiz/" + urlParams.get("id")
+          "http://localhost:8800/api/quizzes/attemptQuiz/" +
+            urlParams.get("quizId")
         );
         console.log(x);
-        const { data } = x;
+        const data = x.data;
+        setIsOwner(data.creatorId === urlParams.get("userId"));
         setQuestions(data.questions);
         console.log(questions);
         setQuizDetails(data);
@@ -79,7 +82,8 @@ const EditQuiz = () => {
       quiz = { ...quiz, questions: questions };
       console.log(quiz);
       const res = await axios.put(
-        "http://localhost:8800/api/quizzes/updateQuiz/" + urlParams.get("id"),
+        "http://localhost:8800/api/quizzes/updateQuiz/" +
+          urlParams.get("quizId"),
         quiz
       );
       const url =
@@ -88,11 +92,11 @@ const EditQuiz = () => {
       console.log(url);
       const arr = user.userData.quizzesCreated;
       arr.push({
-        id: res.data.details._id,
-        name: res.data.details.quizname,
-        startDate: res.data.details.startDate,
-        startTime: res.data.details.startTime,
-        runTime: res.data.details.runTime,
+        id: res?.data.details._id,
+        name: res?.data.details.quizname,
+        startDate: res?.data.details.startDate,
+        startTime: res?.data.details.startTime,
+        runTime: res?.data.details.runTime,
       });
       console.log(arr);
       await axios.put(url, { quizzesCreated: arr });

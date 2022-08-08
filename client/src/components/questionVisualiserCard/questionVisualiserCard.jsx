@@ -5,12 +5,16 @@ import Zoom from "@mui/material/Zoom";
 import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import { Fab } from "@mui/material";
+import Checkbox from "@mui/material/Checkbox";
+import InputLabel from "@mui/material/InputLabel";
 
 const QuestionVisualiserCard = (props) => {
-  const { id, Question, options, correctAns } = props.question;
+  const { id, Question, options, correctAns, isWrittenType } = props.question;
   const [question, setQuestion] = useState({
     Question: Question,
     correctAns: correctAns,
+    isWrittenType: isWrittenType,
+    options: options,
   });
 
   const [showElements, setShowElements] = useState(false);
@@ -18,6 +22,7 @@ const QuestionVisualiserCard = (props) => {
   const AddQuestionText = "Save Question";
   const [option, setOption] = useState({ value: undefined });
   const [Options, setOptions] = useState(options);
+  // const [IsWrittenType, setIsWrittenType] = useState(isWrittenType);
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -28,9 +33,15 @@ const QuestionVisualiserCard = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setQuestion({ ...question, options: Options });
+    setQuestion({
+      ...question,
+      options: Options,
+    });
     console.log(question);
-    if (question.Question && question.correctAns && question.options) {
+    if (
+      (question.Question && question.correctAns && question.options) ||
+      (question.Question && question.isWrittenType)
+    ) {
       const newQuestion = {
         ...question,
         id: id,
@@ -94,41 +105,71 @@ const QuestionVisualiserCard = (props) => {
               </Zoom>
               <div>
                 <Zoom in={true}>
-                  <textarea
-                    type="text"
-                    id="option"
-                    name="option"
-                    className="options"
-                    placeholder="Options.."
-                    rows={1}
-                    onChange={handleOption}
-                  />
+                  <div>
+                    <InputLabel>
+                      Is answer written Type
+                      <Checkbox
+                        value={question.isWrittenType}
+                        defaultChecked={question.isWrittenType}
+                        onClick={() =>
+                          setQuestion({
+                            ...question,
+                            isWrittenType: !question.isWrittenType,
+                          })
+                        }
+                        id="IsWrittenType"
+                      />
+                    </InputLabel>
+                  </div>
                 </Zoom>
-                <Zoom
-                  in={true}
-                  style={{ transitionDelay: true ? "250ms" : "0ms" }}
-                >
-                  <Fab
-                    color="primary"
-                    size="small"
-                    onClick={addOption}
-                    id="AddOptionButton"
-                  >
-                    <AddIcon />
-                  </Fab>
-                </Zoom>
+                {!question.isWrittenType ? (
+                  <>
+                    <Zoom in={true}>
+                      <textarea
+                        type="text"
+                        id="option"
+                        name="option"
+                        className="options"
+                        placeholder="Options.."
+                        rows={1}
+                        onChange={handleOption}
+                      />
+                    </Zoom>
+                    <Zoom
+                      in={true}
+                      style={{ transitionDelay: true ? "250ms" : "0ms" }}
+                    >
+                      <Fab
+                        color="primary"
+                        size="small"
+                        onClick={addOption}
+                        id="AddOptionButton"
+                      >
+                        <AddIcon />
+                      </Fab>
+                    </Zoom>
+                  </>
+                ) : (
+                  <></>
+                )}
               </div>
-              <List options={Options} removeOption={removeOption} />
-              <div className="form-control correctAns">
-                <textarea
-                  type="text"
-                  id="correctAns"
-                  name="correctAns"
-                  value={question.correctAns}
-                  onChange={handleChange}
-                  rows={1}
-                />
-              </div>
+              {!question.isWrittenType ? (
+                <>
+                  <List options={Options} removeOption={removeOption} />
+                  <div className="form-control correctAns">
+                    <textarea
+                      type="text"
+                      id="correctAns"
+                      name="correctAns"
+                      value={question.correctAns}
+                      onChange={handleChange}
+                      rows={1}
+                    />
+                  </div>
+                </>
+              ) : (
+                <></>
+              )}
             </div>
           )}
         </form>
@@ -140,7 +181,7 @@ const QuestionVisualiserCard = (props) => {
 const List = ({ options, removeOption }) => {
   return (
     <>
-      {options.map((option) => {
+      {options?.map((option) => {
         return (
           <SingleOption
             key={option.id}

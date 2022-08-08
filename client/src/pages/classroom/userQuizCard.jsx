@@ -33,7 +33,6 @@ export function UserQuizCard(props) {
   const [currentTime, setCurrentTime] = useState(
     new Date().getHours() + ":" + new Date().getMinutes()
   );
-  const tempImage = "https://picsum.photos/seed/picsum/240/240";
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -42,7 +41,7 @@ export function UserQuizCard(props) {
   };
 
   const handleEdit = async () => {
-    navigate("../editQuiz?id=" + props.id);
+    navigate("../editQuiz?quizId=" + props.id + "&userId=" + user.userData._id);
   };
 
   const handleDelete = async () => {

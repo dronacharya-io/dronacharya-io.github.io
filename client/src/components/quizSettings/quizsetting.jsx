@@ -15,8 +15,10 @@ import Sparkles from "../../lotties/stars.json";
 import Zoom from "@mui/material/Zoom";
 import spaceManTwo from "../../lotties/spaceman2.json";
 import sunAnimation from "../../lotties/sun.json";
+import { useUserAuth } from "../../context/AuthContext";
 
 const QuizSetting = (props) => {
+  const { user } = useUserAuth();
   const [values, setValues] = useState({
     quizname: props.quizDetails?.quizname,
     subject: props.quizDetails?.subject,
@@ -28,6 +30,7 @@ const QuizSetting = (props) => {
     startDate: props.quizDetails?.startDate,
     startTime: props.quizDetails?.startTime,
     runTime: props.quizDetails?.runTime,
+    creatorId: props.quizDetails?.creatorId,
   });
 
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -71,6 +74,7 @@ const QuizSetting = (props) => {
 
   const handleClick = async (e) => {
     e.preventDefault();
+    setValues({ ...values, creatorId: user.userData._id });
     props.func(values);
     setDrawerOpen(false);
   };

@@ -14,11 +14,12 @@ const QuestionCard = (props) => {
     Question: undefined,
     correctAns: undefined,
     isWrittenType: false,
+    options: [],
   });
 
   const [showElements, setShowElements] = useState(false);
   const [row, setRow] = useState("1");
-  const AddQuetionText = "Add Question";
+  const AddQuestionText = "Add Question";
   const [option, setOption] = useState({ value: undefined });
   const [options, setOptions] = useState([]);
   const [IsWrittenType, setIsWrittenType] = useState(false);
@@ -103,7 +104,7 @@ const QuestionCard = (props) => {
                 id="addQuestionButton"
                 aria-label="add"
               >
-                {`${AddQuetionText}`}
+                {`${AddQuestionText}`}
               </Button>
             </Zoom>
             <div>
