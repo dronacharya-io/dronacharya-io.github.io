@@ -24,7 +24,7 @@ const Navbar = () => {
         <span id="logo">
           <img
             src={Logo}
-            style={{ width: "3rem", height: "3rem" }}
+            style={{ width: "3rem", height: "auto" }}
             onClick={() => {
               navigate("/");
             }}
