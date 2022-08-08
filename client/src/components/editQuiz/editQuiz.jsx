@@ -92,11 +92,11 @@ const EditQuiz = () => {
       console.log(url);
       const arr = user.userData.quizzesCreated;
       arr.push({
-        id: res?.data.details._id,
-        name: res?.data.details.quizname,
-        startDate: res?.data.details.startDate,
-        startTime: res?.data.details.startTime,
-        runTime: res?.data.details.runTime,
+        id: res.data._id,
+        name: res.data.quizname,
+        startDate: res.data.startDate,
+        startTime: res.data.startTime,
+        runTime: res.data.runTime,
       });
       console.log(arr);
       await axios.put(url, { quizzesCreated: arr });
