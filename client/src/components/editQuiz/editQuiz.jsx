@@ -40,7 +40,7 @@ const EditQuiz = () => {
     );
   };
 
-  const [output, setOutput] = useState([]);
+  const [output, setOutput] = useState();
   const show = (x) => {
     setOutput(x);
     console.log(output);
@@ -48,7 +48,7 @@ const EditQuiz = () => {
   };
 
   const urlParams = new URLSearchParams(window.location.search);
-  console.log(urlParams.get("id"));
+  console.log(urlParams.get("quizId"));
   useEffect(() => {
     setLoading(true);
     async function fetch() {
@@ -59,11 +59,10 @@ const EditQuiz = () => {
             urlParams.get("quizId")
         );
         console.log(x);
-        const data = x.data;
-        setIsOwner(data.creatorId === urlParams.get("userId"));
-        setQuestions(data.questions);
+        setIsOwner(x.data.creatorId === urlParams.get("userId"));
+        setQuestions(x.data.questions);
         console.log(questions);
-        setQuizDetails(data);
+        setQuizDetails(x.data);
         console.log(quizDetails);
       } catch (err) {
         console.log(err);
@@ -91,16 +90,22 @@ const EditQuiz = () => {
         user.userData._id.toString();
       console.log(url);
       const arr = user.userData.quizzesCreated;
-      arr.push({
-        id: res.data._id,
-        name: res.data.quizname,
-        startDate: res.data.startDate,
-        startTime: res.data.startTime,
-        runTime: res.data.runTime,
+      const arr_m = arr.filter((quiz) => {
+        if (quiz.id === res.data._id) {
+          return {
+            id: res.data._id,
+            name: res.data.quizname,
+            startDate: res.data.startDate,
+            startTime: res.data.startTime,
+            runTime: res.data.runTime,
+          };
+        }
+        return quiz;
       });
-      console.log(arr);
-      await axios.put(url, { quizzesCreated: arr });
-      console.log({ quizzesCreated: arr });
+
+      console.log(arr_m);
+      await axios.put(url, { quizzesCreated: arr_m });
+      console.log({ quizzesCreated: arr_m });
       const redirectURL = "../classroom";
       navigate(redirectURL);
     } catch (err) {

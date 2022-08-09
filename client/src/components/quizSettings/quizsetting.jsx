@@ -19,25 +19,14 @@ import { useUserAuth } from "../../context/AuthContext";
 
 const QuizSetting = (props) => {
   const { user } = useUserAuth();
-  const [values, setValues] = useState({
-    quizname: props.quizDetails?.quizname,
-    subject: props.quizDetails?.subject,
-    isMcq: props.quizDetails?.isMcq,
-    timePerQuestion: props.quizDetails?.timePerQuestion,
-    isNegative: props.quizDetails?.isNegative,
-    positiveMarking: props.quizDetails?.positiveMarking,
-    negativeMarking: props.quizDetails?.negativeMarking,
-    startDate: props.quizDetails?.startDate,
-    startTime: props.quizDetails?.startTime,
-    runTime: props.quizDetails?.runTime,
-    creatorId: props.quizDetails?.creatorId,
-  });
+  const [values, setValues] = useState(props.quizDetails);
 
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const [alertStatus, setAlertStatus] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
+      console.log(values);
       setDrawerOpen(true);
       setAlertStatus(true);
     }, 100);
