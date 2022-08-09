@@ -115,40 +115,49 @@ const EditQuiz = () => {
 
   return (
     <>
-      <div>
-        <QuizSetting func={show} quizDetails={quizDetails} />
-
-        <IoArrowBack className="back-icon-c" onClick={() => navigate("../")} />
-        <div>
-          <QuestionCard addQuestion={addQuestion} />
-        </div>
-        {true && (
+      {!loading ? (
+        <>
           <div>
-            <Zoom in={true}>
-              <Button
-                id="addQuizButton"
-                variant="contained"
-                color="success"
-                onClick={handleSave}
-              >
-                add quiz
-              </Button>
-            </Zoom>
-          </div>
-        )}
-        {questions.map((question) => {
-          return (
-            <>
-              <div key={question.id}>
-                <QuestionVisualiserCard
-                  question={question}
-                  editQuestion={editQuestion}
-                />
+            <QuizSetting func={show} quizDetails={quizDetails} />
+
+            <IoArrowBack
+              className="back-icon-c"
+              onClick={() => navigate("../")}
+            />
+            <div>
+              <QuestionCard addQuestion={addQuestion} />
+            </div>
+            {true && (
+              <div>
+                <Zoom in={true}>
+                  <Button
+                    id="addQuizButton"
+                    variant="contained"
+                    color="success"
+                    onClick={handleSave}
+                  >
+                    add quiz
+                  </Button>
+                </Zoom>
               </div>
-            </>
-          );
-        })}
-      </div>
+            )}
+            {questions.map((question) => {
+              return (
+                <>
+                  <div key={question.id}>
+                    <QuestionVisualiserCard
+                      question={question}
+                      editQuestion={editQuestion}
+                    />
+                  </div>
+                </>
+              );
+            })}
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
     </>
   );
 };
