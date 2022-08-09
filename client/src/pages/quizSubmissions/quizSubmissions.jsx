@@ -33,7 +33,6 @@ const QuizSubmissions = () => {
       {data?.map((attendie) => {
         return (
           <> 
-          
             <button
               onClick={() =>
                 navigate(
@@ -44,7 +43,7 @@ const QuizSubmissions = () => {
                 )
               }
             >
-              {attendie.email} 
+              {attendie.score} 
             </button>
           </>
         );
