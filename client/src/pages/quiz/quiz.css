@@ -116,7 +116,7 @@
 
 
 #light #CreateQuizButton {
-  border-color: #FFEA41;
+  border-color: #ffb74d;
   box-sizing: border-box;
   background-color: #ffb74d;
   color: white;
@@ -126,6 +126,7 @@
   font-size: 1.3rem;
   margin-right: 2rem;
   letter-spacing: 1px;
+  box-shadow: 0 0 0.3rem 0rem rgb(118, 118, 118);
 }
 
 #dark #CreateQuizButton {

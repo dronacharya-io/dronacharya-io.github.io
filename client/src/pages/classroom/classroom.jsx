@@ -102,6 +102,7 @@ export const Classroom = () => {
               <CardSkeleton />
               <CardSkeleton />
               <CardSkeleton />
+              <CardSkeleton />
             </>
           )}
         </div>

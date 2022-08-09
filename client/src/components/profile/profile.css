@@ -160,6 +160,7 @@
   top: 45%;
   width: fit-content;
   letter-spacing: 1.5px;
+  box-shadow: 0 0 0.3rem 0rem rgb(118, 118, 118);
 }
 
 #dark .logout {
