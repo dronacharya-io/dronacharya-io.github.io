@@ -68,9 +68,6 @@ const LoginSignUpPopUp = () => {
   return (
     <>
         <div id="backgroundParent">
-            <div id="backgroundSpankle">
-                <Lottie  options={click} height={height} width={width} />
-            </div>
             <Zoom
             in={true}
             style={{ transitionDelay: true ? "100ms" : "0ms" }}>
