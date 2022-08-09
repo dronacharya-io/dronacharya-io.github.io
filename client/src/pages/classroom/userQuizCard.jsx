@@ -219,19 +219,14 @@ export const CardSkeleton = () => {
       <Button disabled>
         <Skeleton width={200} height={40} />
       </Button>
-      <Skeleton height={100} width="100%" />
-      <CardContent>
+        <Skeleton height={100} width="100%" />
         <Skeleton height={40} width="70%" />
         <Skeleton variant="text" width="30%" />
-      </CardContent>
-      <CardActions>
-        <Button size="small">
-          <Skeleton height={40} width="50%" />
-        </Button>
-        <Button size="small">
-          <Skeleton height={40} width="50%" />
-        </Button>
-      </CardActions>
+     <Button disabled>
+        <Skeleton height={40} width="70%" />
+        <Skeleton height={40} width="70%" />
+     </Button>
+     
     </Card>
   );
 };

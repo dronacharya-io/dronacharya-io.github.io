@@ -106,7 +106,7 @@ const LoginSignUpPopUp = () => {
                     <Zoom
                     in={true}
                     id="loginButtondiv"
-                    style={{ transitionDelay: true ? "400ms" : "0ms" }}>
+                    style={{ transitionDelay: true ? "600ms" : "0ms" }}>
                         <div>
                       
                             <div >
