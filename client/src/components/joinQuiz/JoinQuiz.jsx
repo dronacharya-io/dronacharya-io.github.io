@@ -22,7 +22,7 @@ const JoinQuiz = () => {
   const [loading, setLoading] = useState(true);
   const [attendies, setAttendies] = useState();
   const [index, setIndex] = useState(0);
-  const [isFound, setIsFound] = useState(Data[0].isWrittenType);
+  const [isFound, setIsFound] = useState();
   const [IsWrittenType, setIswrittenType] = useState(true);
   const [positiveMarking, setPositiveMarking] = useState(0);
   const [negativeMarking, setNegativeMarking] = useState(0);
@@ -41,7 +41,7 @@ const JoinQuiz = () => {
         );
         console.log(x);
         setData(x.data.questions);
-        setIswrittenType(Data[0].isWrittenType);
+        setIswrittenType(x.data.questions[0].isWrittenType);
         var { _id, quizname, startDate, runTime } = x;
         console.log(Data);
         setQuizDetails({
