@@ -18,7 +18,7 @@ const QuizSubmissions = () => {
           "http://localhost:8800/api/quizzes/attemptQuiz/" + urlParams.get("id")
         );
         setData(res.data.attendies);
-        
+        console.log(data)
       } catch (err) {
         console.log(err.message);
       }
@@ -32,7 +32,8 @@ const QuizSubmissions = () => {
     <>
       {data?.map((attendie) => {
         return (
-          <>
+          <> 
+          
             <button
               onClick={() =>
                 navigate(
@@ -43,7 +44,7 @@ const QuizSubmissions = () => {
                 )
               }
             >
-              {attendie.userName}
+              {attendie.email} 
             </button>
           </>
         );
