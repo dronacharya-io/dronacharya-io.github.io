@@ -114,6 +114,7 @@ const JoinQuiz = () => {
           attendies.push({
             userId: user.userData._id,
             userName: user.displayName,
+            userEmail: user.email,
             submissions: submissions,
             score: score,
           });
