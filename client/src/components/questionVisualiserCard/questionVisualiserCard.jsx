@@ -22,7 +22,6 @@ const QuestionVisualiserCard = (props) => {
   const AddQuestionText = "Save Question";
   const [option, setOption] = useState({ value: undefined });
   const [Options, setOptions] = useState(options);
-  // const [IsWrittenType, setIsWrittenType] = useState(isWrittenType);
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -57,6 +56,7 @@ const QuestionVisualiserCard = (props) => {
       console.log(newOption);
       setOptions([...Options, newOption]);
       console.log(Options);
+      setQuestion({ ...question, options: Options });
     }
   };
 
@@ -111,12 +111,12 @@ const QuestionVisualiserCard = (props) => {
                       <Checkbox
                         value={question.isWrittenType}
                         defaultChecked={question.isWrittenType}
-                        onClick={() =>
+                        onClick={() => {
                           setQuestion({
                             ...question,
                             isWrittenType: !question.isWrittenType,
-                          })
-                        }
+                          });
+                        }}
                         id="IsWrittenType"
                       />
                     </InputLabel>
