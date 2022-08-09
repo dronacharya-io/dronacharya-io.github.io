@@ -6,6 +6,8 @@ import { useUserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import LoginSignUpPopUp from "../PopUps/LoginSignUpPopUp.jsx";
 
 const JoinQuiz = () => {
@@ -20,7 +22,8 @@ const JoinQuiz = () => {
   const [loading, setLoading] = useState(true);
   const [attendies, setAttendies] = useState();
   const [index, setIndex] = useState(0);
-  const [isFound, setIsFound] = useState(false);
+  const [isFound, setIsFound] = useState(Data[0].isWrittenType);
+  const [IsWrittenType, setIswrittenType] = useState(true);
   const [positiveMarking, setPositiveMarking] = useState(0);
   const [negativeMarking, setNegativeMarking] = useState(0);
 
@@ -37,21 +40,23 @@ const JoinQuiz = () => {
           "http://localhost:8800/api/quizzes/attemptQuiz/" + urlParams.get("id")
         );
         console.log(x);
-        const { data } = x;
-        setData(data.questions);
+        setData(x.data.questions);
+        setIswrittenType(Data[0].isWrittenType);
+        var { _id, quizname, startDate, runTime } = x;
+        console.log(Data);
         setQuizDetails({
-          id: data._id,
-          name: data.quizname,
-          startDate: data.startDate,
-          runTime: data.runTime,
+          id: _id,
+          name: quizname,
+          startDate: startDate,
+          runTime: runTime,
         });
-        setAttendies(data.attendies);
-        setPositiveMarking(data.positiveMarking);
-        setNegativeMarking(data.negativeMarking);
+        setAttendies(x.data.attendies);
+        setPositiveMarking(x.data.positiveMarking);
+        setNegativeMarking(x.data.negativeMarking);
         console.log(quizDetails);
         const arr = x.data.attendies;
         const IsFound = arr.some((element) => {
-          if (element.id === user.userData._id) {
+          if (element.id === user?.userData._id) {
             return true;
           }
           return false;
@@ -69,6 +74,7 @@ const JoinQuiz = () => {
 
   const TakeAnswer = async () => {
     Data[index + 1] ? setIndex(index + 1) : setIndex(index);
+    setIswrittenType(Data[index].isWrittenType);
     handleSubmit();
     if (Data[index].correctAns === submissions[index].submittedAns) {
       setScore(score + positiveMarking);
@@ -169,6 +175,7 @@ const JoinQuiz = () => {
                           className="questionLocator"
                           onClick={() => {
                             setIndex(i);
+                            setIswrittenType(Data[i].isWrittenType);
                           }}
                           id={id}
                         >
@@ -198,12 +205,23 @@ const JoinQuiz = () => {
               </div>
               <div id="answer">
                 <p>answer</p>
-                <TextField
-                  type="text"
-                  id="submittedAns"
-                  name="submittedAns"
-                  onChange={handleChange}
-                />
+                {!IsWrittenType ? (
+                  <TextField
+                    type="text"
+                    id="submittedAns"
+                    name="submittedAns"
+                    onChange={handleChange}
+                  />
+                ) : (
+                  <IconButton
+                    color="primary"
+                    aria-label="upload picture"
+                    component="label"
+                  >
+                    <input hidden accept="image/*" type="file" />
+                    <PhotoCamera />
+                  </IconButton>
+                )}
               </div>
               <Button variant="outlined" onClick={() => TakeAnswer()}>
                 Next

@@ -27,7 +27,7 @@ const QuizSetting = (props) => {
 
   useEffect(() => {
     setLoading(true);
-    setValues(props.quizDetails);
+    props.quizDetails ? setValues(props.quizDetails) : console.log("");
     setLoading(false);
     setTimeout(() => {
       setDrawerOpen(true);
@@ -224,7 +224,7 @@ const QuizSetting = (props) => {
                           id="quizname"
                           label="Required"
                           name="quizname"
-                          value={values.quizname}
+                          value={values?.quizname}
                           onChange={handleChange}
                         />
                       </div>
@@ -242,7 +242,7 @@ const QuizSetting = (props) => {
                             id="subject"
                             label="Required"
                             name="subject"
-                            value={values.subject}
+                            value={values?.subject}
                             onChange={handleChange}
                           />
                         </div>
@@ -262,7 +262,7 @@ const QuizSetting = (props) => {
                               id="isMcq"
                               type="checkbox"
                               onChange={handleCheckbox}
-                              defaultChecked={values.isMcq}
+                              defaultChecked={values?.isMcq}
                               color="success"
                             />
                           </InputLabel>
@@ -282,7 +282,7 @@ const QuizSetting = (props) => {
                             id="timePerQuestion"
                             name="timePerQuestion"
                             label="Required"
-                            value={values.timePerQuestion}
+                            value={values?.timePerQuestion}
                             onChange={handleChange}
                           />
                         </div>
@@ -304,7 +304,7 @@ const QuizSetting = (props) => {
                             label="Required"
                             type="number"
                             min={1}
-                            value={values.positiveMarking}
+                            value={values?.positiveMarking}
                             onChange={handleChange}
                           />
                         </article>
@@ -323,7 +323,9 @@ const QuizSetting = (props) => {
                             name="isNegative"
                             id="isNegative"
                             type="checkbox"
-                            defaultChecked={values.isNegative}
+                            defaultChecked={
+                              values?.isNegative ? values.isNegative : undefined
+                            }
                             onChange={handleCheckbox}
                           />
                         </article>
@@ -337,7 +339,7 @@ const QuizSetting = (props) => {
                         <article
                           id="checkbox"
                           style={{
-                            visibility: !values.isNegative ? "hidden" : "",
+                            visibility: !values?.isNegative ? "hidden" : "",
                           }}
                         >
                           <InputLabel id="inputLabel">
@@ -348,7 +350,7 @@ const QuizSetting = (props) => {
                             id="negativeMarking"
                             type="number"
                             min={0}
-                            value={values.negativeMarking}
+                            value={values?.negativeMarking}
                             onChange={handleChange}
                           />
                         </article>
@@ -366,7 +368,7 @@ const QuizSetting = (props) => {
                             id="startDate"
                             type="date"
                             min={curDate}
-                            value={values.startDate}
+                            value={values?.startDate}
                             onChange={handleChange}
                           />
                         </article>
@@ -383,7 +385,7 @@ const QuizSetting = (props) => {
                             name="startTime"
                             id="startTime"
                             type="time"
-                            value={values.startTime}
+                            value={values?.startTime}
                             onChange={handleChange}
                           />
                         </article>
@@ -400,7 +402,7 @@ const QuizSetting = (props) => {
                             name="runTime"
                             id="runTime"
                             type="time"
-                            value={values.runTime}
+                            value={values?.runTime}
                             onChange={handleChange}
                           />
                         </article>
