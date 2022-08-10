@@ -49,7 +49,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT || 8800, () => {
   connect();
   console.log("Connected to backend.");
 });
