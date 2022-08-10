@@ -22,9 +22,8 @@ const JoinQuiz = () => {
   const [quizDetails, setQuizDetails] = useState(undefined);
   const [loading, setLoading] = useState(true);
   const [attendies, setAttendies] = useState();
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState();
   const [isFound, setIsFound] = useState();
-  const [IsWrittenType, setIswrittenType] = useState(true);
   const [positiveMarking, setPositiveMarking] = useState(0);
   const [negativeMarking, setNegativeMarking] = useState(0);
 
@@ -42,8 +41,8 @@ const JoinQuiz = () => {
         );
         console.log(x);
         setData(x.data.questions);
-        setIswrittenType(x.data.questions[0].isWrittenType);
-        var { _id, quizname, startDate, runTime } = x;
+        // setIswrittenType(x.data.questions[0].isWrittenType);
+        var { _id, quizname, startDate, runTime } = x.data;
         console.log(Data);
         setQuizDetails({
           id: _id,
@@ -55,9 +54,10 @@ const JoinQuiz = () => {
         setPositiveMarking(x.data.positiveMarking);
         setNegativeMarking(x.data.negativeMarking);
         console.log(quizDetails);
+        setIndex(0);
         const arr = x.data.attendies;
         const IsFound = arr.some((element) => {
-          if (element.id === user?.userData._id) {
+          if (element.id === user?.userData?._id) {
             return true;
           }
           return false;
@@ -74,8 +74,9 @@ const JoinQuiz = () => {
   }, []);
 
   const TakeAnswer = async () => {
+    console.log(Data[index]);
     Data[index + 1] ? setIndex(index + 1) : setIndex(index);
-    setIswrittenType(Data[index].isWrittenType);
+    // setIswrittenType(Data[index].isWrittenType);
     handleSubmit();
     if (Data[index].correctAns === submissions[index].submittedAns) {
       setScore(score + positiveMarking);
@@ -139,7 +140,7 @@ const JoinQuiz = () => {
   const handleChange = (e) => {
     const value = e.target.value;
     setSubmission({ submittedAns: value });
-    document.getElementById("submittedAns").val("");
+    document.getElementById("submittedAns").value("");
   };
   const Input = styled("input")({
     display: "none",
@@ -180,7 +181,7 @@ const JoinQuiz = () => {
                           className="questionLocator"
                           onClick={() => {
                             setIndex(i);
-                            setIswrittenType(Data[i].isWrittenType);
+                            // setIswrittenType(Data[i].isWrittenType);
                           }}
                           id={id}
                         >
@@ -210,14 +211,14 @@ const JoinQuiz = () => {
               </div>
               <div id="answer">
                 <p>answer</p>
-                {!IsWrittenType ? (
-                  <TextField
-                    type="text"
-                    id="submittedAns"
-                    name="submittedAns"
-                    onChange={handleChange}
-                  />
-                ) : (
+                {/* {!IsWrittenType ? ( */}
+                <TextField
+                  type="text"
+                  id="submittedAns"
+                  name="submittedAns"
+                  onChange={handleChange}
+                />
+                {/* ) : (
                   <label htmlFor="icon-button-file">
                     <Input accept="image/*" id="icon-button-file" type="file" />
                     <IconButton
@@ -233,7 +234,7 @@ const JoinQuiz = () => {
                       />
                     </IconButton>
                   </label>
-                )}
+                )} */}
               </div>
               <Button variant="outlined" onClick={() => TakeAnswer()}>
                 Next

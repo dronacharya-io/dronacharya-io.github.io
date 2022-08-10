@@ -8,8 +8,10 @@ import Typography from "@mui/material/Typography";
 import Badge from "@mui/material/Badge";
 import Skeleton from "@mui/material/Skeleton";
 import { useNavigate } from "react-router-dom";
+import { useUserAuth } from "../../context/AuthContext.js";
 
 export function UserSubmissionCard(props) {
+  const { user } = useUserAuth();
   const navigate = useNavigate();
   const [zero, setZero] = useState("0");
   const [currentDate, setCurrentDate] = useState(
@@ -90,7 +92,11 @@ export function UserSubmissionCard(props) {
           image={tempImage}
         />
         <CardContent
-          onClick={() => navigate("../quizSubmissions?id=" + props.id)}
+          onClick={() =>
+            navigate(
+              "../quizScore?quizId=" + props.id + "&userId=" + user.userData._id
+            )
+          }
         >
           <Typography
             gutterBottom

@@ -9,11 +9,11 @@ import Checkbox from "@mui/material/Checkbox";
 import InputLabel from "@mui/material/InputLabel";
 
 const QuestionVisualiserCard = (props) => {
-  const { id, Question, options, correctAns, isWrittenType } = props.question;
+  const { id, Question, options, correctAns } = props.question;
   const [question, setQuestion] = useState({
     Question: Question,
     correctAns: correctAns,
-    isWrittenType: isWrittenType,
+    // isWrittenType: isWrittenType,
     options: options,
   });
 
@@ -38,8 +38,10 @@ const QuestionVisualiserCard = (props) => {
     });
     console.log(question);
     if (
-      (question.Question && question.correctAns && question.options) ||
-      (question.Question && question.isWrittenType)
+      question.Question &&
+      question.correctAns &&
+      question.options
+      // || (question.Question && question.isWrittenType)
     ) {
       const newQuestion = {
         ...question,
@@ -104,7 +106,7 @@ const QuestionVisualiserCard = (props) => {
                 </Button>
               </Zoom>
               <div>
-                <Zoom in={true}>
+                {/* <Zoom in={true}>
                   <div>
                     <InputLabel>
                       Is answer written Type
@@ -121,55 +123,55 @@ const QuestionVisualiserCard = (props) => {
                       />
                     </InputLabel>
                   </div>
+                </Zoom> */}
+                {/* {!question.isWrittenType ? (
+                  <> */}
+                <Zoom in={true}>
+                  <textarea
+                    type="text"
+                    id="option"
+                    name="option"
+                    className="options"
+                    placeholder="Options.."
+                    rows={1}
+                    onChange={handleOption}
+                  />
                 </Zoom>
-                {!question.isWrittenType ? (
-                  <>
-                    <Zoom in={true}>
-                      <textarea
-                        type="text"
-                        id="option"
-                        name="option"
-                        className="options"
-                        placeholder="Options.."
-                        rows={1}
-                        onChange={handleOption}
-                      />
-                    </Zoom>
-                    <Zoom
-                      in={true}
-                      style={{ transitionDelay: true ? "250ms" : "0ms" }}
-                    >
-                      <Fab
-                        color="primary"
-                        size="small"
-                        onClick={addOption}
-                        id="AddOptionButton"
-                      >
-                        <AddIcon />
-                      </Fab>
-                    </Zoom>
-                  </>
+                <Zoom
+                  in={true}
+                  style={{ transitionDelay: true ? "250ms" : "0ms" }}
+                >
+                  <Fab
+                    color="primary"
+                    size="small"
+                    onClick={addOption}
+                    id="AddOptionButton"
+                  >
+                    <AddIcon />
+                  </Fab>
+                </Zoom>
+                {/* </>
                 ) : (
                   <></>
-                )}
+                )} */}
               </div>
-              {!question.isWrittenType ? (
-                <>
-                  <List options={Options} removeOption={removeOption} />
-                  <div className="form-control correctAns">
-                    <textarea
-                      type="text"
-                      id="correctAns"
-                      name="correctAns"
-                      value={question.correctAns}
-                      onChange={handleChange}
-                      rows={1}
-                    />
-                  </div>
-                </>
+              {/* {!question.isWrittenType ? (
+                <> */}
+              <List options={Options} removeOption={removeOption} />
+              <div className="form-control correctAns">
+                <textarea
+                  type="text"
+                  id="correctAns"
+                  name="correctAns"
+                  value={question.correctAns}
+                  onChange={handleChange}
+                  rows={1}
+                />
+              </div>
+              {/* </>
               ) : (
                 <></>
-              )}
+              )} */}
             </div>
           )}
         </form>

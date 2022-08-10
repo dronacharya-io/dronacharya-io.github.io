@@ -32,7 +32,7 @@ const QuizSetting = (props) => {
     setTimeout(() => {
       setDrawerOpen(true);
       setAlertStatus(true);
-    }, 1000);
+    }, 10);
   }, []);
 
   const today = new Date();

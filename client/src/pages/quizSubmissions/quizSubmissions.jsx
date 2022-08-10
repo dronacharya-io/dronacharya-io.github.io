@@ -2,12 +2,11 @@ import React from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
-import TableHead from '@mui/material/TableHead';
+import TableHead from "@mui/material/TableHead";
 import TableCard from "./QuizSubmisionTable/TableCard";
 
 const QuizSubmissions = () => {
   const [data, setData] = useState();
-
 
   const urlParams = new URLSearchParams(window.location.search);
   console.log(urlParams.get("id"));
@@ -18,8 +17,9 @@ const QuizSubmissions = () => {
         const res = await axios.get(
           "http://localhost:8800/api/quizzes/attemptQuiz/" + urlParams.get("id")
         );
+        console.log(res.data.attendies);
         setData(res.data.attendies);
-        console.log(data)
+        console.log(data);
       } catch (err) {
         console.log(err.message);
       }
@@ -33,12 +33,16 @@ const QuizSubmissions = () => {
     <>
       {data?.map((attendie) => {
         return (
-          <> 
-            <TableCard name={attendie.userName} score={attendie.score} email={attendie.userEmail} userID={attendie.userId} />
+          <>
+            <TableCard
+              name={attendie.userName}
+              score={attendie.score}
+              email={attendie.userEmail}
+              userID={attendie.userId}
+            />
           </>
         );
       })}
-      
     </>
   );
 };
