@@ -2,6 +2,7 @@ import "./joinQuiz.css";
 import React, { useState, useEffect } from "react";
 import { IoArrowBack } from "react-icons/io5";
 import axios from "axios";
+import { styled } from "@mui/material/styles";
 import { useUserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
@@ -140,6 +141,9 @@ const JoinQuiz = () => {
     setSubmission({ submittedAns: value });
     document.getElementById("submittedAns").val("");
   };
+  const Input = styled("input")({
+    display: "none",
+  });
 
   const handleSubmit = () => {
     const newSubmission = {
@@ -214,14 +218,21 @@ const JoinQuiz = () => {
                     onChange={handleChange}
                   />
                 ) : (
-                  <IconButton
-                    color="primary"
-                    aria-label="upload picture"
-                    component="label"
-                  >
-                    <input hidden accept="image/*" type="file" />
-                    <PhotoCamera />
-                  </IconButton>
+                  <label htmlFor="icon-button-file">
+                    <Input accept="image/*" id="icon-button-file" type="file" />
+                    <IconButton
+                      color="primary"
+                      aria-label="upload picture"
+                      component="label"
+                    >
+                      <input hidden accept="image/*" type="file" />
+                      <PhotoCamera
+                        id="submittedAns"
+                        name="submittedAns"
+                        onChange={handleChange}
+                      />
+                    </IconButton>
+                  </label>
                 )}
               </div>
               <Button variant="outlined" onClick={() => TakeAnswer()}>
