@@ -19,6 +19,8 @@ const connect = async () => {
   }
 };
 
+const PORT = process.env.PORT || 8800;
+
 mongoose.connection.on("disconnected", () => {
   console.log("mongoDB disconnected!");
 });
@@ -32,6 +34,10 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/quizzes", quizzesRoute);
 
+app.get("/", (req, res) => {
+  res.send("Hello!, Welcome to quiz.io API.");
+});
+
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
   const errorMessage = err.message || "Something went wrong!";
@@ -43,7 +49,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(8800, () => {
+app.listen(PORT, () => {
   connect();
   console.log("Connected to backend.");
 });
