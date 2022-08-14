@@ -48,8 +48,8 @@ const QuizSubmissions = () => {
     <>
       <>
         <TableContainer component={Paper}>
-          <Table stickyHeader aria-label="sticky table" sx={{ minWidth: 650 }} >
-            <TableHead >
+          <Table sx={{ minWidth: 650 }} >
+            <TableHead stickyHeader aria-label="sticky table" >
               <TableRow>
                 <TableCell>Examinee</TableCell>
                 <TableCell align="right">ExaminEmail</TableCell>
