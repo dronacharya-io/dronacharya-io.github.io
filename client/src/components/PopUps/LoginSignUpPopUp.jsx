@@ -87,7 +87,7 @@ const LoginSignUpPopUp = () => {
                         in={true}
                         style={{ transitionDelay: true ? "400ms" : "0ms" }}>
                             <div>
-                                <Lottie  options={AstronautTwo} height={587} width={450} />
+                                <Lottie  options={AstronautTwo} height={500} width={450} />
                             </div>
                         </Zoom>
                     </div>

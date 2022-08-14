@@ -14,7 +14,7 @@
   width: auto;
   height: 40px;
   letter-spacing: 2px;
-  box-shadow: 0 0 0.3rem 0rem rgb(118, 118, 118);
+  box-shadow: 0 0.1rem 0.3rem 0rem rgb(118, 118, 118);
 }
 
 #dark #quizSettingButton {

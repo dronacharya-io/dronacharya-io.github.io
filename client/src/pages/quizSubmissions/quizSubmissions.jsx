@@ -9,7 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
-
+import "./quizSubmission.css";
 
 
 const QuizSubmissions = () => {
@@ -47,47 +47,51 @@ const QuizSubmissions = () => {
   return (
     <>
       <>
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} >
-            <TableHead stickyHeader aria-label="sticky table" >
-              <TableRow>
-                <TableCell>Examinee</TableCell>
-                <TableCell align="right">ExaminEmail</TableCell>
-                <TableCell align="right">Examinee-score</TableCell>
-                <TableCell align="right">See Attemted Answers</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {data?.map((row) => (
-                <TableRow
-                  key={row.userName}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell component="th" scope="row">
-                    {row.userName}
-                  </TableCell>
-                  <TableCell align="right">{row.userEmail}</TableCell>
-                  <TableCell align="right">{row.score}</TableCell>
-                  <TableCell align='right'>
-                    <Button 
-                      id=""
-                      variant='outlined'
-                      onClick={() =>
-                        navigate(
-                          "../quizScore?quizId=" +
-                            urlParams.get("id") +
-                            "&userId=" +
-                            row.userId)
-                      }
+        <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+            <TableContainer component={Paper}>
+              <Table sx={{ minWidth: 650 }} stickyHeader aria-label="sticky table" >
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Examinee</TableCell>
+                    <TableCell align="right">Email</TableCell>
+                    <TableCell align="right">Score</TableCell>
+                    <TableCell align="right">See Attempted Answers</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {data?.map((row) => (
+                    <TableRow
+                      hover 
+                      role="checkbox"
+                      key={row.userName}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
-                    Click
-                    </Button>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+                      <TableCell component="th" scope="row">
+                        {row.userName}
+                      </TableCell>
+                      <TableCell align="right">{row.userEmail}</TableCell>
+                      <TableCell align="right">{row.score}</TableCell>
+                      <TableCell align='right'>
+                        <Button 
+                          id="navButton"
+                          variant='outlined'
+                          onClick={() =>
+                            navigate(
+                              "../quizScore?quizId=" +
+                                urlParams.get("id") +
+                                "&userId=" +
+                                row.userId)
+                          }
+                        >
+                        Answers
+                        </Button>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Paper>
       </>
     </>
   );
