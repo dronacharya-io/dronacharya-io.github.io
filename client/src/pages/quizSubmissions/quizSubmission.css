@@ -15,3 +15,14 @@
     color:#1d2238;
    }
    
+   #image{
+    margin-top: 7rem;
+   }
+
+   #light #h2Text{
+    color:black ;
+   }
+
+   #dark #h2Text{
+    color:white
+   }

@@ -10,10 +10,11 @@ import Paper from '@mui/material/Paper';
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import "./quizSubmission.css";
-
+import Lottie from "react-lottie";
+import NoAttendies from "../../lotties/man.json";
 
 const QuizSubmissions = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   
 
 
@@ -41,11 +42,19 @@ const QuizSubmissions = () => {
     };
   }, []);
 
-
+  const noAttendies = {
+    loop: true,
+    autoplay: true,
+    animationData: NoAttendies,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
 
   return (
     <>
+      {data.length > 0 ? 
       <>
         <Paper sx={{ width: '100%', overflow: 'hidden' }}>
             <TableContainer component={Paper}>
@@ -93,6 +102,16 @@ const QuizSubmissions = () => {
             </TableContainer>
           </Paper>
       </>
+      : 
+        <>
+          <div id="image">
+            <Lottie isClickToPauseDisabled={true} options={noAttendies} height={500} width={550} />
+          </div>
+          <div>
+            <h2 id="h2Text">No one has attempted your test yet!</h2>
+          </div>
+        </>
+      }
     </>
   );
 };
