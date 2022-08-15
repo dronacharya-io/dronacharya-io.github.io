@@ -6,6 +6,12 @@ import { useUserAuth } from "../../context/AuthContext.js";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp";
+import Lottie from "react-lottie";
+import Loading from "../../lotties/mainloading.json";
+import UpperBar from "../../lotties/upperbarSettings.json";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import TextField from '@mui/material/TextField';
+
 
 export const Settings = () => {
   const { user, logOut, googleSignIn } = useUserAuth();
@@ -31,8 +37,8 @@ export const Settings = () => {
   }
 
   useEffect(() => {
+    setLoading(true);
     async function Fetch() {
-      setLoading(true);
       try {
         const res = await axios.get(
           "http://localhost:8800/api/users/getUser/" + user.userData._id
@@ -50,31 +56,76 @@ export const Settings = () => {
     };
   }, []);
 
+  const VectorLoading = {
+    loop: true,
+    autoplay: true,
+    animationData: Loading,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const UpperBarS = {
+    loop:true,
+    autoplay: true,
+    animationData: UpperBar,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+
   return (
     <>
       {user ? (
         <div id="settingsBody">
           {loading ? (
-            <p>loading</p>
+            <div id="loading">
+              <Lottie isClickToPauseDisabled={true} options={VectorLoading} height={170} width={170} />
+            </div>
           ) : (
             <>
-              <img
-                src={user.photoURL}
-                alt="profile"
-                id="settingsProfileImage"
-              />
-              <div id="settingsData">
-                <p>{user.displayName}</p>
-                <p>{data.email}</p>
-                <Button
-                  onClick={() => {
-                    deleteAccount();
-                  }}
-                  variant="outlined"
-                  color="error"
-                >
-                  Delete Account
-                </Button>
+              <div id="paper" >
+                <div id="TitleDiv" >
+                  <h1 id="Title" >Settings</h1>
+                </div>
+                <div id="TitleDiv" >
+                  <h2 id="account"><AccountCircleIcon id="iconAccount"/> Account</h2>
+                </div>
+                <div id="lineDiv" >
+                  <Lottie isClickToPauseDisabled={true} options={UpperBarS} height={10} width={"auto"} />
+                </div>
+                  <div id="imgDiv">
+                    <img
+                      src={user.photoURL}
+                      alt="profile"
+                      id="settingsProfileImage"
+                    />
+                  </div>
+                  <div id="NameDiv" >
+                    <h4>Name</h4>
+                    <TextField
+                      id="outlined-helperText"
+                      defaultValue={user.displayName}
+                      style={{width:"80%"}}
+                      helperText=""
+                    />
+                  </div>
+                  <div id="settingsData">
+                    <p></p>
+                    <p>{data.email}</p>
+                    <h2>Delete account</h2>
+                    <hr/>
+                    <Button
+                      onClick={() => {
+                        deleteAccount();
+                      }}
+                      variant="outlined"
+                      color="error"
+                    >
+                      Permanently delete your account
+                    </Button>
+                  </div>
               </div>
             </>
           )}
