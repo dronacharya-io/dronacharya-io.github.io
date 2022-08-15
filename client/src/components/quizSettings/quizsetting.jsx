@@ -170,7 +170,7 @@ const QuizSetting = (props) => {
               >
                 <div id="img-div">
                   <div id="sparkles">
-                    <Lottie options={sparkles} height={1200} width={480} />
+                    <Lottie isClickToPauseDisabled={true} options={sparkles} height={1200} width={480} />
                   </div>
                   <div id="img-div1">
                     <Zoom
@@ -178,7 +178,7 @@ const QuizSetting = (props) => {
                       style={{ transitionDelay: true ? "800ms" : "0ms" }}
                     >
                       <div>
-                        <Lottie options={sun} height={200} width={200} />
+                        <Lottie isClickToPauseDisabled={true} options={sun} height={200} width={200} />
                       </div>
                     </Zoom>
                   </div>
@@ -189,7 +189,7 @@ const QuizSetting = (props) => {
                       style={{ transitionDelay: true ? "600ms" : "0ms" }}
                     >
                       <div>
-                        <Lottie options={spaceMan} height={450} width={500} />
+                        <Lottie isClickToPauseDisabled={true} options={spaceMan} height={450} width={500} />
                       </div>
                     </Zoom>
                   </div>
@@ -199,7 +199,7 @@ const QuizSetting = (props) => {
                       style={{ transitionDelay: true ? "600ms" : "0ms" }}
                     >
                       <div>
-                        <Lottie options={spaceman2} height={450} width={500} />
+                        <Lottie isClickToPauseDisabled={true} options={spaceman2} height={450} width={500} />
                       </div>
                     </Zoom>
                   </div>
@@ -422,6 +422,7 @@ const QuizSetting = (props) => {
                         </Button>
                         <div id="rocket">
                           <Lottie
+                            isClickToPauseDisabled={true}
                             options={spaceRocket}
                             height={40}
                             width={40}

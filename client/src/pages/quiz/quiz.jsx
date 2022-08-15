@@ -143,7 +143,7 @@ export const Quiz = () => {
         </div>
       </div>
       <div id="animation">
-        <Lottie options={defaultOptions} height={675} width={675} />
+        <Lottie isClickToPauseDisabled={true}  options={defaultOptions} height={675} width={675} />
       </div>
     </div>
   );

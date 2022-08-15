@@ -74,14 +74,14 @@ export const Classroom = () => {
                 <div
                   style={{ position: "relative", top: "5rem", right: "2rem" }}
                 >
-                  <Lottie options={defaultOptions} height={400} width={400} />
+                  <Lottie isClickToPauseDisabled={true}  options={defaultOptions} height={400} width={400} />
                 </div>
                 <div
                   style={{ position: "relative", right: "2rem", top: "2rem" }}
                 >
                   <p className="para">
                     Looks like you haven't created any
-                    <span> Quiz</span> yet.
+                    <span style={{color : "#ffb74d"}} > Quiz</span> yet.
                   </p>
                   <Zoom in={true}>
                     <div>

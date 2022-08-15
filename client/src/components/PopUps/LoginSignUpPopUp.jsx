@@ -1,9 +1,8 @@
-import React,{useEffect, useState} from 'react'
+import React,{useState} from 'react'
 import { useUserAuth } from "../../context/AuthContext";
 import "./LoginSignUpPopUp.css"
 import Zoom from "@mui/material/Zoom";
 import Button from "@mui/material/Button";
-import Fade from '@mui/material/Fade';
 import Lottie from "react-lottie";
 import girafOnCycle from "../../lotties/loginBackground.json";
 import clickAnimation from "../../lotties/click.json";
@@ -78,7 +77,7 @@ const LoginSignUpPopUp = () => {
                         in={true}
                         style={{ transitionDelay: true ? "400ms" : "0ms" }}>
                             <div>
-                                <Lottie  options={Astronaut} height={300} width={350} />
+                                <Lottie isClickToPauseDisabled={true} options={Astronaut} height={300} width={350} />
                             </div>
                         </Zoom>
                     </div>
@@ -87,7 +86,7 @@ const LoginSignUpPopUp = () => {
                         in={true}
                         style={{ transitionDelay: true ? "400ms" : "0ms" }}>
                             <div>
-                                <Lottie  options={AstronautTwo} height={500} width={450} />
+                                <Lottie isClickToPauseDisabled={true}  options={AstronautTwo} height={500} width={450} />
                             </div>
                         </Zoom>
                     </div>
@@ -96,7 +95,7 @@ const LoginSignUpPopUp = () => {
                         in={true}
                         style={{ transitionDelay: true ? "400ms" : "0ms" }}>
                             <div>
-                                <Lottie  options={AstronautThree} height={200} width={200} />
+                                <Lottie isClickToPauseDisabled={true}  options={AstronautThree} height={200} width={200} />
                             </div>
                         </Zoom>
                     </div>
