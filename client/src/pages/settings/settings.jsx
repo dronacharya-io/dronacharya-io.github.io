@@ -10,8 +10,8 @@ import Lottie from "react-lottie";
 import Loading from "../../lotties/mainloading.json";
 import UpperBar from "../../lotties/upperbarSettings.json";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import TextField from '@mui/material/TextField';
-
+import DeleteIcon from '@mui/icons-material/Delete';
+import UpgradeSharpIcon from '@mui/icons-material/UpgradeSharp';
 
 export const Settings = () => {
   const { user, logOut, googleSignIn } = useUserAuth();
@@ -22,6 +22,7 @@ export const Settings = () => {
     username: undefined,
     _id: 0,
   });
+  const [phoneNumber, setPhoneNumber] = useState([""]);
 
   async function deleteAccount() {
     user.userData.quizzesCreated.filter(async (quiz) => {
@@ -74,6 +75,15 @@ export const Settings = () => {
     },
   };
 
+  const handleChange = (event) =>{
+    const {value} = event.target;
+    setPhoneNumber(value);
+  }
+
+  const handleUpdate = () =>{
+    setPhoneNumber(phoneNumber);
+    console.log(phoneNumber)
+  }
 
   return (
     <>
@@ -103,25 +113,75 @@ export const Settings = () => {
                     />
                   </div>
                   <div id="NameDiv" >
-                    <h4>Name</h4>
-                    <TextField
-                      id="outlined-helperText"
+                    <h5 id="lable" >Name</h5>
+                    <input
+                      id="text"
                       defaultValue={user.displayName}
                       style={{width:"80%"}}
-                      helperText=""
+                      helperText="Right now you can't change your name. We are working on it. You can change your name in future."				
+                      disabled
+                      rows={"1"}
+                      inputProps={
+					              { readOnly: true, }
+				              }
                     />
                   </div>
-                  <div id="settingsData">
-                    <p></p>
-                    <p>{data.email}</p>
-                    <h2>Delete account</h2>
-                    <hr/>
+                  <div id="NameDiv">
+                    <h5 id="lable" >Email</h5>
+                    <input
+                      id="text"
+                      rows={"1"}
+                      defaultValue={data.email}
+                      style={{width:"80%"}}
+                      helperText="Right now you can't change your email. We are working on it. You can change your email in future."				
+                      disabled
+                      inputProps={
+					              { readOnly: true, }
+				              }
+                    />
+                  </div>
+                  <div id="NameDiv">
+                    <h5 id="lable" >Phone </h5>
+                    <input 
+                      id="text"
+                      rows={"1"}
+                      placeholder="000 000 0000"
+                      style={{width:"80%"}}
+                      helperText="If you don't check email frequently then you can add your phone number here so that we can send you notifications on whatsapp."				
+                      value={phoneNumber}
+                      type="tel"
+                      onChange={(e)=>{
+                        handleChange(e)
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <Button
+                      onClick={() => {
+                        handleUpdate();
+                      }}
+                      variant="outlined"
+                      color="success"
+                      id="UpdateButton"
+                    >
+                      <UpgradeSharpIcon /> Update Profile
+                    </Button>
+                  </div>
+                  <div id="lineDiv" >
+                    <Lottie isClickToPauseDisabled={true} options={UpperBarS} height={10} width={"auto"} />
+                  </div>
+                  <div id="TitleDiv"  >
+                    <h2 id="account" > <DeleteIcon /> delete account</h2>
+                
+                  </div>
+                  <div>
                     <Button
                       onClick={() => {
                         deleteAccount();
                       }}
                       variant="outlined"
                       color="error"
+                      id="deleteButton"
                     >
                       Permanently delete your account
                     </Button>
