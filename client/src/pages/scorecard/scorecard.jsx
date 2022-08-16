@@ -3,6 +3,9 @@ import axios from "axios";
 import { useUserAuth } from "../../context/AuthContext";
 import { UserSubmissionCard } from "./userSubmissionCard";
 import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp";
+import Lottie from "react-lottie";
+import notFound from "../../lotties/astwo.json";
+
 
 export const Scorecard = () => {
   const { user, googleSignIn } = useUserAuth();
@@ -26,11 +29,21 @@ export const Scorecard = () => {
     };
   }, []);
 
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: notFound,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+
   return (
     <>
       {user ? (
-        <>
-          <h1>Scorecard</h1>
+        submissionsData.length > 0 ? (
+          <>
           <div className="cards">
             {submissionsData
               ?.map((quiz, i) => {
@@ -49,6 +62,11 @@ export const Scorecard = () => {
               .reverse()}
           </div>
         </>
+        ) : (
+          <div>
+              <Lottie isClickToPauseDisabled={true}  options={defaultOptions} height={675} width={675} />
+          </div>
+        )
       ) : (
         <LoginSignUpPopUp/>
       )}
