@@ -1,0 +1,53 @@
+#scoreCard__notFound-parentDiv{
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    width:100%;
+
+}
+
+#light #scoreCard__notfoundTest-solarSystem{
+
+    justify-content: center;
+    width: 100%;
+}
+
+
+#dark #scoreCard__notfoundTest-solarSystem{
+    display: none;
+}
+
+#scoreCard__notfoundTest-astronaut{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top:8rem;
+}
+
+#dark #scoreCard__notfoundTest-text{
+    color: white;
+}
+
+#scoreCard__notfoundTest-text-div{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top:45rem;
+}
+
+#light #scoreCard__notfoundTest-space{
+    display: none;
+}
+
+#dark #scoreCard__notfoundTest-space{
+    width: 100%;
+    height:57rem;
+}
+
+#light span{
+    color: #ffb74d;
+}
+
+#dark span{
+    color:#FFEA41;
+}

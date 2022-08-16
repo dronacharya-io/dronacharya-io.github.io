@@ -5,7 +5,9 @@ import { UserSubmissionCard } from "./userSubmissionCard";
 import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp";
 import Lottie from "react-lottie";
 import notFound from "../../lotties/astwo.json";
-
+import solarsystem from "../../lotties/solarsystem.json";
+import "./scroreCard.css";
+import space from "../../lotties/space.json";
 
 export const Scorecard = () => {
   const { user, googleSignIn } = useUserAuth();
@@ -38,6 +40,26 @@ export const Scorecard = () => {
     },
   };
 
+  const Solarsystem = {
+    loop: true,
+    autoplay: true,
+    animationData: solarsystem,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  
+  const Space = {
+    loop: true,
+    autoplay: true,
+    animationData: space,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+
 
   return (
     <>
@@ -63,8 +85,19 @@ export const Scorecard = () => {
           </div>
         </>
         ) : (
-          <div>
-              <Lottie isClickToPauseDisabled={true}  options={defaultOptions} height={675} width={675} />
+          <div id="scoreCard__notFound-parentDiv">
+              <div id="scoreCard__notfoundTest-space">
+                  <Lottie isClickToPauseDisabled={true}  options={Space} height="100%" width="100%" />
+              </div>
+              <div id="scoreCard__notfoundTest-solarSystem">
+                  <Lottie isClickToPauseDisabled={true}  options={Solarsystem} height="100%" width="100%" />
+              </div>
+              <div id="scoreCard__notfoundTest-astronaut">
+                  <Lottie isClickToPauseDisabled={true}  options={defaultOptions} height={400} width={400} />
+              </div>
+              <div id="scoreCard__notfoundTest-text-div" >
+                <h2 id="scoreCard__notfoundTest-text" >There is so much <span>Space</span> here because you have not attempted any Test yet!</h2>
+              </div>
           </div>
         )
       ) : (

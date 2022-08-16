@@ -24,6 +24,16 @@ export const Settings = () => {
   });
   const [phoneNumber, setPhoneNumber] = useState([""]);
 
+  async function updatePhoneNumber(){
+    user.userDate.phoneNumber.push(
+      async (number) =>{
+        await axios.post(
+          
+        )
+      } 
+    );
+  }
+
   async function deleteAccount() {
     user.userData.quizzesCreated.filter(async (quiz) => {
       await axios.delete(
