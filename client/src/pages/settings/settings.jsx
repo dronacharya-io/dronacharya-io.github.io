@@ -51,9 +51,9 @@ export const Settings = () => {
       } catch (err) {
         setData(err);
       }
-      setTimeout(()=>{
-        setLoading(false);
-      },1000)
+
+      setLoading(false);
+      
     }
 
     return () => {

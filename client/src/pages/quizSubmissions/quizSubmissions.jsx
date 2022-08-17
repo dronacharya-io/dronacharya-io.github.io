@@ -36,9 +36,9 @@ const QuizSubmissions = () => {
         } catch (err) {
           console.log(err.message);
         }
-        setTimeout(()=>{
+     
           setLoading(false);
-        },1000)
+        
       
     }
 

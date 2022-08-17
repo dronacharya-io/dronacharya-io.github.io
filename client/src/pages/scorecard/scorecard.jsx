@@ -8,13 +8,16 @@ import notFound from "../../lotties/astwo.json";
 import solarsystem from "../../lotties/solarsystem.json";
 import "./scroreCard.css";
 import space from "../../lotties/space.json";
+import Loading from "../../lotties/mainloading.json";
 
 export const Scorecard = () => {
   const { user, googleSignIn } = useUserAuth();
   const [submissionsData, setSubmitionsData] = useState([]);
+  const [loading, setLoading] = useState(false)
   console.log(user);
 
   useEffect(() => {
+    setLoading(true)
     async function fetch() {
       try {
         const res = await axios.get(
@@ -25,6 +28,7 @@ export const Scorecard = () => {
       } catch (err) {
         console.log(err.message);
       }
+      setLoading(false)
     }
     return () => {
       fetch();
@@ -59,12 +63,20 @@ export const Scorecard = () => {
     },
   };
 
+  const VectorLoading = {
+    loop: true,
+    autoplay: true,
+    animationData: Loading,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
 
   return (
     <>
       {user ? (
-        submissionsData.length > 0 ? (
+        !loading ? submissionsData.length > 0 ? (
           <>
           <div className="cards">
             {submissionsData
@@ -99,7 +111,15 @@ export const Scorecard = () => {
                 <h2 id="scoreCard__notfoundTest-text" >There is so much <span>Space</span> here because you have not attempted any Test yet!</h2>
               </div>
           </div>
-        )
+        ) : 
+            <div id="loading">
+              <Lottie
+                isClickToPauseDisabled={true}
+                options={VectorLoading}
+                height={170}
+                width={170}
+              />
+            </div>
       ) : (
         <LoginSignUpPopUp/>
       )}
