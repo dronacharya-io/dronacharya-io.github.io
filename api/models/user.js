@@ -12,6 +12,12 @@ const UserSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+    phoneNumber : {
+      type: Array,
+      required: false,
+      unique: true,
+      default: [],
+    },
     isAdmin: {
       type: Boolean,
       default: false,

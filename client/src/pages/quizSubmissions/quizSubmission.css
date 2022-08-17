@@ -26,3 +26,11 @@
    #dark #h2Text{
     color:white
    }
+
+   #loading{
+    display:flex;
+    justify-self: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+   }

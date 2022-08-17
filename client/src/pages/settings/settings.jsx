@@ -13,6 +13,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import UpgradeSharpIcon from "@mui/icons-material/UpgradeSharp";
 import { useUserAuth } from "../../context/AuthContext";
 
+
 export const Settings = () => {
   const { user, logOut, googleSignIn } = useUserAuth();
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ export const Settings = () => {
     _id: 0,
   });
   const [phoneNumber, setPhoneNumber] = useState([""]);
+
 
   async function deleteAccount() {
     user.userData.quizzesCreated.filter(async (quiz) => {
@@ -49,7 +51,9 @@ export const Settings = () => {
       } catch (err) {
         setData(err);
       }
+
       setLoading(false);
+      
     }
 
     return () => {
