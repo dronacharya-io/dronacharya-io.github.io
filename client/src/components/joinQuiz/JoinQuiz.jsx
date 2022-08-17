@@ -7,8 +7,8 @@ import { useUserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import PhotoCamera from "@mui/icons-material/PhotoCamera";
+import Lottie from "react-lottie";
+import Loading from "../../lotties/mainloading.json";
 import LoginSignUpPopUp from "../PopUps/LoginSignUpPopUp.jsx";
 
 const JoinQuiz = () => {
@@ -158,12 +158,28 @@ const JoinQuiz = () => {
     console.log(submissions);
   };
 
+  const VectorLoading = {
+    loop: true,
+    autoplay: true,
+    animationData: Loading,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <>
       {user ? (
         <>
           {loading ? (
-            <p>loading</p>
+            <div id="loading">
+              <Lottie
+                isClickToPauseDisabled={true}
+                options={VectorLoading}
+                height={170}
+                width={170}
+              />
+            </div>
           ) : (
             <>
               <div id="joinQuizHeader">
