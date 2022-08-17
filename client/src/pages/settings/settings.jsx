@@ -13,6 +13,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import UpgradeSharpIcon from "@mui/icons-material/UpgradeSharp";
 import { useUserAuth } from "../../context/AuthContext";
 
+
 export const Settings = () => {
   const { user, logOut, googleSignIn } = useUserAuth();
   const navigate = useNavigate();
@@ -50,7 +51,9 @@ export const Settings = () => {
       } catch (err) {
         setData(err);
       }
-      setLoading(false);
+      setTimeout(()=>{
+        setLoading(false);
+      },1000)
     }
 
     return () => {
