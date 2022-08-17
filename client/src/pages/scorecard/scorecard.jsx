@@ -73,8 +73,8 @@ export const Scorecard = () => {
 
   return (
     <>
-      {user ? (
-        !loading ? (
+      {!loading ? (
+        user ? (
           submissionsData.length > 0 ? (
             <>
               <div className="cards">
@@ -130,17 +130,17 @@ export const Scorecard = () => {
             </div>
           )
         ) : (
-          <div id="loading">
-            <Lottie
-              isClickToPauseDisabled={true}
-              options={VectorLoading}
-              height={170}
-              width={170}
-            />
-          </div>
+          <LoginSignUpPopUp />
         )
       ) : (
-        <LoginSignUpPopUp />
+        <div id="loading">
+          <Lottie
+            isClickToPauseDisabled={true}
+            options={VectorLoading}
+            height={170}
+            width={170}
+          />
+        </div>
       )}
     </>
   );
