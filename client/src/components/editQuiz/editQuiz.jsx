@@ -6,6 +6,8 @@ import QuestionCard from "../questionBuilderCard/questionBuilderCard";
 import QuestionVisualiserCard from "../questionVisualiserCard/questionVisualiserCard";
 import { useUserAuth } from "../../context/AuthContext";
 import Button from "@mui/material/Button";
+import Lottie from "react-lottie";
+import Loading from "../../lotties/mainloading.json";
 import "../questionBuilderCard/Css/questionBuilderCard.css";
 import Zoom from "@mui/material/Zoom";
 import { useNavigate } from "react-router-dom";
@@ -113,6 +115,15 @@ const EditQuiz = () => {
     }
   };
 
+  const VectorLoading = {
+    loop: true,
+    autoplay: true,
+    animationData: Loading,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <>
       {!loading ? (
@@ -156,7 +167,16 @@ const EditQuiz = () => {
           </div>
         </>
       ) : (
-        <></>
+        <>
+          <div id="loading">
+            <Lottie
+              isClickToPauseDisabled={true}
+              options={VectorLoading}
+              height={170}
+              width={170}
+            />
+          </div>
+        </>
       )}
     </>
   );

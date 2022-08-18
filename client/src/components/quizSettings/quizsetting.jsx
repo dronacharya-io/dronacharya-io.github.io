@@ -9,6 +9,7 @@ import InputLabel from "@mui/material/InputLabel";
 import Checkbox from "@mui/material/Checkbox";
 import SettingsIcon from "@mui/icons-material/Settings";
 import Lottie from "react-lottie";
+import Loading from "../../lotties/mainloading.json";
 import animationData from "../../lotties/spaceman.json";
 import RocketData from "../../lotties/fillformalert.json";
 import Sparkles from "../../lotties/stars.json";
@@ -117,6 +118,15 @@ const QuizSetting = (props) => {
     },
   };
 
+  const VectorLoading = {
+    loop: true,
+    autoplay: true,
+    animationData: Loading,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <>
       {!loading ? (
@@ -170,7 +180,12 @@ const QuizSetting = (props) => {
               >
                 <div id="img-div">
                   <div id="sparkles">
-                    <Lottie isClickToPauseDisabled={true} options={sparkles} height={1200} width={480} />
+                    <Lottie
+                      isClickToPauseDisabled={true}
+                      options={sparkles}
+                      height={1200}
+                      width={480}
+                    />
                   </div>
                   <div id="img-div1">
                     <Zoom
@@ -178,7 +193,12 @@ const QuizSetting = (props) => {
                       style={{ transitionDelay: true ? "800ms" : "0ms" }}
                     >
                       <div>
-                        <Lottie isClickToPauseDisabled={true} options={sun} height={200} width={200} />
+                        <Lottie
+                          isClickToPauseDisabled={true}
+                          options={sun}
+                          height={200}
+                          width={200}
+                        />
                       </div>
                     </Zoom>
                   </div>
@@ -189,7 +209,12 @@ const QuizSetting = (props) => {
                       style={{ transitionDelay: true ? "600ms" : "0ms" }}
                     >
                       <div>
-                        <Lottie isClickToPauseDisabled={true} options={spaceMan} height={450} width={500} />
+                        <Lottie
+                          isClickToPauseDisabled={true}
+                          options={spaceMan}
+                          height={450}
+                          width={500}
+                        />
                       </div>
                     </Zoom>
                   </div>
@@ -199,7 +224,12 @@ const QuizSetting = (props) => {
                       style={{ transitionDelay: true ? "600ms" : "0ms" }}
                     >
                       <div>
-                        <Lottie isClickToPauseDisabled={true} options={spaceman2} height={450} width={500} />
+                        <Lottie
+                          isClickToPauseDisabled={true}
+                          options={spaceman2}
+                          height={450}
+                          width={500}
+                        />
                       </div>
                     </Zoom>
                   </div>
@@ -437,7 +467,16 @@ const QuizSetting = (props) => {
           </div>
         </>
       ) : (
-        <></>
+        <>
+          <div id="loading">
+            <Lottie
+              isClickToPauseDisabled={true}
+              options={VectorLoading}
+              height={170}
+              width={170}
+            />
+          </div>
+        </>
       )}
     </>
   );
