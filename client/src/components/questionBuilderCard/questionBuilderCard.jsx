@@ -6,8 +6,6 @@ import IconButton from "@mui/material/IconButton";
 import "./Css/questionBuilderCard.css";
 import Button from "@mui/material/Button";
 import { Fab } from "@mui/material";
-import Checkbox from "@mui/material/Checkbox";
-import InputLabel from "@mui/material/InputLabel";
 
 const QuestionCard = (props) => {
   const [question, setQuestion] = useState({
