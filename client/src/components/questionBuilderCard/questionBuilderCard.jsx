@@ -165,10 +165,6 @@ const QuestionCard = (props) => {
                 rows={1}
               />
             </div>
-            {/* </>
-            ) : (
-              <></>
-            )} */}
           </div>
         )}
       </form>
