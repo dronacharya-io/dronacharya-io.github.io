@@ -67,7 +67,7 @@ const QuizSetting = (props) => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    setValues({ ...values, creatorId: user.userData._id });
+    setValues({ ...values, creatorId: user?.userData._id });
     props.func(values);
     setDrawerOpen(false);
   };
