@@ -26,15 +26,15 @@
  width: 200px;
  letter-spacing: 3px;
  color: white;
- border-color: white;
+ background-color: #ffb74d;
 
 }
 
 #dark #loginButton{
  width: 200px;
  letter-spacing: 3px;
- border-color: #FFEA41;
- color: #FFEA41;
+ background-color: #FFEA41;
+ color: white;
 }
 
 #light #backgroundParent{
@@ -64,28 +64,21 @@
 }
 
 
-#astronaut{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    height: 0;
-    margin-top: 9rem;
-    margin-right:29rem ;
-}
 
 #light #title{
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     color:white;
     display: flex;
     justify-content: center;
     position: absolute;
     height: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.422);
     letter-spacing: 1px;
 }
 
 #dark #title{
     color:white;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     display: flex;
     justify-content: center;
     position: absolute;
@@ -93,18 +86,10 @@
     letter-spacing: 1px;
 }
 
-#atronautTwo{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    height: 0;
-    margin-left:29rem ;
-}
 
-#atronautThree{
+#background{
     display: flex;
-    justify-content: center;
+    justify-self: center;
     position: absolute;
-    margin-top: 5rem;
-    height: 0;
+    min-width:45rem;
 }

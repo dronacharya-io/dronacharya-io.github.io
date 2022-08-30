@@ -5,10 +5,8 @@ import Zoom from "@mui/material/Zoom";
 import Button from "@mui/material/Button";
 import Lottie from "react-lottie";
 import girafOnCycle from "../../lotties/loginBackground.json";
-import clickAnimation from "../../lotties/click.json";
-import astronaut from "../../lotties/mainAsro.json";
-import astronautTwo from "../../lotties/astwo.json";
-import astronautThree from "../../lotties/sun.json"
+import Space from "../../lotties/space2.json";
+import {motion} from "framer-motion";
 
 const LoginSignUpPopUp = () => {
     const { user, googleSignIn } = useUserAuth();
@@ -22,36 +20,11 @@ const LoginSignUpPopUp = () => {
           preserveAspectRatio: "xMidYMid slice",
         },
       };
-      const click = {
-        loop: true,
-        autoplay: true,
-        animationData: clickAnimation,
-        rendererSettings: {
-          preserveAspectRatio: "xMidYMid slice",
-        },
-      };
-      const Astronaut = {
-        loop: true,
-        autoplay: true,
-        animationData: astronaut,
-        rendererSettings: {
-          preserveAspectRatio: "xMidYMid slice",
-        },
-      };
-      
-      const AstronautTwo = {
-        loop: true,
-        autoplay: true,
-        animationData: astronautTwo,
-        rendererSettings: {
-          preserveAspectRatio: "xMidYMid slice",
-        },
-      };
 
-      const AstronautThree = {
+      const space = {
         loop: true,
         autoplay: true,
-        animationData: astronautThree,
+        animationData: Space,
         rendererSettings: {
           preserveAspectRatio: "xMidYMid slice",
         },
@@ -71,54 +44,34 @@ const LoginSignUpPopUp = () => {
             in={true}
             style={{ transitionDelay: true ? "100ms" : "0ms" }}>
                 <div id="loginPopUp">
+                  
+                <div id="background">
+                  <Lottie isClickToPauseDisabled={true}  options={space} height={480} width={720} />
+                </div>
 
-                    <div id="astronaut" >
-                        <Zoom
-                        in={true}
-                        style={{ transitionDelay: true ? "400ms" : "0ms" }}>
-                            <div>
-                                <Lottie isClickToPauseDisabled={true} options={Astronaut} height={300} width={350} />
-                            </div>
-                        </Zoom>
-                    </div>
-                    <div id="atronautTwo">
-                        <Zoom
-                        in={true}
-                        style={{ transitionDelay: true ? "400ms" : "0ms" }}>
-                            <div>
-                                <Lottie isClickToPauseDisabled={true}  options={AstronautTwo} height={500} width={450} />
-                            </div>
-                        </Zoom>
-                    </div>
-                    <div id="atronautThree">
-                        <Zoom
-                        in={true}
-                        style={{ transitionDelay: true ? "400ms" : "0ms" }}>
-                            <div>
-                                <Lottie isClickToPauseDisabled={true}  options={AstronautThree} height={200} width={200} />
-                            </div>
-                        </Zoom>
-                    </div>
                     <div id="title" >
                         <h1>LOGIN IN LESS THAN 2 SECONDS!</h1>
                     </div>
-                    <Zoom
+                    <motion.div
                     in={true}
                     id="loginButtondiv"
-                    style={{ transitionDelay: true ? "600ms" : "0ms" }}>
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                    duration: 0.8,
+                    delay: 0.5,
+                    ease: [0, 0.71, 0.2, 1.01]}}
+                    
+                    >
                         <div>
                       
                             <div >
-                                <div id="sparkle">
-                                    <Lottie options={click} height={37} width={198} />
-                                </div>
-
                                 <div>
-                                    <Button variant='outlined' id="loginButton" onClick={() => googleSignIn()}>Login</Button>
+                                    <Button variant='contained' id="loginButton" onClick={() => googleSignIn()}>Login</Button>
                                 </div>
                             </div>
                         </div>
-                    </Zoom>
+                    </motion.div>
                 </div>
             </Zoom>   
         </div>
