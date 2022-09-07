@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Zoom from "@mui/material/Zoom";
@@ -6,6 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import "./Css/questionBuilderCard.css";
 import Button from "@mui/material/Button";
 import { Fab } from "@mui/material";
+import { useIdleTimer } from 'react-idle-timer';
 
 const QuestionCard = (props) => {
   const [question, setQuestion] = useState({
@@ -19,7 +20,39 @@ const QuestionCard = (props) => {
   const [option, setOption] = useState({ value: undefined });
   const [options, setOptions] = useState([]);
   // const [IsWrittenType, setIsWrittenType] = useState(false);
+  
+  const timeout = 120000; //2 minutes 
+  const [remaining, setRemaining] = useState(timeout);
+  const [elapsed, setElapsed] = useState(0);
+  const [lastActive, setLastActive] = useState(+new Date());
+  const [isIdle, setIsIdle] = useState(false);
 
+  const handleOnActive = () => setIsIdle(false);
+  const handleOnIdle = () => setIsIdle(true);
+
+  const {
+    getRemainingTime,
+    getLastActiveTime,
+    getElapsedTime
+  } = useIdleTimer({
+    timeout,
+    onActive: handleOnActive,
+    onIdle: handleOnIdle
+  })
+
+  useEffect(() => {
+    setRemaining(getRemainingTime())
+    setLastActive(getLastActiveTime())
+    setElapsed(getElapsedTime())
+
+    setInterval(() => {
+      setRemaining(getRemainingTime())
+      setLastActive(getLastActiveTime())
+      setElapsed(getElapsedTime())
+    }, 1000)
+  }, [])
+  
+  
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -75,6 +108,8 @@ const QuestionCard = (props) => {
     });
   };
 
+
+
   return (
     <div id="ParentDiv">
       <form className="form" id="form-c">
@@ -88,11 +123,11 @@ const QuestionCard = (props) => {
             id="Question"
             name="Question"
             placeholder={`Take a Question...`}
-            rows={row}
+            rows={ isIdle ? "1" : row}
             onChange={handleChange}
           />
         </div>
-        {showElements && (
+        { isIdle ? false  :  showElements && (
           <div>
             <Zoom in={true}>
               <Button

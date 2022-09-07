@@ -12,6 +12,7 @@ import Zoom from "@mui/material/Zoom";
 import { useNavigate } from "react-router-dom";
 import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp";
 
+
 const CreateQuiz = () => {
   const [questions, setQuestions] = useState([]);
   const [settingsTab, setSettingsTab] = useState(false);
