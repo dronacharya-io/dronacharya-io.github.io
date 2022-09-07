@@ -215,7 +215,9 @@ const QuestionCard = (props) => {
                 </Fab>
               </motion.div>
             </div>
-            <List options={options} removeOption={removeOption} />
+            <div id="optionDiv" >
+              <List options={options} removeOption={removeOption} />
+            </div>
             <motion.div 
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -260,7 +262,7 @@ const List = ({ options, removeOption }) => {
 const SingleOption = (props) => {
   const { id, value } = props.option;
   return (
-    <div className="option">
+    <div className="optionDiv">
       <h4>{value}</h4>
       <Zoom in={true}>
         <IconButton
