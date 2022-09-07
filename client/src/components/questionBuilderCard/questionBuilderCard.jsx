@@ -7,6 +7,7 @@ import "./Css/questionBuilderCard.css";
 import Button from "@mui/material/Button";
 import { Fab } from "@mui/material";
 import { useIdleTimer } from 'react-idle-timer';
+import { motion } from "framer-motion";
 
 const QuestionCard = (props) => {
   const [question, setQuestion] = useState({
@@ -29,7 +30,10 @@ const QuestionCard = (props) => {
 
   const handleOnActive = () => setIsIdle(false);
   const handleOnIdle = () => setIsIdle(true);
-
+  const handleCancel = () => {
+    setShowElements(false) 
+    setRow("1") 
+  }
   const {
     getRemainingTime,
     getLastActiveTime,
@@ -129,34 +133,59 @@ const QuestionCard = (props) => {
         </div>
         { isIdle ? false  :  showElements && (
           <div>
-            <Zoom in={true}>
-              <Button
-                onClick={handleSubmit}
-                size="medium"
-                variant="contained"
-                type="submit"
-                id="addQuestionButton"
-                aria-label="add"
-              >
-                {`${AddQuestionText}`}
-              </Button>
-            </Zoom>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+            }}
+            >
+                <Button
+                  onClick={handleSubmit}
+                  size="medium"
+                  variant="outlined"
+                  type="submit"
+                  id="addQuestionButton"
+                  aria-label="add"
+                >
+                  {`${AddQuestionText}`}
+                </Button>
+            </motion.div>
             <div>
-              {/* <Zoom in={true}>
-                <div>
-                  <InputLabel>
-                    Is answer written Type
-                    <Checkbox
-                      value={IsWrittenType}
-                      onClick={() => setIsWrittenType(!IsWrittenType)}
-                      id="IsWrittenType"
-                    />
-                  </InputLabel>
-                </div>
-              </Zoom> */}
-              {/* {!IsWrittenType ? (
-                <> */}
-              <Zoom in={true}>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+              }}
+              >
+                <Button
+                  onClick={handleCancel}
+                  size="medium"
+                  variant="contained"
+                  color="warning"
+                  type="submit"
+                  id="cancelBtn"
+                  aria-label="add"
+                >
+                  cancel
+                </Button>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+              }}
+              >
                 <textarea
                   type="text"
                   id="option"
@@ -166,10 +195,15 @@ const QuestionCard = (props) => {
                   rows={1}
                   onChange={handleOption}
                 />
-              </Zoom>
-              <Zoom
-                in={true}
-                style={{ transitionDelay: true ? "250ms" : "0ms" }}
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+              }}
               >
                 <Fab
                   color="primary"
@@ -179,16 +213,18 @@ const QuestionCard = (props) => {
                 >
                   <AddIcon />
                 </Fab>
-              </Zoom>
-              {/* </> */}
-              {/* ) : (
-                <></>
-              )} */}
+              </motion.div>
             </div>
-            {/* {!IsWrittenType ? (
-              <> */}
             <List options={options} removeOption={removeOption} />
-            <div className="form-control correctAns">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+              duration: 0.8,
+              delay: 0.5,
+              ease: [0, 0.71, 0.2, 1.01]
+              }}
+              className="form-control correctAns">
               <textarea
                 type="text"
                 id="correctAns"
@@ -197,7 +233,7 @@ const QuestionCard = (props) => {
                 onChange={handleChange}
                 rows={1}
               />
-            </div>
+            </motion.div>
           </div>
         )}
       </form>

@@ -11,7 +11,7 @@ import "../questionBuilderCard/Css/questionBuilderCard.css";
 import Zoom from "@mui/material/Zoom";
 import { useNavigate } from "react-router-dom";
 import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp";
-
+import { motion } from "framer-motion";
 
 const CreateQuiz = () => {
   const [questions, setQuestions] = useState([]);
@@ -93,8 +93,15 @@ const CreateQuiz = () => {
             <QuestionCard addQuestion={addQuestion} />
           </div>
           {true && (
-            <div>
-              <Zoom in={true}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+            }}
+            >
                 <Button
                   id="addQuizButton"
                   variant="outlined"
@@ -103,8 +110,7 @@ const CreateQuiz = () => {
                 >
                   Add Test
                 </Button>
-              </Zoom>
-            </div>
+              </motion.div>
           )}
           {questions.map((question) => {
             return (

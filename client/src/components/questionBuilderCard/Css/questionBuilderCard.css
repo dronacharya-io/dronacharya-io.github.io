@@ -2,8 +2,6 @@
     width: auto;
     height: auto;
     position: relative;
-    left: 400px;
-    bottom: 86px;
     letter-spacing: 1.2px;
 }
 
@@ -91,4 +89,8 @@
     left: 100px;
     width: auto;
     letter-spacing: 1.2px;
+}
+
+#cancelBtn{
+
 }
