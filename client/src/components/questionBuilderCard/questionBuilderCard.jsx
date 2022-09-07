@@ -21,7 +21,7 @@ const QuestionCard = (props) => {
   const [options, setOptions] = useState([]);
   // const [IsWrittenType, setIsWrittenType] = useState(false);
   
-  const timeout = 120000; //2 minutes 
+  const timeout = 60000; //2 minutes 
   const [remaining, setRemaining] = useState(timeout);
   const [elapsed, setElapsed] = useState(0);
   const [lastActive, setLastActive] = useState(+new Date());
