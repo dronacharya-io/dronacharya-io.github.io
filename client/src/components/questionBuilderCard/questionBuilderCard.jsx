@@ -22,7 +22,7 @@ const QuestionCard = (props) => {
   const [options, setOptions] = useState([]);
   // const [IsWrittenType, setIsWrittenType] = useState(false);
   
-  const timeout = 15000; //2 seconds 
+  const timeout = 300000; //idle timeout in mili-seconds
   const [remaining, setRemaining] = useState(timeout);
   const [elapsed, setElapsed] = useState(0);
   const [lastActive, setLastActive] = useState(+new Date());
@@ -115,131 +115,146 @@ const QuestionCard = (props) => {
 
 
   return (
-    <div id="ParentDiv">
+    <>
       <form className="form" id="form-c">
-        <div className="form-control Question">
-          <textarea
-            onClick={() => {
-              setRow("2");
-              setShowElements(true);
-            }}
-            type="text"
-            id="Question"
-            name="Question"
-            placeholder={`Take a Question...`}
-            rows={ isIdle ? "1" : row}
-            onChange={handleChange}
-          />
-        </div>
-        { isIdle ? false  :  showElements && (
-          <div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.8,
-                delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01]
-            }}
-            >
-                <Button
-                  onClick={handleSubmit}
-                  size="medium"
-                  variant="outlined"
-                  type="submit"
-                  id="addQuestionButton"
-                  aria-label="add"
-                >
-                  {`${AddQuestionText}`}
-                </Button>
-            </motion.div>
-            <div>
+        <div id="flex-main-container" >
+          <div className="first-container">
+            <div className="text-area-container" >
+              <textarea
+                    onClick={() => {
+                      setRow("2");
+                      setShowElements(true);
+                    }}
+                    type="text"
+                    id="Question"
+                    name="Question"
+                    placeholder={`Take a Question...`}
+                    rows={ isIdle ? "1" : row}
+                    onChange={handleChange}
+                  />
+            </div>
+              { isIdle ? false  :  showElements && (
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                duration: 0.8,
-                delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01]
-              }}
-              >
-                <Button
-                  onClick={handleCancel}
-                  size="medium"
-                  variant="contained"
-                  color="warning"
-                  type="submit"
-                  id="cancelBtn"
-                  aria-label="add"
+                <div className="button-container" >
+                  <div className="add-btn-div" >
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{
+                          duration: 0.8,
+                          delay: 0.5,
+                          ease: [0, 0.71, 0.2, 1.01]
+                        }}
+                      >
+                          <Button
+                            onClick={handleSubmit}
+                            size="medium"
+                            variant="outlined"
+                            type="submit"
+                            id="addQuestionButton"
+                            aria-label="add"
+                          >
+                            {`${AddQuestionText}`}
+                          </Button>
+                      </motion.div>
+                  </div>
+                  <div className="cancel-btn-div" >
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{
+                      duration: 0.8,
+                      delay: 0.5,
+                      ease: [0, 0.71, 0.2, 1.01]
+                    }}
+                    className=""
+                    >
+                      <Button
+                        onClick={handleCancel}
+                        size="medium"
+                        variant="contained"
+                        color="warning"
+                        type="submit"
+                        id="cancelBtn"
+                        aria-label="add"
+                      >
+                        cancel
+                      </Button>
+                    </motion.div>
+                  </div>
+                </div>
+              ) }
+          </div>
+          { isIdle ? false  :  showElements && (
+            <div className="mainContainer" >
+
+              <div>
+
+                
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                  duration: 0.8,
+                  delay: 0.5,
+                  ease: [0, 0.71, 0.2, 1.01]
+                }}
                 >
-                  cancel
-                </Button>
-              </motion.div>
-              
-              <motion.div
+                  <textarea
+                    type="text"
+                    id="option"
+                    name="option"
+                    className="options"
+                    placeholder="Options.."
+                    rows={1}
+                    onChange={handleOption}
+                  />
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                  duration: 0.8,
+                  delay: 0.5,
+                  ease: [0, 0.71, 0.2, 1.01]
+                }}
+                >
+                  <Fab
+                    color="primary"
+                    size="small"
+                    onClick={addOption}
+                    id="AddOptionButton"
+                  >
+                    <AddIcon />
+                  </Fab>
+                </motion.div>
+              </div>
+              <div id="optionDiv" >
+                <List options={options} removeOption={removeOption} />
+              </div>
+              <motion.div 
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{
                 duration: 0.8,
                 delay: 0.5,
                 ease: [0, 0.71, 0.2, 1.01]
-              }}
-              >
+                }}
+                className="form-control correctAns">
                 <textarea
                   type="text"
-                  id="option"
-                  name="option"
-                  className="options"
-                  placeholder="Options.."
+                  id="correctAns"
+                  name="correctAns"
+                  placeholder="Type correct answer..."
+                  onChange={handleChange}
                   rows={1}
-                  onChange={handleOption}
                 />
               </motion.div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                duration: 0.8,
-                delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01]
-              }}
-              >
-                <Fab
-                  color="primary"
-                  size="small"
-                  onClick={addOption}
-                  id="AddOptionButton"
-                >
-                  <AddIcon />
-                </Fab>
-              </motion.div>
             </div>
-            <div id="optionDiv" >
-              <List options={options} removeOption={removeOption} />
-            </div>
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-              duration: 0.8,
-              delay: 0.5,
-              ease: [0, 0.71, 0.2, 1.01]
-              }}
-              className="form-control correctAns">
-              <textarea
-                type="text"
-                id="correctAns"
-                name="correctAns"
-                placeholder="Type correct answer..."
-                onChange={handleChange}
-                rows={1}
-              />
-            </motion.div>
-          </div>
-        )}
+          )}
+        </div>
       </form>
-    </div>
+    </>
   );
 };
 

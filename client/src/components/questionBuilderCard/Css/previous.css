@@ -1,0 +1,112 @@
+#addQuestionButton {
+    width: auto;
+    height: auto;
+    position: relative;
+    letter-spacing: 1.2px;
+}
+
+.DeleteButton {
+    width: auto;
+    height: auto;
+}
+
+#AddOptionButton {
+    position: relative;
+    border: none;
+    border-radius: 100%;
+
+}
+
+
+#option {
+    width: 1rem;
+    border: none;
+    padding: 1px;
+    outline: none;
+    font-size: 1em;
+    font-family: inherit;
+    resize: none;
+    background: #eee;
+    position: relative;
+    width: fit-content;
+    margin: 1.875rem auto 1.25rem auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(207, 207, 207);
+}
+
+#correctAns {
+    width: 1rem;
+    border: none;
+    padding: 1px;
+    outline: none;
+    font-size: 1em;
+    font-family: inherit;
+    resize: none;
+    background: #eee;
+    position: relative;
+    width: fit-content;
+    margin: 1.875rem auto 1.25rem auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(207, 207, 207);
+
+}
+
+#addQuizButton {
+    letter-spacing: 1.2px;
+    inline-size: 300px;
+}
+
+#settingsButton {
+    position: absolute;
+    bottom: 670px;
+    left: 100px;
+    width: auto;
+    letter-spacing: 1.2px;
+}
+
+#optionDiv{
+    display: flex;
+    flex-flow: wrap;
+}
+
+
+
+
+#Question {
+    width: 100%;
+    border: none;
+    padding: 4px;
+    outline: none;
+    font-size: 1.2em;
+    font-family: inherit;
+    resize: none;
+    background: #eee;
+    position: relative;
+    width: 38rem;
+    margin: 1.875rem auto 1.25rem auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(207, 207, 207);
+
+}
+
+
+#ParentDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.firstContainer{
+    display: flex;
+
+}
+
+.form-control{
+    display:flex;
+    flex-direction: column;
+}
