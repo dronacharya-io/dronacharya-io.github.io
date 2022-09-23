@@ -115,13 +115,6 @@
     justify-content: space-between;
     max-width: 450px;
 
-    background: #fff;
-    border-radius: 7px;
-    box-shadow: 0 2px 5px #ccc;
-    padding: 10px;
-    width: 240px;
-    margin: 16px;
-    float: left;
 }
 
 #option {
@@ -171,6 +164,37 @@
     box-shadow: 0 1px 5px rgb(207, 207, 207);
 }
 
-.options-individual{
+ #light .options-individual{
     margin: 2rem 50px 2rem 50px;
+    min-width: 173px;
+    background: #ffb74d;
+    color: #eee;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 10px;
+    margin: 16px;
+    float: left;
+    font-weight: 800;
+}
+
+#dark .options-individual{
+    margin: 2rem 50px 2rem 50px;
+    min-width: 173px;
+    background: #1d2238;
+    border-color: #1d2238;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.422);
+    color: #eee;
+    border-radius: 7px;
+    padding: 10px;
+    margin: 16px;
+    float: left;
+    font-weight: 800;
+}
+
+#light .deletebtn{
+    color: white;
+}
+
+#dark .deletebtn{
+    color:#FFEA41
 }

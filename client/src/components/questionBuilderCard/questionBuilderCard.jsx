@@ -248,9 +248,11 @@ const QuestionCard = (props) => {
             </div>
           )}
           {isIdle ? false  :  showElements && 
-            <div id="optionDiv" >
-              <List options={options} removeOption={removeOption} />
-            </div>
+
+                <div id="optionDiv" >
+                      <List options={options} removeOption={removeOption} />
+                </div>
+          
           }
         </div>
       </form>
@@ -277,18 +279,28 @@ const List = ({ options, removeOption }) => {
 const SingleOption = (props) => {
   const { id, value } = props.option;
   return (
-    <div className="options-individual">
-      <h4>{value}</h4>
-      <Zoom in={true}>
-        <IconButton
-          className="DeleteButton"
-          onClick={() => props.removeOption(id)}
-          aria-label="delete"
-        >
-          <DeleteIcon />
-        </IconButton>
-      </Zoom>
-    </div>
+    <motion.div 
+    initial={{ opacity: 0, scale: 0.5 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{
+    duration: 0.8,
+    delay: 0,
+    ease: [0, 0.71, 0.2, 1.01]
+    }}>
+      <div className="options-individual">
+        <h4>{value}</h4>
+        <Zoom in={true}>
+          <IconButton
+            className="DeleteButton"
+            onClick={() => props.removeOption(id)}
+            aria-label="delete"
+            className="deletebtn"
+          >
+            <DeleteIcon />
+          </IconButton>
+        </Zoom>
+      </div>
+    </motion.div>
   );
 };
 
