@@ -120,6 +120,32 @@ const QuestionCard = (props) => {
         <div id="flex-main-container" >
           <div className="first-container">
             <div className="text-area-container" >
+              { isIdle ? false : showElements &&
+                <div className="cancel-btn-div" >
+                  <motion.div
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{
+                        duration: 0.8,
+                        delay: 0.5,
+                        ease: [0, 0.71, 0.2, 1.01]
+                      }}
+                      >
+                        <Button
+                          onClick={handleCancel}
+                          size="medium"
+                          variant="contained"
+                          color="warning"
+                          type="submit"
+                          id="cancelBtn"
+                        >
+                          cancel
+                        </Button>
+                      </motion.div>
+                </div>
+              }
+
+
               <textarea
                     onClick={() => {
                       setRow("2");
@@ -158,39 +184,12 @@ const QuestionCard = (props) => {
                           </Button>
                       </motion.div>
                   </div>
-                  <div className="cancel-btn-div" >
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.5 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{
-                      duration: 0.8,
-                      delay: 0.5,
-                      ease: [0, 0.71, 0.2, 1.01]
-                    }}
-                    className=""
-                    >
-                      <Button
-                        onClick={handleCancel}
-                        size="medium"
-                        variant="contained"
-                        color="warning"
-                        type="submit"
-                        id="cancelBtn"
-                        aria-label="add"
-                      >
-                        cancel
-                      </Button>
-                    </motion.div>
-                  </div>
                 </div>
               ) }
           </div>
           { isIdle ? false  :  showElements && (
-            <div className="mainContainer" >
-
-              <div>
-
-                
+            <div className="flex-option-ca-Container" >
+              <div className="option-plus-addButton" >
                 <motion.div
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -220,7 +219,6 @@ const QuestionCard = (props) => {
                 }}
                 >
                   <Fab
-                    color="primary"
                     size="small"
                     onClick={addOption}
                     id="AddOptionButton"
@@ -229,29 +227,31 @@ const QuestionCard = (props) => {
                   </Fab>
                 </motion.div>
               </div>
-              <div id="optionDiv" >
-                <List options={options} removeOption={removeOption} />
-              </div>
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                duration: 0.8,
-                delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01]
-                }}
-                className="form-control correctAns">
-                <textarea
-                  type="text"
-                  id="correctAns"
-                  name="correctAns"
-                  placeholder="Type correct answer..."
-                  onChange={handleChange}
-                  rows={1}
-                />
-              </motion.div>
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{
+                  duration: 0.8,
+                  delay: 0.5,
+                  ease: [0, 0.71, 0.2, 1.01]
+                  }}
+                  className="form-control correctAns">
+                  <textarea
+                    type="text"
+                    id="correctAns"
+                    name="correctAns"
+                    placeholder="Type correct answer..."
+                    onChange={handleChange}
+                    rows={1}
+                  />
+                </motion.div>
             </div>
           )}
+          {isIdle ? false  :  showElements && 
+            <div id="optionDiv" >
+              <List options={options} removeOption={removeOption} />
+            </div>
+          }
         </div>
       </form>
     </>
@@ -263,11 +263,11 @@ const List = ({ options, removeOption }) => {
     <>
       {options.map((option) => {
         return (
-          <SingleOption
-            key={option.id}
-            option={option}
-            removeOption={removeOption}
-          />
+            <SingleOption
+              key={option.id}
+              option={option}
+              removeOption={removeOption}
+            />
         );
       })}
     </>
@@ -277,7 +277,7 @@ const List = ({ options, removeOption }) => {
 const SingleOption = (props) => {
   const { id, value } = props.option;
   return (
-    <div className="optionDiv">
+    <div className="options-individual">
       <h4>{value}</h4>
       <Zoom in={true}>
         <IconButton
