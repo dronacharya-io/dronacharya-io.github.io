@@ -9,12 +9,15 @@ import { Fab } from "@mui/material";
 import { useIdleTimer } from 'react-idle-timer';
 import { motion } from "framer-motion";
 
+
 const QuestionCard = (props) => {
   const [question, setQuestion] = useState({
     Question: undefined,
     correctAns: undefined,
   });
 
+  const alphabets = ["A","B","C","D","E","F","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+  const [QuestionNumber, setQuestionNumber] = useState(-1);
   const [showElements, setShowElements] = useState(false);
   const [row, setRow] = useState("1");
   const AddQuestionText = "Add Question";
@@ -99,6 +102,9 @@ const QuestionCard = (props) => {
       document.getElementById("option").value = null;
       setOption(undefined);
     }
+    setQuestionNumber((preValue)=>{
+      return (QuestionNumber+1);
+    })
   };
 
   const handleOption = (e) => {
@@ -250,7 +256,7 @@ const QuestionCard = (props) => {
           {isIdle ? false  :  showElements && 
 
                 <div id="optionDiv" >
-                      <List options={options} removeOption={removeOption} />
+                      <List options={options} removeOption={removeOption} questionNumber={alphabets[QuestionNumber]}/>
                 </div>
           
           }
@@ -260,7 +266,7 @@ const QuestionCard = (props) => {
   );
 };
 
-const List = ({ options, removeOption }) => {
+const List = ({ options, removeOption, questionNumber }) => {
   return (
     <>
       {options.map((option) => {
@@ -269,6 +275,7 @@ const List = ({ options, removeOption }) => {
               key={option.id}
               option={option}
               removeOption={removeOption}
+              questionNumber={questionNumber}
             />
         );
       })}
@@ -287,14 +294,17 @@ const SingleOption = (props) => {
     delay: 0,
     ease: [0, 0.71, 0.2, 1.01]
     }}>
+      <div className="question-number" >
+        <p>{props.questionNumber}</p>
+      </div>
       <div className="options-individual">
+
         <h4>{value}</h4>
         <Zoom in={true}>
           <IconButton
             className="DeleteButton"
             onClick={() => props.removeOption(id)}
             aria-label="delete"
-            className="deletebtn"
           >
             <DeleteIcon />
           </IconButton>
