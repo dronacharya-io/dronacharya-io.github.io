@@ -17,7 +17,7 @@ const QuestionCard = (props) => {
   });
 
   const alphabets = ["A","B","C","D","E","F","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-  const [QuestionNumber, setQuestionNumber] = useState(-1);
+  const [optionNumber, setOptionNumber] = useState(-1);
   const [showElements, setShowElements] = useState(false);
   const [row, setRow] = useState("1");
   const AddQuestionText = "Add Question";
@@ -102,8 +102,8 @@ const QuestionCard = (props) => {
       document.getElementById("option").value = null;
       setOption(undefined);
     }
-    setQuestionNumber((preValue)=>{
-      return (QuestionNumber+1);
+    setOptionNumber((preValue)=>{
+      return(optionNumber+1)
     })
   };
 
@@ -116,6 +116,10 @@ const QuestionCard = (props) => {
     setOptions((options) => {
       return options.filter((option) => option.id !== id);
     });
+
+    setOptionNumber(()=>{
+      return optionNumber -1;
+    })
   };
 
 
@@ -256,7 +260,7 @@ const QuestionCard = (props) => {
           {isIdle ? false  :  showElements && 
 
                 <div id="optionDiv" >
-                      <List options={options} removeOption={removeOption} questionNumber={alphabets[QuestionNumber]}/>
+                      <List options={options} removeOption={removeOption} optionNumber={alphabets[optionNumber]}/>
                 </div>
           
           }
@@ -266,7 +270,7 @@ const QuestionCard = (props) => {
   );
 };
 
-const List = ({ options, removeOption, questionNumber }) => {
+const List = ({ options, removeOption, optionNumber }) => {
   return (
     <>
       {options.map((option) => {
@@ -275,7 +279,7 @@ const List = ({ options, removeOption, questionNumber }) => {
               key={option.id}
               option={option}
               removeOption={removeOption}
-              questionNumber={questionNumber}
+              optionNumber={optionNumber}
             />
         );
       })}
@@ -294,8 +298,8 @@ const SingleOption = (props) => {
     delay: 0,
     ease: [0, 0.71, 0.2, 1.01]
     }}>
-      <div className="question-number" >
-        <p>{props.questionNumber}</p>
+      <div className="option-number" >
+        <p>{props.optionNumber}</p>
       </div>
       <div className="options-individual">
 

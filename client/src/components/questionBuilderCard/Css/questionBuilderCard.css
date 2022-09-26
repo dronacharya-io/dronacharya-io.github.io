@@ -196,10 +196,10 @@
 #dark .DeleteButton{
     display: flex;
     justify-self: flex-end;
-    color:#FFEA41
+    color:#FFEA41;
 }
 
-#light .question-number{
+#light .option-number{
     background-color: #ffb74d;
     color: white;
     box-shadow: 0 3px 8px rgb(207, 207, 207);
@@ -215,6 +215,17 @@
     z-index: 3;
 }
 
-#dark .question-number{
-
+#dark .option-number{
+    color: #FFEA41;
+    border: 1px solid;
+    border-radius: 100%;
+    width: 40px;
+    height:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-bottom: -20px;
+    position: absolute;
+    z-index: 3;
 }
