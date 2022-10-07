@@ -4,6 +4,7 @@
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
+    margin-top: 15%;
 }
 
 .first-container{
