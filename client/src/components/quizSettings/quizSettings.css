@@ -1,6 +1,8 @@
 .quiz-settings-main-container{
   display: flex;
   align-items: center;
+  flex-direction: row;
+  position: absolute;
 }
 
 #centerContent{
@@ -40,4 +42,101 @@
 .quiz-settings-sweepable-drawer{
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
+
+.quiz-settings-div-containing-vectors-and-form{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.quiz-settings-div-containing-vectors{
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1rem;
+  margin-right: -1rem;
+}
+
+.quiz-settings-div-containing-form{
+  min-width: 50%;
+}
+
+#quizname,
+  #subject,
+  #timePerQuestion,
+  #positiveMarking,
+  #negativeMarking,
+  #startDate,
+  #startTime,
+  #runTime {
+    border: none;
+    padding: 4px;
+    outline: none;
+    font-size: 1.2em;
+    font-family: inherit;
+    resize: none;
+    background: #eee;
+    position: relative;
+    width: 38rem;
+    margin: 1rem auto 1.25rem auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(207, 207, 207);
+    border: none;
+  }
+
+  #form {
+    box-shadow: 0 2px 10px rgb(70, 56, 14);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffb74d;
+    align-items: center;
+    padding-bottom: 2.5rem;
+  }
+
+  #addSettingButton {
+    background-color: #ffb74d;
+    width: fit-content;
+    z-index: 9999;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-right: 2rem;
+  }
+
+  #sparkles {
+    position: absolute;
+  }
+
+    
+  #inputLabel {
+    color: white;
+    font-size: large;
+    position: relative;
+    top: 2px;
+    letter-spacing: 1.5px;
+  }
+
+  #alert {
+    width: 100%;
+    font-size: larger;
+  }
+
+  #quiz-settings-vector-addbtn-canclebtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+    
+  #rocket {
+    display: flex;
+    margin-right: 0.5rem;
+  }
+
+  .i-will-fill-later-btn{
+    width: fit-content;
+    z-index: 9999;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
