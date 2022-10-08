@@ -16,8 +16,8 @@ function Earth(props) {
     const cloudsRef = useRef()
     useFrame(({clock})=>{
         const elapseTime = clock.getElapsedTime()
-       earthRef.current.rotation.y =  elapseTime / 6;                                                                                                                                                                                                                                                                                            
-       cloudsRef.current.rotation.y =  elapseTime / 6
+       earthRef.current.rotation.y =  elapseTime / 16;                                                                                                                                                                                                                                                                                            
+       cloudsRef.current.rotation.y =  elapseTime / 16
     })
   return (
     <>
