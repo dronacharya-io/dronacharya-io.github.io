@@ -6,6 +6,7 @@
     color:white;
     border-color: #ffb74d;
     size: 2px;
+    box-shadow: 0 0.1rem 0.3rem 0rem rgb(118, 118, 118);
    }
    
    #dark #navButton{
@@ -33,4 +34,8 @@
     align-items: center;
     width: 100%;
     height: 100%;
+   }
+
+   .quiz-submissions-page-div-submission{
+    padding : 2rem 2rem 1rem 2rem ;
    }

@@ -75,8 +75,8 @@ const QuizSubmissions = () => {
           />
         </div>
       ) : data.length > 0 ? (
-        <>
-          <Paper sx={{ width: "100%", overflow: "hidden" }}>
+        <div className="quiz-submissions-page-div-submission" >
+          <Paper sx={{ width: "100%", overflow: "hidden", }} elevation={3}>
             <TableContainer component={Paper}>
               <Table
                 sx={{ minWidth: 650 }}
@@ -126,7 +126,7 @@ const QuizSubmissions = () => {
               </Table>
             </TableContainer>
           </Paper>
-        </>
+        </div>
       ) : data.length <= 0 && !loading ? (
         <>
           <div id="image">
