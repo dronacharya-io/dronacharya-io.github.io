@@ -11,6 +11,7 @@ import animationData from "../../lotties/circle-animation.json";
 import { styled } from "@mui/material/styles";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
+
 export const Quiz = () => {
   const { user } = useUserAuth();
 
@@ -68,7 +69,7 @@ export const Quiz = () => {
                 user.displayName
                   ?.slice(1, user.displayName?.length)
                   .toLowerCase()
-              : "Namaste",
+              : "Namaste human",
           ]}
           cursorRenderer={(cursor) => <h1>{cursor}</h1>}
           speed={100}
