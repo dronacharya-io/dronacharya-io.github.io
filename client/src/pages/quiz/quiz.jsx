@@ -10,7 +10,9 @@ import Lottie from "react-lottie";
 import animationData from "../../lotties/circle-animation.json";
 import { styled } from "@mui/material/styles";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-
+import Earth from "../../components/ThreeJs Earth/Earth.jsx";
+import { Canvas } from "@react-three/fiber"
+import { Suspense } from 'react'
 
 export const Quiz = () => {
   const { user } = useUserAuth();
@@ -105,6 +107,7 @@ export const Quiz = () => {
           }}
         />
         <div id="centerContent">
+
           <div id="homePageText">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
@@ -143,8 +146,13 @@ export const Quiz = () => {
           </div>
         </div>
       </div>
-      <div id="animation">
-        <Lottie isClickToPauseDisabled={true}  options={defaultOptions} height={675} width={675} />
+      <div className="animation">
+        {/* <Lottie isClickToPauseDisabled={true}  options={defaultOptions} height={675} width={675} /> */}
+        <Canvas >
+            <Suspense fallback={null}>
+              <Earth />
+            </Suspense>
+        </Canvas>
       </div>
     </div>
   );
