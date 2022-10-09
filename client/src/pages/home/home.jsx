@@ -15,7 +15,7 @@ import EditQuiz from "../../components/editQuiz/editQuiz";
 import QuizSubmissions from "../quizSubmissions/quizSubmissions";
 import QuizScore from "../quizScore/quizScore";
 
-export const Home = () => {
+export const Home = (props) => {
   return (
     <>
       <BrowserRouter>
@@ -27,7 +27,7 @@ export const Home = () => {
           </div>
           <div className="remPart">
             <Routes>
-              <Route path="/" element={<Quiz />} />
+              <Route path="/" element={<Quiz theme={props.theme} />} />
               <Route path="/createQuiz" element={<CreateQuiz />} />
               <Route path="/joinQuiz" element={<JoinQuiz />} />
               <Route path="/editQuiz" element={<EditQuiz />} />

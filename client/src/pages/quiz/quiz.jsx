@@ -14,9 +14,10 @@ import Earth from "../../components/ThreeJs Earth/Earth.jsx";
 import { Canvas } from "@react-three/fiber"
 import { Suspense } from 'react'
 
-export const Quiz = () => {
+export const Quiz = (props) => {
   const { user } = useUserAuth();
 
+  console.log(props.theme)
   const navigate = useNavigate();
   const [id, setId] = useState();
 
@@ -146,13 +147,20 @@ export const Quiz = () => {
           </div>
         </div>
       </div>
-      <div className="animation">
-        {/* <Lottie isClickToPauseDisabled={true}  options={defaultOptions} height={675} width={675} /> */}
-        <Canvas >
-            <Suspense fallback={null}>
-              <Earth />
-            </Suspense>
-        </Canvas>
+      <div>
+      { props.theme === 'light' ? (
+        <div className="quiz-light-vector" >
+          <Lottie isClickToPauseDisabled={true}  options={defaultOptions} height={675} width={675} /> 
+        </div>
+      ) : (
+        <div className="animation">
+          <Canvas >
+              <Suspense fallback={null}>
+                <Earth />
+              </Suspense>
+          </Canvas>
+        </div>
+      ) }
       </div>
     </div>
   );

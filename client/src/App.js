@@ -16,7 +16,7 @@ function App() {
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <div className="App" id={theme}>
         <div id="body">
-          <Home />
+          <Home theme={theme} />
         </div>
       </div>
     </ThemeContext.Provider>

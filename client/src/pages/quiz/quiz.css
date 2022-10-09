@@ -195,3 +195,11 @@
 #textField__ {
   color: #FF9800;
 }
+
+.quiz-light-vector{
+  margin-left: 19% ;
+  margin-top: 5rem;
+  width: 32rem;
+  display: flex;
+  justify-content: flex-end;
+}
