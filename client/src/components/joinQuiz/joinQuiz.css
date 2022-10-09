@@ -1,4 +1,5 @@
-#question {
+
+.join-quiz-question{
     word-break: break-all;
     text-align: center;
     padding: 2%;
@@ -41,12 +42,26 @@ button {
     display: flex;
     height: 3rem;
     align-items: center;
+    margin-top: 1rem;
+    padding:4rem;
 }
 
-.back-icon {
-    height: 2rem;
-    width: 2rem;
+#light .back-icon {
+    height: 4rem;
+    width: 1rem;
     margin: 0.5rem;
+    border-color: white;
+    border-radius: 50%;
+    color:black;
+}
+
+#dark .back-icon{
+    height: 4rem;
+    width: 1rem;
+    margin: 0.5rem;
+    border-color: #FFEA41;
+    border-radius: 50%;
+    color:#FFEA41;
 }
 
 #navigationTab {
@@ -55,8 +70,45 @@ button {
     width: 100%;
 }
 
-.questionLocator {
-    width: 2rem;
-    height: 2rem;
+#light .questionLocator {
+    border-radius: 100%;
+    width: 1rem;
+    height: 3.8rem;
     margin: 0.5rem;
+    border-color: #ffb74d;
+    box-sizing: border-box;
+    background-color: #ffb74d;
+    color:white;
+    box-shadow: 0 0.1rem 0.3rem 0rem rgb(118, 118, 118);
+    font-size: larger;
+    font-weight: 800;
 }
+
+#light .questionLocator:hover{
+    box-shadow: 0 0.1rem 0.3rem 0rem rgb(185, 185, 185);
+    font-size: small;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+#dark .questionLocator{
+    border-radius: 100%;
+    width: 1rem;
+    height: 3.8rem;
+    margin: 0.5rem;
+    box-sizing: border-box;
+    border-color: #FFEA41;
+    color: #FFEA41;
+    font-size: larger;
+    font-weight: 800;
+
+}
+
+#dark .questionLocator:hover{
+    font-size: larger;
+    font-weight: 800;
+    transition: 0.3s;
+    border-color: #FFEA41;
+    color:#FFEA41;
+}
+

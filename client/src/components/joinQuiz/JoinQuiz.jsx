@@ -10,6 +10,8 @@ import Button from "@mui/material/Button";
 import Lottie from "react-lottie";
 import Loading from "../../lotties/mainloading.json";
 import LoginSignUpPopUp from "../PopUps/LoginSignUpPopUp.jsx";
+import Tooltip from "@mui/material/Tooltip";
+import IconButton from "@mui/material/IconButton";
 
 const JoinQuiz = () => {
   const navigate = useNavigate();
@@ -183,36 +185,54 @@ const JoinQuiz = () => {
           ) : (
             <>
               <div id="joinQuizHeader">
-                <IoArrowBack
+                <Tooltip
+                  title="I Quit this Quiz"
+                  placement="top"
+                  disableFocusListener
+                  disableTouchListener
+                  arrow
                   className="back-icon"
-                  onClick={() => navigate("../")}
-                />
+                >
+                  <Button
+                    className="back-icon"
+                    variant="outlined"
+                    onClick={() => navigate("../")}
+                    >
+                    <IoArrowBack/>
+                  </Button>
+                </Tooltip>
                 <div id="navigationTab">
                   {Data.map((question, i) => {
                     const { id } = question;
                     return (
                       <>
-                        <Button
-                          variant="outlined"
-                          className="questionLocator"
-                          onClick={() => {
-                            setIndex(i);
-                            // setIswrittenType(Data[i].isWrittenType);
-                          }}
-                          id={id}
+                        <Tooltip
+                          title={`Jump to Question ${i+1}`}
+                          placement="top"
+                          disableFocusListener
+                          disableTouchListener
+                          arrow
+                          
                         >
-                          {i}
-                        </Button>
+                            <Button
+                              className="questionLocator"
+                              variant="outlined"
+                              onClick={() => {
+                                setIndex(i);
+                                // setIswrittenType(Data[i].isWrittenType);
+                              }}
+                            >
+                              {i+1}
+                            </Button>
+                        </Tooltip>
                       </>
                     );
                   })}
                 </div>
               </div>
-              <TextField
-                id="question"
-                key={Data[index].id}
-                value={Data[index].Question}
-              />
+              <div className="join-quiz-question" >
+                <h1>{Data[index].Question}</h1>
+              </div>
               <div id="options">
                 {Data[index].options.map((option, i) => {
                   return (
