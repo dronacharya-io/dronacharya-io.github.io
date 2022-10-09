@@ -112,3 +112,20 @@ button {
     color:#FFEA41;
 }
 
+ #light .join-quiz-main-div{
+    background-color: #ffb74d;
+    width: 70%;
+    height: 60%;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 0.2rem 0.5rem 0rem rgb(185, 185, 185);
+}
+
+.vectorMainDiv{
+    position:absolute;
+    margin-top: 18.5%;
+    margin-left: 1rem;
+    width:auto ;
+}

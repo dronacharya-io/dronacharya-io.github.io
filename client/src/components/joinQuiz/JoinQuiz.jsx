@@ -11,7 +11,8 @@ import Lottie from "react-lottie";
 import Loading from "../../lotties/mainloading.json";
 import LoginSignUpPopUp from "../PopUps/LoginSignUpPopUp.jsx";
 import Tooltip from "@mui/material/Tooltip";
-import IconButton from "@mui/material/IconButton";
+import mainDivVector from "../../lotties/join-quiz-main-div.json";
+import {motion} from "framer-motion";
 
 const JoinQuiz = () => {
   const navigate = useNavigate();
@@ -160,6 +161,15 @@ const JoinQuiz = () => {
     console.log(submissions);
   };
 
+  const VectorMainDiv = {
+    loop: true,
+    autoplay: true,
+    animationData: mainDivVector,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  }
+
   const VectorLoading = {
     loop: true,
     autoplay: true,
@@ -230,48 +240,64 @@ const JoinQuiz = () => {
                   })}
                 </div>
               </div>
-              <div className="join-quiz-question" >
-                <h1>{Data[index].Question}</h1>
-              </div>
-              <div id="options">
-                {Data[index].options.map((option, i) => {
-                  return (
-                    <>
-                      <div className="option" key={i}>
-                        <p>option {i + 1}</p>
-                        <p>{option.value}</p>
-                      </div>
-                    </>
-                  );
-                })}
-              </div>
-              <div id="answer">
-                <p>answer</p>
-                {/* {!IsWrittenType ? ( */}
-                <TextField
-                  type="text"
-                  id="submittedAns"
-                  name="submittedAns"
-                  onChange={handleChange}
-                />
-                {/* ) : (
-                  <label htmlFor="icon-button-file">
-                    <Input accept="image/*" id="icon-button-file" type="file" />
-                    <IconButton
-                      color="primary"
-                      aria-label="upload picture"
-                      component="label"
-                    >
-                      <input hidden accept="image/*" type="file" />
-                      <PhotoCamera
+                  <motion.div 
+                    className="join-quiz-main-div"
+                    initial={{ y: 10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -10, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                   >
+                    <div className="join-quiz-question" >
+                      <h1>{Data[index].Question}</h1>
+                    </div>
+                    <div id="options">
+                      {Data[index].options.map((option, i) => {
+                        return (
+                          <>
+                            <div className="option" key={i}>
+                              <p>option {i + 1}</p>
+                              <p>{option.value}</p>
+                            </div>
+                          </>
+                        );
+                      })}
+                    </div>
+                    <div id="answer">
+                      <p>answer</p>
+                      {/* {!IsWrittenType ? ( */}
+                      <TextField
+                        type="text"
                         id="submittedAns"
                         name="submittedAns"
                         onChange={handleChange}
                       />
-                    </IconButton>
-                  </label>
-                )} */}
-              </div>
+                      {/* ) : (
+                        <label htmlFor="icon-button-file">
+                          <Input accept="image/*" id="icon-button-file" type="file" />
+                          <IconButton
+                            color="primary"
+                            aria-label="upload picture"
+                            component="label"
+                          >
+                            <input hidden accept="image/*" type="file" />
+                            <PhotoCamera
+                              id="submittedAns"
+                              name="submittedAns"
+                              onChange={handleChange}
+                            />
+                          </IconButton>
+                        </label>
+                      )} */}
+                    </div>
+                      <div className="vectorMainDiv" >
+                        <Lottie
+                          isClickToPauseDisabled={true}
+                          options={VectorMainDiv}
+                          height={170}
+                          width={270}
+                        />
+                      </div>
+                  </motion.div>
               <Button variant="outlined" onClick={() => TakeAnswer()}>
                 Next
               </Button>
