@@ -149,7 +149,7 @@ export const Quiz = (props) => {
       </div>
       <div className="quiz-outer-div-lottie" >
         <div className="animation" >
-          <Lottie isClickToPauseDisabled={true}  options={defaultOptions} height={675} width={675} /> 
+          <Lottie isClickToPauseDisabled={true}  options={defaultOptions} height={575} width={675} /> 
           {/* 
             <Canvas >
                 <Suspense fallback={null}>
