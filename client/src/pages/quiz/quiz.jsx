@@ -10,9 +10,7 @@ import Lottie from "react-lottie";
 import animationData from "../../lotties/circle-animation.json";
 import { styled } from "@mui/material/styles";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import Earth from "../../components/ThreeJs Earth/Earth.jsx";
-import { Canvas } from "@react-three/fiber"
-import { Suspense } from 'react'
+import { motion } from "framer-motion";
 
 export const Quiz = (props) => {
   const { user } = useUserAuth();
@@ -148,7 +146,16 @@ export const Quiz = (props) => {
         </div>
       </div>
       <div className="quiz-outer-div-lottie" >
-        <div className="animation" >
+        <motion.div 
+        className="animation"
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01]
+        }}
+         >
           <Lottie isClickToPauseDisabled={true}  options={defaultOptions} height={575} width={675} /> 
           {/* 
             <Canvas >
@@ -156,7 +163,7 @@ export const Quiz = (props) => {
                   <Earth theme={props.theme} />
                 </Suspense>
             </Canvas> */}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
