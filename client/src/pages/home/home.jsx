@@ -22,7 +22,7 @@ export const Home = (props) => {
         <div id="mainBody">
           <div id="navbar">
             <StickyBox offsetTop={0} offsetBottom={0}>
-              <Navbar />
+              <Navbar theme={props.theme} />
             </StickyBox>
           </div>
           <div className="remPart">

@@ -1,5 +1,5 @@
 import "./navbar.css";
-import React from "react";
+import React, { useState }from "react";
 import { AiOutlineHome, AiOutlineQuestionCircle } from "react-icons/ai";
 import { SiGoogleclassroom, SiDarkreader } from "react-icons/si";
 import { IoSettingsOutline, IoStatsChartOutline } from "react-icons/io5";
@@ -11,12 +11,15 @@ import Logo from "../../pages/images/logo.webp";
 import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
 import { Button } from "@mui/material";
+import LightModeIcon from '@mui/icons-material/LightMode';
+import NightlightRoundIcon from '@mui/icons-material/NightlightRound';
 
-const Navbar = () => {
+const Navbar = (props) => {
   const navigate = useNavigate();
 
   const useThemeContext = useContext(ThemeContext);
   const { toggleTheme } = useThemeContext;
+
 
   return (
     <>
@@ -114,7 +117,31 @@ const Navbar = () => {
           <hr />
           
             <IconButton id="darkmode" onClick={toggleTheme} className="iconCover 6">
-              <SiDarkreader className="icon" />
+              { props.theme === "dark" ? 
+              (
+                <Tooltip
+                  title="Light Mode"
+                  placement="right"
+                  disableFocusListener
+                  disableTouchListener
+                  arrow
+                >
+
+                  <LightModeIcon className="icon"  />
+                </Tooltip>
+                ) 
+              : 
+              (           
+                <Tooltip
+                  title="Dark Mode"
+                  placement="right"
+                  disableFocusListener
+                  disableTouchListener
+                  arrow
+                >
+                  <NightlightRoundIcon className="icon" /> 
+                </Tooltip>
+                )  }
             </IconButton>
           
           <br />
