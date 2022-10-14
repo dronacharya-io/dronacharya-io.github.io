@@ -147,26 +147,16 @@ export const Quiz = (props) => {
           </div>
         </div>
       </div>
-      <div>
-      { props.theme === 'light' ? (
+      <div className="quiz-outer-div-lottie" >
         <div className="animation" >
-          {/* <Lottie isClickToPauseDisabled={true}  options={defaultOptions} height={675} width={675} />  */}
-
-          <Canvas >
-              <Suspense fallback={null}>
-                <Earth theme={props.theme} />
-              </Suspense>
-          </Canvas>
+          <Lottie isClickToPauseDisabled={true}  options={defaultOptions} height={675} width={675} /> 
+          {/* 
+            <Canvas >
+                <Suspense fallback={null}>
+                  <Earth theme={props.theme} />
+                </Suspense>
+            </Canvas> */}
         </div>
-      ) : (
-        <div className="animation">
-          <Canvas >
-              <Suspense fallback={null}>
-                <Earth theme={props.theme} />
-              </Suspense>
-          </Canvas>
-        </div>
-      ) }
       </div>
     </div>
   );

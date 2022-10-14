@@ -8,7 +8,6 @@
   background-color: #222B45;
   display: flex;
   height: 100%;
-  align-items: center;
 }
 
 #light .body {
@@ -178,13 +177,14 @@
   color: #DBBE01;
 }
 
+.quiz-outer-div-lottie{
+  display:flex;
+  justify-self: center;
+}
+
 .animation {
-  margin-left: 10% ;
-  margin-top: -5rem;
-  width: 32rem;
-  height: 60rem;
-  display: flex;
-  justify-content: flex-end;
+  padding: 5rem;
+  position: absolute;
 }
 
 #outerTab,
@@ -203,3 +203,4 @@
   display: flex;
   justify-content: flex-end;
 }
+

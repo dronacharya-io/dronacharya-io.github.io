@@ -41,3 +41,5 @@ function Earth(props) {
 }
 
 export default Earth
+
+//Earth component is imported in Quiz.jsx in pages but commented
