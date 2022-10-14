@@ -13,6 +13,7 @@ import IconButton from "@mui/material/IconButton";
 import { Button } from "@mui/material";
 import LightModeIcon from '@mui/icons-material/LightMode';
 import NightlightRoundIcon from '@mui/icons-material/NightlightRound';
+import SchoolIcon from '@mui/icons-material/School';
 
 const Navbar = (props) => {
   const navigate = useNavigate();
@@ -50,6 +51,25 @@ const Navbar = (props) => {
             </IconButton>
           </Tooltip>
 
+
+          <Tooltip
+            title="Explore Courses "
+            placement="right"
+            disableFocusListener
+            disableTouchListener
+            arrow
+          >
+            <IconButton
+              className="iconCover 5"
+              sx={{ "&:hover": { backgroundColor: "white" } }}
+              onClick={() => navigate("/exploreCourses")}
+            >
+              <SchoolIcon className="icon" />
+            </IconButton>
+          </Tooltip>
+
+
+
           <Tooltip
             title="My Quizzes"
             placement="right"
@@ -66,21 +86,6 @@ const Navbar = (props) => {
             </IconButton>
           </Tooltip>
 
-          <Tooltip
-            title="Settings"
-            placement="right"
-            disableFocusListener
-            disableTouchListener
-            arrow
-          >
-            <IconButton
-              className="iconCover 3"
-              sx={{ "&:hover": { backgroundColor: "white" } }}
-              onClick={() => navigate("/settings")}
-            >
-              <IoSettingsOutline className="icon" />
-            </IconButton>
-          </Tooltip>
 
           <Tooltip
             title="Score Card"
@@ -99,7 +104,7 @@ const Navbar = (props) => {
           </Tooltip>
 
           <Tooltip
-            title="Explore"
+            title="About Us"
             placement="right"
             disableFocusListener
             disableTouchListener
@@ -111,6 +116,23 @@ const Navbar = (props) => {
               onClick={() => navigate("/aboutUs")}
             >
               <AiOutlineQuestionCircle className="icon" />
+            </IconButton>
+          </Tooltip>
+
+
+          <Tooltip
+            title="Settings"
+            placement="right"
+            disableFocusListener
+            disableTouchListener
+            arrow
+          >
+            <IconButton
+              className="iconCover 3"
+              sx={{ "&:hover": { backgroundColor: "white" } }}
+              onClick={() => navigate("/settings")}
+            >
+              <IoSettingsOutline className="icon" />
             </IconButton>
           </Tooltip>
 

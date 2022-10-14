@@ -2,6 +2,7 @@ import "./home.css";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AboutUs } from "../About us/aboutUs.jsx";
+import { ExploreCourses } from "../Explore Courses/exploreCourses.jsx"
 import Navbar from "../../components/navbar/navbar.jsx";
 import ProfileTab from "../../components/profile/profile.jsx";
 import { Classroom } from "../classroom/classroom.jsx";
@@ -37,6 +38,7 @@ export const Home = (props) => {
               <Route path="/settings" element={<Settings />} />
               <Route path="/scorecard" element={<Scorecard />} />
               <Route path="/aboutUs" element={<AboutUs />} />
+              <Route path="/exploreCourses" element={<ExploreCourses />} />
             </Routes>
           </div>
           <div id="profile">
