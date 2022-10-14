@@ -11,6 +11,9 @@ import animationData from "../../lotties/circle-animation.json";
 import { styled } from "@mui/material/styles";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { motion } from "framer-motion";
+import Earth from "../../components/ThreeJs Earth/Earth.jsx";
+import { Canvas } from "@react-three/fiber"
+import { Suspense } from 'react'
 
 export const Quiz = (props) => {
   const { user } = useUserAuth();
