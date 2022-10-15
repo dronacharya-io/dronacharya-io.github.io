@@ -1,0 +1,24 @@
+.explore-courses-main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem auto;
+}
+
+.explore-courses-content-lottie-div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+
+#light .explore-courses-h1{
+    margin-top: 2rem;
+    color:black;
+}
+
+#dark .explore-courses-h1{
+    margin-top: 2rem;
+    color:white;
+}
+

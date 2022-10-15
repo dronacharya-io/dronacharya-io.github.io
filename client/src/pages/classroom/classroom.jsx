@@ -11,7 +11,7 @@ import animationData from "../../lotties/notfound.json";
 import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp"
 
 export const Classroom = () => {
-  const { user} = useUserAuth();
+  const { user } = useUserAuth();
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
     quizzesCreated: [{ quiz: { quizName: "null", startDate: 0, runTime: 0 } }],
@@ -102,7 +102,7 @@ export const Classroom = () => {
               <CardSkeleton />
               <CardSkeleton />
               <CardSkeleton />
-              <CardSkeleton />
+              <CardSkeleton /> 
             </>
           )}
         </div>

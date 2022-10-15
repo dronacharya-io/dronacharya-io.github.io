@@ -1,0 +1,23 @@
+#light .Search-course-component-main-botton{
+    color: white;
+    border-color: #ffb74d;
+    background-color: #ffb74d;
+    width: 150px;
+    height: 40px;
+    letter-spacing: 2px;
+    box-shadow: 0 0.1rem 0.3rem 0rem rgb(118, 118, 118);
+    margin-top: 1rem;
+    font-weight: 200;
+    font-size: larger;
+}
+
+#dark .Search-course-component-main-botton{
+    border-color: #FFEA41;
+    color: #FFEA41;
+    width: 150px;
+    height: 40px;
+    letter-spacing: 2px;
+    margin-top: 1rem;
+    font-weight: 200;
+    font-size: larger;
+}
