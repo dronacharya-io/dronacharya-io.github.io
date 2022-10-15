@@ -59,7 +59,6 @@ export const ExploreCourses = () => {
                 </div>
               }
               <ExploreCoursesSelector />
-
           </div>
         ) : (
           <LoginSignUpPopUp />

@@ -14,11 +14,26 @@ import "./SearchCourse.css";
 
 const SearchCourses = ( props ) => {
     const [open, setOpen] = React.useState(false);
+    const [collgeName, setCollegeName] = React.useState('')
+    const [standard, setStandard] = React.useState('')
+    const [language, setLanguage] = React.useState('')
     const [age, setAge] = React.useState('');
   
-    const handleChange = (event) => {
-      setAge(Number(event.target.value) || '');
-    };
+
+
+    const handleChangeCollege = (event) => {
+      setCollegeName(event.target.value);
+    }
+
+    const handleChangeClass = (event) => {
+      setStandard(event.target.value);
+    }
+
+    const handleChangeLanguage = (event) => {
+      setLanguage(event.target.value);
+    }
+
+
   
     const handleClickOpen = () => {
       setOpen(true);
@@ -38,34 +53,43 @@ const SearchCourses = ( props ) => {
         <DialogContent>
             <Box component="form" sx={{ display: 'flex', flexWrap: 'wrap' }}>
             <FormControl sx={{ m: 1, minWidth: 120 }}>
-                <InputLabel htmlFor="demo-dialog-native">Age</InputLabel>
-                <Select
-                native
-                value={age}
-                onChange={handleChange}
-                input={<OutlinedInput label="Age" id="demo-dialog-native" />}
-                >
-                <option aria-label="None" value="" />
-                <option value={10}>Ten</option>
-                <option value={20}>Twenty</option>
-                <option value={30}>Thirty</option>
-                </Select>
-            </FormControl>
-            <FormControl sx={{ m: 1, minWidth: 120 }}>
-                <InputLabel id="demo-dialog-select-label">Age</InputLabel>
+                <InputLabel id="demo-dialog-select-label">College</InputLabel>
                 <Select
                 labelId="demo-dialog-select-label"
                 id="demo-dialog-select"
-                value={age}
-                onChange={handleChange}
-                input={<OutlinedInput label="Age" />}
+                value={collgeName}
+                onChange={handleChangeCollege}
+                input={<OutlinedInput label="College" />}
                 >
-                <MenuItem value="">
-                    <em>None</em>
-                </MenuItem>
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                <MenuItem value={'VBPC'}>V.B.P.C.</MenuItem>
+                </Select>
+            </FormControl>
+            <FormControl sx={{ m: 1, minWidth: 120 }}>
+                <InputLabel id="demo-dialog-select-label">Class</InputLabel>
+                <Select
+                labelId="demo-dialog-select-label"
+                id="demo-dialog-select"
+                value={standard}
+                onChange={handleChangeClass}
+                input={<OutlinedInput label="Class" />}
+                >
+
+                <MenuItem value={'firstYear'}>1st Year</MenuItem>
+                </Select>
+            </FormControl>
+            
+            <FormControl sx={{ m: 1, minWidth: 120 }}>
+                <InputLabel id="demo-dialog-select-label">Language</InputLabel>
+                <Select
+                labelId="demo-dialog-select-label"
+                id="demo-dialog-select"
+                value={language}
+                onChange={handleChangeLanguage}
+                input={<OutlinedInput label="Language" />}
+                >
+
+                <MenuItem value={'hindi'}>Hindi</MenuItem>
+                <MenuItem value={'english'}>English</MenuItem>
                 </Select>
             </FormControl>
             </Box>
