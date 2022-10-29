@@ -1,4 +1,6 @@
-import "./navbar.css";
+import "./Monitor css/navbar.css";
+import "./Mobile Css/mobileNavbar.css";
+import "./Tablet css/tabletNavbar.css";
 import React, { useState }from "react";
 import { AiOutlineHome, AiOutlineQuestionCircle } from "react-icons/ai";
 import { SiGoogleclassroom, SiDarkreader } from "react-icons/si";

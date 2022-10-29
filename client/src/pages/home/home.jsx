@@ -1,4 +1,6 @@
-import "./home.css";
+import "./Monitor css/home.css";
+import "./Mobile css/mobileHome.css";
+import "./Tablet css/tabletHome.css";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AboutUs } from "../About us/aboutUs.jsx";
