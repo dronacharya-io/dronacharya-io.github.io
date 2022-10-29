@@ -79,7 +79,7 @@ const SearchCourses = ( props ) => {
             </FormControl>
             
             <FormControl sx={{ m: 1, minWidth: 120 }}>
-                <InputLabel id="demo-dialog-select-label">Language</InputLabel>
+                <InputLabel id="demo-dialog-select-label">Medium</InputLabel>
                 <Select
                 labelId="demo-dialog-select-label"
                 id="demo-dialog-select"
