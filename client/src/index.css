@@ -6,6 +6,18 @@ body {
 
 }
 
+:root {
+
+  --light-primary-color: #ffb74d;
+  --dark-primary-color: #FFEA41;
+  --black-color: #030303;
+  --lightGray-color: #e4e4e4;
+  --gray-color: #6b7688;
+  --white-color: #ffffff;
+}
+
+
+
 * {
   font-family: 'Roboto'
 }

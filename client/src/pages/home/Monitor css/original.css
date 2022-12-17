@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+#mainBody {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.remPart {
+  width: -webkit-fill-available;
+}

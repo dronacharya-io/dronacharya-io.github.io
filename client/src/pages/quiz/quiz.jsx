@@ -63,7 +63,7 @@ export const Quiz = (props) => {
 
   return (
     <div className="bodyWithAnimation">
-      <div className="body">
+      <div className="quiz-content-div">
         <ReactTypingEffect
           className="typing"
           text={[
@@ -112,11 +112,11 @@ export const Quiz = (props) => {
 
           <div id="homePageText">
             Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
+            industry. borem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
             PageMaker including versions of Lorem Ipsum.
           </div>
-          <div id="q-mainBody">
+          <div id="quiz-buttons">
             <Button
               variant="outlined"
               id="CreateQuizButton"
@@ -148,26 +148,26 @@ export const Quiz = (props) => {
           </div>
         </div>
       </div>
-      <div className="quiz-outer-div-lottie" >
-        <motion.div 
-        className="animation"
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.8,
-          delay: 0.5,
-          ease: [0, 0.71, 0.2, 1.01]
-        }}
-         >
-          <Lottie isClickToPauseDisabled={true}  options={defaultOptions} height={575} width={675} /> 
-          {/* 
-            <Canvas >
-                <Suspense fallback={null}>
-                  <Earth theme={props.theme} />
-                </Suspense>
-            </Canvas> */}
-        </motion.div>
-      </div>
+          <div className="quiz-animation-motion-parent-div">
+            <motion.div 
+              className="quiz-animation-motion-div"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+              }}
+            >
+                <Lottie isClickToPauseDisabled={true}  options={defaultOptions} height={490} width={590} /> 
+                {/* 
+                  <Canvas >
+                      <Suspense fallback={null}>
+                        <Earth theme={props.theme} />
+                      </Suspense>
+                  </Canvas> */}
+            </motion.div>
+          </div>
     </div>
   );
 };
