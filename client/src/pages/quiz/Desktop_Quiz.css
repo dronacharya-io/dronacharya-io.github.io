@@ -45,6 +45,7 @@
 }
 
 #centerContent{
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   row-gap: 3rem ;
@@ -72,7 +73,7 @@
   text-align: center;
   line-height: 2rem;
   letter-spacing: 0.8px;
-  width: 41rem;
+  max-width: 45rem;
 }
 
 #light #CreateQuizButton{
@@ -81,6 +82,17 @@
   color: var(--white-color);
   letter-spacing: 0.8px;
   box-shadow: 0 0.1rem 0.3rem 0rem var(--gray-color);
+  min-width: 15rem;
+  min-height: 4rem;
+  max-width: max-content;
+  font-size: 1.3rem;
+  box-sizing: border-box;
+}
+
+#dark #CreateQuizButton{
+  border-color: var(--dark-primary-color);
+  color: var(--dark-primary-color);
+  letter-spacing: 0.8px;
   min-width: 15rem;
   min-height: 4rem;
   max-width: max-content;
@@ -97,6 +109,19 @@
   border-color: var(--light-primary-color);
 }
 
+#dark #joinquiztextfeild {
+  width: 20rem;
+  height: 4rem;
+  letter-spacing: 0.8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  border-color: var(--dark-primary-color);
+}
+
+.quiz-textfield-joinbtn-parent-div{
+  display: flex;
+}
+
 #light #joinquizbutton {
   box-sizing: border-box;
   width: 5rem;
@@ -104,6 +129,15 @@
   letter-spacing: 2px;
   height: 4rem;
   color: var(--light-primary-color);
+}
+
+#dark #joinquizbutton {
+  box-sizing: border-box;
+  width: 5rem;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  height: 4rem;
+  color: var(--dark-primary-color);
 }
 
 .quiz-animation-motion-div{

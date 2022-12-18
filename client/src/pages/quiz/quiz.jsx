@@ -1,4 +1,5 @@
-import "./quiz.css";
+import "./Desktop_Quiz.css";
+import "./Quiz_Mobile.css";
 import React, { useState } from "react";
 import { useUserAuth } from "../../context/AuthContext";
 import ReactTypingEffect from "react-typing-effect";
@@ -73,7 +74,7 @@ export const Quiz = (props) => {
                 user.displayName
                   ?.slice(1, user.displayName?.length)
                   .toLowerCase()
-              : "Namaste human",
+              : "Namaste, human",
           ]}
           cursorRenderer={(cursor) => <h1>{cursor}</h1>}
           speed={100}
@@ -127,24 +128,26 @@ export const Quiz = (props) => {
               />
               Create Test
             </Button>
-            <ThemeProvider theme={darkTheme}>
-              <CssTextField
-                id="joinquiztextfeild"
-                placeholder="Paste a Test ID"
-                onChange={handleChange}
-                value={id}
-                InputLabel={{ className: "test" }}
-                label="Paste Test id here!"
-                focused
-              />
-            </ThemeProvider>
+            <div className="quiz-textfield-joinbtn-parent-div" >
+              <ThemeProvider theme={darkTheme}>
+                <CssTextField
+                  id="joinquiztextfeild"
+                  placeholder="Paste a Test ID"
+                  onChange={handleChange}
+                  value={id}
+                  InputLabel={{ className: "test" }}
+                  label="Paste Test id here!"
+                  focused
+                />
+              </ThemeProvider>
 
-            <Button
-              id="joinquizbutton"
-              onClick={() => navigate("/joinQuiz/?id=" + id)}
-            >
-              Join
-            </Button>
+              <Button
+                id="joinquizbutton"
+                onClick={() => navigate("/joinQuiz/?id=" + id)}
+              >
+                Join
+              </Button>
+            </div>
           </div>
         </div>
       </div>

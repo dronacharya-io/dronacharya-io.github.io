@@ -1,4 +1,7 @@
 @media screen and (max-width:450px){
+  #navbar{
+    display: none;
+  }
     #light #tab {
         display: flex;
         flex-direction: row;
