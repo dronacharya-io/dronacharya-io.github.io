@@ -1,0 +1,50 @@
+@media screen and (max-width: 451px) {
+    
+.login-signup-pop-up-backgroundParent-div{
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+#loginPopUp{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white-color); /*background color should be white*/
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.422);
+}
+
+#background{
+    height: 100%;
+}
+
+#login-signup-pop-up-title{
+    display: none;
+}
+
+#loginButton{
+	background: linear-gradient(-45deg,
+    var(--color-one),
+    var(--color-two),
+    var(--color-one));
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+    width: 200px;
+    letter-spacing: 3px;
+    margin-top: -5rem;
+    position: relative;
+    border-color: none;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+}

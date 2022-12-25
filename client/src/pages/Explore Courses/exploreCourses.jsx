@@ -52,10 +52,10 @@ export const ExploreCourses = () => {
                       ease: [0, 0.71, 0.2, 1.01]
                     }}
                   >
-                    <Lottie isClickToPauseDisabled={true}  options={InitaialLottie} height={400} width={400} />
+                    <Lottie isClickToPauseDisabled={true}  options={InitaialLottie} height={300} width={300} />
                   </motion.div>
-                  <h2 className='explore-courses-h1' >Select your <span>College Name</span> , <span>Class</span> , <span>Branch</span> and your Preffered Medium <span>Hindi</span> or <span>English.</span> .</h2>
-                  <h2 className='explore-courses-h1' style={{marginBottom:"2rem"}} > अपने <span>कॉलेज का नाम</span>, <span> कक्षा </span> , <span> शाखा  </span> और अपना पसंदीदा माध्यम <span> हिंदी </span> या <span> अंग्रेजी </span> चुनें।  </h2>
+                  <h2 className='explore-courses-h2' >Select your <span>College Name</span> , <span>Class</span> , <span>Branch</span> and your Preffered Medium <span>Hindi</span> or <span>English.</span> .</h2>
+                  <h2 className='explore-courses-h2' style={{marginBottom:"2rem"}} > अपने <span>कॉलेज का नाम</span>, <span> कक्षा </span> , <span> शाखा  </span> और अपना पसंदीदा माध्यम <span> हिंदी </span> या <span> अंग्रेजी </span> चुनें।  </h2>
                 </div>
               }
               <ExploreCoursesSelector />

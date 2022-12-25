@@ -1,6 +1,5 @@
-import "./Monitor css/navbar.css";
-import "./Mobile Css/mobileNavbar.css";
-import "./Tablet css/tabletNavbar.css";
+import "./Mobile_Navbar.css";
+import "./Desktop_Navbar.css";
 import React, { useState }from "react";
 import { AiOutlineHome, AiOutlineQuestionCircle } from "react-icons/ai";
 import { SiGoogleclassroom, SiDarkreader } from "react-icons/si";
@@ -26,8 +25,8 @@ const Navbar = (props) => {
 
   return (
     <>
-      <div id="tab">
-        <span id="logo">
+      <div id="navbar-tab-div">
+        <span id="navbar-logo-div">
           <img
             src={Logo}
             style={{ width: "3rem", height: "auto" }}
@@ -36,7 +35,7 @@ const Navbar = (props) => {
             }}
           />
         </span>
-        <div id="iconStart">
+        <div id="navbar-icons-div">
           <Tooltip
             title="Home"
             placement="right"
@@ -49,7 +48,7 @@ const Navbar = (props) => {
               sx={{ "&:hover": { backgroundColor: "white" } }}
               onClick={() => navigate("/")}
             >
-              <AiOutlineHome className="icon" />
+              <AiOutlineHome className="navbar-icon" />
             </IconButton>
           </Tooltip>
 
@@ -66,7 +65,7 @@ const Navbar = (props) => {
               sx={{ "&:hover": { backgroundColor: "white" } }}
               onClick={() => navigate("/exploreCourses")}
             >
-              <SchoolIcon className="icon" />
+              <SchoolIcon className="navbar-icon" />
             </IconButton>
           </Tooltip>
 
@@ -84,7 +83,7 @@ const Navbar = (props) => {
               sx={{ "&:hover": { backgroundColor: "white" } }}
               onClick={() => navigate("/classroom")}
             >
-              <SiGoogleclassroom className="icon" />
+              <SiGoogleclassroom className="navbar-icon" />
             </IconButton>
           </Tooltip>
 
@@ -101,7 +100,7 @@ const Navbar = (props) => {
               sx={{ "&:hover": { backgroundColor: "white" }}}
               onClick={() => navigate("/scorecard")}
             >
-              <IoStatsChartOutline className="icon" />
+              <IoStatsChartOutline className="navbar-icon" />
             </IconButton>
           </Tooltip>
 
@@ -117,7 +116,7 @@ const Navbar = (props) => {
               sx={{ "&:hover": { backgroundColor: "white" } }}
               onClick={() => navigate("/aboutUs")}
             >
-              <AiOutlineQuestionCircle className="icon" />
+              <AiOutlineQuestionCircle className="navbar-icon" />
             </IconButton>
           </Tooltip>
 
@@ -134,7 +133,7 @@ const Navbar = (props) => {
               sx={{ "&:hover": { backgroundColor: "white" } }}
               onClick={() => navigate("/settings")}
             >
-              <IoSettingsOutline className="icon" />
+              <IoSettingsOutline className="navbar-icon" />
             </IconButton>
           </Tooltip>
 
@@ -151,7 +150,7 @@ const Navbar = (props) => {
                   arrow
                 >
 
-                  <LightModeIcon className="icon"  />
+                  <LightModeIcon className="navbar-icon"  />
                 </Tooltip>
                 ) 
               : 
@@ -163,7 +162,7 @@ const Navbar = (props) => {
                   disableTouchListener
                   arrow
                 >
-                  <NightlightRoundIcon className="icon" /> 
+                  <NightlightRoundIcon className="navbar-icon" /> 
                 </Tooltip>
                 )  }
             </IconButton>

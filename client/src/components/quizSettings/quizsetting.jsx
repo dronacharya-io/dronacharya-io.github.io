@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./quizSettings.css";
+import "./Mobile_quizSettings.css";
+import "./Desktop_quizSettings.css";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Box from "@mui/material/Box";
 import MuiAlert from "@mui/material/Alert";
@@ -179,7 +180,7 @@ const QuizSetting = (props) => {
                 <div className="quiz-settings-div-containing-vectors-and-form" >
                   
                   <div className="quiz-settings-div-containing-vectors" >
-                      <div id="img-div">
+                      <div id="quiz-settings-img-div">
                         <div id="sparkles">
                           <Lottie
                             isClickToPauseDisabled={true}

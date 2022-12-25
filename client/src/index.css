@@ -12,9 +12,12 @@ body {
   --dark-primary-color: #FFEA41;
   --black-color: #030303;
   --dark-mode-primary-color:#222B45;
+  --dark-mode-secondary-color: #1d2238;
   --lightGray-color: #e4e4e4;
   --gray-color: #6b7688;
   --white-color: #ffffff;
+  --color-one: hsl(15 90% 55%);
+  --color-two: hsl(40 95% 55%);
 }
 
 

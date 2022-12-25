@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import { useUserAuth } from "../../context/AuthContext";
-import "./LoginSignUpPopUp.css"
+import "./Mobile_LoginSignUpPopUp.css"
+import "./Desktop_LoginSignUpPopUp.css"
 import Zoom from "@mui/material/Zoom";
 import Button from "@mui/material/Button";
 import Lottie from "react-lottie";
@@ -39,19 +40,15 @@ const LoginSignUpPopUp = () => {
     
   return (
     <>
-        <div id="backgroundParent">
+        <div class="login-signup-pop-up-backgroundParent-div">
             <Zoom
             in={true}
             style={{ transitionDelay: true ? "100ms" : "0ms" }}>
-                <div id="loginPopUp">
+              <div id="loginPopUp">
                   
                 <div id="background">
-                  <Lottie isClickToPauseDisabled={true}  options={space} height={480} width={720} />
+                  <Lottie isClickToPauseDisabled={true}  options={space} />
                 </div>
-
-                    <div id="title" >
-                        <h1>LOGIN IN LESS THAN 2 SECONDS!</h1>
-                    </div>
                     <motion.div
                     in={true}
                     id="loginButtondiv"

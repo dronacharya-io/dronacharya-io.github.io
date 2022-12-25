@@ -1,4 +1,6 @@
- .bodyWithAnimation{
+@media screen  and (min-width: 451px) {
+  
+.bodyWithAnimation{
   display: flex;
   flex-direction: row;
   height: 90%;
@@ -77,9 +79,14 @@
 }
 
 #light #CreateQuizButton{
-  border-color: var(--light-primary-color);
-  background-color: var(--light-primary-color);
+	background: linear-gradient(-45deg,
+    var(--color-one),
+    var(--color-two),
+    var(--color-one));
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
   color: var(--white-color);
+  border-color: transparent;
   letter-spacing: 0.8px;
   box-shadow: 0 0.1rem 0.3rem 0rem var(--gray-color);
   min-width: 15rem;
@@ -87,11 +94,19 @@
   max-width: max-content;
   font-size: 1.3rem;
   box-sizing: border-box;
+  font-weight: 500;
 }
 
 #dark #CreateQuizButton{
-  border-color: var(--dark-primary-color);
-  color: var(--dark-primary-color);
+  font-weight: 500;
+  border-color: transparent;
+	background: linear-gradient(-45deg,
+    var(--color-one),
+    var(--color-two),
+    var(--color-one));
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+  color: var(--white-color);
   letter-spacing: 0.8px;
   min-width: 15rem;
   min-height: 4rem;
@@ -148,4 +163,5 @@
 .quiz-animation-motion-parent-div{
   display: flex;
   padding: 11rem;
+}
 }

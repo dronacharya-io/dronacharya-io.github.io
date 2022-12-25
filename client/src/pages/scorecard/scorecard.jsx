@@ -101,16 +101,14 @@ export const Scorecard = () => {
                 <Lottie
                   isClickToPauseDisabled={true}
                   options={Space}
-                  height="100%"
-                  width="100%"
+          
                 />
               </div>
               <div id="scoreCard__notfoundTest-solarSystem">
                 <Lottie
                   isClickToPauseDisabled={true}
                   options={Solarsystem}
-                  height="100%"
-                  width="100%"
+              
                 />
               </div>
               <div id="scoreCard__notfoundTest-astronaut">

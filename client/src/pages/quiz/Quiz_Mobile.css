@@ -1,23 +1,23 @@
+@media screen and (max-width:451px){
 
   .bodyWithAnimation{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    width: -webkit-fill-available;
   }
   
   .quiz-content-div{
     display: flex;
     flex-direction: column;
+    row-gap: 0;
   }
   
   .typing {
     display: flex;
     padding: 2rem;
     height: 1rem;
-    margin-top: 3rem; 
+    margin: 0;
     overflow-x: scroll;
-    margin-bottom: 1rem;
   }
   
   #light .namaste {
@@ -45,6 +45,7 @@
   }
   
   #centerContent{
+    margin-top: 0;
     display: flex;
     flex-direction: column;
   }
@@ -53,6 +54,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    width: 80%;
   }
   
   #light #homePageText {
@@ -61,6 +63,9 @@
     line-height: 1.5rem;
     letter-spacing: 0.8px;
     max-width: 45rem;
+    margin: 0;
+    padding-bottom: 0px;
+    padding-top: 40px;
   }
   
   #dark #homePageText {
@@ -70,6 +75,9 @@
     line-height: 1.5rem;
     letter-spacing: 0.8px;
     max-width: 45rem;
+    margin: 0;
+    padding-bottom: 0px;
+    padding-top: 40px;
   }
   
   #quiz-buttons{
@@ -78,10 +86,15 @@
     width: 100%;
     margin-top: 2rem;
   }
-
+  
   #light #CreateQuizButton{
-    border-color: var(--light-primary-color);
-    background-color: var(--light-primary-color);
+    border-color: transparent;
+    background: linear-gradient(-45deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
     color: var(--white-color);
     letter-spacing: 0.8px;
     box-shadow: 0 0.1rem 0.3rem 0rem var(--gray-color);
@@ -108,10 +121,11 @@
   .quiz-textfield-joinbtn-parent-div{
     display: flex;
     padding: 2rem;
+    padding-right: 0px;
   }
-
+  
   #light #joinquiztextfeild {
-    max-width: 15rem;
+    max-width: 14rem;
     height: 4rem;
     letter-spacing: 0.8px;
     font-size: 1rem;
@@ -120,7 +134,7 @@
   }
   
   #dark #joinquiztextfeild {
-    max-width: 15rem;
+    max-width: 14rem;
     height: 4rem;
     letter-spacing: 0.8px;
     font-size: 1rem;
@@ -151,10 +165,10 @@
   }
   
   .quiz-animation-motion-div{
-   
+    display: none;
   }
   
   .quiz-animation-motion-parent-div{
     display: none;
   }
-
+}

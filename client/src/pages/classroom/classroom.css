@@ -27,22 +27,35 @@
 }
 
 #light #joinQuizButton {
-    color: white;
-    border-color: #ffb74d;
-    background-color: #ffb74d;
+    border-color: transparent;
+    background: linear-gradient(-45deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    color: var(--white-color);
     margin-top: 4rem;
     left: 20px;
     width: 150px;
     height: 40px;
+    font-weight: 500;
     letter-spacing: 2px;
     box-shadow: 0 0.1rem 0.3rem 0rem rgb(118, 118, 118);
 }
 
 #dark #joinQuizButton {
-    border-color: #FFEA41;
-    color: #FFEA41;
+    border-color: transparent;
+    background: linear-gradient(-45deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    color: var(--white-color);
     margin-top: 4rem;
     left: 20px;
+    font-weight: 500;
     width: 150px;
     height: 40px;
     letter-spacing: 2px;

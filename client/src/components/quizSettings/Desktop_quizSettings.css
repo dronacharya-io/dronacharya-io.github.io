@@ -1,0 +1,148 @@
+@media screen and (min-width:901px) {
+  .quiz-settings-main-container{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+  }
+  
+  #centerContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .quizSettingBtn-div{
+    display: flex;
+    align-self: flex-start;
+    justify-self: flex-start;
+  }
+  
+  #light .quizSettingBtn {
+    background-color: #ffb74d;
+    color:white;
+    border-color: #ffb74d;
+    margin-bottom: 4rem;
+    width: auto;
+    height: 40px;
+    margin: 2rem;
+    letter-spacing: 2px;
+    box-shadow: 0 0.1rem 0.3rem 0rem rgb(118, 118, 118);
+  }
+  
+  #dark .quizSettingBtn  {
+    border-color: #FFEA41;
+    color: #FFEA41;
+    margin-bottom: 4rem;
+    width: auto;
+    height: 40px;
+    letter-spacing: 2px;
+    margin-top: -3rem;
+  }
+  
+  .quiz-settings-sweepable-drawer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .quiz-settings-div-containing-vectors-and-form{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .quiz-settings-div-containing-vectors{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1rem;
+    margin-right: -1rem;
+  }
+  
+  .quiz-settings-div-containing-form{
+    min-width: 50%;
+  }
+  
+  #quizname,
+    #subject,
+    #timePerQuestion,
+    #positiveMarking,
+    #negativeMarking,
+    #startDate,
+    #startTime,
+    #runTime {
+      border: none;
+      padding: 4px;
+      outline: none;
+      font-size: 1.4em;
+      font-family: inherit;
+      resize: none;
+      background: #eee;
+      position: relative;
+      width: 38rem;
+      margin: 1rem auto 1.25rem auto;
+      background: #fff;
+      padding: 15px;
+      border-radius: 7px;
+      box-shadow: 0 1px 5px rgb(207, 207, 207);
+      border: none;
+      font-weight: 900;
+  
+    }
+  
+    #form {
+      padding-top: 1rem;
+      box-shadow: 0 2px 10px rgb(70, 56, 14);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #ffb74d;
+      align-items: center;
+      padding-bottom: 2.5rem;
+    }
+  
+    #addSettingButton {
+      background-color: #ffb74d;
+      width: fit-content;
+      z-index: 9999;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-right: 2rem;
+    }
+  
+    #sparkles {
+      position: absolute;
+    }
+  
+      
+    #inputLabel {
+      color: white;
+      font-size: large;
+      position: relative;
+      top: 2px;
+      letter-spacing: 1.5px;
+    }
+  
+    #alert {
+      width: 100%;
+      font-size: larger;
+    }
+  
+    #quiz-settings-vector-addbtn-canclebtn {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+      
+    #rocket {
+      display: flex;
+      margin-right: 0.5rem;
+    }
+  
+    .i-will-fill-later-btn{
+      width: fit-content;
+      z-index: 9999;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+  
+}

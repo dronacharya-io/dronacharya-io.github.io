@@ -163,6 +163,7 @@ export const Quiz = (props) => {
               }}
             >
                 <Lottie isClickToPauseDisabled={true}  options={defaultOptions} height={490} width={590} /> 
+                
                 {/* 
                   <Canvas >
                       <Suspense fallback={null}>
