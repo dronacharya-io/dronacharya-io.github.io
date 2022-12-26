@@ -133,8 +133,6 @@ const QuizSubmissions = () => {
             <Lottie
               isClickToPauseDisabled={true}
               options={noAttendies}
-              height={500}
-              width={550}
             />
           </div>
           <div>

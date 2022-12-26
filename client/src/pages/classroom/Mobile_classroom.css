@@ -1,0 +1,27 @@
+@media screen and (max-width: 451px)  {
+    .classroom-lottie-text-btn-parent-div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 2rem;
+    }
+    
+    .classroom-lottie-div{
+        width: fit-content;
+        height: auto;
+    }
+    
+    .classroom-getstarted-btn{
+        margin: 1rem !important;
+        color: var(--white-color)!important;
+        border-color: transparent!important;
+        background: linear-gradient(-45deg,
+          var(--color-one),
+          var(--color-two),
+          var(--color-one));
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+        letter-spacing: 0.8px!important;
+        box-shadow: 0 0.1rem 0.3rem 0rem var(--gray-color);
+    }
+}

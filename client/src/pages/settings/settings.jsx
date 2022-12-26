@@ -117,14 +117,7 @@ export const Settings = () => {
                     <AccountCircleIcon id="iconAccount" /> Account
                   </h2>
                 </div>
-                <div id="lineDiv">
-                  <Lottie
-                    isClickToPauseDisabled={true}
-                    options={UpperBarS}
-                    height={10}
-                    width={"auto"}
-                  />
-                </div>
+                <hr className="settings-hr-line" />
                 <div id="imgDiv">
                   <img
                     src={user.photoURL}
@@ -181,14 +174,7 @@ export const Settings = () => {
                     <UpgradeSharpIcon /> Update Profile
                   </Button>
                 </div>
-                <div id="lineDiv">
-                  <Lottie
-                    isClickToPauseDisabled={true}
-                    options={UpperBarS}
-                    height={10}
-                    width={"auto"}
-                  />
-                </div>
+                <hr className="settings-hr-line"/>
                 <div id="TitleDiv">
                   <h2 id="account">
                     {" "}

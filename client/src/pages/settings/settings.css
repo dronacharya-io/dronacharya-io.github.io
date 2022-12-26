@@ -138,9 +138,17 @@
 }
 
 #light #UpdateButton{
-    background-color: #ffb74d;
-    color:white;
-    border-color: #ffb74d;
+    margin: 2rem 0 2rem 0;
+    height: 0.5rem;
+    width: 100%;
+    border-color: transparent;
+    background: linear-gradient(-45deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one));
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    color: var(--white-color);
     margin-top: 4rem;
     width: auto;
     height: 40px;
@@ -155,4 +163,18 @@
     width: auto;
     height: 40px;
     letter-spacing: 2px;
+}
+
+.settings-hr-line{
+    margin: 2rem 0 2rem 0;
+    height: 0.5rem;
+    width: 100%;
+    border-color: transparent;
+    background: linear-gradient(-45deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one));
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    color: var(--white-color);
 }

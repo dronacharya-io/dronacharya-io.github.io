@@ -87,14 +87,14 @@
     margin-top: 2rem;
   }
   
-  #light #CreateQuizButton{
+  #light .CreateQuizButton{
     border-color: transparent;
     background: linear-gradient(-45deg,
       var(--color-one),
       var(--color-two),
       var(--color-one));
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    animation: gradient 10s ease infinite;
     color: var(--white-color);
     letter-spacing: 0.8px;
     box-shadow: 0 0.1rem 0.3rem 0rem var(--gray-color);
@@ -106,7 +106,7 @@
     margin-left: 2rem;
   }
   
-  #dark #CreateQuizButton{
+  #dark .CreateQuizButton{
     border-color: var(--dark-primary-color);
     color: var(--dark-primary-color);
     letter-spacing: 0.8px;

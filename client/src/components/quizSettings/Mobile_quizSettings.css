@@ -19,9 +19,14 @@
   }
   
   #light .quizSettingBtn {
-    background-color: var(--light-primary-color);
-    color:var(--white-color);
-    border-color: var(--light-primary-color);
+    border-color: transparent;
+    background: linear-gradient(-45deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one));
+    background-size: 400% 400%;
+    color: var(--white-color);
+    animation: gradient 10s ease infinite;
     margin-bottom: 4rem;
     width: auto;
     height: 40px;

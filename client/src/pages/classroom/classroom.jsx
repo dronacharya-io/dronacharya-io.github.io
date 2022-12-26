@@ -1,4 +1,5 @@
-import "./classroom.css";
+import "./Mobile_classroom.css";
+import "./Desktop_classroom.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useUserAuth } from "../../context/AuthContext";
@@ -70,29 +71,23 @@ export const Classroom = () => {
                 })
                 .reverse()
             ) : (
-              <div>
-                <div
-                  style={{ position: "relative", top: "5rem", right: "2rem" }}
-                >
-                  <Lottie isClickToPauseDisabled={true}  options={defaultOptions} height={400} width={400} />
+              <div className="classroom-lottie-text-btn-parent-div" >
+                <div className="classroom-lottie-div" >
+                  <Lottie isClickToPauseDisabled={true}  options={defaultOptions}  />
                 </div>
-                <div
-                  style={{ position: "relative", right: "2rem", top: "2rem" }}
-                >
+                <div>
                   <p className="para">
                     Looks like you haven't created any
                     <span style={{color : "#ffb74d"}} > Quiz</span> yet.
                   </p>
                   <Zoom in={true}>
-                    <div>
                       <Button
-                        id="joinQuizButton"
+                        className="classroom-getstarted-btn"
                         variant="outlined"
                         onClick={() => navigate("/")}
                       >
                         Get Started
                       </Button>
-                    </div>
                   </Zoom>
                 </div>
               </div>

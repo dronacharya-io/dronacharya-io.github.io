@@ -120,7 +120,7 @@ export const Quiz = (props) => {
           <div id="quiz-buttons">
             <Button
               variant="outlined"
-              id="CreateQuizButton"
+              className="CreateQuizButton"
               onClick={() => navigate("/createQuiz")}
             >
               <AddBoxIcon
