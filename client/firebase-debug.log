@@ -1,0 +1,68 @@
+[debug] [2022-12-26T11:11:56.558Z] ----------------------------------------------------------------------
+[debug] [2022-12-26T11:11:56.560Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Quick\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-26T11:11:56.560Z] CLI Version:   11.7.0
+[debug] [2022-12-26T11:11:56.561Z] Platform:      win32
+[debug] [2022-12-26T11:11:56.561Z] Node Version:  v16.17.0
+[debug] [2022-12-26T11:11:56.562Z] Time:          Mon Dec 26 2022 16:41:56 GMT+0530 (India Standard Time)
+[debug] [2022-12-26T11:11:56.562Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-26T11:11:56.565Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-12-26T11:11:56.632Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-26T11:11:56.632Z] > authorizing via signed-in user (hemustdielouis@gmail.com)
+[debug] [2022-12-26T11:11:56.632Z] [iam] checking project dronacharya-io for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-26T11:11:56.633Z] > refreshing access token with scopes: []
+[debug] [2022-12-26T11:11:56.634Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-12-26T11:11:56.634Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-26T11:11:57.087Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-12-26T11:11:57.088Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-26T11:11:57.093Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/dronacharya-io:testIamPermissions [none]
+[debug] [2022-12-26T11:11:57.093Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/dronacharya-io:testIamPermissions x-goog-quota-user=projects/dronacharya-io
+[debug] [2022-12-26T11:11:57.094Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dronacharya-io:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-26T11:11:57.540Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-12-26T11:11:57.540Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-12-26T11:11:59.090Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/dronacharya-io:testIamPermissions 200
+[debug] [2022-12-26T11:11:59.090Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dronacharya-io:testIamPermissions {}
+[debug] [2022-12-26T11:11:59.090Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project dronacharya-io:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2022-12-26T11:11:59.091Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dronacharya-io [none]
+[debug] [2022-12-26T11:11:59.810Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dronacharya-io 403
+[debug] [2022-12-26T11:11:59.810Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dronacharya-io {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2022-12-26T11:11:59.810Z] HTTP Error: 403, The caller does not have permission
+[debug] [2022-12-26T11:12:00.623Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\Quick\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\Quick\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project dronacharya-io. Please make sure the project exists and your account has permission to access it.
+[debug] [2022-12-26T11:12:38.846Z] ----------------------------------------------------------------------
+[debug] [2022-12-26T11:12:38.847Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Quick\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-26T11:12:38.848Z] CLI Version:   11.7.0
+[debug] [2022-12-26T11:12:38.848Z] Platform:      win32
+[debug] [2022-12-26T11:12:38.848Z] Node Version:  v16.17.0
+[debug] [2022-12-26T11:12:38.849Z] Time:          Mon Dec 26 2022 16:42:38 GMT+0530 (India Standard Time)
+[debug] [2022-12-26T11:12:38.849Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-26T11:12:38.906Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-26T11:12:38.906Z] > authorizing via signed-in user (hemustdielouis@gmail.com)
+[debug] [2022-12-26T11:12:38.906Z] [iam] checking project dronacharya-io for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-26T11:12:38.908Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/dronacharya-io:testIamPermissions [none]
+[debug] [2022-12-26T11:12:38.908Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/dronacharya-io:testIamPermissions x-goog-quota-user=projects/dronacharya-io
+[debug] [2022-12-26T11:12:38.908Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dronacharya-io:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-26T11:12:40.638Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/dronacharya-io:testIamPermissions 200
+[debug] [2022-12-26T11:12:40.638Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dronacharya-io:testIamPermissions {}
+[debug] [2022-12-26T11:12:40.638Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project dronacharya-io:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2022-12-26T11:12:40.639Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dronacharya-io [none]
+[debug] [2022-12-26T11:12:41.299Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dronacharya-io 403
+[debug] [2022-12-26T11:12:41.300Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dronacharya-io {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2022-12-26T11:12:41.300Z] HTTP Error: 403, The caller does not have permission
+[debug] [2022-12-26T11:12:41.684Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\Quick\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\Quick\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project dronacharya-io. Please make sure the project exists and your account has permission to access it.
