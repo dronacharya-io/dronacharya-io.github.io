@@ -10,7 +10,14 @@
   margin: 0;
   padding: 0.5rem 0.5rem 0.5rem 1rem;
   z-index: 100;
-  background-color: #FF9800;
+  border-color: transparent;
+  background: linear-gradient(-45deg,
+    var(--color-one),
+    var(--color-two),
+    var(--color-one));
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  color: var(--white-color);
   border: none;
 }
 
@@ -26,7 +33,14 @@
   margin: 0;
   padding: 0.5rem 0.5rem 0.5rem 1rem;
   z-index: 100;
-  background-color: #FFE102;
+  border-color: transparent;
+  background: linear-gradient(-45deg,
+    var(--color-one),
+    var(--color-two),
+    var(--color-one));
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  color: var(--white-color);
   border: none;
 }
 
@@ -153,10 +167,15 @@
 }
 
 #light .logout {
-  background-color: #ffb74d;
-  color: white;
+  border-color: transparent;
+  background: linear-gradient(-45deg,
+    var(--color-one),
+    var(--color-two),
+    var(--color-one));
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  color: var(--white-color);
   position: relative;
-  border-color: #ffb74d;
   top: 45%;
   width: fit-content;
   letter-spacing: 1.5px;
@@ -164,8 +183,14 @@
 }
 
 #dark .logout {
-  border-color: #FFE102;
-  color: #FFE102;
+  border-color: transparent;
+  background: linear-gradient(-45deg,
+    var(--color-one),
+    var(--color-two),
+    var(--color-one));
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  color: var(--white-color);
   position: relative;
   top: 45%;
   width:fit-content;

@@ -162,7 +162,7 @@ export const Quiz = (props) => {
                 ease: [0, 0.71, 0.2, 1.01]
               }}
             >
-                <Lottie isClickToPauseDisabled={true}  options={defaultOptions} height={490} width={590} /> 
+                <Lottie isClickToPauseDisabled={true}  options={defaultOptions}  /> 
                 
                 {/* 
                   <Canvas >
