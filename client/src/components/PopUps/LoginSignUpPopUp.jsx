@@ -51,7 +51,7 @@ const LoginSignUpPopUp = () => {
                 </div>
                     <motion.div
                     in={true}
-                    id="loginButtondiv"
+                    class="loginSignup-popup-loginButtondiv"
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{
@@ -60,14 +60,9 @@ const LoginSignUpPopUp = () => {
                     ease: [0, 0.71, 0.2, 1.01]}}
                     
                     >
-                        <div>
-                      
-                            <div >
-                                <div>
-                                    <Button variant='contained' id="loginButton" onClick={() => googleSignIn()}>Login</Button>
-                                </div>
-                            </div>
-                        </div>
+                       
+                      <Button variant='contained' id="loginButton" onClick={() => googleSignIn()}>Login</Button>
+                       
                     </motion.div>
                 </div>
             </Zoom>   

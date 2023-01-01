@@ -12,23 +12,30 @@
   }
   
   #light #navbar-tab-div{
+    position: fixed;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0.1rem 0.3rem 0rem var(--gray-color);
+    box-shadow: 0 0.1rem 0.2rem 0 var(--gray-color);
     background-color: var(--white-color);
+    right: 30px;
+    left: 30px;
+    top: 20px;
+    
+    border-radius: 2rem;
   }
   
   #dark #navbar-tab-div{
     display: flex;
+    width: 100%;
     flex-direction: column;
-    box-shadow: 0 0.1rem 0.3rem 0rem var(--dark-mode-secondary-color);
+    position: fixed;
     background-color: var(--dark-mode-primary-color);
   }
   
   #navbar-icons-div{
     display: flex;
     flex-direction: row;
-    row-gap: 2px;
+    row-gap: 3rem;
     align-items: center;
     justify-content: center;
     position: sticky;

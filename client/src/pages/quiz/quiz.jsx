@@ -121,14 +121,12 @@ export const Quiz = (props) => {
             <Button
               variant="outlined"
               className="CreateQuizButton"
-              onClick={() => navigate("/createQuiz")}
+              onClick={() => navigate("/exploreCourses")}
             >
-              <AddBoxIcon
-                style={{ position: "relative", right: "1rem", height: "28px" }}
-              />
-              Create Test
+
+              Subject Notes
             </Button>
-            <div className="quiz-textfield-joinbtn-parent-div" >
+            {/* <div className="quiz-textfield-joinbtn-parent-div" >
               <ThemeProvider theme={darkTheme}>
                 <CssTextField
                   id="joinquiztextfeild"
@@ -147,7 +145,7 @@ export const Quiz = (props) => {
               >
                 Join
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

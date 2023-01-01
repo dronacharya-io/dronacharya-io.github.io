@@ -70,40 +70,6 @@ const Navbar = (props) => {
           </Tooltip>
 
 
-
-          <Tooltip
-            title="My Quizzes"
-            placement="right"
-            disableFocusListener
-            disableTouchListener
-            arrow
-          >
-            <IconButton
-              className="iconCover 2"
-              sx={{ "&:hover": { backgroundColor: "white" } }}
-              onClick={() => navigate("/classroom")}
-            >
-              <SiGoogleclassroom className="navbar-icon" />
-            </IconButton>
-          </Tooltip>
-
-
-          <Tooltip
-            title="Score Card"
-            placement="right"
-            disableFocusListener
-            disableTouchListener
-            arrow
-          >
-            <IconButton
-              className="iconCover 4"
-              sx={{ "&:hover": { backgroundColor: "white" }}}
-              onClick={() => navigate("/scorecard")}
-            >
-              <IoStatsChartOutline className="navbar-icon" />
-            </IconButton>
-          </Tooltip>
-
           <Tooltip
             title="About Us"
             placement="right"

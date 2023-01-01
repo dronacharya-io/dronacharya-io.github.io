@@ -16,6 +16,8 @@
 }
 
 .remPart {
+  margin-top: 50px;
+  margin-bottom: 40px;
   width: -webkit-fill-available;
 }
 }
