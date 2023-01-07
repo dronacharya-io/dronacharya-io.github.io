@@ -19,7 +19,7 @@ import ReplyIcon from "@mui/icons-material/Reply";
 import Tooltip from "@mui/material/Tooltip";
 
 export function UserQuizCard(props) {
-  const { user } = useUserAuth();
+  var { user } = useUserAuth();
   const navigate = useNavigate();
   const [zero, setZero] = useState("0");
   const [currentDate, setCurrentDate] = useState(
@@ -46,7 +46,7 @@ export function UserQuizCard(props) {
 
   const handleDelete = async () => {
     await axios.delete(
-      "http://localhost:8800/api/quizzes/deleteQuiz/" + props.id
+      "https://dronacharya-api.onrender.com/api/quizzes/deleteQuiz/" + props.id
     );
     let arr1 = user.userData.quizzesCreated;
     arr1 = arr1.filter((element) => {
@@ -57,9 +57,10 @@ export function UserQuizCard(props) {
       return element.id !== props.id;
     });
     await axios.put(
-      "http://localhost:8800/api/users/updateUser/" + user.userData._id,
+      "https://dronacharya-api.onrender.com/api/users/updateUser/" + user.userData._id,
       { quizzesCreated: arr1, quizzesSubmitted: arr2 }
     );
+    props.setX(!props.x);
   };
 
   const open = Boolean(anchorEl);
@@ -86,7 +87,7 @@ export function UserQuizCard(props) {
     setInterval(() => {}, 3600000);
 
     setInterval(() => {}, 60000);
-  }, []);
+  }, [props.flip]);
 
   return (
     <>
@@ -213,22 +214,5 @@ export function UserQuizCard(props) {
   );
 }
 
-export const CardSkeleton = () => {
-  return (
-    <Card id="card">
-      <Button disabled>
-        <Skeleton width={200} height={40} />
-      </Button>
-        <Skeleton height={100} width="100%" />
-        <Skeleton height={40} width="70%" />
-        <Skeleton variant="text" width="30%" />
-     <Button disabled>
-        <Skeleton height={40} width="70%" />
-        <Skeleton height={40} width="70%" />
-     </Button>
-     
-    </Card>
-  );
-};
 
 //css of this card is in aboutUs.css in aboutUs folder

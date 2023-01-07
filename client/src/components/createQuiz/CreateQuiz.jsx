@@ -56,9 +56,9 @@ const CreateQuiz = () => {
       let quiz = output;
       quiz = { ...quiz, questions: questions };
       console.log(quiz);
-      const res = await axios.post("http://localhost:8800/api/quizzes", quiz);
+      const res = await axios.post("https://dronacharya-api.onrender.com/api/quizzes", quiz);
       const url =
-        "http://localhost:8800/api/users/updateUser/" +
+        "https://dronacharya-api.onrender.com/api/users/updateUser/" +
         user.userData._id.toString();
       console.log(url);
       const arr = user.userData.quizzesCreated;

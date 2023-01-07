@@ -11,8 +11,8 @@ import {motion} from "framer-motion";
 
 const LoginSignUpPopUp = () => {
     const { user, googleSignIn } = useUserAuth();
-    const [height, setHeight] = useState(760);
-    const [width, setWidth] = useState(1520);
+    // const [height, setHeight] = useState(760);
+    // const [width, setWidth] = useState(1520);
     const giraf = {
         loop: true,
         autoplay: true,
@@ -33,8 +33,8 @@ const LoginSignUpPopUp = () => {
 
 
       setTimeout(()=>{
-        setHeight(0);
-        setWidth(0);
+        // setHeight(0);
+        // setWidth(0);
       },3000)
     
     

@@ -17,47 +17,47 @@ import {motion} from "framer-motion";
 const JoinQuiz = () => {
   const navigate = useNavigate();
 
-  const [counter, setCounter] = useState(0);
-  const [submission, setSubmission] = useState({ submittedAns: undefined });
-  const [submissions, setSubmissions] = useState([]);
-  const [score, setScore] = useState(0);
-  const [Data, setData] = useState();
-  const [quizDetails, setQuizDetails] = useState(undefined);
-  const [loading, setLoading] = useState(true);
-  const [attendies, setAttendies] = useState();
-  const [index, setIndex] = useState();
-  const [isFound, setIsFound] = useState();
-  const [positiveMarking, setPositiveMarking] = useState(0);
-  const [negativeMarking, setNegativeMarking] = useState(0);
+  var counter = 0;
+  var submission = { submittedAns: undefined };
+  var submissions = [];
+  var score = 0;
+  var Data = undefined;
+  var quizDetails = undefined;
+  var loading = true;
+  var attendies = undefined;
+  var index = undefined;
+  var isFound = undefined;
+  var positiveMarking = 0;
+  var negativeMarking = 0;
 
-  const { user, googleSignIn } = useUserAuth();
+  var { user, googleSignIn } = useUserAuth();
   const urlParams = new URLSearchParams(window.location.search);
   console.log(urlParams.get("id"));
 
   useEffect(() => {
-    setLoading(true);
+    loading = true;
     async function fetch() {
       try {
         console.log("called");
         const x = await axios.get(
-          "http://localhost:8800/api/quizzes/attemptQuiz/" + urlParams.get("id")
+          "https://dronacharya-api.onrender.com/api/quizzes/attemptQuiz/" + urlParams.get("id")
         );
         console.log(x);
-        setData(x.data.questions);
+        Data = x.data.questions;
         // setIswrittenType(x.data.questions[0].isWrittenType);
         var { _id, quizname, startDate, runTime } = x.data;
         console.log(Data);
-        setQuizDetails({
+        quizDetails = {
           id: _id,
           name: quizname,
           startDate: startDate,
           runTime: runTime,
-        });
-        setAttendies(x.data.attendies);
-        setPositiveMarking(x.data.positiveMarking);
-        setNegativeMarking(x.data.negativeMarking);
+        };
+        attendies = x.data.attendies;
+        positiveMarking = x.data.positiveMarking;
+        negativeMarking = x.data.negativeMarking;
         console.log(quizDetails);
-        setIndex(0);
+        index = 0;
         const arr = x.data.attendies;
         const IsFound = arr.some((element) => {
           if (element.id === user?.userData?._id) {
@@ -65,11 +65,11 @@ const JoinQuiz = () => {
           }
           return false;
         });
-        setIsFound(IsFound);
+        isFound = IsFound;
       } catch (err) {
         console.log(err);
       }
-      setLoading(false);
+      Loading = false;
     }
     return () => {
       fetch();
@@ -78,33 +78,33 @@ const JoinQuiz = () => {
 
   const TakeAnswer = async () => {
     console.log(Data[index]);
-    Data[index + 1] ? setIndex(index + 1) : setIndex(index);
+    Data[index + 1] ? index = index + 1 : index = index;
     // setIswrittenType(Data[index].isWrittenType);
     handleSubmit();
     if (Data[index].correctAns === submissions[index].submittedAns) {
-      setScore(score + positiveMarking);
+      score = score + positiveMarking;
       console.log("correct");
     }
     if (Data[index].correctAns !== submissions[index].submittedAns) {
-      setScore(score - negativeMarking);
+      score = score - negativeMarking;
       console.log("wrong");
     }
     if (Data[index + 1]) {
-      setCounter(index + 1);
+      counter = index + 1;
     }
     if (!Data[index + 1]) {
       if (Data[index].correctAns === submissions[index].submittedAns) {
-        setScore(score + positiveMarking);
+        score = score + positiveMarking;
         console.log("correct");
       }
       if (Data[index].correctAns !== submissions[index].submittedAns) {
-        setScore(score - negativeMarking);
+        score = score - negativeMarking;
         console.log("wrong");
       }
       if (!isFound) {
         try {
           const url =
-            "http://localhost:8800/api/users/updateUser/" +
+            "https://dronacharya-api.onrender.com/api/users/updateUser/" +
             user.userData._id.toString();
           console.log(url);
           const arr = user.userData.quizzesSubmitted;
@@ -124,7 +124,7 @@ const JoinQuiz = () => {
             score: score,
           });
           await axios.put(
-            "http://localhost:8800/api/quizzes/updateQuiz/" +
+            "https://dronacharya-api.onrender.com/api/quizzes/updateQuiz/" +
               urlParams.get("id"),
             { attendies: attendies }
           );
@@ -142,7 +142,7 @@ const JoinQuiz = () => {
 
   const handleChange = (e) => {
     const value = e.target.value;
-    setSubmission({ submittedAns: value });
+    submission = { submittedAns: value };
     document.getElementById("submittedAns").value("");
   };
   const Input = styled("input")({
@@ -155,8 +155,8 @@ const JoinQuiz = () => {
       id: new Date().getTime().toString(),
       qid: Data[index].id,
     };
-    setSubmissions([...submissions, newSubmission]);
-    setSubmission({ submittedAns: undefined });
+    submissions = [...submissions, newSubmission];
+    submission = { submittedAns: undefined };
 
     console.log(submissions);
   };
@@ -228,7 +228,7 @@ const JoinQuiz = () => {
                               className="questionLocator"
                               variant="outlined"
                               onClick={() => {
-                                setIndex(i);
+                                index = i;
                                 // setIswrittenType(Data[i].isWrittenType);
                               }}
                             >
@@ -271,23 +271,6 @@ const JoinQuiz = () => {
                         name="submittedAns"
                         onChange={handleChange}
                       />
-                      {/* ) : (
-                        <label htmlFor="icon-button-file">
-                          <Input accept="image/*" id="icon-button-file" type="file" />
-                          <IconButton
-                            color="primary"
-                            aria-label="upload picture"
-                            component="label"
-                          >
-                            <input hidden accept="image/*" type="file" />
-                            <PhotoCamera
-                              id="submittedAns"
-                              name="submittedAns"
-                              onChange={handleChange}
-                            />
-                          </IconButton>
-                        </label>
-                      )} */}
                     </div>
                       <div className="vectorMainDiv" >
                         <Lottie

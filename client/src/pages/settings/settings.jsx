@@ -15,51 +15,43 @@ import { useUserAuth } from "../../context/AuthContext";
 
 
 export const Settings = () => {
-  const { user, logOut, googleSignIn } = useUserAuth();
+  var { user, logOut, googleSignIn } = useUserAuth();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState({
-    email: undefined,
-    username: undefined,
-    _id: 0,
-  });
-  const [phoneNumber, setPhoneNumber] = useState([""]);
+  var data = user;
+  var phoneNumber = "";
 
 
   async function deleteAccount() {
     user.userData.quizzesCreated.filter(async (quiz) => {
       await axios.delete(
-        "http://localhost:8800/api/quizzes/deleteQuiz/" + quiz.id
+        "https://dronacharya-api.onrender.com/api/quizzes/deleteQuiz/" + quiz.id
       );
     });
     await axios.delete(
-      "http://localhost:8800/api/users/deleteUser/" + user.userData._id
+      "https://dronacharya-api.onrender.com/api/users/deleteUser/" + user.userData._id
     );
     logOut();
     navigate("../");
   }
 
   useEffect(() => {
-    setLoading(true);
+    // setLoading(true);
     async function Fetch() {
       try {
-        const res = await axios.get(
-          "http://localhost:8800/api/users/getUser/" + user.userData._id
-        );
-        console.log(res);
-        setData(res.data);
+        data = user;
       } catch (err) {
-        setData(err);
+        data = err;
       }
 
-      setLoading(false);
+      // setLoading(false);
       
     }
 
     return () => {
       Fetch();
     };
-  }, []);
+  });
 
   const VectorLoading = {
     loop: true,
@@ -81,13 +73,13 @@ export const Settings = () => {
 
   const handleChange = (event) => {
     const { value } = event.target;
-    setPhoneNumber(value);
+    phoneNumber = value;
   };
 
   const handleUpdate = async () => {
-    setPhoneNumber(phoneNumber);
+    phoneNumber = phoneNumber;
     const res = await axios.put(
-      "http://localhost:8800/api/users/updateUser/" + user.userData._id,
+      "https://dronacharya-api.onrender.com/api/users/updateUser/" + user.userData._id,
       { phoneNumber: phoneNumber }
     );
     console.log(phoneNumber);

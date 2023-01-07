@@ -28,7 +28,7 @@ const QuizSubmissions = () => {
     async function fetch() {
       try {
         const res = await axios.get(
-          "http://localhost:8800/api/quizzes/attemptQuiz/" + urlParams.get("id")
+          "https://dronacharya-api.onrender.com/api/quizzes/attemptQuiz/" + urlParams.get("id")
         );
         console.log(res.data.attendies);
         setData(res.data.attendies);
@@ -43,7 +43,7 @@ const QuizSubmissions = () => {
     return () => {
       fetch();
     };
-  }, []);
+  });
 
   const noAttendies = {
     loop: true,

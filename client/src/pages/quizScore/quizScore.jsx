@@ -11,7 +11,7 @@ const QuizScore = () => {
     async function fetch() {
       try {
         const res = await axios.get(
-          "http://localhost:8800/api/quizzes/attemptQuiz/" +
+          "https://dronacharya-api.onrender.com/api/quizzes/attemptQuiz/" +
             urlParams.get("quizId")
         );
         setReport(

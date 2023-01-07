@@ -19,11 +19,12 @@ export function UserAuthContextProvider({ children }) {
     const googleAuthProvider = new GoogleAuthProvider();
     return signInWithPopup(auth, googleAuthProvider);
   }
+  var [x, setX] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentuser) => {
       try {
-        const res = await axios.post("http://localhost:8800/api/auth/login", {
+        const res = await axios.post("https://dronacharya-api.onrender.com/api/auth/login", {
           email: currentuser.email,
         });
         currentuser = { ...currentuser, userData: res.data.details };
@@ -34,7 +35,7 @@ export function UserAuthContextProvider({ children }) {
             email: currentuser.email,
           };
           const res = await axios.post(
-            "http://localhost:8800/api/auth/register",
+            "https://dronacharya-api.onrender.com/api/auth/register",
             registerData
           );
           currentuser = { ...currentuser, userData: res.data.details };
@@ -49,10 +50,10 @@ export function UserAuthContextProvider({ children }) {
     return () => {
       unsubscribe();
     };
-  }, []);
+  }, [x]);
 
   return (
-    <userAuthContext.Provider value={{ user, logOut, googleSignIn }}>
+    <userAuthContext.Provider value={{ user, logOut, googleSignIn, x, setX }}>
       {children}
     </userAuthContext.Provider>
   );

@@ -10,34 +10,30 @@ import { useNavigate } from "react-router-dom";
 import Lottie from "react-lottie";
 import animationData from "../../lotties/notfound.json";
 import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp"
+import { UserSubmissionCard } from "../scorecard/userSubmissionCard";
 
 export const Classroom = () => {
-  const { user } = useUserAuth();
-  const [loading, setLoading] = useState(false);
-  const [data, setData] = useState({
-    quizzesCreated: [{ quiz: { quizName: "null", startDate: 0, runTime: 0 } }],
-  });
-
+  var { user, x, setX } = useUserAuth();
+  var [loading, setLoading] = useState(false);
+  var submissionsData = user?.userData?.quizzesCreated;
   const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
     async function Fetch() {
       try {
-        const res = await axios.get(
-          "http://localhost:8800/api/users/getUser/" + user.userData._id
-        );
-        setData(res.data);
+        submissionsData = user?.userData?.quizzesCreated;
       } catch (err) {
-        setData(err);
+        // setData(err);
       }
       setLoading(false);
     }
 
     return () => {
       Fetch();
+      console.log('x', x)
     };
-  }, []);
+  }, [x]);
 
   const defaultOptions = {
     loop: true,
@@ -50,60 +46,25 @@ export const Classroom = () => {
 
   return (
     <>
-      {user ? (
-        <div className="cards">
-          {!loading ? (
-            data.quizzesCreated.length > 0 ? (
-              data.quizzesCreated
-                ?.map((quiz, i) => {
-                  return (
-                    <div>
-                      <UserQuizCard
-                        key={i}
-                        id={quiz.id}
-                        loading={loading}
-                        quizName={quiz.name}
-                        runTime={quiz.runTime}
-                        startDate={quiz.startDate}
-                      />
-                    </div>
-                  );
-                })
-                .reverse()
-            ) : (
-              <div className="classroom-lottie-text-btn-parent-div" >
-                <div className="classroom-lottie-div" >
-                  <Lottie isClickToPauseDisabled={true}  options={defaultOptions}  />
-                </div>
-                <div>
-                  <p className="para">
-                    Looks like you haven't created any
-                    <span style={{color : "#ffb74d"}} > Quiz</span> yet.
-                  </p>
-                  <Zoom in={true}>
-                      <Button
-                        className="classroom-getstarted-btn"
-                        variant="outlined"
-                        onClick={() => navigate("/")}
-                      >
-                        Get Started
-                      </Button>
-                  </Zoom>
-                </div>
-              </div>
-            )
-          ) : (
-            <>
-              <CardSkeleton />
-              <CardSkeleton />
-              <CardSkeleton />
-              <CardSkeleton /> 
-            </>
-          )}
-        </div>
-      ) : (
-          <LoginSignUpPopUp/>
-      )}
+      <div className="cards">
+        {submissionsData
+          ?.map((quiz, i) => {
+            return (
+              <>
+                <UserQuizCard
+                  key={i}
+                  id={quiz.id}
+                  quizName={quiz.name}
+                  runTime={quiz.runTime}
+                  startDate={quiz.startDate}
+                  x={x}
+                  setX={setX}
+                />
+              </>
+            );
+          })
+          .reverse()}
+      </div>
     </>
   );
 };

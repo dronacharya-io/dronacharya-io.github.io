@@ -13,7 +13,6 @@ const QuestionVisualiserCard = (props) => {
   const [question, setQuestion] = useState({
     Question: Question,
     correctAns: correctAns,
-    // isWrittenType: isWrittenType,
     options: options,
   });
 
@@ -106,26 +105,6 @@ const QuestionVisualiserCard = (props) => {
                 </Button>
               </Zoom>
               <div>
-                {/* <Zoom in={true}>
-                  <div>
-                    <InputLabel>
-                      Is answer written Type
-                      <Checkbox
-                        value={question.isWrittenType}
-                        defaultChecked={question.isWrittenType}
-                        onClick={() => {
-                          setQuestion({
-                            ...question,
-                            isWrittenType: !question.isWrittenType,
-                          });
-                        }}
-                        id="IsWrittenType"
-                      />
-                    </InputLabel>
-                  </div>
-                </Zoom> */}
-                {/* {!question.isWrittenType ? (
-                  <> */}
                 <Zoom in={true}>
                   <textarea
                     type="text"

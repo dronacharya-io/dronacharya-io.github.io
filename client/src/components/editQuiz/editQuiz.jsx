@@ -58,7 +58,7 @@ const EditQuiz = () => {
       try {
         console.log("called");
         const x = await axios.get(
-          "http://localhost:8800/api/quizzes/attemptQuiz/" +
+          "https://dronacharya-api.onrender.com/api/quizzes/attemptQuiz/" +
             urlParams.get("quizId")
         );
         console.log(x);
@@ -84,12 +84,12 @@ const EditQuiz = () => {
       quiz = { ...quiz, questions: questions };
       console.log(quiz);
       const res = await axios.put(
-        "http://localhost:8800/api/quizzes/updateQuiz/" +
+        "https://dronacharya-api.onrender.com/api/quizzes/updateQuiz/" +
           urlParams.get("quizId"),
         quiz
       );
       const url =
-        "http://localhost:8800/api/users/updateUser/" +
+        "https://dronacharya-api.onrender.com/api/users/updateUser/" +
         user.userData._id.toString();
       console.log(url);
       const arr = user.userData.quizzesCreated;

@@ -19,8 +19,8 @@ import SchoolIcon from '@mui/icons-material/School';
 const Navbar = (props) => {
   const navigate = useNavigate();
 
-  const useThemeContext = useContext(ThemeContext);
-  const { toggleTheme } = useThemeContext;
+  var useThemeContext = useContext(ThemeContext);
+  var { toggleTheme } = useThemeContext;
 
 
   return (
@@ -52,7 +52,38 @@ const Navbar = (props) => {
             </IconButton>
           </Tooltip>
 
+<Tooltip
+            title="My Quizzes"
+            placement="right"
+            disableFocusListener
+            disableTouchListener
+            arrow
+          >
+            <IconButton
+              className="iconCover 2"
+              sx={{ "&:hover": { backgroundColor: "white" } }}
+              onClick={() => navigate("/classroom")}
+            >
+              <SiGoogleclassroom className="navbar-icon" />
+            </IconButton>
+          </Tooltip>
 
+
+          <Tooltip
+            title="Score Card"
+            placement="right"
+            disableFocusListener
+            disableTouchListener
+            arrow
+          >
+            <IconButton
+              className="iconCover 4"
+              sx={{ "&:hover": { backgroundColor: "white" }}}
+              onClick={() => navigate("/scorecard")}
+            >
+              <IoStatsChartOutline className="navbar-icon" />
+            </IconButton>
+          </Tooltip>
           <Tooltip
             title="Explore Courses "
             placement="right"
@@ -78,7 +109,7 @@ const Navbar = (props) => {
             arrow
           >
             <IconButton
-              className="iconCover 5"
+              className="iconCover 6"
               sx={{ "&:hover": { backgroundColor: "white" } }}
               onClick={() => navigate("/aboutUs")}
             >
@@ -95,7 +126,7 @@ const Navbar = (props) => {
             arrow
           >
             <IconButton
-              className="iconCover 3"
+              className="iconCover 7"
               sx={{ "&:hover": { backgroundColor: "white" } }}
               onClick={() => navigate("/settings")}
             >
@@ -105,7 +136,7 @@ const Navbar = (props) => {
 
           <hr />
           
-            <IconButton id="darkmode" onClick={toggleTheme} className="iconCover 6">
+            <IconButton id="darkmode" onClick={toggleTheme} className="iconCover 8">
               { props.theme === "dark" ? 
               (
                 <Tooltip
@@ -115,7 +146,6 @@ const Navbar = (props) => {
                   disableTouchListener
                   arrow
                 >
-
                   <LightModeIcon className="navbar-icon"  />
                 </Tooltip>
                 ) 
@@ -134,7 +164,7 @@ const Navbar = (props) => {
             </IconButton>
           
           <br />
-          <div id="copyright" className="7">
+          <div id="copyright" className="9">
             {CopyRight()}
           </div>
         </div>
