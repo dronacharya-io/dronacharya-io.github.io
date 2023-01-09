@@ -52,21 +52,12 @@ const JoinQuiz = () => {
           name: quizname,
           startDate: startDate,
           runTime: runTime,
-<<<<<<< HEAD
         });
         setAttendies(x.data.attendies);
         setPositiveMarking(x.data.positiveMarking);
         setNegativeMarking(x.data.negativeMarking);
         console.log(quizDetails);
         setIndex(0);
-=======
-        };
-        attendies = x.data.attendies;
-        positiveMarking = x.data.positiveMarking;
-        negativeMarking = x.data.negativeMarking;
-        console.log(quizDetails,"quizDetails");
-        index = 0;
->>>>>>> 2a9bf1252af21c594563a855b3c5c645349c8207
         const arr = x.data.attendies;
         const IsFound = arr.some((element) => {
           if (element.id === user?.userData?._id) {
