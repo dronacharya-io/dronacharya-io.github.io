@@ -43,7 +43,7 @@ const QuizSubmissions = () => {
     return () => {
       fetch();
     };
-  });
+  }, []);
 
   const noAttendies = {
     loop: true,
@@ -111,9 +111,9 @@ const QuizSubmissions = () => {
                           onClick={() =>
                             navigate(
                               "../quizScore?quizId=" +
-                                urlParams.get("id") +
-                                "&userId=" +
-                                row.userId
+                              urlParams.get("id") +
+                              "&userId=" +
+                              row.userId
                             )
                           }
                         >
