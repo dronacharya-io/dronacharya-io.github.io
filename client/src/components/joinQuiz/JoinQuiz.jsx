@@ -12,30 +12,30 @@ import Loading from "../../lotties/mainloading.json";
 import LoginSignUpPopUp from "../PopUps/LoginSignUpPopUp.jsx";
 import Tooltip from "@mui/material/Tooltip";
 import mainDivVector from "../../lotties/join-quiz-main-div.json";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 const JoinQuiz = () => {
   const navigate = useNavigate();
 
-  var counter = 0;
-  var submission = { submittedAns: undefined };
-  var submissions = [];
-  var score = 0;
-  var Data = undefined;
-  var quizDetails = undefined;
-  var loading = true;
-  var attendies = undefined;
-  var index = undefined;
-  var isFound = undefined;
-  var positiveMarking = 0;
-  var negativeMarking = 0;
+  const [counter, setCounter] = useState(0);
+  const [submission, setSubmission] = useState({ submittedAns: undefined });
+  const [submissions, setSubmissions] = useState([]);
+  const [score, setScore] = useState(0);
+  const [Data, setData] = useState();
+  const [quizDetails, setQuizDetails] = useState(undefined);
+  const [loading, setLoading] = useState(true);
+  const [attendies, setAttendies] = useState();
+  const [index, setIndex] = useState();
+  const [isFound, setIsFound] = useState();
+  const [positiveMarking, setPositiveMarking] = useState(0);
+  const [negativeMarking, setNegativeMarking] = useState(0);
 
-  var { user, googleSignIn } = useUserAuth();
+  const { user, googleSignIn } = useUserAuth();
   const urlParams = new URLSearchParams(window.location.search);
   console.log(urlParams.get("id"));
 
   useEffect(() => {
-    loading = true;
+    setLoading(true);
     async function fetch() {
       try {
         console.log("called");
@@ -43,21 +43,21 @@ const JoinQuiz = () => {
           "https://dronacharya-api.onrender.com/api/quizzes/attemptQuiz/" + urlParams.get("id")
         );
         console.log(x);
-        Data = x.data.questions;
+        setData(x.data.questions);
         // setIswrittenType(x.data.questions[0].isWrittenType);
         var { _id, quizname, startDate, runTime } = x.data;
         console.log(Data);
-        quizDetails = {
+        setQuizDetails({
           id: _id,
           name: quizname,
           startDate: startDate,
           runTime: runTime,
-        };
-        attendies = x.data.attendies;
-        positiveMarking = x.data.positiveMarking;
-        negativeMarking = x.data.negativeMarking;
+        });
+        setAttendies(x.data.attendies);
+        setPositiveMarking(x.data.positiveMarking);
+        setNegativeMarking(x.data.negativeMarking);
         console.log(quizDetails);
-        index = 0;
+        setIndex(0);
         const arr = x.data.attendies;
         const IsFound = arr.some((element) => {
           if (element.id === user?.userData?._id) {
@@ -65,40 +65,40 @@ const JoinQuiz = () => {
           }
           return false;
         });
-        isFound = IsFound;
+        setIsFound(IsFound);
       } catch (err) {
         console.log(err);
       }
-      Loading = false;
+      setLoading(false);
     }
     return () => {
       fetch();
     };
-  }, []);
+  }, [user]);
 
   const TakeAnswer = async () => {
     console.log(Data[index]);
-    Data[index + 1] ? index = index + 1 : index = index;
+    Data[index + 1] ? setIndex(index + 1) : setIndex(index);
     // setIswrittenType(Data[index].isWrittenType);
     handleSubmit();
     if (Data[index].correctAns === submissions[index].submittedAns) {
-      score = score + positiveMarking;
+      setScore(score + positiveMarking);
       console.log("correct");
     }
     if (Data[index].correctAns !== submissions[index].submittedAns) {
-      score = score - negativeMarking;
+      setScore(score - negativeMarking);
       console.log("wrong");
     }
     if (Data[index + 1]) {
-      counter = index + 1;
+      setCounter(index + 1);
     }
     if (!Data[index + 1]) {
       if (Data[index].correctAns === submissions[index].submittedAns) {
-        score = score + positiveMarking;
+        setScore(score + positiveMarking);
         console.log("correct");
       }
       if (Data[index].correctAns !== submissions[index].submittedAns) {
-        score = score - negativeMarking;
+        setScore(score - negativeMarking);
         console.log("wrong");
       }
       if (!isFound) {
@@ -125,7 +125,7 @@ const JoinQuiz = () => {
           });
           await axios.put(
             "https://dronacharya-api.onrender.com/api/quizzes/updateQuiz/" +
-              urlParams.get("id"),
+            urlParams.get("id"),
             { attendies: attendies }
           );
         } catch (err) {
@@ -142,7 +142,7 @@ const JoinQuiz = () => {
 
   const handleChange = (e) => {
     const value = e.target.value;
-    submission = { submittedAns: value };
+    setSubmission({ submittedAns: value });
     document.getElementById("submittedAns").value("");
   };
   const Input = styled("input")({
@@ -155,8 +155,8 @@ const JoinQuiz = () => {
       id: new Date().getTime().toString(),
       qid: Data[index].id,
     };
-    submissions = [...submissions, newSubmission];
-    submission = { submittedAns: undefined };
+    setSubmissions([...submissions, newSubmission]);
+    setSubmission({ submittedAns: undefined });
 
     console.log(submissions);
   };
@@ -207,8 +207,8 @@ const JoinQuiz = () => {
                     className="back-icon"
                     variant="outlined"
                     onClick={() => navigate("../")}
-                    >
-                    <IoArrowBack/>
+                  >
+                    <IoArrowBack />
                   </Button>
                 </Tooltip>
                 <div id="navigationTab">
@@ -217,70 +217,87 @@ const JoinQuiz = () => {
                     return (
                       <>
                         <Tooltip
-                          title={`Jump to Question ${i+1}`}
+                          title={`Jump to Question ${i + 1}`}
                           placement="top"
                           disableFocusListener
                           disableTouchListener
                           arrow
-                          
+
                         >
-                            <Button
-                              className="questionLocator"
-                              variant="outlined"
-                              onClick={() => {
-                                index = i;
-                                // setIswrittenType(Data[i].isWrittenType);
-                              }}
-                            >
-                              {i+1}
-                            </Button>
+                          <Button
+                            className="questionLocator"
+                            variant="outlined"
+                            onClick={() => {
+                              setIndex(i);
+                              // setIswrittenType(Data[i].isWrittenType);
+                            }}
+                          >
+                            {i + 1}
+                          </Button>
                         </Tooltip>
                       </>
                     );
                   })}
                 </div>
               </div>
-                  <motion.div 
-                    className="join-quiz-main-div"
-                    initial={{ y: 10, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -10, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                   >
-                    <div className="join-quiz-question" >
-                      <h1>{Data[index].Question}</h1>
-                    </div>
-                    <div id="options">
-                      {Data[index].options.map((option, i) => {
-                        return (
-                          <>
-                            <div className="option" key={i}>
-                              <p>option {i + 1}</p>
-                              <p>{option.value}</p>
-                            </div>
-                          </>
-                        );
-                      })}
-                    </div>
-                    <div id="answer">
-                      <p>answer</p>
-                      {/* {!IsWrittenType ? ( */}
-                      <TextField
-                        type="text"
-                        id="submittedAns"
-                        name="submittedAns"
-                        onChange={handleChange}
-                      />
-                    </div>
-                      <div className="vectorMainDiv" >
-                        <Lottie
-                          isClickToPauseDisabled={true}
-                          options={VectorMainDiv}
-                          height={170}
-                          width={270}
-                        />
-                      </div>
-                  </motion.div>
+              <motion.div
+                className="join-quiz-main-div"
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -10, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="join-quiz-question" >
+                  <h1>{Data[index].Question}</h1>
+                </div>
+                <div id="options">
+                  {Data[index].options.map((option, i) => {
+                    return (
+                      <>
+                        <div className="option" key={i}>
+                          <p>option {i + 1}</p>
+                          <p>{option.value}</p>
+                        </div>
+                      </>
+                    );
+                  })}
+                </div>
+                <div id="answer">
+                  <p>answer</p>
+                  {/* {!IsWrittenType ? ( */}
+                  <TextField
+                    type="text"
+                    id="submittedAns"
+                    name="submittedAns"
+                    onChange={handleChange}
+                  />
+                  {/* ) : (
+                        <label htmlFor="icon-button-file">
+                          <Input accept="image/*" id="icon-button-file" type="file" />
+                          <IconButton
+                            color="primary"
+                            aria-label="upload picture"
+                            component="label"
+                          >
+                            <input hidden accept="image/*" type="file" />
+                            <PhotoCamera
+                              id="submittedAns"
+                              name="submittedAns"
+                              onChange={handleChange}
+                            />
+                          </IconButton>
+                        </label>
+                      )} */}
+                </div>
+                <div className="vectorMainDiv" >
+                  <Lottie
+                    isClickToPauseDisabled={true}
+                    options={VectorMainDiv}
+                    height={170}
+                    width={270}
+                  />
+                </div>
+              </motion.div>
               <Button variant="outlined" onClick={() => TakeAnswer()}>
                 Next
               </Button>
