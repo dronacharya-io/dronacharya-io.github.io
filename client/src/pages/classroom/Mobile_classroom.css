@@ -20,6 +20,7 @@
           var(--color-two),
           var(--color-one));
         background-size: 400% 400%;
+        width: auto;
         animation: gradient 10s ease infinite;
         letter-spacing: 0.8px!important;
         box-shadow: 0 0.1rem 0.3rem 0rem var(--gray-color);

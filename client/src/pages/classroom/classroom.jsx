@@ -46,25 +46,59 @@ export const Classroom = () => {
 
   return (
     <>
-      <div className="cards">
-        {submissionsData
-          ?.map((quiz, i) => {
-            return (
-              <>
-                <UserQuizCard
-                  key={i}
-                  id={quiz.id}
-                  quizName={quiz.name}
-                  runTime={quiz.runTime}
-                  startDate={quiz.startDate}
-                  x={x}
-                  setX={setX}
-                />
-              </>
-            );
-          })
-          .reverse()}
-      </div>
+      {user ?
+        (
+          <div className="cards">
+            {submissionsData?.length < 1 ? 
+              (
+                <div className="classroom-lottie-text-btn-parent-div" >
+                <div className="classroom-lottie-div" >
+                  <Lottie isClickToPauseDisabled={true}  options={defaultOptions}  />
+                </div>
+                <div>
+                  <p className="para">
+                    Looks like you haven't created any
+                    <span style={{color : "#ffb74d"}} > Quiz</span> yet.
+                  </p>
+                  <Zoom in={true}>
+                      <Button
+                        className="classroom-getstarted-btn"
+                        variant="outlined"
+                        onClick={() => navigate("/createQuiz")}
+                      >
+                        Create Your First Quiz
+                      </Button>
+                  </Zoom>
+                </div>
+              </div>
+              ) : (
+                submissionsData
+              ?.map((quiz, i) => {
+                return (
+                  <>
+                    <UserQuizCard
+                      key={i}
+                      id={quiz.id}
+                      quizName={quiz.name}
+                      runTime={quiz.runTime}
+                      startDate={quiz.startDate}
+                      x={x}
+                      setX={setX}
+                    />
+                  </>
+              );
+            })
+            .reverse()
+              )
+            }
+          </div>
+        ) : (<LoginSignUpPopUp/>)
+      }
     </>
   );
 };
+
+{
+  /*
+     */
+}
