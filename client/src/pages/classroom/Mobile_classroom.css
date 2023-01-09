@@ -12,7 +12,7 @@
     }
     
     .classroom-getstarted-btn{
-        margin: 1rem !important;
+        margin: 2rem !important;
         color: var(--white-color)!important;
         border-color: transparent!important;
         background: linear-gradient(-45deg,

@@ -56,7 +56,7 @@ const JoinQuiz = () => {
         attendies = x.data.attendies;
         positiveMarking = x.data.positiveMarking;
         negativeMarking = x.data.negativeMarking;
-        console.log(quizDetails);
+        console.log(quizDetails,"quizDetails");
         index = 0;
         const arr = x.data.attendies;
         const IsFound = arr.some((element) => {
