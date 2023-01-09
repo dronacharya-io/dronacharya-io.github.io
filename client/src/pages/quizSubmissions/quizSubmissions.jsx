@@ -43,7 +43,7 @@ const QuizSubmissions = () => {
     return () => {
       fetch();
     };
-  }, []);
+  }, [loading]);
 
   const noAttendies = {
     loop: true,
