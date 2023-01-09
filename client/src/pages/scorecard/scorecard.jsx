@@ -74,23 +74,62 @@ export const Scorecard = () => {
 
   return (
     <>
-      <div className="cards">
-        {submissionsData
-          ?.map((quiz, i) => {
-            return (
-              <>
-                <UserSubmissionCard
-                  key={i}
-                  quizName={quiz.name}
-                  id={quiz.id}
-                  runTime={quiz.runTime}
-                  startDate={quiz.startDate}
-                />
-              </>
-            );
-          })
-          .reverse()}
-      </div>
+      {user ? (
+          <div className="cards">
+            {submissionsData?.length < 1 ? 
+              (
+                <div id="scoreCard__notFound-parentDiv">
+                  <div id="scoreCard__notfoundTest-space">
+                    <Lottie
+                      isClickToPauseDisabled={true}
+                      options={Space}
+              
+                    />
+                  </div>
+                  <div id="scoreCard__notfoundTest-solarSystem">
+                    <Lottie
+                      isClickToPauseDisabled={true}
+                      options={Solarsystem}
+                    />
+                  </div>
+                  <div id="scoreCard__notfoundTest-astronaut">
+                    <Lottie
+                      isClickToPauseDisabled={true}
+                      options={defaultOptions}
+          
+                    />
+                  </div>
+                  <div id="scoreCard__notfoundTest-text-div">
+                    <h2 id="scoreCard__notfoundTest-text">
+                      There is so much <span>Space</span> here because you have not
+                      attempted any Test yet!
+                    </h2>
+                  </div>
+                </div>
+              ) : 
+              (
+                submissionsData
+                  ?.map((quiz, i) => {
+                      return (
+                        <>
+                          <UserSubmissionCard
+                            key={i}
+                            quizName={quiz.name}
+                            id={quiz.id}
+                            runTime={quiz.runTime}
+                            startDate={quiz.startDate}
+                          />
+                        </>
+                      );
+                    })
+                    .reverse()
+              )
+            }
+            </div>
+        ) : (<LoginSignUpPopUp />)
+      }
     </>
   );
 };
+
+{/* */}
