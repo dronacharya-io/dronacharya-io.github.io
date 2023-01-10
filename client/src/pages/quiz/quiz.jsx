@@ -8,7 +8,9 @@ import Button from "@mui/material/Button";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import TextField from "@mui/material/TextField";
 import Lottie from "react-lottie";
-import animationData from "../../lotties/circle-animation.json";
+import animationData from "../../lotties/study-online";
+import secondAnimationData from "../../lotties/67934-studyly";
+import thirdAnimationData from "../../lotties/67928-studyly";
 import { styled } from "@mui/material/styles";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { motion } from "framer-motion";
@@ -35,6 +37,25 @@ export const Quiz = (props) => {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+
+  const welcome = {
+    loop:true,
+    autoplay:true,
+    animationData: secondAnimationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const tAnimationData = {
+    loop:true,
+    autoplay:true,
+    animationData: thirdAnimationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
 
   const CssTextField = styled(TextField)({
     "& label.Mui-focused": {
@@ -110,12 +131,18 @@ export const Quiz = (props) => {
           }}
         />
         <div id="centerContent">
-
           <div id="homePageText">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. borem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            PageMaker including versions of Lorem Ipsum.
+            <div className="home-page-sanskrit-shloka-div" >
+              <h2 className="home-page-sanskrit-shloka" >
+                  "गुरुर्ब्रह्मा ग्रुरुर्विष्णुः गुरुर्देवो महेश्वरः। <br/>
+                  गुरुः साक्षात् परं ब्रह्म तस्मै श्री गुरवे नमः।।"
+              </h2>
+            </div>
+            <h3 className="home-page-sanskrit-shloka-hindi">
+              "गुरु ब्रह्मा है, गुरु विष्णु है, और गुरु ही भगवान शंकर है। गुरु हि साक्षात् परब्रह्म है, उन सद्गुरु को प्रणाम करता हूँ।"
+            </h3>
+            <br/>
+            <br/>
           </div>
           <div id="quiz-buttons">
             <Button
@@ -124,7 +151,7 @@ export const Quiz = (props) => {
               onClick={() => navigate("/createQuiz")}
             >
 
-              Subject Notes
+              Create Quiz
             </Button>
             <div className="quiz-textfield-joinbtn-parent-div" >
               <ThemeProvider theme={darkTheme}>
@@ -143,14 +170,24 @@ export const Quiz = (props) => {
                 id="joinquizbutton"
                 onClick={() => navigate("/joinQuiz/?id=" + id)}
               >
-                Join
+                Join Quiz
               </Button>
             </div>
           </div>
+            <Button
+                variant="outlined"
+                className="subject-notes-btn"
+                onClick={() => navigate("/exploreCourses")}
+              >
+
+                Explore Courses
+            </Button>
+
         </div>
       </div>
           <div className="quiz-animation-motion-parent-div">
             <motion.div 
+              id="quiz-animation-motion-div-id"
               className="quiz-animation-motion-div"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -159,9 +196,12 @@ export const Quiz = (props) => {
                 delay: 0.5,
                 ease: [0, 0.71, 0.2, 1.01]
               }}
-            >
-                <Lottie isClickToPauseDisabled={true}  options={defaultOptions}  /> 
-                
+            > 
+              <div className='quiz-animation-img-one' >
+                <Lottie   isClickToPauseDisabled={true}  options={defaultOptions}  />
+              </div>
+
+
                 {/* 
                   <Canvas >
                       <Suspense fallback={null}>

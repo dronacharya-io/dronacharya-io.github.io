@@ -47,7 +47,6 @@
 }
 
 #centerContent{
-  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   row-gap: 3rem ;
@@ -58,24 +57,18 @@
   flex-direction: row;
   width: 100%;
   gap: 2rem;
-  margin-top: 4rem;
 }
 
 #light #homePageText {
-  text-align: center;
-  margin-top: 3rem;
-  line-height: 2rem;
-  letter-spacing: 0.8px;
-  max-width: 45rem;
+  display: flex;
+  flex-direction: column;
 }
 
 #dark #homePageText {
   color: var(--white-color);
-  margin-top: 3rem;
   text-align: center;
-  line-height: 2rem;
-  letter-spacing: 0.8px;
-  max-width: 45rem;
+  display: flex;
+  flex-direction: column;
 }
 
 #light .CreateQuizButton{
@@ -141,7 +134,7 @@
 
 #light #joinquizbutton {
   box-sizing: border-box;
-  width: 5rem;
+  width: fit-content;
   font-size: 1rem;
   letter-spacing: 2px;
   height: 4rem;
@@ -150,7 +143,7 @@
 
 #dark #joinquizbutton {
   box-sizing: border-box;
-  width: 5rem;
+  width: fit-content;
   font-size: 1rem;
   letter-spacing: 2px;
   height: 4rem;
@@ -166,4 +159,55 @@
   display: flex;
   padding: 11rem;
 }
+
+.subject-notes-btn-div{
+  width: 100%;
+}
+
+.subject-notes-btn{
+  border: none !important ;
+  background: linear-gradient(-45deg,
+    var(--color-one),
+    var(--color-two),
+    var(--color-one));
+  background-size: 400% 400%;
+  color: var(--white-color) !important;
+  animation: gradient 10s ease infinite;
+  border-color: transparent;
+  letter-spacing: 0.8px !important;
+  box-shadow: 0 0.1rem 0.3rem 0rem var(--gray-color);
+  min-width: 15rem;
+  min-height: 4rem;
+  width: 100%;
+  font-size: 1.3rem !important;
+  box-sizing: border-box;
+  font-weight: 500 !important;
+}
+
+  .home-page-sanskrit-shloka-div{
+    line-height: 2.5rem;
+    letter-spacing: 0.8px;
+    margin-bottom: 0.5rem;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .home-page-sanskrit-shloka{
+    border-color: transparent;
+    background: linear-gradient(-45deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one));
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    color: transparent;
+    background-clip: text;
+  }
+
+
+  .home-page-sanskrit-shloka-hindi{
+    text-align: center;
+    padding: 2rem;
+  }
+
 }

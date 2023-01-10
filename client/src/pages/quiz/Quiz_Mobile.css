@@ -59,19 +59,20 @@
   
   #light #homePageText {
     padding: 2rem;
-    text-align: start;
+    text-align: center;
     line-height: 1.5rem;
     letter-spacing: 0.8px;
     max-width: 45rem;
     margin: 0;
     padding-bottom: 0px;
     padding-top: 40px;
+    
   }
   
   #dark #homePageText {
     color: var(--white-color);
     padding: 2rem;
-    text-align: start;
+    text-align: center;
     line-height: 1.5rem;
     letter-spacing: 0.8px;
     max-width: 45rem;
@@ -100,10 +101,10 @@
     box-shadow: 0 0.1rem 0.3rem 0rem var(--gray-color);
     min-width: 15rem;
     min-height: 4rem;
-    max-width: max-content;
     font-size: 1.3rem;
     box-sizing: border-box;
     margin-left: 2rem;
+    width: 80%;
   }
   
   #dark .CreateQuizButton{
@@ -116,12 +117,14 @@
     font-size: 1.3rem;
     box-sizing: border-box;
     margin: 2rem;
+
   }
   
   .quiz-textfield-joinbtn-parent-div{
     display: flex;
     padding: 2rem;
     padding-right: 0px;
+    width: 100%;
   }
   
   #light #joinquiztextfeild {
@@ -144,7 +147,7 @@
   
   
   #light #joinquizbutton {
-    width: 0;
+    width: fit-content;
     margin-left: 1rem;
     box-sizing: border-box;
     font-size: 1rem;
@@ -163,10 +166,58 @@
     color: var(--dark-primary-color);
     margin-bottom: 2rem;
   }
+
+  .subject-notes-btn{
+    background: linear-gradient(-45deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one));
+    background-size: 400% 400%;
+    color: var(--white-color) !important;
+    animation: gradient 10s ease infinite;
+    border-color: transparent !important;
+    letter-spacing: 0.8px !important;
+    box-shadow: 0 0.1rem 0.3rem 0rem var(--gray-color);
+    min-width: 15rem;
+    min-height: 4rem;
+    width: 80%;
+    font-size: 1.3rem !important;
+    box-sizing: border-box;
+    font-weight: 500 !important;
+    margin-right: 1rem !important;
+  }
   
   .quiz-animation-motion-div{
   }
   
   .quiz-animation-motion-parent-div{
+  }
+
+  .home-page-sanskrit-shloka-div{
+    line-height: 2rem;
+    letter-spacing: 0.8px;
+    max-width: 45rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .home-page-sanskrit-shloka{
+    border-color: transparent;
+    background: linear-gradient(-45deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one));
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    color: transparent;
+    background-clip: text;
+    font-size: large;
+  }
+
+  .home-page-sanskrit-shloka-hindi{
+    text-align: start;
+    padding: 1rem;
   }
 }
