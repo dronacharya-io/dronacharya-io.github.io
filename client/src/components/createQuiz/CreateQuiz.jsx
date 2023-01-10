@@ -84,11 +84,6 @@ const CreateQuiz = () => {
       {user ? (
         <div>
           <QuizSetting func={show} />
-
-          <IoArrowBack
-            className="back-icon-c"
-            onClick={() => navigate("../")}
-          />
           <div>
             <QuestionCard addQuestion={addQuestion} />
           </div>

@@ -1,4 +1,28 @@
 @media screen and (max-width:451px) {
+    .question-builder-card-main-div{
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .question-builder-card-main-lottie-div{
+        position: absolute;
+        height: 100%;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -9999;
+
+    }
+
+    .question-builder-card-main-child-div{
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+        align-self: center;
+    }
+
     #flex-main-container{
         display: flex;
         justify-content: center;
