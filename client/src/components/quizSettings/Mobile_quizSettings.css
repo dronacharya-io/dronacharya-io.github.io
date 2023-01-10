@@ -3,7 +3,6 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-    position: absolute;
   }
   
   #centerContent{
@@ -60,7 +59,6 @@
     display: flex;
     justify-content: flex-end;
     padding-top: 1rem;
-    margin-right: -1rem;
   }
   
   .quiz-settings-div-containing-form{
