@@ -1,4 +1,7 @@
-#profileButton {
+@media screen and (min-width:901px) {
+
+  
+  #profileButton {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,9 +15,9 @@
   z-index: 100;
   border-color: transparent;
   background: linear-gradient(-45deg,
-    var(--color-one),
-    var(--color-two),
-    var(--color-one));
+  var(--color-one),
+  var(--color-two),
+  var(--color-one));
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
   color: var(--white-color);
@@ -35,9 +38,9 @@
   z-index: 100;
   border-color: transparent;
   background: linear-gradient(-45deg,
-    var(--color-one),
-    var(--color-two),
-    var(--color-one));
+  var(--color-one),
+  var(--color-two),
+  var(--color-one));
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
   color: var(--white-color);
@@ -45,6 +48,11 @@
 }
 
 #light #outerTab {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 100;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -55,6 +63,11 @@
 }
 
 #dark #outerTab {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 100;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -169,9 +182,9 @@
 #light .logout {
   border-color: transparent;
   background: linear-gradient(-45deg,
-    var(--color-one),
-    var(--color-two),
-    var(--color-one));
+  var(--color-one),
+  var(--color-two),
+  var(--color-one));
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
   color: var(--white-color);
@@ -185,9 +198,9 @@
 #dark .logout {
   border-color: transparent;
   background: linear-gradient(-45deg,
-    var(--color-one),
-    var(--color-two),
-    var(--color-one));
+  var(--color-one),
+  var(--color-two),
+  var(--color-one));
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
   color: var(--white-color);
@@ -195,4 +208,5 @@
   top: 45%;
   width:fit-content;
   letter-spacing: 1.5px;
+}
 }

@@ -1,10 +1,12 @@
-import "./profile.css";
+import "./profile-desktop.css";
+import "./profile-mobile.css";
 import React, { useState } from "react";
 import { IoMailOutline } from "react-icons/io5";
 import { BsFillPersonFill } from "react-icons/bs";
 import Button from "@mui/material/Button";
 import { useUserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const ProfileTab = () => {
   const navigate = useNavigate();
@@ -51,7 +53,12 @@ const ProfileTab = () => {
     months[today.getMonth()];
 
   return (
-    <>
+    <motion.div
+      initial={{ y: 10, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -10, opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      >
       <button id="profileButton" onClick={() => Disable()}>
         <BsFillPersonFill className="icon" id="profile-icon" />
       </button>
@@ -95,7 +102,7 @@ const ProfileTab = () => {
           )}
         </div>
       )}
-    </>
+      </motion.div>
   );
 };
 

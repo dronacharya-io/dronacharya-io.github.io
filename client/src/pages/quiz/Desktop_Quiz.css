@@ -56,15 +56,19 @@
   display: flex;
   flex-direction: row;
   width: 100%;
+  margin-top: 6rem;
   gap: 2rem;
 }
 
 #light #homePageText {
+  
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
 }
 
 #dark #homePageText {
+  margin-top: 2rem;
   color: var(--white-color);
   text-align: center;
   display: flex;
@@ -91,21 +95,22 @@
 }
 
 #dark .CreateQuizButton{
-  font-weight: 500;
-  border-color: transparent;
 	background: linear-gradient(-45deg,
     var(--color-one),
     var(--color-two),
     var(--color-one));
 	background-size: 400% 400%;
-	animation: gradient 10s ease infinite;
   color: var(--white-color);
+  animation: gradient 10s ease infinite;
+  border-color: transparent;
   letter-spacing: 0.8px;
+  box-shadow: 0 0.1rem 0.3rem 0rem var(--gray-color);
   min-width: 15rem;
   min-height: 4rem;
   max-width: max-content;
   font-size: 1.3rem;
   box-sizing: border-box;
+  font-weight: 500;
 }
 
 
@@ -160,29 +165,7 @@
   padding: 11rem;
 }
 
-.subject-notes-btn-div{
-  width: 100%;
-}
 
-.subject-notes-btn{
-  border: none !important ;
-  background: linear-gradient(-45deg,
-    var(--color-one),
-    var(--color-two),
-    var(--color-one));
-  background-size: 400% 400%;
-  color: var(--white-color) !important;
-  animation: gradient 10s ease infinite;
-  border-color: transparent;
-  letter-spacing: 0.8px !important;
-  box-shadow: 0 0.1rem 0.3rem 0rem var(--gray-color);
-  min-width: 15rem;
-  min-height: 4rem;
-  width: 100%;
-  font-size: 1.3rem !important;
-  box-sizing: border-box;
-  font-weight: 500 !important;
-}
 
   .home-page-sanskrit-shloka-div{
     line-height: 2.5rem;

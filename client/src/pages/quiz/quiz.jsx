@@ -172,16 +172,19 @@ export const Quiz = (props) => {
               >
                 Join Quiz
               </Button>
-            </div>
-          </div>
-            <Button
-                variant="outlined"
-                className="subject-notes-btn"
-                onClick={() => navigate("/exploreCourses")}
-              >
 
-                Explore Courses
+            </div>
+            <Button
+              variant="outlined"
+              className="CreateQuizButton"
+              onClick={() => navigate("/exploreCourses")}
+            >
+
+              Explore Courses
             </Button>
+   
+          </div>
+
 
         </div>
       </div>
