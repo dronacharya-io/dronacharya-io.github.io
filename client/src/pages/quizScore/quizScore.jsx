@@ -7,26 +7,26 @@ const QuizScore = () => {
 
   const urlParams = new URLSearchParams(window.location.search);
   console.log(urlParams.get("quizId"));
-  useEffect(() => {
-    async function fetch() {
-      try {
-        const res = await axios.get(
-          "https://dronacharya-api.onrender.com/api/quizzes/attemptQuiz/" +
-            urlParams.get("quizId")
-        );
-        setReport(
-          res.data.attendies.filter((x) => {
-            return x.userId === urlParams.get("userId");
-          })
-        );
-        console.log(report);
-      } catch (err) {
-        console.log(err.message);
-      }
+
+  async function fetch() {
+    try {
+      const res = await axios.get(
+        "https://dronacharya-api.onrender.com/api/quizzes/attemptQuiz/" +
+        urlParams.get("quizId")
+      );
+      setReport(
+        res.data.attendies.filter((x) => {
+          return x.userId === urlParams.get("userId");
+        })
+      );
+      console.log(report);
+    } catch (err) {
+      console.log(err.message);
     }
-    return () => {
-      fetch();
-    };
+  }
+
+  useEffect(() => {
+    fetch();
   }, []);
 
   return (
