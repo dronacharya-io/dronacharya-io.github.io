@@ -145,6 +145,14 @@ export const Quiz = (props) => {
             <br/>
           </div>
           <div id="quiz-buttons">
+          <Button
+              variant="outlined"
+              className="CreateQuizButton"
+              onClick={() => navigate("/exploreCourses")}
+            >
+
+              Explore Courses
+            </Button>
             <Button
               variant="outlined"
               className="CreateQuizButton"
@@ -153,6 +161,7 @@ export const Quiz = (props) => {
 
               Create Quiz
             </Button>
+ 
             <div className="quiz-textfield-joinbtn-parent-div" >
               <ThemeProvider theme={darkTheme}>
                 <CssTextField
@@ -174,14 +183,7 @@ export const Quiz = (props) => {
               </Button>
 
             </div>
-            <Button
-              variant="outlined"
-              className="CreateQuizButton"
-              onClick={() => navigate("/exploreCourses")}
-            >
 
-              Explore Courses
-            </Button>
    
           </div>
 

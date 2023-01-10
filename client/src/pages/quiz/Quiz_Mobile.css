@@ -105,6 +105,7 @@
     box-sizing: border-box;
     margin-left: 2rem;
     width: 80%;
+    margin-bottom: 1rem;
   }
   
   #dark .CreateQuizButton{

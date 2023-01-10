@@ -41,9 +41,12 @@ const LoginSignUpPopUp = () => {
   return (
     <>
         <div class="login-signup-pop-up-backgroundParent-div">
-            <Zoom
-            in={true}
-            style={{ transitionDelay: true ? "100ms" : "0ms" }}>
+        <motion.div
+          initial={{ y: 40, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -10, opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          >
               <div id="loginPopUp">
                   
                 <div id="background">
@@ -65,7 +68,7 @@ const LoginSignUpPopUp = () => {
                        
                     </motion.div>
                 </div>
-            </Zoom>   
+              </motion.div>
         </div>
     </>    
   )
