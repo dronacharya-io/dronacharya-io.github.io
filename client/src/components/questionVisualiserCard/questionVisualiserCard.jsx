@@ -50,6 +50,8 @@ const QuestionVisualiserCard = (props) => {
       };
       props.editQuestion(newQuestion);
     }
+    setShowElements(false);
+    setRow(1)
   };
 
   const addOption = (e) => {
@@ -75,77 +77,80 @@ const QuestionVisualiserCard = (props) => {
   };
   return (
     <>
-      <div id="ParentDiv">
-      <form className="form" id="form-c">
-          <div id="flex-main-container" >
-            <div className="text-area-container" >
-                <textarea
-                  onClick={() => {
-                    setRow("2");
-                    setShowElements(true);
-                    console.log(question);
-                  }}
-                  type="text"
-                  id="Question"
-                  name="Question"
-                  value={question.Question}
-                  rows={row}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-          {showElements && (
-            <div>
-              <div className="flex-option-ca-Container" >
-                <div className="option-plus-addButton" >
-                  <Zoom in={true}>
-                    <textarea
-                      type="text"
-                      id="option"
-                      name="option"
-                      className="options"
-                      placeholder="Options.."
-                      rows={1}
-                      onChange={handleOption}
-                    />
-                  </Zoom>
-                  <Zoom
-                    in={true}
-                    style={{ transitionDelay: true ? "250ms" : "0ms" }}
-                  >
-                    <Fab
-                      color="primary"
-                      size="small"
-                      onClick={addOption}
-                      id="AddOptionButton"
-                    >
-                      <AddIcon />
-                    </Fab>
-                  </Zoom>
+      <div id="ParentDiv" >
+        <div  className={showElements ? `question-vis-card-main-div` : ""} >
+
+        <form className="form" id="form-c">
+            <div id="flex-main-container" >
+              <div className="text-area-container" >
+                  <textarea
+                    onClick={() => {
+                      setRow("2");
+                      setShowElements(true);
+                      console.log(question);
+                    }}
+                    type="text"
+                    id="Question"
+                    name="Question"
+                    value={question.Question}
+                    rows={row}
+                    onChange={handleChange}
+                  />
                 </div>
               </div>
-              
-              <div  id="optionDiv" >
-                <List options={Options} removeOption={removeOption} />
-              </div>
-              <div className="add-btn-div" >
-              <Zoom in={true}>
-                <Button
-                  onClick={handleSubmit}
-                  size="medium"
-                  variant="contained"
-                  type="submit"
-                  id="addQuestionButton"
-                  aria-label="add"
-                >
-                  {`${AddQuestionText}`}
-                </Button>
-              </Zoom>
+            {showElements && (
+              <div>
+                <div className="flex-option-ca-Container" >
+                  <div className="option-plus-addButton" >
+                    <Zoom in={true}>
+                      <textarea
+                        type="text"
+                        id="option"
+                        name="option"
+                        className="options"
+                        placeholder="Options.."
+                        rows={1}
+                        onChange={handleOption}
+                      />
+                    </Zoom>
+                    <Zoom
+                      in={true}
+                      style={{ transitionDelay: true ? "250ms" : "0ms" }}
+                    >
+                      <Fab
+                        color="primary"
+                        size="small"
+                        onClick={addOption}
+                        id="AddOptionButton"
+                      >
+                        <AddIcon />
+                      </Fab>
+                    </Zoom>
+                  </div>
+                </div>
+                
+                <div  id="optionDiv" >
+                  <List options={Options} removeOption={removeOption} />
+                </div>
+                <div className="add-btn-div" >
+                <Zoom in={true}>
+                  <Button
+                    onClick={handleSubmit}
+                    size="medium"
+                    variant="contained"
+                    type="submit"
+                    id="addQuestionButton"
+                    aria-label="add"
+                  >
+                    {`${AddQuestionText}`}
+                  </Button>
+                </Zoom>
 
-            </div>
-            </div>
-          )}
-        </form>
+              </div>
+              </div>
+            )}
+          </form>
+        </div>
       </div>
     </>
   );

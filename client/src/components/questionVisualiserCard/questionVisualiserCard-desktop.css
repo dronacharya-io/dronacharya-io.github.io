@@ -1,8 +1,32 @@
 @media screen and (min-width: 901px) {
     #ParentDiv{
-       
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 90%;
     }
+    .question-vis-card-main-div{
+        background-image: url("../../lotties/SharedScreenshot.jpg");
+        width: 60%;
+        border-radius: 5px;
+    }
+}
 
-
+@media screen and (max-width:451px) {
+    #ParentDiv{
+        height: 100%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    .question-vis-card-main-div{
+        background-image: url("../../lotties/SharedScreenshot.jpg");
+        width: 90%;
+        border-radius: 5px;
+    }
 }
