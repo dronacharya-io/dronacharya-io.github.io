@@ -9,7 +9,7 @@ import AddBoxIcon from "@mui/icons-material/AddBox";
 import TextField from "@mui/material/TextField";
 import Lottie from "react-lottie";
 import animationData from "../../lotties/study-online";
-import secondAnimationData from "../../lotties/67934-studyly";
+import secondAnimationData from "../../lotties/Designerboyready";
 import thirdAnimationData from "../../lotties/67928-studyly";
 import { styled } from "@mui/material/styles";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
@@ -203,7 +203,7 @@ export const Quiz = (props) => {
               }}
             > 
               <div className='quiz-animation-img-one' >
-                <Lottie   isClickToPauseDisabled={true}  options={defaultOptions}  />
+                <Lottie   isClickToPauseDisabled={true}  options={welcome}  />
               </div>
 
 
