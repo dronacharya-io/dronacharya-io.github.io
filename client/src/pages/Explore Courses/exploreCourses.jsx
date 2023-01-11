@@ -4,7 +4,7 @@ import { useUserAuth } from '../../context/AuthContext'
 import LoginSignUpPopUp from '../../components/PopUps/LoginSignUpPopUp'
 import ExploreCoursesSelector from "../../components/explore Courses Search/SearchCourses.jsx"
 import Lottie from "react-lottie";
-import searchLottie from "../../lotties/explore-courses-search-lottie"
+import searchLottie from "../../lotties/112360-search-files"
 import { motion } from "framer-motion";
 
 export const ExploreCourses = () => {
