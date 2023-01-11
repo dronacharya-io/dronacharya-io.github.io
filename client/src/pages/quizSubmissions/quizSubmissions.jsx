@@ -78,7 +78,13 @@ const QuizSubmissions = () => {
           />
         </div>
       ) : ( */}
-      <div className="quiz-submissions-page-div-submission" >
+
+      { data.length < 1 ? (
+        <div>
+          <Lottie   isClickToPauseDisabled={true}  options={noAttendies}  />
+          <h2> Looks like no one has <span>attended</span> your <span>quiz</span> yet. </h2>
+        </div>) : (
+        <div className="quiz-submissions-page-div-submission" >
         <Paper sx={{ width: "100%", overflow: "hidden", }} elevation={3}>
           <TableContainer component={Paper}>
             <Table
@@ -130,7 +136,7 @@ const QuizSubmissions = () => {
           </TableContainer>
         </Paper>
       </div>
-      {/* )} */}
+      ) }
     </>
   );
 };
