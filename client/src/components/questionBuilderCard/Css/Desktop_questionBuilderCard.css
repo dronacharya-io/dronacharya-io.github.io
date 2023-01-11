@@ -1,123 +1,129 @@
 @media screen and (min-width: 901px) {
-    #flex-main-container{
+    
+    .question-builder-card-main-div{
         display: flex;
         justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        flex-direction: column;
-        margin-top: 15%;
+        width: 90%;
+        
+        transition: all 0.3s ease-in-out;
     }
 
+    .question-builder-card-main-child-div{
+        border-color: transparent;
+        background-image: url("../../../lotties/SharedScreenshot.jpg");
+        margin-top: 5rem;
+        display: flex;
+        width: 60%;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.422);
+    }
+    
+    .question-builder-card-main-lottie-div{
+        height: 100%;
+        width: 100%;
+        display: none;
+    }
 
+    .question-builder-card-main-form-div{
+        width: 100%;
+        flex-direction: column;
+        margin: 1rem 2rem;
+        
+    }
+
+    #flex-main-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-self: center;
+        width: auto;
+    }
+
+    #form-c{
+        
+        width:100%;
+        margin:0.75rem 0;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        overflow: hidden; 
+    }
     
     .first-container{
         display: flex;
-        flex-direction: row;
     }
     
     .text-area-container{
-        display: flex;
+        
     }
     
     .button-container{
-     display: flex;
-     flex-direction: row;
+   
     }
     
     .add-btn-div{
-     display:flex;
-     align-self: center;
+    
     }
     
     .cancel-btn-div{
-        display: flex;
-        align-self: center;
+    
     }
     
     #light #Question {
-        width: 100%;
+        position: relative;
+        width: 45rem;
+        justify-self: center;
         border: none;
-        padding: 4px;
         outline: none;
         font-size: 1.2em;
         font-family: inherit;
         resize: none;
         background: #eee;
-        position: relative;
-        width: 38rem;
-        margin: 1.875rem auto 1.25rem auto;
-        background: #fff;
+        margin: 2rem auto 0 auto;
         padding: 15px;
         border-radius: 7px;
-        box-shadow: 0 1px 5px rgb(207, 207, 207);
+        box-shadow: 0 1px 5px rgb(207, 207, 207)
     }
     
     #dark #Question {
-        width: 100%;
+        position: relative;
+        width: 45rem;
+        justify-self: center;
         border: none;
-        padding: 4px;
         outline: none;
         font-size: 1.2em;
         font-family: inherit;
         resize: none;
-        position: relative;
-        width: 38rem;
-        margin: 1.875rem auto 1.25rem auto;
-        background: #fff;
+        background: #eee;
+        margin: 2rem auto 0 auto;
         padding: 15px;
         border-radius: 7px;
-        box-shadow: 0 1px 5px rgb(207, 207, 207);
+        box-shadow: 0 1px 5px rgb(207, 207, 207)
     }
     
     
-    
-    #cancelBtn{
-        width:auto;
-        margin: 0 20px 0 20px;
-        font-weight: 800;
-        letter-spacing: 1.2px;
-    }
-     
+
     #light #addQuestionButton {
-        width: auto;
-        height: auto;
-        margin: 0 20px 0 20px;
-        font-weight: 800;
-        letter-spacing: 1.2px;
-        background-color: #ffb74d;
-        border-color: #ffb74d;
-        color:white;
-        box-shadow: 0 0.1rem 0.3rem 0rem rgb(118, 118, 118);
+        
     }
     
     #dark #addQuestionButton {
-        width: auto;
-        height: auto;
-        margin: 0 20px 0 20px;
-        font-weight: 800;
-        letter-spacing: 1.2px;
-        border-color: #FFEA41;
-        color: #FFEA41;
-        box-shadow: 0 0.1rem 0.3rem 0rem rgb(118, 118, 118);
+        
     }
     
     .flex-option-ca-Container{
+        margin-top: 1rem;
         display: flex;
-        flex-direction: row;
-        align-self: center;
     }
     
     .option-plus-addButton{
         display: flex;
-        margin: 0.5rem 2rem 2rem 2rem;
     }
     
     #optionDiv{
-        display: flex;
-        align-items: center;
-        flex-wrap:wrap;
-        justify-content: space-between;
-        max-width: 450px;
+        
     
     }
     
@@ -138,22 +144,17 @@
     }
     
     #light #AddOptionButton{
-        display: flex;
-        align-self: center;
-        background-color: #ffb74d;
-        border-color: #ffb74d;
-        color:white;
+        
     }
     
     #dark #AddOptionButton{
-        display: flex;
-        align-self: center;
-        background-color: #FFEA41;
-        color: white;
+       
     }
-    
+    .correctAns{
+        display: flex;
+        justify-content: flex-end;
+    } 
     #correctAns{
-        width: 1rem;
         border: none;
         outline: none;
         font-size: 1em;
@@ -161,76 +162,34 @@
         resize: none;
         background: #eee;
         width: fit-content;
-        margin: 0.5rem 2rem 2rem 2rem;
         background: #fff;
         padding: 15px;
+        height: min-content;
         border-radius: 7px;
         box-shadow: 0 1px 5px rgb(207, 207, 207);
     }
     
      #light .options-individual{
-        margin: 2rem 50px 2rem 50px;
-        min-width: 173px;
-        background: white;
-        border-radius: 7px;
-        box-shadow: 0 2px 5px #ccc;
-        padding: 10px;
-        margin: 16px;
-        font-weight: 800;
+       
     }
     
     #dark .options-individual{
-        margin: 2rem 50px 2rem 50px;
-        min-width: 173px;
-        background: #1d2238;
-        border-color: #1d2238;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.422);
-        color: #eee;
-        border-radius: 7px;
-        padding: 10px;
-        margin: 16px;
-        font-weight: 800;
+        
     }
     
     
     #light .DeleteButton{
-        display: flex;
-        color: #ffb74d;
+        
     }
     #dark .DeleteButton{
-        display: flex;
-        justify-self: flex-end;
-        color:#FFEA41;
+       
     }
     
     #light .option-number{
-        background-color: #ffb74d;
-        color: white;
-        box-shadow: 0 3px 8px rgb(207, 207, 207);
-        border-radius: 100%;
-        width: 40px;
-        height:40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-        margin-bottom: -20px;
-        position: absolute;
-        z-index: 3;
+       
     }
     
     #dark .option-number{
-        color: #FFEA41;
-        border: 1px solid;
-        border-radius: 100%;
-        width: 40px;
-        height:40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-        margin-bottom: -20px;
-        position: absolute;
-        z-index: 3;
+       
     }
 }
