@@ -52,14 +52,42 @@
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     color: var(--white-color);
-    margin-top: 4rem;
-    left: 20px;
-    width: auto;
+
+    margin-bottom: 2rem;
+    width: 25%;
     height: 40px;
+    font-weight: 700;
     letter-spacing: 2px;
     box-shadow: 0 0.1rem 0.3rem 0rem rgb(118, 118, 118);
 }
 
+.create-quiz-create-quiz-btn-div{
+    width: 90%;
+}
+
+@media screen and (max-width:451px) {
+    #light   #addQuizButton{
+        border-color: transparent;
+        background: linear-gradient(-45deg,
+          var(--color-one),
+          var(--color-two),
+          var(--color-one));
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        color: var(--white-color);
+        
+        margin-bottom: 2rem;
+        width: 90%;
+        height: 40px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        box-shadow: 0 0.1rem 0.3rem 0rem rgb(118, 118, 118);
+    }
+
+    .create-quiz-create-quiz-btn-div{
+        width: 100%;
+    }
+}
 
 #dark #addQuizButton{
     border-color: transparent;

@@ -35,10 +35,7 @@ const QuestionCard = (props) => {
 
   const handleOnActive = () => setIsIdle(false);
   const handleOnIdle = () => setIsIdle(true);
-  const handleCancel = () => {
-    setShowElements(false) 
-    setRow("1") 
-  }
+
   const {
     getRemainingTime,
     getLastActiveTime,
@@ -216,7 +213,7 @@ const QuestionCard = (props) => {
                               type="text"
                               id="correctAns"
                               name="correctAns"
-                              placeholder="Type correct answer..."
+                              placeholder="Correct answer..."
                               onChange={handleChange}
                               rows={1}
                             />
@@ -226,27 +223,27 @@ const QuestionCard = (props) => {
                           <List options={options} removeOption={removeOption} optionNumber={alphabets[optionNumber]}/>
                       </div>
                       <div className="add-btn-div" >
-                                <motion.div
-                                  initial={{ opacity: 0, scale: 0.5 }}
-                                  animate={{ opacity: 1, scale: 1 }}
-                                  transition={{
-                                    duration: 0.8,
-                                    delay: 0.5,
-                                    ease: [0, 0.71, 0.2, 1.01]
-                                  }}
+                            <motion.div
+                              initial={{ opacity: 0, scale: 0.5 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{
+                                duration: 0.8,
+                                delay: 0.5,
+                                ease: [0, 0.71, 0.2, 1.01]
+                              }}
+                            >
+                                <Button
+                                  onClick={handleSubmit}
+                                  size="medium"
+                                  variant="outlined"
+                                  type="submit"
+                                  id="addQuestionButton"
+                                  aria-label="add"
                                 >
-                                    <Button
-                                      onClick={handleSubmit}
-                                      size="medium"
-                                      variant="outlined"
-                                      type="submit"
-                                      id="addQuestionButton"
-                                      aria-label="add"
-                                    >
-                                      {`${AddQuestionText}`}
-                                    </Button>
-                                </motion.div>
-                            </div>
+                                  {`${AddQuestionText}`}
+                                </Button>
+                            </motion.div>
+                        </div>
                   </div>
                   <div>
                   </div>

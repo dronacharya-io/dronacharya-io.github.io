@@ -96,6 +96,7 @@ const CreateQuiz = () => {
                 delay: 0.5,
                 ease: [0, 0.71, 0.2, 1.01]
             }}
+              className="create-quiz-create-quiz-btn-div"
             >
                 <Button
                   id="addQuizButton"
@@ -103,7 +104,7 @@ const CreateQuiz = () => {
                   color="success"
                   onClick={handleCreate}
                 >
-                  Add Test
+                  Create Quiz
                 </Button>
               </motion.div>
           )}
