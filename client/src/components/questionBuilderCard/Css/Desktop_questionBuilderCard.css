@@ -67,10 +67,6 @@
     
     }
     
-    .cancel-btn-div{
-    
-    }
-    
     #light #Question {
         position: relative;
         width: 45rem;
@@ -105,12 +101,17 @@
     
     
 
-    #light #addQuestionButton {
-        
-    }
-    
-    #dark #addQuestionButton {
-        
+    #addQuestionButton {
+        margin-top: 3rem;
+        border: transparent;
+        background: linear-gradient(-45deg, var(--color-one),
+        var(--color-two),
+        var(--color-one) );
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        font-weight: 800;
+        letter-spacing: 1px;
+        color: var(--white-color);
     }
     
     .flex-option-ca-Container{
@@ -123,8 +124,12 @@
     }
     
     #optionDiv{
-        
-    
+        display: flex;
+        align-items: center;
+        flex-wrap:wrap;
+        justify-content: space-between;
+ 
+        width: 750px;
     }
     
     #option {
@@ -143,13 +148,17 @@
         box-shadow: 0 1px 5px rgb(207, 207, 207);
     }
     
-    #light #AddOptionButton{
-        
+    #AddOptionButton{
+        border: transparent;
+        background: linear-gradient(-45deg, var(--color-one),
+        var(--color-two),
+        var(--color-one) );
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        color: var(--white-color);
     }
     
-    #dark #AddOptionButton{
-       
-    }
+   
     .correctAns{
         display: flex;
         justify-content: flex-end;
@@ -169,27 +178,57 @@
         box-shadow: 0 1px 5px rgb(207, 207, 207);
     }
     
-     #light .options-individual{
-       
+    .options-individual{
+        margin: 2rem 50px 2rem 50px;
+        min-width: 173px;
+        max-width: 173px;
+        background: white;
+        border-radius: 7px;
+        box-shadow: 0 3px 7px black;
+        padding: 10px;
+        margin: 16px;
+        font-weight: 800;
+    }
+
+    .options-individual:hover{
+        box-shadow: none;
+        transition: all 0.3s ease-in-out;
     }
     
-    #dark .options-individual{
-        
-    }
+
     
     
     #light .DeleteButton{
-        
+        display: flex;
+        color: #ffb74d;
     }
     #dark .DeleteButton{
-       
+        display: flex;
+        justify-self: flex-end;
+        color:#FFEA41;
     }
     
-    #light .option-number{
-       
+    .option-number{
+        background-color: #ffb74d;
+        color: white;
+        
+        border-radius: 100%;
+        width: 40px;
+        height:40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        margin-bottom: -20px;
+        position: absolute;
+        z-index: 3;
     }
     
-    #dark .option-number{
-       
+    .option-value{
+        font-size: larger;
+        font-weight: 400;
+        letter-spacing: 1px;
+        padding: 5px;
+        overflow: scroll;
     }
 }

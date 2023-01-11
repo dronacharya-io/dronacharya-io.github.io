@@ -223,7 +223,7 @@ const QuestionCard = (props) => {
                           </motion.div>
                       </div>
                       <div id="optionDiv" >
-                                <List options={options} removeOption={removeOption} optionNumber={alphabets[optionNumber]}/>
+                          <List options={options} removeOption={removeOption} optionNumber={alphabets[optionNumber]}/>
                       </div>
                       <div className="add-btn-div" >
                                 <motion.div
@@ -291,7 +291,7 @@ const SingleOption = (props) => {
       </div>
       <div className="options-individual">
 
-        <h4>{value}</h4>
+        <h4 className="option-value" >{value}</h4>
         <Zoom in={true}>
           <IconButton
             className="DeleteButton"
