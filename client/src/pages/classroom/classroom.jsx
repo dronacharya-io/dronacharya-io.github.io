@@ -11,13 +11,15 @@ import Lottie from "react-lottie";
 import animationData from "../../lotties/notfound.json";
 import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp"
 import { UserSubmissionCard } from "../scorecard/userSubmissionCard";
+import Newcard from "../../components/NewCards/Newcard";
+import Heading from "../../components/HeadingText/heading";
 
 export const Classroom = () => {
   var { user, x, setX } = useUserAuth();
   var [loading, setLoading] = useState(false);
   var submissionsData = user?.userData?.quizzesCreated;
   const navigate = useNavigate();
-
+  console.log(submissionsData, "submissions data recent")
   useEffect(() => {
     setLoading(true);
     async function Fetch() {
@@ -46,6 +48,7 @@ export const Classroom = () => {
 
   return (
     <>
+      <Heading title={ submissionsData?.length < 1 ? 'CREATE YOUR FIRST QUIZ' : 'QUIZZES CREATED'} />
       {user ?
         (
           <div className="cards">
@@ -72,16 +75,18 @@ export const Classroom = () => {
                 </div>
               </div>
               ) : (
+                
                 submissionsData
               ?.map((quiz, i) => {
                 return (
                   <>
-                    <UserQuizCard
+                    <Newcard
                       key={i}
                       id={quiz.id}
                       quizName={quiz.name}
                       runTime={quiz.runTime}
                       startDate={quiz.startDate}
+                      subject={quiz.subject}
                       x={x}
                       setX={setX}
                     />

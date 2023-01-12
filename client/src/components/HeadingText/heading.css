@@ -1,0 +1,94 @@
+@media screen  and (min-width: 451px) {
+
+    
+    #light .classroom-h2{
+        color: var(--white-color);
+        letter-spacing: 2px;
+        font-size: x-large;
+        font-weight: 800;
+    }
+
+    #dark .classroom-h2{
+        letter-spacing: 2px;
+        font-size: x-large;
+        font-weight: 800;
+        border-color: transparent;
+        color: var(--white-color);
+    }
+    
+    #light .classroom-h2-div{ 
+        width: 90%;
+        margin: 2rem auto 2rem auto;
+        justify-self: center;
+        box-shadow: 0 0 1.5rem 0rem rgb(184, 182, 182);
+        padding:1rem; 
+        border-radius: 5px;
+        border-color: transparent;
+        background: linear-gradient(-45deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-one));
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+        color: transparent;
+    }
+    
+    #dark .classroom-h2-div{ 
+        border-radius: 5px;
+        width: 90%;
+        margin: 2rem auto 2rem auto;
+        justify-self: center;
+        padding:1rem; 
+        box-shadow:  0 0 1.5rem 0rem var(#1d2238);
+       
+        background: linear-gradient(-45deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-one));
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+      color: transparent;
+}
+}
+
+@media screen and (max-width:451px){
+    .classroom-h2{
+        color: var(--white-color);
+        letter-spacing: 2px;
+        font-size: x-large;
+        font-weight: 800;
+    }
+    
+    #light .classroom-h2-div{ 
+        width: 90%;
+        margin: 10PX auto 0 auto;
+        justify-self: center;
+        box-shadow: 0 2px 2rem 1rem rgb(233 233 233);
+        padding:1rem; 
+        border-radius: 5px;
+        border-color: transparent;
+        background: linear-gradient(-45deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-one));
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+        color: transparent;
+    }
+    
+    #dark .classroom-h2-div{ 
+        border-radius: 5px;
+        width: 90%;
+        margin: 2rem auto 0 auto;
+        justify-self: center;
+        padding:1rem; 
+        border-color: transparent;
+        background: linear-gradient(-45deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-one));
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+        color: transparent;
+}
+}

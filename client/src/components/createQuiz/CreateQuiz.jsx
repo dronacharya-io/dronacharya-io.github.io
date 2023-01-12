@@ -12,6 +12,8 @@ import "../questionBuilderCard/Css/Desktop_questionBuilderCard.css";
 import { useNavigate } from "react-router-dom";
 import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp";
 import { motion } from "framer-motion";
+import Heading from "../HeadingText/heading";
+
 
 const CreateQuiz = () => {
   const [questions, setQuestions] = useState([]);
@@ -68,6 +70,7 @@ const CreateQuiz = () => {
         startDate: res.data.details.startDate,
         startTime: res.data.details.startTime,
         runTime: res.data.details.runTime,
+        subject: res.data.details.subject,
       });
       console.log(arr);
       await axios.put(url, { quizzesCreated: arr });
@@ -81,6 +84,7 @@ const CreateQuiz = () => {
 
   return (
     <>
+    <Heading title={"CREATE QUIZ"} />
       {user ? (
         <div>
           <QuizSetting func={show} />

@@ -9,6 +9,8 @@ import solarsystem from "../../lotties/solarsystem.json";
 import "./scroreCard.css";
 import space from "../../lotties/space.json";
 import Loading from "../../lotties/mainloading.json";
+import Heading from "../../components/HeadingText/heading";
+import {motion} from "framer-motion";
 
 export const Scorecard = () => {
   const { user, googleSignIn, x, setX } = useUserAuth();
@@ -74,6 +76,7 @@ export const Scorecard = () => {
 
   return (
     <>
+      <Heading title={user?.userData?.quizzesSubmitted?.length < 1 ? 'GIVE SOME QUIZZES' : "QUIZZES ATTENDED " } />
       {user ? (
         <div className="cards">
           {user?.userData?.quizzesSubmitted?.length < 1 ?
@@ -102,7 +105,7 @@ export const Scorecard = () => {
                 <div id="scoreCard__notfoundTest-text-div">
                   <h2 id="scoreCard__notfoundTest-text">
                     There is so much <span>Space</span> here because you have not
-                    attempted any Test yet!
+                    attempted any Quiz yet!
                   </h2>
                 </div>
               </div>
@@ -111,7 +114,14 @@ export const Scorecard = () => {
               user?.userData?.quizzesSubmitted
                 ?.map((quiz, i) => {
                   return (
-                    <>
+                   
+                    <motion.div        
+                      initial={{ y: 40, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -10, opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                      
+                      > 
                       <UserSubmissionCard
                         key={i}
                         quizName={quiz.name}
@@ -119,7 +129,8 @@ export const Scorecard = () => {
                         runTime={quiz.runTime}
                         startDate={quiz.startDate}
                       />
-                    </>
+                     </motion.div>
+                    
                   );
                 })
                 .reverse()

@@ -6,6 +6,7 @@ import ExploreCoursesSelector from "../../components/explore Courses Search/Sear
 import Lottie from "react-lottie";
 import searchLottie from "../../lotties/112360-search-files"
 import { motion } from "framer-motion";
+import Heading from '../../components/HeadingText/heading'
 
 export const ExploreCourses = () => {
   const [open, setOpen] = React.useState(false);
@@ -38,6 +39,7 @@ export const ExploreCourses = () => {
 
   return (
     <>
+      <Heading title={'EXPLORE COURSES'} />
       {
         user ? (
           <div className="explore-courses-main-container" >

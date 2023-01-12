@@ -14,6 +14,7 @@ import Lottie from "react-lottie";
 import NoAttendies from "../../lotties/man.json";
 import Loading from "../../lotties/mainloading.json";
 import { useUserAuth } from "../../context/AuthContext";
+import Heading from "../../components/HeadingText/heading";
 
 const QuizSubmissions = () => {
   const [data, setData] = useState([]);
@@ -68,6 +69,7 @@ const QuizSubmissions = () => {
 
   return (
     <>
+    <Heading title={ "QUIZ ATTENDIES"} />
       {/* {loading ? (
         <div id="loading">
           <Lottie

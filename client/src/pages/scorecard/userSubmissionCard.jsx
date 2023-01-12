@@ -35,8 +35,6 @@ export function UserSubmissionCard(props) {
 
   const currentBaseURL =
     window.location.href.split("classroom")[0] + "joinQuiz/?id=";
-
-  useEffect(() => {
     setInterval(() => {
       if (new Date().getMonth() + 1 > 9) {
         setZero("");
@@ -55,7 +53,7 @@ export function UserSubmissionCard(props) {
     setInterval(() => {}, 3600000);
 
     setInterval(() => {}, 60000);
-  }, []);
+
 
   return (
     <>

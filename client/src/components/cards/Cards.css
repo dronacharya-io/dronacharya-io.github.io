@@ -5,11 +5,12 @@
   }
   
   #card {
-    width: 17rem;
-    height: 21rem;
+    width: max-content;
+    border-radius: 5px;
+    height: max-content;
     background-color: white;
     margin: 2rem 1.75rem;
-    border: solid 0.5px rgb(233 233 233);
+    box-shadow: 0 0 1.5rem 0rem rgb(233 233 233);
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -18,12 +19,25 @@
     box-sizing: border-box;
     padding: 1rem;
   }
+
+  .card-see-attendies-btn{
+    width: 93%;
+    
+  }
   
   #card:hover {
     box-shadow: 0 0 1.5rem 0rem rgb(233 233 233);
     border: none;
     transition: border;
     transition-duration: 0.5s;
+  }
+
+  #light .app__work-tag{
+    background-color: var(--white-color);
+  }
+
+  #dark .app__work-tag{
+    background-color: var(--dark-mode-secondary-color);
   }
   
   #dark #card {
@@ -70,5 +84,5 @@
   }
   
   .cardActionsIcon {
-    margin: 0 0.2rem
+    margin: 0 0.8rem
   }

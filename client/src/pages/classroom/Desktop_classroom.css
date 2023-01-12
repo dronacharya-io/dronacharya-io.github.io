@@ -1,9 +1,9 @@
 @media screen and (min-width:901px) {
     #dark .cards {
-        height: 100%;
         width: 100%;
         background-color: #222B45;
     }
+
     
     #light .para {
         color: #000000;

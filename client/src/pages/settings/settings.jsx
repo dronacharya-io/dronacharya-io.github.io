@@ -12,6 +12,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import DeleteIcon from "@mui/icons-material/Delete";
 import UpgradeSharpIcon from "@mui/icons-material/UpgradeSharp";
 import { useUserAuth } from "../../context/AuthContext";
+import Heading from "../../components/HeadingText/heading";
 
 
 export const Settings = () => {
@@ -87,6 +88,7 @@ export const Settings = () => {
 
   return (
     <>
+    <Heading title={"SETTINGS"} />
       {user ? (
         <div id="settingsBody">
           {loading ? (
@@ -101,9 +103,6 @@ export const Settings = () => {
           ) : (
             <>
               <div id="paper">
-                <div id="TitleDiv">
-                  <h1 id="Title">Settings</h1>
-                </div>
                 <div id="TitleDiv">
                   <h2 id="account">
                     <AccountCircleIcon id="iconAccount" /> Account
