@@ -54,9 +54,9 @@
 @media screen and (max-width:451px){
     .classroom-h2{
         color: var(--white-color);
-        letter-spacing: 2px;
-        font-size: x-large;
-        font-weight: 800;
+        letter-spacing: 1px;
+        font-size: large;
+        font-weight: 300;
     }
     
     #light .classroom-h2-div{ 
@@ -64,7 +64,7 @@
         margin: 10PX auto 0 auto;
         justify-self: center;
         box-shadow: 0 2px 2rem 1rem rgb(233 233 233);
-        padding:1rem; 
+        padding:0.7rem; 
         border-radius: 5px;
         border-color: transparent;
         background: linear-gradient(-45deg,
