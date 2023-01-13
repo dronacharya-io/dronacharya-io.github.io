@@ -7,6 +7,8 @@ import Button from "@mui/material/Button";
 import { useUserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import Lottie from "react-lottie";
+import email from "../../lotties/email.json";
 
 const ProfileTab = () => {
   const navigate = useNavigate();
@@ -52,6 +54,15 @@ const ProfileTab = () => {
     " " +
     months[today.getMonth()];
 
+    const emailt = {
+      loop: true,
+      autoplay: true,
+      animationData: email,
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice",
+      },
+    };
+
   return (
     <motion.div
       initial={{ y: 10, opacity: 0 }}
@@ -66,7 +77,12 @@ const ProfileTab = () => {
         <div id="outerTab">
           <div id="iconTab">
             <h4 id="today">{Today}</h4>
-            <IoMailOutline className="icons" />
+            <div onClick={()=>{window.open("mailto:pixelhosters@gmail.com/")}} className="profile-tab-lottie-div" >
+              <Lottie
+                isClickToPauseDisabled={true}
+                options={emailt}
+              />
+            </div>
           </div>
           {user ? (
             <>

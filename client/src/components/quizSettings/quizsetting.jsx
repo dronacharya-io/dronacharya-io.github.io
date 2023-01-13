@@ -185,7 +185,7 @@ const QuizSetting = (props) => {
                           <Lottie
                             isClickToPauseDisabled={true}
                             options={sparkles}
-                            height={1200}
+                            height={900}
                             width={480}
                           />
                         </div>
@@ -206,7 +206,7 @@ const QuizSetting = (props) => {
                         </div>
 
                         <div id="img-div2">
-                          <Zoom
+                          {/* <Zoom
                             in={true}
                             style={{ transitionDelay: true ? "600ms" : "0ms" }}
                           >
@@ -218,7 +218,7 @@ const QuizSetting = (props) => {
                                 width={500}
                               />
                             </div>
-                          </Zoom>
+                          </Zoom> */}
                         </div>
                         <div id="img-div3">
                           <Zoom
@@ -229,7 +229,7 @@ const QuizSetting = (props) => {
                               <Lottie
                                 isClickToPauseDisabled={true}
                                 options={spaceman2}
-                                height={450}
+                                height={650}
                                 width={500}
                               />
                             </div>
@@ -259,7 +259,7 @@ const QuizSetting = (props) => {
                             style={{ transitionDelay: true ? "300ms" : "0ms" }}
                           >
                             <div>
-                              <InputLabel id="inputLabel">Test name</InputLabel>
+                              <InputLabel id="inputLabel">Quiz name</InputLabel>
                               <input
                                 style={{ width: "auto" }}
                                 required
@@ -289,7 +289,7 @@ const QuizSetting = (props) => {
                                 />
                               </div>
                             </Zoom>
-                            <Zoom
+                            {/* <Zoom
                               in={true}
                               style={{ transitionDelay: true ? "300ms" : "0ms" }}
                             >
@@ -309,8 +309,8 @@ const QuizSetting = (props) => {
                                   />
                                 </InputLabel>
                               </div>
-                            </Zoom>
-                            <Zoom
+                            </Zoom> */}
+                            {/* <Zoom
                               in={true}
                               style={{ transitionDelay: true ? "300ms" : "0ms" }}
                             >
@@ -328,10 +328,10 @@ const QuizSetting = (props) => {
                                   onChange={handleChange}
                                 />
                               </div>
-                            </Zoom>
+                            </Zoom> */}
                           </div>
                           <div style={{ position: "relative" }}></div>
-                          <Zoom
+                          {/* <Zoom
                             in={true}
                             style={{ transitionDelay: true ? "300ms" : "0ms" }}
                           >
@@ -351,8 +351,8 @@ const QuizSetting = (props) => {
                                 />
                               </article>
                             </div>
-                          </Zoom>
-                          <Zoom
+                          </Zoom> */}
+                          {/* <Zoom
                             in={true}
                             style={{ transitionDelay: true ? "300ms" : "0ms" }}
                           >
@@ -372,8 +372,8 @@ const QuizSetting = (props) => {
                                 />
                               </article>
                             </div>
-                          </Zoom>
-                          <Zoom
+                          </Zoom> */}
+                          {/* <Zoom
                             in={true}
                             style={{ transitionDelay: true ? "300ms" : "0ms" }}
                           >
@@ -397,7 +397,7 @@ const QuizSetting = (props) => {
                                 />
                               </article>
                             </div>
-                          </Zoom>
+                          </Zoom> */}
                           <Zoom
                             in={true}
                             style={{ transitionDelay: true ? "300ms" : "0ms" }}
