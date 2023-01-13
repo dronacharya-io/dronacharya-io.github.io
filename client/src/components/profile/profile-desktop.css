@@ -190,7 +190,9 @@
   color: var(--white-color);
   position: relative;
   top: 45%;
-  width: fit-content;
+  display: flex;
+  align-self: center;
+  width: max-content;
   letter-spacing: 1.5px;
   box-shadow: 0 0.1rem 0.3rem 0rem rgb(118, 118, 118);
 }
@@ -199,8 +201,8 @@
   border-color: transparent;
   background: linear-gradient(-45deg,
   var(--color-one),
-  var(--color-two),
   var(--color-one));
+  align-self: center;
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
   color: var(--white-color);

@@ -208,7 +208,7 @@ const QuizSetting = (props) => {
                         </div>
 
                         <div id="img-div2">
-                          {/* <Zoom
+                          <Zoom
                             in={true}
                             style={{ transitionDelay: true ? "600ms" : "0ms" }}
                           >
@@ -216,11 +216,11 @@ const QuizSetting = (props) => {
                               <Lottie
                                 isClickToPauseDisabled={true}
                                 options={spaceMan}
-                                height={450}
+                                height={350}
                                 width={500}
                               />
                             </div>
-                          </Zoom> */}
+                          </Zoom>
                         </div>
                         <div id="img-div3">
                           <Zoom
@@ -231,7 +231,7 @@ const QuizSetting = (props) => {
                               <Lottie
                                 isClickToPauseDisabled={true}
                                 options={spaceman2}
-                                height={650}
+                                height={450}
                                 width={500}
                               />
                             </div>

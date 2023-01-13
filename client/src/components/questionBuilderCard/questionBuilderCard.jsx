@@ -256,15 +256,17 @@ const QuestionCard = (props) => {
 };
 
 const List = ({ options, removeOption, optionNumber }) => {
+
+  const alphabets = ["A","B","C","D","E","F","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
   return (
     <>
-      {options.map((option) => {
+      {options.map((option, i) => {
         return (
             <SingleOption
               key={option.id}
               option={option}
               removeOption={removeOption}
-              optionNumber={optionNumber}
+              optionNumber={alphabets[i]}
             />
         );
       })}

@@ -1,0 +1,133 @@
+@media screen and (min-width:901px) {
+    
+.join-quiz-question{
+    word-break: break-all;
+    text-align: center;
+    padding: 2%;
+    margin: 2%;
+}
+
+#options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.option {
+    word-wrap: break-word;
+    width: 40%;
+    margin: 2%;
+}
+
+#answer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    margin: 0.625rem 2rem 0;
+    width: 50%;
+    padding: 0.625rem 1.25rem 0.625rem 0.625rem;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+button {
+    width: 50%;
+    align-self: center;
+    border-radius: 0.5rem;
+}
+
+#joinQuizHeader {
+    display: flex;
+    height: 3rem;
+    align-items: center;
+    margin-top: 1rem;
+    padding:4rem;
+}
+
+#light .back-icon {
+    height: 4rem;
+    width: 1rem;
+    margin: 0.5rem;
+    border-color: white;
+    border-radius: 50%;
+    color:black;
+}
+
+#dark .back-icon{
+    height: 4rem;
+    width: 1rem;
+    margin: 0.5rem;
+    border-color: #FFEA41;
+    border-radius: 50%;
+    color:#FFEA41;
+}
+
+#navigationTab {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#light .questionLocator {
+    border-radius: 100%;
+    width: 1rem;
+    height: 3.8rem;
+    margin: 0.5rem;
+    border-color: #ffb74d;
+    box-sizing: border-box;
+    background-color: #ffb74d;
+    color:white;
+    box-shadow: 0 0.1rem 0.3rem 0rem rgb(118, 118, 118);
+    font-size: larger;
+    font-weight: 800;
+}
+
+#light .questionLocator:hover{
+    box-shadow: 0 0.1rem 0.3rem 0rem rgb(185, 185, 185);
+    font-size: small;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+#dark .questionLocator{
+    border-radius: 100%;
+    width: 1rem;
+    height: 3.8rem;
+    margin: 0.5rem;
+    box-sizing: border-box;
+    border-color: #FFEA41;
+    color: #FFEA41;
+    font-size: larger;
+    font-weight: 800;
+
+}
+
+#dark .questionLocator:hover{
+    font-size: larger;
+    font-weight: 800;
+    transition: 0.3s;
+    border-color: #FFEA41;
+    color:#FFEA41;
+}
+
+ #light .join-quiz-main-div{
+    background-image: url("../../lotties/SharedScreenshot.jpg");
+    width: 70%;
+    height: 60%;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 0.2rem 0.5rem 0rem rgb(185, 185, 185);
+}
+
+.vectorMainDiv{
+    position:absolute;
+    margin-top: 18.5%;
+    margin-left: 1rem;
+    width:auto ;
+}
+}

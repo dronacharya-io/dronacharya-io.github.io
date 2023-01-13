@@ -1,4 +1,5 @@
-import "./joinQuiz.css";
+import "./joinQuiz-mobile.css";
+import "./joinQuiz-desktop.css";
 import React, { useState, useEffect } from "react";
 import { IoArrowBack } from "react-icons/io5";
 import axios from "axios";
@@ -10,13 +11,14 @@ import Button from "@mui/material/Button";
 import Lottie from "react-lottie";
 import Loading from "../../lotties/mainloading.json";
 import LoginSignUpPopUp from "../PopUps/LoginSignUpPopUp.jsx";
-import Tooltip from "@mui/material/Tooltip";
 import mainDivVector from "../../lotties/join-quiz-main-div.json";
 import { motion } from "framer-motion";
+import Heading from "../HeadingText/heading.jsx";
+import { TextareaAutosize } from "@mui/material";
 
 const JoinQuiz = () => {
   const navigate = useNavigate();
-
+  const alphabets = ["A","B","C","D","E","F","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
   const [counter, setCounter] = useState(0);
   const [submission, setSubmission] = useState({ submittedAns: undefined });
   const [submissions, setSubmissions] = useState([]);
@@ -45,13 +47,14 @@ const JoinQuiz = () => {
         console.log(x);
         setData(x.data.questions);
         // setIswrittenType(x.data.questions[0].isWrittenType);
-        var { _id, quizname, startDate, runTime } = x.data;
+        var { _id, quizname, startDate, runTime, subject } = x.data;
         console.log(Data);
         setQuizDetails({
           id: _id,
           name: quizname,
           startDate: startDate,
           runTime: runTime,
+          subject: subject,
         });
         setAttendies(x.data.attendies);
         setPositiveMarking(x.data.positiveMarking);
@@ -194,36 +197,14 @@ const JoinQuiz = () => {
             </div>
           ) : (
             <>
+         
               <div id="joinQuizHeader">
-                <Tooltip
-                  title="I Quit this Quiz"
-                  placement="top"
-                  disableFocusListener
-                  disableTouchListener
-                  arrow
-                  className="back-icon"
-                >
-                  <Button
-                    className="back-icon"
-                    variant="outlined"
-                    onClick={() => navigate("../")}
-                  >
-                    <IoArrowBack />
-                  </Button>
-                </Tooltip>
+                
                 <div id="navigationTab">
                   {Data.map((question, i) => {
                     const { id } = question;
                     return (
                       <>
-                        <Tooltip
-                          title={`Jump to Question ${i + 1}`}
-                          placement="top"
-                          disableFocusListener
-                          disableTouchListener
-                          arrow
-
-                        >
                           <Button
                             className="questionLocator"
                             variant="outlined"
@@ -234,7 +215,6 @@ const JoinQuiz = () => {
                           >
                             {i + 1}
                           </Button>
-                        </Tooltip>
                       </>
                     );
                   })}
@@ -248,24 +228,33 @@ const JoinQuiz = () => {
                 transition={{ duration: 0.2 }}
               >
                 <div className="join-quiz-question" >
-                  <h1>{Data[index].Question}</h1>
+                  <div className="join-quiz-question-number-div" >
+                    <h3 style={{margin:"0", boxShadow:'none'}} className="join-quiz-question" >Q.{index+1}</h3>
+                  </div>
+                  <div className="join-quiz-question-number-div" >
+                    <h3 style={{margin:"0", boxShadow:'none'}} className="join-quiz-question" >{`${Data[index].Question.toUpperCase()}`}</h3>
+                  </div>
                 </div>
-                <div id="options">
+                <div id="optionDiv">
                   {Data[index].options.map((option, i) => {
                     return (
                       <>
-                        <div className="option" key={i}>
-                          <p>option {i + 1}</p>
-                          <p>{option.value}</p>
+                        <div className="join-quiz-option-div" >
+                          <div className="join-quiz-option-number" id="join-quiz-option-number" >
+                            <p>{alphabets[i]}</p>
+                          </div>
+                          <div className="join-quiz-option" key={i}>
+                            <h4 className="option-value" id="join-quiz-option-value" >{option.value.toUpperCase()}</h4>
+                          </div>
                         </div>
                       </>
                     );
                   })}
                 </div>
-                <div id="answer">
-                  <p>answer</p>
+                <div className="join-quiz-correct-answer">
+                  <h4>ANSWER</h4>
                   {/* {!IsWrittenType ? ( */}
-                  <TextField
+                  <textarea
                     type="text"
                     id="submittedAns"
                     name="submittedAns"
@@ -290,15 +279,15 @@ const JoinQuiz = () => {
                       )} */}
                 </div>
                 <div className="vectorMainDiv" >
-                  <Lottie
+                  {/* <Lottie
                     isClickToPauseDisabled={true}
                     options={VectorMainDiv}
                     height={170}
                     width={270}
-                  />
+                  /> */}
                 </div>
               </motion.div>
-              <Button variant="outlined" onClick={() => TakeAnswer()}>
+              <Button className="classroom-getstarted-btn" variant="outlined" onClick={() => TakeAnswer()}>
                 Next
               </Button>
             </>

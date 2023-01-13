@@ -200,6 +200,7 @@
         color: var(--white-color);
         position: relative;
         top: 45%;
+        align-self: center;
         width: fit-content;
         letter-spacing: 1.5px;
         box-shadow: 0 0.1rem 0.3rem 0rem rgb(118, 118, 118);
@@ -216,6 +217,7 @@
         color: var(--white-color);
         position: relative;
         top: 45%;
+        align-self: center;
         width:fit-content;
         letter-spacing: 1.5px;
       }
