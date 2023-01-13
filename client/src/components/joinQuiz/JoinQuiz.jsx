@@ -235,7 +235,7 @@ const JoinQuiz = () => {
                     <h3 style={{margin:"0", boxShadow:'none'}} className="join-quiz-question" >{`${Data[index].Question.toUpperCase()}`}</h3>
                   </div>
                 </div>
-                <div id="optionDiv">
+                <div className="join-quiz-option-main-div">
                   {Data[index].options.map((option, i) => {
                     return (
                       <>
@@ -252,7 +252,7 @@ const JoinQuiz = () => {
                   })}
                 </div>
                 <div className="join-quiz-correct-answer">
-                  <h4>ANSWER</h4>
+                  <h4 className="option-value-ans-join-quiz" >ANSWER</h4>
                   {/* {!IsWrittenType ? ( */}
                   <textarea
                     type="text"

@@ -185,6 +185,14 @@ button {
     padding-left: 1rem;
 }
 
+.option-value-ans-join-quiz{
+    font-size: larger;
+        font-weight: 400;
+        letter-spacing: 1px;
+        overflow: scroll;
+        margin-bottom: 10px;
+}
+
 .vectorMainDiv{
     position:absolute;
     margin-top: 18.5%;
