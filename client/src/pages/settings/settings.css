@@ -26,6 +26,7 @@
     box-shadow: 0 0 1.5rem 0rem rgb(233 233 233);
 }
 
+
 #dark #paper{
     width: 98%;
     background-color: #1d2238;;
@@ -176,4 +177,14 @@
     background-size: 400% 400%;
     animation: gradient 5s ease infinite;
     color: var(--white-color);
+}
+
+@media screen and (max-width:451px){
+    #light #paper{
+        width: 98%;
+        background-color: white;
+        align-items: center;
+        box-shadow: none;
+        margin-top: -1rem;
+    }   
 }
