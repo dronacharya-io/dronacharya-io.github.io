@@ -18,6 +18,7 @@ import Zoom from "@mui/material/Zoom";
 import spaceManTwo from "../../lotties/spaceman2.json";
 import sunAnimation from "../../lotties/sun.json";
 import { useUserAuth } from "../../context/AuthContext";
+import Heading from "../HeadingText/heading";
 
 const QuizSetting = (props) => {
   const { user } = useUserAuth();
@@ -168,6 +169,7 @@ const QuizSetting = (props) => {
               </Alert>
             </Snackbar>
             <div className="quiz-settings-sweepable-drawer" >
+             
               <SwipeableDrawer
                 anchor="top"
                 open={isDrawerOpen}
@@ -246,6 +248,7 @@ const QuizSetting = (props) => {
                       textAlign="center"
                       className="tempClassName"
                     >
+                      <Heading title={"QUIZZ DETAILS"} />
                       <Box
                         id="form"
                         component="form"
