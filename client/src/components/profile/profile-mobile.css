@@ -83,10 +83,16 @@
         border-bottom: solid 1px rgb(233 233 233);
       }
 
+      .profile-tab-img{
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
       .profile-tab-lottie-div{
         width: 50px;
         height: 50px;
-        margin-right: 40px;
+        margin-right: 80px;
       }
       
       #dark #iconTab {

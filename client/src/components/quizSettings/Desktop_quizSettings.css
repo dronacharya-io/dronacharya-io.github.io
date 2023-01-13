@@ -17,6 +17,11 @@
     height: 50px;
     margin-right: 40px;
   }
+  .profile-tab-img{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
   
   .quizSettingBtn-div{
     display: flex;

@@ -8,7 +8,7 @@ import { useUserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Lottie from "react-lottie";
-import email from "../../lotties/email.json";
+import email from "../../lotties/95247-email.gif";
 
 const ProfileTab = () => {
   const navigate = useNavigate();
@@ -78,10 +78,7 @@ const ProfileTab = () => {
           <div id="iconTab">
             <h4 id="today">{Today}</h4>
             <div onClick={()=>{window.open("mailto:pixelhosters@gmail.com/")}} className="profile-tab-lottie-div" >
-              <Lottie
-                isClickToPauseDisabled={true}
-                options={emailt}
-              />
+              <img src={email} className='profile-tab-img' />
             </div>
           </div>
           {user ? (
