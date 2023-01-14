@@ -237,6 +237,61 @@ const QuizSetting = (props) => {
                             </div>
                           </Zoom>
                         </div>
+                      </div><div id="quiz-settings-img-div">
+                        <div id="sparkles">
+                          <Lottie
+                            isClickToPauseDisabled={true}
+                            options={sparkles}
+                            height={900}
+                            width={480}
+                          />
+                        </div>
+                        <div id="img-div1">
+                          <Zoom
+                            in={true}
+                            style={{ transitionDelay: true ? "800ms" : "0ms" }}
+                          >
+                            <div>
+                              <Lottie
+                                isClickToPauseDisabled={true}
+                                options={sun}
+                                height={200}
+                                width={200}
+                              />
+                            </div>
+                          </Zoom>
+                        </div>
+
+                        <div id="img-div2">
+                          <Zoom
+                            in={true}
+                            style={{ transitionDelay: true ? "600ms" : "0ms" }}
+                          >
+                            <div>
+                              <Lottie
+                                isClickToPauseDisabled={true}
+                                options={spaceMan}
+                                height={350}
+                                width={500}
+                              />
+                            </div>
+                          </Zoom>
+                        </div>
+                        <div id="img-div3">
+                          <Zoom
+                            in={true}
+                            style={{ transitionDelay: true ? "600ms" : "0ms" }}
+                          >
+                            <div>
+                              <Lottie
+                                isClickToPauseDisabled={true}
+                                options={spaceman2}
+                                height={450}
+                                width={500}
+                              />
+                            </div>
+                          </Zoom>
+                        </div>
                       </div>
                   </div>
 

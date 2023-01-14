@@ -1,198 +1,110 @@
-@media screen and (min-width:901px) {
-    
-    .join-quiz-question{
+ /* @media screen and (min-width:901px) {} */
+    .join-quiz-main-conatainer{
         display: flex;
-    text-align: center;
-    padding: 2%;
-    justify-content: flex-start;
-    margin: 2%;
-    position: relative;
-    overflow: scroll;
-    width: 85%;
-    justify-self: center;
-    border: none;
-    outline: none;
-    font-size: 1.2em;
-    font-family: inherit;
-    resize: none;
-    background: #eee;
-    margin: 1rem auto 0 auto;
-    padding: 15px;
-    border-radius: 7px;
-    box-shadow: 0 1px 5px rgb(207, 207, 207)
-    }
-    
-    .join-quiz-correct-answer{
-        border: none;
-        outline: none;
-        font-size: 1em;
-        font-family: inherit;
-        margin: 0 auto 1rem auto;
-        padding: 15px;
-        border-radius: 7px;
-        box-shadow: 0 1px 5px rgb(207, 207, 207);border: none;
-        outline: none;
-        background: #eee;
-        display: flex;
-        flex-direction: column;
-        width:25%;
-    }
-    
-    #options {
-       
-    }
-    
-    .option {
-       
-    }
-    
-    #answer {
-       
-    }
-    
-    input {
-      
-    }
-    
-    button {
-       
-    }
-    
-    #joinQuizHeader {
-        display: flex;
-        height: 3rem;
-        justify-self: center;
-        align-items: center;
-        margin: 0 auto 0 auto;
-        margin-top: 2rem;
-        padding: 0.2rem;
-        width: 90%;
-    }
-    
-    #light .back-icon {
-      
-    }
-    
-    #dark .back-icon{
-      
-    }
-
-    .option-value-ans-join-quiz{
-        font-size: larger;
-            font-weight: 400;
-            letter-spacing: 1px;
-            overflow: scroll;
-            margin-bottom: 10px;
-    }
-    
-    #navigationTab {
-        display: flex;
-        align-items: center;
-        margin-top: 2rem;
-        overflow: scroll;
-        margin-bottom: 2rem;
-    }
-    
-    ::-webkit-scrollbar {
+        flex-direction: row;
+        width: 80%;
+        margin: 4rem auto 0 auto;
         
-      }
-        .join-quiz-question-number-div{
-           
-    
-        }
-    #light .questionLocator {
-       
+    }   
+
+    .join-quiz-lottie{
+        width: 30%;
     }
-    
-    #light .questionLocator:hover{
-       
-        
-    }
-    
-    #dark .questionLocator{
-       
-    
-    }
-    
-    #dark .questionLocator:hover{
-        
-    }
-    
-     #light .join-quiz-main-div{
-        width: 70%;
-        margin: 2rem auto 0 auto;
-        display: flex;
-        background-image: url("../../lotties/SharedScreenshot.jpg");
-        flex-direction: column;
-        border-radius: 5px;
-        box-shadow: 0 0.2rem 0.5rem 0rem rgb(185, 185, 185);
+ 
+    .join-quiz-header{
+        position: relative;
+        white-space: nowrap;
     }
 
-    #dark .join-quiz-main-div{
-       
-    }
-    
-    /*join-quiz-option was  last div i did at 1 am sat 14 jan 2023 */
-
-    .join-quiz-option{
-        margin: 0 auto 0 auto;
-        padding: 1rem;
-        background: white;
-        border-radius: 7px;
-        box-shadow: 0 3px 7px black;
-        font-weight: 800;
-        min-width: 173px;
-        max-width: 173px;
-    }
-    
-    #join-quiz-option-value{
-        top: 0px;
-        padding-left: 1rem;
-    }
-
-    .join-quiz-option-main-div{
-        display: flex;
-        align-items: center;
-        flex-wrap:wrap;
-        justify-content: space-between;
-    }
-    
-    .vectorMainDiv{
+    .join-quiz-question-navigation-tab{
       
+        overflow-x: hidden;
+        overflow-y: scroll;
+        width: fit-content;
+        height: 40rem;
     }
-    
-     #join-quiz-option-number{
-        background: linear-gradient(-45deg, var(--color-one),
-        var(--color-two),
-        var(--color-one) );
-        background-size: 400% 400%;
-        animation: gradient 15s ease infinite;
-        color: var(--white-color);
-        padding: 10px;
-        border-radius: 5px 5px 0 0 ;
-        width: 2rem;
-        height: 2rem;
+
+    .join-quiz-question-locator{
+
+        cursor: pointer;
+        display: inline-block;
+        margin-right: 30px;
         border-radius: 100%;
+        width: 3rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-weight: 600;
-        margin-top: 5px;
-        position: relative;
-        left: 20px;
+        height: 3rem;
+        margin: 0.5rem;
+        border-color: none;
+        box-sizing: border-box;
+        background: linear-gradient(-45deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-one));
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        color:white;
+        box-shadow: 0 0.1rem 0.3rem 0rem rgb(118, 118, 118);
         font-size: larger;
-     }
-    
-     .join-quiz-option-div{
+        font-weight: 800;
+    }
+
+    .join-quiz-content-div{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .join-quiz-question-navigation-tab-h5{
+        border-radius: 0 0 2px 2px;
+        display: inline-block;
+        margin-right: 30px;
+        width: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
+        border-color: none;
+        box-sizing: border-box;
+        background: linear-gradient(-45deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-one));
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        color:white;
+        box-shadow: 0 0.1rem 0.5rem 0rem rgb(118, 118, 118);
+        font-size: larger;
+        font-weight: 800;
+    }
+   
+    .join-quiz-main-div{
+        background-image: url("../../lotties/SharedScreenshot.jpg");
+        width: 70%;
+        height: 50%;
         display: flex;
         flex-direction: row;
-        margin: 5rem;
-        
-     }
-    
-     #submittedAns{
-        padding: 1rem;
-        font-size: larger;
-        resize: vertical;
-     }
-}
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.422);
+    }
+
+    .join-quiz-next-btn{
+        background: linear-gradient(-45deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-one));
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        width: 200px;
+        height: 200px;
+        letter-spacing: 3px;
+        position: relative;
+        border-color: none;
+    }
+
+    #join-quiz-containing-vector{
+        padding-top: 0;
+    }
+   
+
+
