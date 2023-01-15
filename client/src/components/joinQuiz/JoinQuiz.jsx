@@ -35,7 +35,7 @@ const JoinQuiz = () => {
   const [isFound, setIsFound] = useState();
   const [positiveMarking, setPositiveMarking] = useState(0);
   const [negativeMarking, setNegativeMarking] = useState(0);
-
+  var [lastQuestion, setLastQuestion] = useState(false);
   const { user, googleSignIn } = useUserAuth();
   const urlParams = new URLSearchParams(window.location.search);
   console.log(urlParams.get("id"));
@@ -83,8 +83,13 @@ const JoinQuiz = () => {
     };
   }, [user]);
 
+  
+
   const TakeAnswer = async () => {
     console.log(Data[index]);
+    
+    
+
     Data[index + 1] ? setIndex(index + 1) : setIndex(index);
     // setIswrittenType(Data[index].isWrittenType);
     handleSubmit();
@@ -229,6 +234,8 @@ const JoinQuiz = () => {
     },
   };
 
+ 
+
   return (
     <>
       {user ? (
@@ -307,7 +314,7 @@ const JoinQuiz = () => {
                   <h5 className="join-quiz-question-navigation-tab-h5" >Sr. No</h5>
                     <div className="join-quiz-question-navigation-tab">
                       
-                      {Data.map((question, i) => {
+                      {Data?.map((question, i) => {
                         const { id } = question;
                         return (
                           <>
@@ -336,26 +343,52 @@ const JoinQuiz = () => {
                       exit={{ y: -10, opacity: 0 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <div className="join-quiz-question" >
-                          <h3 style={{margin:"0", boxShadow:'none'}} className="join-quiz-question" >Q.{index+1}</h3>
-                          <h3 style={{margin:"0", boxShadow:'none'}} className="join-quiz-question" >{`${Data[index].Question.toUpperCase()}`}</h3>
-                      </div>
-                      <div className="join-quiz-option-main-div">
+                      <motion.div
+                      className="join-quiz-question"
+                      initial={{ y: 10, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -10, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      >
+                          <h3 className="join-quiz-question-number" >Q.{index+1}</h3>
+                          <h3 className="join-quiz-question-value" >{`${Data[index].Question.toUpperCase()}`}</h3>
+                      </motion.div>
+                      <motion.div
+                      className="join-quiz-option-main-div"
+                      initial={{ y: 10, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: -10, opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                      >
                         {Data[index].options.map((option, i) => {
                           return (
-                            <>
-                              <p>{alphabets[i]}</p>
-                              <h4  id="join-quiz-option-value" >{option.value.toUpperCase()}</h4>
-                            </>
+                      
+                              <motion.div
+                              className="join-quiz-option-div"
+                              initial={{ y: 10, opacity: 0 }}
+                              animate={{ y: 0, opacity: 1 }}
+                              exit={{ y: -10, opacity: 0 }}
+                              transition={{ duration: 0.5 }}
+                              >
+
+                                <p className="join-quiz-option-number" >{alphabets[i]}</p>
+                                <h4  className="join-quiz-option-value" >{option.value.toUpperCase()}</h4>
+                              </motion.div>
+                            
                           );
                         })}
-                      </div>
-                      <div className="join-quiz-correct-answer">
+                      </motion.div>
+                      <motion.div
+                        initial={{ y: 10, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -10, opacity: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="join-quiz-correct-answer">
                         <h4 className="option-value-ans-join-quiz" >ANSWER</h4>
                         {/* {!IsWrittenType ? ( */}
                         <textarea
                           type="text"
-                          id="submittedAns"
+                          className="submittedAns"
                           name="submittedAns"
                           onChange={handleChange}
                         />
@@ -376,7 +409,7 @@ const JoinQuiz = () => {
                                 </IconButton>
                               </label>
                             )} */}
-                      </div>
+                      </motion.div>
                       <div className="vectorMainDiv" >
                         {/* <Lottie
                           isClickToPauseDisabled={true}
@@ -387,7 +420,7 @@ const JoinQuiz = () => {
                       </div>
                     </motion.div>
                     <Button className="join-quiz-next-btn" variant="outlined" onClick={() => TakeAnswer()}>
-                      Next
+                      { Data?.length === index+1 ? "Submit Quiz" : "Next Question"  }
                     </Button>
                 </div>
               </div>

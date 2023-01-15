@@ -4,11 +4,16 @@
         flex-direction: row;
         width: 80%;
         margin: 4rem auto 0 auto;
-        
-    }   
+    }  
+    
+    
 
-    .join-quiz-lottie{
-        width: 30%;
+    #light .quiz-settings-div-containing-vectors{
+        display: none;
+    }
+
+    #dark .quiz-settings-div-containing-vectors{
+        display: none;
     }
  
     .join-quiz-header{
@@ -21,7 +26,7 @@
         overflow-x: hidden;
         overflow-y: scroll;
         width: fit-content;
-        height: 40rem;
+        height: 100%;
     }
 
     .join-quiz-question-locator{
@@ -53,6 +58,7 @@
     .join-quiz-content-div{
         display: flex;
         flex-direction: column;
+        width: 90%;
     }
 
     .join-quiz-question-navigation-tab-h5{
@@ -78,9 +84,14 @@
         font-weight: 800;
     }
    
+    .join-quiz-main-child-div{
+        display: flex;
+        flex-direction: column;
+    }
+
     .join-quiz-main-div{
         background-image: url("../../lotties/SharedScreenshot.jpg");
-        width: 70%;
+        width: 100%;
         height: 50%;
         display: flex;
         flex-direction: row;
@@ -95,16 +106,194 @@
         var(--color-one));
         background-size: 400% 400%;
         animation: gradient 15s ease infinite;
-        width: 200px;
-        height: 200px;
-        letter-spacing: 3px;
-        position: relative;
-        border-color: none;
+        min-width: 12rem;
+        margin-top: 3rem !important;
+        justify-self: center;
+        align-self: center;
+        color: var(--white-color) !important;
+        border-color: none !important ;
+        font-size: small !important;
+        letter-spacing: 1px !important;
+        font-weight: 300;
+    }
+
+    .join-quiz-next-btn:hover{
+        border-color: none !important ;
     }
 
     #join-quiz-containing-vector{
         padding-top: 0;
     }
-   
+
+    .join-quiz-question{
+        display: flex;
+        justify-self: center;
+        border: none;
+        outline: none;
+        font-size: 1.2em;
+        width: 90%;
+        font-family: inherit;
+        resize: none;
+        background: #eee;
+        margin: 2rem auto 0 auto;
+        padding: 15px;
+        overflow: scroll;
+        border-radius: 7px;
+        box-shadow: 0 1px 5px rgb(207, 207, 207)
+    }
+
+    .join-quiz-question-number{
+        border: none;
+        outline: none;
+        font-size: 1.2em;
+        font-family: inherit;
+        resize: none;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        min-width: fit-content;
+        align-self: center;
+        padding: 15px;
+        overflow: scroll;
+        background: linear-gradient(-45deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-one));
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        border-radius: 5px;
+        color: var(--white-color);
+        box-shadow: 0 1px 5px rgb(207, 207, 207)
+    }
+
+    .join-quiz-question-value{
+        border: none;
+        outline: none;
+        font-size: 1.2em;
+        font-family: inherit;
+        resize: none;
+        margin-left:1rem;
+        height: fit-content;
+        padding: 15px;
+        overflow: scroll;
+    }
+
+    .join-quiz-option-main-div{
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: space-between;
+        width: 100%;
+        padding: 3rem;
+    }
+
+    .join-quiz-option-number{
+        border: none;
+        outline: none;
+        font-size: 1.2em;
+        font-family: inherit;
+        resize: none;
+        height: 1rem;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 1rem;
+        align-self: center;
+        padding: 15px;
+        overflow: scroll;
+        background: linear-gradient(-45deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-one));
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        border-radius: 100%;
+        color: var(--white-color);
+        box-shadow: 0 1px 5px rgb(207, 207, 207)
+    }
+
+    .join-quiz-option-value{
+        border: none;
+        outline: none;
+        font-size: 1em;
+        font-family: inherit;
+        resize: none;
+        background: #eee;
+        width: fit-content;
+        background: #fff;
+        overflow: scroll;
+        padding: 15px;
+        width: 65%;
+        justify-self: center;
+        align-self: center;
+        border-radius: 7px;
+    }
+
+    .join-quiz-option-div{
+        display: flex;
+        
+        margin-right: 6rem;
+        margin-top: 1rem;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 1em;
+        font-family: inherit;
+        resize: none;
+        background: #eee;
+        width: fit-content;
+        background: #fff;
+        padding: 15px;
+        min-width: 300px;
+        max-width: 300px;
+        min-height: 50px;
+        border-radius: 7px;
+        box-shadow: 1rem rgb(23, 22, 22);
+        transition: all ease-out 0.3s;
+    }
+
+    .join-quiz-option-div:hover{
+        box-shadow: none;
+    }
+
+    .join-quiz-correct-answer{
+        border: none;
+        outline: none;
+        font-size: 1em;
+        font-family: inherit;
+        resize: none;
+        background: #eee;
+        justify-self: center;
+        align-self: center;
+        width: fit-content;
+        background: #fff;
+        padding: 5px;
+        min-width: 300px;
+        min-height: 100px;
+        border-radius: 7px;
+        box-shadow: 0 1px 5px rgb(207, 207, 207);
+    }
 
 
+    .option-value-ans-join-quiz{
+        border: none;
+        outline: none;
+        font-size: 1em;
+        font-family: inherit;
+        background: #eee;
+        margin: 1rem auto 1rem auto;
+        width: fit-content;
+        background: #fff;
+    }
+
+    .submittedAns{
+        border: none;
+        outline: none;
+        resize: vertical ;
+        font-size: 1rem;
+        width: fit-content;
+        border: solid 2px  black;
+        min-width: 250px;
+        min-height: 50px;
+        margin-bottom: 10px;
+        border-radius: 2px;
+    }

@@ -127,8 +127,9 @@ function Newcard(props) {
                     transition={{duration:0.25, ease:"easeInOut", staggerChildren:0.5}}
                     className="app__work-hover app__flex"
                     >
-                    <a href={work} target="_blank" rel='noreferrer'>
+                    <a  href={currentBaseURL + props.id} onClick={handleClick}  target="_blank" rel='noreferrer'>
                         <motion.div
+                        style={{display:"flex" ,justifyContent:'center', alignItems:'center'}}
                         whileInView={{scale:[0,1]}}
                         whileHover={{opacity:[1,0.8]}}
                         transition={{duration:0.25}}
@@ -137,7 +138,7 @@ function Newcard(props) {
                         <AiFillEye  />
                         </motion.div>
                     </a>
-                    <a href={work} target="_blank" rel='noreferrer'>
+                    {/* <a href={work} target="_blank" rel='noreferrer'>
                         <motion.div
                         whileInView={{scale:[0,1]}}
                         whileHover={{opacity:[1,0.8]}}
@@ -146,7 +147,7 @@ function Newcard(props) {
                         >
                         <AiFillGithub /> 
                         </motion.div>
-                    </a>
+                    </a> */}
                     </motion.div>
                 </div>
                 <div className="app__work-content app__flex" >
