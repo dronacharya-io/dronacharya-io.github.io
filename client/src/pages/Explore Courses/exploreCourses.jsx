@@ -7,6 +7,8 @@ import Lottie from "react-lottie";
 import searchLottie from "../../lotties/112360-search-files"
 import { motion } from "framer-motion";
 import Heading from '../../components/HeadingText/heading'
+import Pdf_visualiser from '../../components/pdf visualiser/pdf_visualiser'
+
 
 export const ExploreCourses = () => {
   const [open, setOpen] = React.useState(false);
@@ -61,6 +63,7 @@ export const ExploreCourses = () => {
                 </div>
               }
               <ExploreCoursesSelector />
+              <Pdf_visualiser />
           </div>
         ) : (
           <LoginSignUpPopUp />

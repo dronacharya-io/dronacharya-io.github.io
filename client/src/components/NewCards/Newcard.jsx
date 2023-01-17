@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react';
 import {AiFillEye, AiFillGithub} from "react-icons/ai";
 import {animate, motion} from "framer-motion";
 import "./newcard.scss";
-import "../cards/Cards.css"
+import "./Cards.css";
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import Badge from "@mui/material/Badge";
@@ -120,7 +120,7 @@ function Newcard(props) {
         >
             <div className='app__work-item app__flex'  >
                 <div className='app__work-img app__flex' >
-                <Lottie isClickToPauseDisabled={true}  options={defaultOptions} />
+               
                     
                     <motion.div
                     whileHover={{opacity:[0,1]}}
