@@ -12,8 +12,6 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import DeleteIcon from "@mui/icons-material/Delete";
 import UpgradeSharpIcon from "@mui/icons-material/UpgradeSharp";
 import { useUserAuth } from "../../context/AuthContext";
-import Heading from "../../components/HeadingText/heading";
-
 
 export const Settings = () => {
   var { user, logOut, googleSignIn } = useUserAuth();

@@ -8,9 +8,7 @@ import notFound from "../../lotties/astwo.json";
 import solarsystem from "../../lotties/solarsystem.json";
 import "./scroreCard.css";
 import space from "../../lotties/space.json";
-import Loading from "../../lotties/mainloading.json";
-import Heading from "../../components/HeadingText/heading";
-import {motion} from "framer-motion";
+import Loading from "../../lotties/mainloading.json"; import {motion} from "framer-motion";
 
 export const Scorecard = () => {
   const { user, googleSignIn, x, setX } = useUserAuth();

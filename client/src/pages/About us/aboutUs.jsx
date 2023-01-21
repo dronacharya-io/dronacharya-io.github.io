@@ -3,9 +3,7 @@ import React, { useEffect } from "react";
 import Card from "../../components/NewCards/Newcard.jsx";
 import CardDetails from "../../components/cards/cardDetails";
 import { useUserAuth } from "../../context/AuthContext";
-import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp";
-import Heading from "../../components/HeadingText/heading";
-
+import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp"; 
 export const AboutUs = () => {
   const { user, googleSignIn } = useUserAuth();
 

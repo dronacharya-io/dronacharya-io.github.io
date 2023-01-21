@@ -13,9 +13,7 @@ import "./quizSubmission.css";
 import Lottie from "react-lottie";
 import NoAttendies from "../../lotties/man.json";
 import Loading from "../../lotties/mainloading.json";
-import { useUserAuth } from "../../context/AuthContext";
-import Heading from "../../components/HeadingText/heading";
-
+import { useUserAuth } from "../../context/AuthContext"; 
 const QuizSubmissions = () => {
   const [data, setData] = useState([]);
   const { user } = useUserAuth();

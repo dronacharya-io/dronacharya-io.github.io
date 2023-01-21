@@ -11,9 +11,7 @@ import Lottie from "react-lottie";
 import animationData from "../../lotties/notfound.json";
 import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp"
 import { UserSubmissionCard } from "../scorecard/userSubmissionCard";
-import Newcard from "../../components/NewCards/Newcard";
-import Heading from "../../components/HeadingText/heading";
-
+import Newcard from "../../components/NewCards/Newcard"; 
 export const Classroom = () => {
   var { user, x, setX } = useUserAuth();
   var [loading, setLoading] = useState(false);
