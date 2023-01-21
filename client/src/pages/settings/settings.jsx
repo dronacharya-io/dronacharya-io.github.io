@@ -88,7 +88,6 @@ export const Settings = () => {
 
   return (
     <>
-    <Heading title={"ACCOUNT SETTINGS"} />
       {user ? (
         <div id="settingsBody">
           {loading ? (

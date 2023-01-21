@@ -41,7 +41,7 @@ export const ExploreCourses = () => {
 
   return (
     <>
-      <Heading title={'EXPLORE COURSES'} />
+     
       {
         user ? (
           <div className="explore-courses-main-container" >

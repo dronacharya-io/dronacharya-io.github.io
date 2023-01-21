@@ -11,7 +11,6 @@ export const AboutUs = () => {
 
   return (
     <>
-    <Heading title={'ABOUT US SECTION'} />
       {user ? (
         <div id="dashboardCover">
           <div id="upcomingTests">

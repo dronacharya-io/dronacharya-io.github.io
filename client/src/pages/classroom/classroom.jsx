@@ -48,7 +48,7 @@ export const Classroom = () => {
 
   return (
     <>
-      <Heading title={ submissionsData?.length < 1 ? 'CREATE YOUR FIRST QUIZ' : 'QUIZZES CREATED'} />
+    
       {user ?
         (
           <div className="cards">

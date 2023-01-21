@@ -69,7 +69,7 @@ const QuizSubmissions = () => {
 
   return (
     <>
-    <Heading title={ "QUIZ ATTENDIES"} />
+   
       {/* {loading ? (
         <div id="loading">
           <Lottie

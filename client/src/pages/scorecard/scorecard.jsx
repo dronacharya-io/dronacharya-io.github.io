@@ -76,7 +76,7 @@ export const Scorecard = () => {
 
   return (
     <>
-      <Heading title={user?.userData?.quizzesSubmitted?.length < 1 ? 'GIVE SOME QUIZZES' : "QUIZZES ATTENDED " } />
+  
       {user ? (
         <div className="cards">
           {user?.userData?.quizzesSubmitted?.length < 1 ?
