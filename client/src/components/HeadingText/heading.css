@@ -1,9 +1,11 @@
+
 @media screen and (max-width:451px){
+
       .container {
         background: #f0f0f0;
         box-sizing: border-box;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         border-radius: 2rem;
         overflow: hidden;
@@ -16,11 +18,14 @@
       .box {
         height: 100%;
         width: max-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         overflow: hidden;
         background: #f0f0f0; 
-        animation: anime 3s infinite alternate;
+        animation: anime 2s infinite alternate;
         animation-fill-mode: forwards; 
-     
+        
       }
   
       @keyframes anime {
@@ -28,7 +33,14 @@
             width: 70px;
             border-radius: 2rem;
           height: 100%;
-          background: #f0f0f0;
+          border-color: transparent;
+          background: linear-gradient(-45deg,
+            var(--color-one),
+            var(--color-two),
+            var(--color-one));
+          background-size: 400% 400%;
+          animation: gradient 15s ease infinite;
+          color: var(--white-color);
           box-shadow:  0 0 0 #cccccc,
                        0 0 0 #ffffff,
                         10px 10px 10px #cccccc inset,
@@ -38,7 +50,14 @@
           width: 80px;
           height: 100%;
           border-radius: 2rem;
-          background: #f8f8f8;
+          border-color: transparent;
+          background: linear-gradient(-45deg,
+            var(--color-one),
+            var(--color-two),
+            var(--color-one));
+          background-size: 400% 400%;
+          animation: gradient 15s ease infinite;
+          color: var(--white-color);
           box-shadow:  10px 10px 10px #cccccc,
                        10px 10px 10px #ffffff,
                        0 0 0 #cccccc inset,
@@ -48,7 +67,14 @@
           width: 60px;
           height:100%;
           border-radius: 2rem;
-          background: #f8f8f8;
+          border-color: transparent;
+          background: linear-gradient(-45deg,
+            var(--color-one),
+            var(--color-two),
+            var(--color-one));
+          background-size: 400% 400%;
+          animation: gradient 15s ease infinite;
+          color: var(--white-color);
           box-shadow:  10px 10px 10px #cccccc,
                        10px 10px 10px #ffffff,
                        0 0 0 #cccccc inset,
@@ -58,11 +84,24 @@
           width: 480px;
           height: 100%;
           border-radius: 2rem;
-          background: #fafafa;
+          border-color: transparent;
+          background: linear-gradient(-45deg,
+            var(--color-one),
+            var(--color-two),
+            var(--color-one));
+          background-size: 400% 400%;
+          animation: gradient 15s ease infinite;
+          color: var(--white-color);
           box-shadow:  40px 40px 40px #cccccc,
                        0 0 0 #ffffff,
                        0 0 0 #cccccc inset,
                        2px 2px 2px #ffffff inset;
+         }
         }
-    }
+
+        .heading-h4{
+            letter-spacing: 1px;
+            font-size: large;
+        }
+
     }

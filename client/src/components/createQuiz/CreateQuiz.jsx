@@ -12,7 +12,6 @@ import "../questionBuilderCard/Css/Desktop_questionBuilderCard.css";
 import { useNavigate } from "react-router-dom";
 import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp";
 import { motion } from "framer-motion";
-import Heading from "../HeadingText/heading";
 
 
 const CreateQuiz = () => {
@@ -84,7 +83,6 @@ const CreateQuiz = () => {
 
   return (
     <>
-    <Heading title={"CREATE QUIZ"} />
       {user ? (
         <div>
           <QuizSetting func={show} />

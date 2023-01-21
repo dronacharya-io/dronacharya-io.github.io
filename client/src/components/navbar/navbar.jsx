@@ -17,6 +17,7 @@ import NightlightRoundIcon from '@mui/icons-material/NightlightRound';
 import SchoolIcon from '@mui/icons-material/School';
 import Heading from "../HeadingText/heading";
 
+
 const Navbar = (props) => {
   const navigate = useNavigate();
   const [ showHeading, setShowHeading ] = useState(false)
@@ -26,7 +27,7 @@ const Navbar = (props) => {
     window.innerWidth,
     window.innerHeight,
   ]);
-  
+  var [title, setTitle] = useState("");
 
 
   useEffect(() => {
@@ -41,7 +42,7 @@ const Navbar = (props) => {
     };
   });
 
-  const handleClick = () =>{
+  const handleClick = (title) =>{
     if( window.innerWidth > 425) {
       console.log(showHeading)
     } else{
@@ -49,14 +50,15 @@ const Navbar = (props) => {
     }
     setTimeout(()=>{
       setShowHeading(false)
-    },7498)
+    },3200)
+    setTitle(title)
   }
 
   console.log(window.innerWidth + " width")
   return (
     <>
       <div id="navbar-tab-div">
-        { showHeading ? <Heading /> : (
+        { showHeading ? <Heading title={title} /> : (
           < div id="navbar-tab-div">
           <span id="navbar-logo-div">
           <img
@@ -80,7 +82,7 @@ const Navbar = (props) => {
               sx={{ "&:hover": { backgroundColor: "white" } }}
               onClick={() => {
                 navigate("/")
-                handleClick()
+                handleClick("HOME")
               }}
             >
               <AiOutlineHome className="navbar-icon" />
@@ -99,7 +101,7 @@ const Navbar = (props) => {
               sx={{ "&:hover": { backgroundColor: "white" } }}
               onClick={() => {
                 navigate("/classroom")
-                handleClick()
+                handleClick("CLASSROOM")
                 }}
             >
               <SiGoogleclassroom className="navbar-icon" />
@@ -119,7 +121,7 @@ const Navbar = (props) => {
               sx={{ "&:hover": { backgroundColor: "white" }}}
               onClick={() =>{
                 navigate("/scorecard")
-                handleClick()
+                handleClick("SCORECARD")
               }}
             >
               <IoStatsChartOutline className="navbar-icon" />
@@ -137,7 +139,7 @@ const Navbar = (props) => {
               sx={{ "&:hover": { backgroundColor: "white" } }}
               onClick={() => {
                 navigate("/exploreCourses")
-                handleClick()
+                handleClick("EXPLORE COURSES")
               }}
             >
               <SchoolIcon className="navbar-icon" />
@@ -157,7 +159,7 @@ const Navbar = (props) => {
               sx={{ "&:hover": { backgroundColor: "white" } }}
               onClick={() => {
                 navigate("/aboutUs")
-                handleClick()
+                handleClick("ABOUT US")
                 }}
             >
               <AiOutlineQuestionCircle className="navbar-icon" />
@@ -177,7 +179,7 @@ const Navbar = (props) => {
               sx={{ "&:hover": { backgroundColor: "white" } }}
               onClick={() => {
                 navigate("/settings")
-                handleClick()
+                handleClick("SETTINGS")
                 }}
             >
               <IoSettingsOutline className="navbar-icon" />
