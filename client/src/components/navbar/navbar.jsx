@@ -1,6 +1,6 @@
 import "./Mobile_Navbar.css";
 import "./Desktop_Navbar.css";
-import React, { useState }from "react";
+import React, { useState, useEffect }from "react";
 import { AiOutlineHome, AiOutlineQuestionCircle } from "react-icons/ai";
 import { SiGoogleclassroom, SiDarkreader } from "react-icons/si";
 import { IoSettingsOutline, IoStatsChartOutline } from "react-icons/io5";
@@ -15,18 +15,50 @@ import { Button } from "@mui/material";
 import LightModeIcon from '@mui/icons-material/LightMode';
 import NightlightRoundIcon from '@mui/icons-material/NightlightRound';
 import SchoolIcon from '@mui/icons-material/School';
+import Heading from "../HeadingText/heading";
 
 const Navbar = (props) => {
   const navigate = useNavigate();
-
+  const [ showHeading, setShowHeading ] = useState(false)
   var useThemeContext = useContext(ThemeContext);
   var { toggleTheme } = useThemeContext;
+  const [windowSize, setWindowSize] = useState([
+    window.innerWidth,
+    window.innerHeight,
+  ]);
+  
 
 
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowSize([window.innerWidth, window.innerHeight]);
+    };
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  });
+
+  const handleClick = () =>{
+    if( window.innerWidth > 425) {
+      console.log(showHeading)
+    } else{
+      setShowHeading(true)
+    }
+    setTimeout(()=>{
+      setShowHeading(false)
+    },2000)
+  }
+
+  console.log(window.innerWidth + " width")
   return (
     <>
       <div id="navbar-tab-div">
-        <span id="navbar-logo-div">
+        { showHeading ? <Heading /> : (
+          < div id="navbar-tab-div">
+          <span id="navbar-logo-div">
           <img
             src={Logo}
             style={{ width: "3rem", height: "auto" }}
@@ -46,13 +78,16 @@ const Navbar = (props) => {
             <IconButton
               className="iconCover 1"
               sx={{ "&:hover": { backgroundColor: "white" } }}
-              onClick={() => navigate("/")}
+              onClick={() => {
+                navigate("/")
+                handleClick()
+              }}
             >
               <AiOutlineHome className="navbar-icon" />
             </IconButton>
           </Tooltip>
 
-<Tooltip
+          <Tooltip
             title="My Quizzes"
             placement="right"
             disableFocusListener
@@ -62,7 +97,10 @@ const Navbar = (props) => {
             <IconButton
               className="iconCover 2"
               sx={{ "&:hover": { backgroundColor: "white" } }}
-              onClick={() => navigate("/classroom")}
+              onClick={() => {
+                navigate("/classroom")
+                handleClick()
+                }}
             >
               <SiGoogleclassroom className="navbar-icon" />
             </IconButton>
@@ -79,7 +117,10 @@ const Navbar = (props) => {
             <IconButton
               className="iconCover 4"
               sx={{ "&:hover": { backgroundColor: "white" }}}
-              onClick={() => navigate("/scorecard")}
+              onClick={() =>{
+                navigate("/scorecard")
+                handleClick()
+              }}
             >
               <IoStatsChartOutline className="navbar-icon" />
             </IconButton>
@@ -94,7 +135,10 @@ const Navbar = (props) => {
             <IconButton
               className="iconCover 5"
               sx={{ "&:hover": { backgroundColor: "white" } }}
-              onClick={() => navigate("/exploreCourses")}
+              onClick={() => {
+                navigate("/exploreCourses")
+                handleClick()
+              }}
             >
               <SchoolIcon className="navbar-icon" />
             </IconButton>
@@ -111,7 +155,10 @@ const Navbar = (props) => {
             <IconButton
               className="iconCover 6"
               sx={{ "&:hover": { backgroundColor: "white" } }}
-              onClick={() => navigate("/aboutUs")}
+              onClick={() => {
+                navigate("/aboutUs")
+                handleClick()
+                }}
             >
               <AiOutlineQuestionCircle className="navbar-icon" />
             </IconButton>
@@ -128,7 +175,10 @@ const Navbar = (props) => {
             <IconButton
               className="iconCover 7"
               sx={{ "&:hover": { backgroundColor: "white" } }}
-              onClick={() => navigate("/settings")}
+              onClick={() => {
+                navigate("/settings")
+                handleClick()
+                }}
             >
               <IoSettingsOutline className="navbar-icon" />
             </IconButton>
@@ -168,6 +218,8 @@ const Navbar = (props) => {
             {CopyRight()}
           </div>
         </div>
+          </div>
+        )}
       </div>
     </>
   );
