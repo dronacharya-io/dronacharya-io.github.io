@@ -1,94 +1,68 @@
-@media screen  and (min-width: 451px) {
-
-    
-    #light .classroom-h2{
-        color: var(--white-color);
-        letter-spacing: 2px;
-        font-size: x-large;
-        font-weight: 800;
-        border-color: transparent;
-        background: linear-gradient(-45deg,
-          var(--color-one),
-          var(--color-two),
-          var(--color-one));
-        background-size: 400% 400%;
-        animation: gradient 10s ease infinite;
-        color: transparent;
-        background-clip: text;
-        font-size: larger;
-    }
-
-    #dark .classroom-h2{
-        letter-spacing: 2px;
-        font-size: x-large;
-        font-weight: 800;
-        border-color: transparent;
-        background: linear-gradient(-45deg,
-          var(--color-one),
-          var(--color-two),
-          var(--color-one));
-        background-size: 400% 400%;
-        animation: gradient 10s ease infinite;
-        color: transparent;
-        background-clip: text;
-        font-size: largeR;
-    }
-    
-    #light .classroom-h2-div{ 
-        width: 90%;
-        margin: 2rem auto 2rem auto;
-        justify-self: center;
-      
-        padding:1rem; 
-        border-radius: 5px;
-        
-    }
-    
-    #dark .classroom-h2-div{ 
-        border-radius: 5px;
-        width: 90%;
-        margin: 2rem auto 2rem auto;
-        justify-self: center;
-        padding:1rem; 
-        box-shadow:  0 0 1.5rem 0rem var(#1d2238);
-       
-       
-}
-}
-
 @media screen and (max-width:451px){
-    .classroom-h2{
-        color: var(--white-color);
-        letter-spacing: 1px;
-        font-size: large;
-        font-weight: 300;
-        border-color: transparent;
-        background: linear-gradient(-45deg,
-          var(--color-one),
-          var(--color-two),
-          var(--color-one));
-        background-size: 400% 400%;
-        animation: gradient 10s ease infinite;
-        color: transparent;
-        background-clip: text;
-        font-size: large;
-        
-    }
-    
-    #light .classroom-h2-div{ 
-        width: 90%;
-        margin: 10PX auto 0 auto;
-        justify-self: center;
-        padding:0.7rem; 
-        border-radius: 5px;
+      .container {
+        background: #f0f0f0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2rem;
+        overflow: hidden;
+        height: 60px;
+        box-shadow:  0 0 0 #cccccc,
+        0 0 0 #ffffff,
+         10px 10px 10px #cccccc inset,
+         -10px -10px 10px #ffffff inset;
+      }
+      .box {
+        height: 100%;
+        width: max-content;
+        overflow: hidden;
+        background: #f0f0f0; 
+        animation: anime 3s infinite alternate;
+        animation-fill-mode: forwards; 
      
+      }
+  
+      @keyframes anime {
+        0% {
+            width: 70px;
+            border-radius: 2rem;
+          height: 100%;
+          background: #f0f0f0;
+          box-shadow:  0 0 0 #cccccc,
+                       0 0 0 #ffffff,
+                        10px 10px 10px #cccccc inset,
+                        -10px -10px 10px #ffffff inset;
+        }
+        25% {
+          width: 80px;
+          height: 100%;
+          border-radius: 2rem;
+          background: #f8f8f8;
+          box-shadow:  10px 10px 10px #cccccc,
+                       10px 10px 10px #ffffff,
+                       0 0 0 #cccccc inset,
+                       0 0 0 #ffffff inset;
+        }
+        50% {
+          width: 60px;
+          height:100%;
+          border-radius: 2rem;
+          background: #f8f8f8;
+          box-shadow:  10px 10px 10px #cccccc,
+                       10px 10px 10px #ffffff,
+                       0 0 0 #cccccc inset,
+                       0 0 0 #ffffff inset;
+        }
+        100% {
+          width: 480px;
+          height: 100%;
+          border-radius: 2rem;
+          background: #fafafa;
+          box-shadow:  40px 40px 40px #cccccc,
+                       0 0 0 #ffffff,
+                       0 0 0 #cccccc inset,
+                       2px 2px 2px #ffffff inset;
+        }
     }
-    
-    #dark .classroom-h2-div{ 
-        border-radius: 5px;
-        width: 90%;
-        margin: 2rem auto 0 auto;
-        justify-self: center;
-        padding:1rem; 
-}
-}
+    }

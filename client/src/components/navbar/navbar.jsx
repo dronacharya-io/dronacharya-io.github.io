@@ -49,7 +49,7 @@ const Navbar = (props) => {
     }
     setTimeout(()=>{
       setShowHeading(false)
-    },2000)
+    },7498)
   }
 
   console.log(window.innerWidth + " width")
