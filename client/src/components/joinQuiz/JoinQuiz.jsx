@@ -1,7 +1,7 @@
 import "./joinQuiz-mobile.css";
 import "./joinQuiz-desktop.css";
 import React, { useState, useEffect } from "react";
-import { IoArrowBack } from "react-icons/io5";
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import axios from "axios";
 import { styled } from "@mui/material/styles";
 import { useUserAuth } from "../../context/AuthContext";
@@ -14,12 +14,10 @@ import LoginSignUpPopUp from "../PopUps/LoginSignUpPopUp.jsx";
 import mainDivVector from "../../lotties/join-quiz-main-div.json";
 import { motion } from "framer-motion";
 import Heading from "../HeadingText/heading.jsx";
-import animationData from "../../lotties/57276-astronaut-and-music.json";
-import RocketData from "../../lotties/fillformalert.json";
-import Sparkles from "../../lotties/space.json";
-import spaceManTwo from "../../lotties/loginBackground.json";
-import sunAnimation from "../../lotties/moon.json";
 import Zoom from "@mui/material/Zoom";
+import ExitquizPopUp from "../PopUps/Warnning popup/exitquizPopUp";
+import LinearProgress from '@mui/material/LinearProgress';
+
 const JoinQuiz = () => {
   const navigate = useNavigate();
   const alphabets = ["A", "B", "C", "D", "E", "F", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -39,6 +37,8 @@ const JoinQuiz = () => {
   var [selectedOption, setSelectedOption] = useState(undefined)
   const { user, googleSignIn } = useUserAuth();
   const urlParams = new URLSearchParams(window.location.search);
+  const [lineWidth, setLineWidth] = useState("0")
+  var totalLineWidth = `${lineWidth}px`
   console.log(urlParams.get("id"));
 
   useEffect(() => {
@@ -84,7 +84,7 @@ const JoinQuiz = () => {
     };
   }, [user]);
 
-
+  
 
   const TakeAnswer = async () => {
     console.log(Data[index]);
@@ -172,57 +172,8 @@ const JoinQuiz = () => {
     console.log(submissions);
   };
 
-  const VectorMainDiv = {
-    loop: true,
-    autoplay: true,
-    animationData: mainDivVector,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  }
-
-  const spaceMan = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-  const spaceRocket = {
-    loop: true,
-    autoplay: true,
-    animationData: RocketData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-  const sparkles = {
-    loop: true,
-    autoplay: true,
-    animationData: Sparkles,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
-  const spaceman2 = {
-    loop: true,
-    autoplay: true,
-    animationData: spaceManTwo,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
-  const sun = {
-    loop: true,
-    autoplay: true,
-    animationData: sunAnimation,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+ 
+ 
 
   const VectorLoading = {
     loop: true,
@@ -249,131 +200,48 @@ const JoinQuiz = () => {
               />
             </div>
           ) : (
-            <div className="join-quiz-main-conatainer" >
-              <div className="quiz-settings-div-containing-vectors" id="join-quiz-containing-vector" style={{ boxShadow: "0 2px 10px rgba(0, 0, 0, 0.422)" }} >
-                <div id="quiz-settings-img-div">
-                  <div id="sparkles">
-                    <Lottie
-                      isClickToPauseDisabled={true}
-                      options={sparkles}
-                      height={689}
-                      width={480}
-                    />
-                  </div>
-                  <div id="img-div1">
-                    <Zoom
-                      in={true}
-                      style={{ transitionDelay: true ? "800ms" : "0ms" }}
-                    >
-                      <div>
-                        <Lottie
-                          isClickToPauseDisabled={true}
-                          options={sun}
-                          height={200}
-                          width={200}
-                        />
-                      </div>
-                    </Zoom>
-                  </div>
-
-                  <div id="img-div2">
-                    <Zoom
-                      in={true}
-                      style={{ transitionDelay: true ? "600ms" : "0ms" }}
-                    >
-                      <div style={{ visibility: "hidden" }} >
-                        <Lottie
-                          isClickToPauseDisabled={true}
-                          options={spaceMan}
-                          height={350}
-                          width={500}
-                        />
-                      </div>
-                    </Zoom>
-                  </div>
+            <div className="join-quiz-first-container" >
+              <div className="join-quiz-second-container">
+                <ArrowBackIosIcon
+                  className="join-quiz-arrowBack-icon"
+                  onClick={()=>{}}
+                />
+              </div>
+              <div className="join-quiz-third-container" >
+                <div className="join-quiz-third-containers-first-div" >
+                  <h2 className="join-quiz-question" >{`${Data[index].Question}`}</h2>
+                </div>
+                <div className="join-quiz-third-containers-second-div"  >
+                  <h4 className="join-quiz-under-question-text" >Answer and get points</h4>
                 </div>
               </div>
-              <div className="join-quiz-main-div" >
-                <div className="join-quiz-header">
-                  <h5 className="join-quiz-question-navigation-tab-h5" >Sr. No</h5>
-                  <div className="join-quiz-question-navigation-tab">
-
-                    {Data?.map((question, i) => {
-                      const { id } = question;
+              <div className="join-quiz-fourth-container" >
+                <div className="join-quiz-fourth-containers-first-div" >
+                  <h4 className="join-quiz-step-navigator" ><span className="join-quiz-navigator-first-span" >Question  {index+1} </span><span className="join-quiz-navigator-second-span" >of {Data.length}</span></h4>
+                </div>
+                <div className="join-quiz-fourth-containers-second-div" style={{width:totalLineWidth}} >
+                 
+                </div>
+                <div className="join-quiz-fifth-container" > 
+                  {Data[index].options.map((option, j) => {
                       return (
-                        <>
-                          <div
-                            variant="outlined"
-                            onClick={() => {
-                              setIndex(i);
-                              // setIswrittenType(Data[i].isWrittenType);
-                            }}
-                          >
-                            <h4 className="join-quiz-question-locator" >
-                              {i + 1}
-                            </h4>
+                        <div className="join-quiz-fifth-containers-first-div" >
+                          <div className="join-quiz-fifth-containers-first-divs-second-div"  >
+                            <div  className="join-quiz-fifth-containers-first-divs-second-divs-first-div" >
+                              <p className="join-quiz-option-number" >{alphabets[j]}</p>
+                            </div>
                           </div>
-                        </>
-                      );
+                          <div className="join-quiz-fifth-containers-second-div" >
+                            <h4 className="join-quiz-option-value" >{option.value}</h4>
+                          </div>
+                        </div>);
                     })}
-                  </div>
                 </div>
-
-                <div className="join-quiz-content-div" >
-                  <motion.div
-                    className="join-quiz-main-child-div"
-                    initial={{ y: 10, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -10, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <motion.div
-                      className="join-quiz-question"
-                      initial={{ y: 10, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: -10, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <h3 className="join-quiz-question-number" >Q.{index + 1}</h3>
-                      <h3 className="join-quiz-question-value" >{`${Data[index].Question.toUpperCase()}`}</h3>
-                    </motion.div>
-                      {Data[index].options.map((option, j) => {
-                        return (
-
-                          <motion.div
-                            className="join-quiz-option-div"
-                            initial={{ y: 10, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: -10, opacity: 0 }}
-                            transition={{ duration: 0.5 }}
-                            onClick={()=>handleChange(j)}
-                            style={{borderRadius: j===selectedOption?'100px':'5px'}}
-                          >
-                            <p className="join-quiz-option-number" >{alphabets[j]}</p>
-                            <h4 className="join-quiz-option-value" >{option.value.toUpperCase()}</h4>
-                          </motion.div>
-
-                        );
-                      })}
-                    {/* <motion.div
-                      initial={{ y: 10, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: -10, opacity: 0 }}
-                      transition={{ duration: 0.5 }}
-                      className="join-quiz-correct-answer">
-                      <h4 className="option-value-ans-join-quiz" >ANSWER</h4>
-                      <textarea
-                        type="text"
-                        className="submittedAns"
-                        name="submittedAns"
-                        onChange={handleChange}
-                      />
-                    </motion.div> */}
-                  </motion.div>
-                  <Button className="join-quiz-next-btn" variant="outlined" onClick={() => TakeAnswer()}>
-                    {Data?.length === index + 1 ? "Submit Quiz" : "Next Question"}
-                  </Button>
-                </div>
+              </div>
+              <div className="join-quiz-sixth-container" >
+                <button className="join-quiz-next-btn" variant="outlined" onClick={() => TakeAnswer()}>
+                  {Data?.length === index + 1 ? "Submit" : "Next"}
+                </button>
               </div>
             </div>
           )}
@@ -386,3 +254,66 @@ const JoinQuiz = () => {
 };
 
 export default JoinQuiz;
+
+
+
+// <div className="join-quiz-main-conatainer" >
+//                   <div className="join-quiz-question-navigation-tab">
+//                     {Data?.map((question, i) => {
+//                       const { id } = question;
+//                       return (
+//                         <>
+//                           <div
+//                             variant="outlined"
+//                             onClick={() => {
+//                               setIndex(i);
+//                               // setIswrittenType(Data[i].isWrittenType);
+//                             }}
+//                           >
+//                             <h4 className="join-quiz-question-locator" >
+//                               {i + 1}
+//                             </h4>
+//                           </div>
+//                         </>
+//                       );
+//                     })}
+//                   </div>
+
+                
+//                   <motion.div
+//                     className="join-quiz-main-child-div"
+//                     initial={{ y: 10, opacity: 0 }}
+//                     animate={{ y: 0, opacity: 1 }}
+//                     exit={{ y: -10, opacity: 0 }}
+//                     transition={{ duration: 0.2 }}
+//                   >
+//                       <h3 className="join-quiz-question-number" >Q.{index + 1}</h3>
+//                       <h3 className="join-quiz-question-value" >{`${Data[index].Question.toUpperCase()}`}</h3>
+                
+//                       {Data[index].options.map((option, j) => {
+//                         return (
+//                           <>
+//                             <p className="join-quiz-option-number" >{alphabets[j]}</p>
+//                             <h4 className="join-quiz-option-value" >{option.value.toUpperCase()}</h4>
+//                           </>);
+//                       })}
+//                     {/* <motion.div
+//                       initial={{ y: 10, opacity: 0 }}
+//                       animate={{ y: 0, opacity: 1 }}
+//                       exit={{ y: -10, opacity: 0 }}
+//                       transition={{ duration: 0.5 }}
+//                       className="join-quiz-correct-answer">
+//                       <h4 className="option-value-ans-join-quiz" >ANSWER</h4>
+//                       <textarea
+//                         type="text"
+//                         className="submittedAns"
+//                         name="submittedAns"
+//                         onChange={handleChange}
+//                       />
+//                     </motion.div> */}
+//                   </motion.div>
+//                   <Button className="join-quiz-next-btn" variant="outlined" onClick={() => TakeAnswer()}>
+//                     {Data?.length === index + 1 ? "Submit Quiz" : "Next Question"}
+//                   </Button>
+            
+//             </div>

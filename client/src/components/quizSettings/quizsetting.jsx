@@ -248,7 +248,7 @@ const QuizSetting = (props) => {
                       textAlign="center"
                       className="tempClassName"
                     >
-                      <Heading title={"QUIZZ DETAILS"} />
+                
                       <Box
                         id="form"
                         component="form"
