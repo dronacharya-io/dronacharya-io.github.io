@@ -30,6 +30,7 @@
         margin: 0 1rem 0 2rem;
         justify-self: flex-start;
         letter-spacing: 0.3px;
+        overflow: scroll;
     }
 
     .join-quiz-third-containers-second-div{
@@ -55,7 +56,7 @@
 
     .join-quiz-step-navigator{
         letter-spacing: 0.5px;
-        margin: 0 2rem 0.7rem 2rem;
+        margin: 0 2rem 1rem 2rem;
     }
 
     .join-quiz-navigator-first-span{
@@ -75,7 +76,7 @@
         background-size: 400% 400%;
         animation: gradient 15s ease infinite;
         color: var(--white-color);
-        height: 4px;
+        height: 3px;
     }
 
     .join-quiz-fifth-container{
@@ -90,9 +91,9 @@
 
     .join-quiz-fifth-containers-first-div{
         display: flex;
-        border: solid 1.5px var(--gray-color-secondary);
+        border: 1px solid var(--gray-color-secondary)!important;
         width: 85%;
-        border-radius: 10px;
+        border-radius: 12px;
         min-height: 50px;
         overflow: scroll;
         max-height: 50px;
@@ -101,22 +102,23 @@
     }
 
     .join-quiz-fifth-containers-first-divs-second-div{
-        border: solid 1.5px var(--gray-color-secondary);
+        border: solid 1px var(--gray-color-secondary);
         min-width: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 10px;
+        border-radius: 12px;
     }
 
     .join-quiz-option-number{
         font-size: larger;
+        font-weight: 200;
     }
 
     .join-quiz-fifth-containers-first-divs-second-divs-first-div{
         border-radius: 100%;
-        min-height: 30px;
-        min-width:30px ;
+        min-height:35px;
+        min-width:35px ;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -147,7 +149,7 @@
         width: 90%;
         margin: 0 auto 0 auto;
         min-height: 50px;
-        border-radius: 10px;
+        border-radius: 12px;
         padding: 6px;
         border: none;
         font-weight: 400;
@@ -161,4 +163,31 @@
         animation: gradient 15s ease infinite;
         color: var(--white-color);
     }
+
+    .join-quiz-fifth-containers-first-div:hover{
+        background: linear-gradient(-45deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-one));
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        color: var(--white-color);
+    }
+
+    .join-quiz-fifth-containers-first-div:hover, .join-quiz-fifth-containers-first-divs-second-div{
+        background-color: var(--white-color);
+    }
+
+    .join-quiz-fifth-containers-first-div:hover  .join-quiz-fifth-containers-first-divs-second-divs-first-div {
+        background: linear-gradient(-45deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-one)) ;
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+    }
+
+    /* #a:hover  #b{
+        background-color:green;
+      } */
 }

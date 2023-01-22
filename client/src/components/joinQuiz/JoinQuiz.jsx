@@ -37,8 +37,8 @@ const JoinQuiz = () => {
   var [selectedOption, setSelectedOption] = useState(undefined)
   const { user, googleSignIn } = useUserAuth();
   const urlParams = new URLSearchParams(window.location.search);
-  const [lineWidth, setLineWidth] = useState("0")
-  var totalLineWidth = `${lineWidth}px`
+  const [lineWidth, setLineWidth] = useState("5")
+  var totalLineWidth = `${lineWidth}%`
   console.log(urlParams.get("id"));
 
   useEffect(() => {
@@ -84,7 +84,11 @@ const JoinQuiz = () => {
     };
   }, [user]);
 
-  
+  const fillLine = (totalLen, currentPos) =>{
+    const percentage = (currentPos / totalLen) * 100 / 100;
+    setLineWidth(percentage*100)
+    console.log(percentage*100+" percentage") 
+  }
 
   const TakeAnswer = async () => {
     console.log(Data[index]);
@@ -204,7 +208,9 @@ const JoinQuiz = () => {
               <div className="join-quiz-second-container">
                 <ArrowBackIosIcon
                   className="join-quiz-arrowBack-icon"
-                  onClick={()=>{}}
+                  onClick={ index + 1 > 1 ?()=>{
+                    setIndex((index)=> index-1); 
+                    fillLine(Data?.length, index-0.5); } : ""}
                 />
               </div>
               <div className="join-quiz-third-container" >
@@ -225,9 +231,9 @@ const JoinQuiz = () => {
                 <div className="join-quiz-fifth-container" > 
                   {Data[index].options.map((option, j) => {
                       return (
-                        <div className="join-quiz-fifth-containers-first-div" >
+                        <div className="join-quiz-fifth-containers-first-div" id="a" >
                           <div className="join-quiz-fifth-containers-first-divs-second-div"  >
-                            <div  className="join-quiz-fifth-containers-first-divs-second-divs-first-div" >
+                            <div  className="join-quiz-fifth-containers-first-divs-second-divs-first-div" id="b" >
                               <p className="join-quiz-option-number" >{alphabets[j]}</p>
                             </div>
                           </div>
@@ -239,7 +245,10 @@ const JoinQuiz = () => {
                 </div>
               </div>
               <div className="join-quiz-sixth-container" >
-                <button className="join-quiz-next-btn" variant="outlined" onClick={() => TakeAnswer()}>
+                <button className="join-quiz-next-btn" variant="outlined" onClick={() => {
+                  TakeAnswer()
+                  fillLine(Data?.length, index+1)
+                  }}>
                   {Data?.length === index + 1 ? "Submit" : "Next"}
                 </button>
               </div>
