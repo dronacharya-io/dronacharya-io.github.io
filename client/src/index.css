@@ -19,6 +19,7 @@ body {
   --white-color: #ffffff;
   --color-one: hsl(15 90% 55%);
   --color-two: hsl(40 95% 55%);
+  --test-color: radial-gradient(circle at 0.8% 1.8%, rgb(255, 104, 107) 0%, rgb(255, 187, 103) 90.1%);
 }
 
 

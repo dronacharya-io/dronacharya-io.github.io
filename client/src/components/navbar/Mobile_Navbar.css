@@ -15,12 +15,12 @@
     position: fixed;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0.1rem 0.2rem 0 var(--gray-color);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     background-color: var(--white-color);
-    right: 30px;
-    left: 30px;
-    top: 20px;
-    border-radius: 2rem;
+    width: 90%;
+    bottom: 10px;
+    top: auto;
+    border-radius: 12px;
   }
   
   #dark #navbar-tab-div{

@@ -140,9 +140,8 @@
         position: fixed;
         justify-self: flex-end;
         top: auto;
-        bottom: 20px;
+        bottom: 90px;
         width: 100%;
-        
     }
 
     .join-quiz-next-btn{
