@@ -59,7 +59,7 @@
     width: 95%;
     border-radius: 23px;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-    height:8rem;
+    height:7.5rem;
     background-color:var(--white-color);
     position: relative;
     bottom: 80px;
@@ -72,7 +72,7 @@
 
   .quiz-main-materials-div{
     width: 20%;
-    height: 100px;
+    height: 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -126,7 +126,7 @@
     gap: 10px;
     border-radius: 23px;
     position: relative;
-    bottom: 35px;
+    bottom: 25px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
 
@@ -253,7 +253,7 @@
 
   .quiz-fifth-container-first-div-h2{
     margin-left: 1.2rem;
-    font-size: 17px;
+    font-size: small;
     margin-top: 7px;
     color: var(--white-color);
     letter-spacing: 1px;
