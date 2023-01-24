@@ -2,7 +2,7 @@
     
     .My-Quizzes-main-div{
         width: 270px;
-        height: 250px;
+        height: 180px;
         border-radius: 7px;
         overflow: scroll;
         display: inline-block;
@@ -35,7 +35,7 @@
         align-items: flex-start;
         gap: 5px;
         margin: 10px 0px 0px 15px;
-        height: 35%;
+        height: 25%;
     }
 
     .My-Quizzes-content-div-h3{
