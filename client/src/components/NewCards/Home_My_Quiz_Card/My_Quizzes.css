@@ -7,8 +7,8 @@
         overflow: scroll;
         display: inline-block;
         justify-self: flex-start;
-        margin: 2px 1rem 0px 0px;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+        margin: 2px 1rem 0px 1.5px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     }
 
     .My-Quizzes-img-div{

@@ -20,7 +20,7 @@
     position: relative;
     justify-content: center;
     align-items: center;
-    bottom: 20px;
+    bottom: 200px;
   }
   
   #light #span{
@@ -58,11 +58,11 @@
   .quiz-third-containers-first-div{
     width: 95%;
     border-radius: 23px;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     height:7.5rem;
     background-color:var(--white-color);
     position: relative;
-    bottom: 80px;
+    bottom: 200px;
     display: flex;
     flex-direction: row;
     gap: 1rem;
@@ -126,7 +126,7 @@
     gap: 10px;
     border-radius: 23px;
     position: relative;
-    bottom: 25px;
+    bottom: 155px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
 
@@ -194,6 +194,8 @@
   }
 
   .quiz-fifth-container{
+    position: relative;
+    bottom: 110px;
     width: 95%;
     height: 150px;
     display: flex;
@@ -215,6 +217,7 @@
 
   .quiz-fifth-containers-three{
     background: linear-gradient(135deg, rgb(255, 168, 168) 10%, rgb(252, 255, 0) 100%);
+    margin-bottom: -50px;
   }
 
   .quiz-image{
