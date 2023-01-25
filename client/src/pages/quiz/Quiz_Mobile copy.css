@@ -150,11 +150,12 @@
 
   .quiz-fourth-contaners-first-div-child-div-heading-h2{
     letter-spacing: 0.2px;
+    font-size: large;
   }
 
   .quiz-fourth-contaners-first-div-child-div-view-more{
     width: 50%;
-    height: 100%;
+    height: min-content;
     display: flex;
     justify-content: flex-end;
     gap: 4px;
@@ -163,17 +164,21 @@
   }
 
   .quiz-fourth-contaners-first-div-child-div-view-more-h4-div{
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--gray-color);
   }
 
   .quiz-fourth-contaners-first-div-child-div-view-more-h4{
-    font-size: large;
+    font-size: small;
     color: var(--gray-color);
     letter-spacing: 0.5px;
   }
 
   .quiz-fourth-contaners-first-div-child-div-view-more-icon-div{
     color: var(--gray-color);
+    font-size: small;
   }
 
   .quiz-fourth-contaners-second-div{ 

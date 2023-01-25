@@ -1,6 +1,6 @@
 import "./Desktop_Quiz.css";
 import "./Quiz_Mobile copy.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useUserAuth } from "../../context/AuthContext";
 import ReactTypingEffect from "react-typing-effect";
 import { useNavigate } from "react-router-dom";
@@ -30,10 +30,13 @@ import earthimg from "../../lotties/Quizzes/3d illustrators/earth.png";
 import cam from "../../lotties/Quizzes/3d illustrators/crypto-camera.png";
 import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 import TravelExploreOutlinedIcon from '@mui/icons-material/TravelExploreOutlined';
+import { async } from "@firebase/util";
 
 export const Quiz = (props) => {
-  const { user } = useUserAuth();
+  var { user, x, setX } = useUserAuth();
   console.log(props.theme)
+  var [loading, setLoading] = useState(false);
+  var submissionsData = user?.userData?.quizzesCreated;
   const navigate = useNavigate();
   const [id, setId] = useState();
   var {one , two} = MyQuizAnimation;
@@ -41,6 +44,20 @@ export const Quiz = (props) => {
     setId(e.target.value);
   };
 
+  const Fetch = async()=>{
+      try {
+        submissionsData = user?.userData?.quizzesCreated;
+      } catch (err) {
+        // setData(err);
+      }
+      setLoading(false);
+  }
+
+  useEffect(() => {
+    setLoading(true);
+    Fetch();
+  }, [x]);
+  
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -67,6 +84,7 @@ export const Quiz = (props) => {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+
 
 
   const CssTextField = styled(TextField)({
@@ -174,27 +192,34 @@ export const Quiz = (props) => {
             </div>
           </div>
         </div>
-        <div className="quiz-fourth-container grandparent " >
-          <div className="quiz-fourth-contaners-first-div" >
-            <div className="quiz-fourth-contaners-first-div-child-div-heading" >
-              <h2 className="quiz-fourth-contaners-first-div-child-div-heading-h2" >My Quizzes</h2>
-            </div>
-            <div className="quiz-fourth-contaners-first-div-child-div-view-more" >
-              <div className="quiz-fourth-contaners-first-div-child-div-view-more-h4-div" >
-                <h4 className="quiz-fourth-contaners-first-div-child-div-view-more-h4" >View All</h4>
+          {
+            user && submissionsData?.length > 0 && (
+              <div className="quiz-fourth-container grandparent " >
+                <div className="quiz-fourth-contaners-first-div" >
+                  <div className="quiz-fourth-contaners-first-div-child-div-heading" >
+                    <h2 className="quiz-fourth-contaners-first-div-child-div-heading-h2" >My Quizzes</h2>
+                  </div>
+                  <div className="quiz-fourth-contaners-first-div-child-div-view-more" onClick={()=>{navigate("/classroom")}} >
+                    <div className="quiz-fourth-contaners-first-div-child-div-view-more-h4-div"  >
+                      <h4 className="quiz-fourth-contaners-first-div-child-div-view-more-h4"  >{submissionsData?.length < 1 ? ("Create") : (" View All")}</h4>
+                      <ArrowForwardIosIcon sx={{width:"15px"}} />
+                    </div>
+                  </div>
+                </div>
+                  <div className="parent" >
+                    <div className="quiz-fourth-contaners-second-div" >
+                      {
+                        submissionsData?.slice(0,6)?.map((quiz,i)=>{
+                          return(
+                            <My_Quizzes id={quiz.id} image={defaultOptions} title={quiz.name} subject={quiz.subject}/>
+                          )
+                        }).reverse()
+                      }
+                    </div>
+                  </div>
               </div>
-              <div className="quiz-fourth-contaners-first-div-child-div-view-more-icon-div" >
-                <ArrowForwardIosIcon sx={{width:"15px"}} />
-              </div>
-            </div>
-          </div>
-            <div className="parent" >
-              <div className="quiz-fourth-contaners-second-div" >
-                <My_Quizzes image={defaultOptions} title={"Quiz Name"} subject={"Subject"}/>
-                <My_Quizzes image={defaultOptions} title={"Quiz Name"} subject={"Subject"}/>
-              </div>
-            </div>
-        </div>
+            )
+          }
         <div className="quiz-fifth-container quiz-fifth-containers-one" >
             <div onClick={() => navigate("/createQuiz")} className="quiz-fifth-container-first-div" >
               <div className="quiz-fifth-container-first-div-icon" >
