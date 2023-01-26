@@ -1,2 +1,12 @@
 export { default as one } from "./1.json";
 export { default as two } from "./2.json";
+export { default as three } from "./3.json";
+export { default as four } from "./4.json";
+export { default as five } from "./5.json";
+export { default as six } from "./6.json";
+export { default as seven } from "./7.json";
+export { default as eight } from "./8.json";
+export { default as nine } from "./9.json";
+export { default as ten } from "./10.json";
+export { default as eleven } from "./11.json";
+export { default as twelve } from "./12.json";

@@ -23,14 +23,13 @@ import PostAddIcon from '@mui/icons-material/PostAdd';
 import TouchAppIcon from '@mui/icons-material/TouchApp';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { My_Quizzes } from "../../components/NewCards/Home_My_Quiz_Card/My_Quizzes";
-import * as MyQuizAnimation from "../../lotties/Quizzes/My quizzes lotties/index.js";
 import Books from "../../lotties/Quizzes/3d illustrators/pencil-case.png";
 import quizimg from "../../lotties/Quizzes/3d illustrators/faq-file.png";
 import earthimg from "../../lotties/Quizzes/3d illustrators/earth.png";
 import cam from "../../lotties/Quizzes/3d illustrators/crypto-camera.png";
 import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 import TravelExploreOutlinedIcon from '@mui/icons-material/TravelExploreOutlined';
-import { async } from "@firebase/util";
+
 
 export const Quiz = (props) => {
   var { user, x, setX } = useUserAuth();
@@ -39,7 +38,7 @@ export const Quiz = (props) => {
   var submissionsData = user?.userData?.quizzesCreated;
   const navigate = useNavigate();
   const [id, setId] = useState();
-  var {one , two} = MyQuizAnimation;
+
   const handleChange = (e) => {
     setId(e.target.value);
   };
@@ -58,10 +57,13 @@ export const Quiz = (props) => {
     Fetch();
   }, [x]);
   
+
+
+
   const defaultOptions = {
     loop: true,
     autoplay: true,
-    animationData: one,
+    animationData:animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -211,7 +213,7 @@ export const Quiz = (props) => {
                       {
                         submissionsData?.slice(0,6)?.map((quiz,i)=>{
                           return(
-                            <My_Quizzes id={quiz.id} image={defaultOptions} title={quiz.name} subject={quiz.subject}/>
+                            <My_Quizzes id={quiz.id} image={i} title={quiz.name} subject={quiz.subject}/>
                           )
                         }).reverse()
                       }
