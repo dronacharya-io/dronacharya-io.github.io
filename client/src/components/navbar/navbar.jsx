@@ -223,6 +223,7 @@ const Navbar = (props) => {
           </div>
         )}
       </div>
+
     </>
   );
 };
