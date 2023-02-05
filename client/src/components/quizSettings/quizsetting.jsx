@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Mobile_quizSettings.css";
+import "./Mobile_quizSettings copy.css";
 import "./Desktop_quizSettings.css";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Box from "@mui/material/Box";
@@ -139,16 +139,11 @@ const QuizSetting = (props) => {
         <div className="quiz-settings-main-container" >
           <div id="centerContent">
             <div className="quizSettingBtn-div" >
-              <Button
-                variant="outlined"
-                onClick={() => {
+              <button className="quizSettingBtn" onClick={() => {
                   setDrawerOpen(true);
-                }}
-                className="quizSettingBtn"
-              >
-                <SettingsIcon />
-                Settings
-              </Button>
+                }}>
+                  <SettingsIcon />
+              </button>
             </div>
             <Snackbar
               open={alertStatus}
@@ -243,7 +238,7 @@ const QuizSetting = (props) => {
                   <div className="quiz-settings-div-containing-form" >
                       <Box
                       p={2}
-                      sx={{ width: "auto", height: "700px" }}
+          
                       role="presentation"
                       textAlign="center"
                       className="tempClassName"
@@ -264,9 +259,8 @@ const QuizSetting = (props) => {
                             <div>
                               <InputLabel id="inputLabel">Quiz name</InputLabel>
                               <input
-                                style={{ width: "auto" }}
                                 required
-                                id="quizname"
+                                id="subject"
                                 label="Required"
                                 name="quizname"
                                 value={values?.quizname}
@@ -473,7 +467,7 @@ const QuizSetting = (props) => {
                                 variant="contained"
                                 onClick={handleClick}
                               >
-                                Add Settings
+                                Add
                               </Button>
                               <div>
                                 <Button
@@ -482,7 +476,7 @@ const QuizSetting = (props) => {
                                   color="warning"
                                   onClick={handleCancle}
                                 >
-                                  I'll fill it later!
+                                  fill it later
                                 </Button>
                               </div>
                             </div>
@@ -514,5 +508,371 @@ export default QuizSetting;
 
 
 {
-  /*                  */
+  /**        <>
+      {!loading ? (
+        <div className="quiz-settings-main-container" >
+          <div id="centerContent">
+            <div className="quizSettingBtn-div" >
+              <button className="quizSettingBtn" onClick={() => {
+                  setDrawerOpen(true);
+                }}>
+                  <SettingsIcon />
+              </button>
+            </div>
+            <Snackbar
+              open={alertStatus}
+              autoHideDuration={300000}
+              onClose={() => {
+                setAlertStatus(false);
+              }}
+            >
+              <Alert
+                id="alert"
+                onClose={() => {
+                  setAlertStatus(false);
+                }}
+                severity="warning"
+                sx={{ width: "100%" }}
+              >
+                Please fill details regarding your test.
+              </Alert>
+            </Snackbar>
+            <div className="quiz-settings-sweepable-drawer" >
+             
+              <SwipeableDrawer
+                anchor="top"
+                open={isDrawerOpen}
+                onClose={() => {
+                  setDrawerOpen(false);
+                }}
+                style={{ height:"300px" }}
+                className="drawerBody"
+              >
+                <div className="quiz-settings-div-containing-vectors-and-form" >
+                  
+                  <div className="quiz-settings-div-containing-vectors" >
+                  <div id="quiz-settings-img-div">
+                        <div id="sparkles">
+                          <Lottie
+                            isClickToPauseDisabled={true}
+                            options={sparkles}
+                            height={900}
+                            width={480}
+                          />
+                        </div>
+                        <div id="img-div1">
+                          <Zoom
+                            in={true}
+                            style={{ transitionDelay: true ? "800ms" : "0ms" }}
+                          >
+                            <div>
+                              <Lottie
+                                isClickToPauseDisabled={true}
+                                options={sun}
+                                height={200}
+                                width={200}
+                              />
+                            </div>
+                          </Zoom>
+                        </div>
+
+                        <div id="img-div2">
+                          <Zoom
+                            in={true}
+                            style={{ transitionDelay: true ? "600ms" : "0ms" }}
+                          >
+                            <div>
+                              <Lottie
+                                isClickToPauseDisabled={true}
+                                options={spaceMan}
+                                height={350}
+                                width={500}
+                              />
+                            </div>
+                          </Zoom>
+                        </div>
+                        <div id="img-div3">
+                          <Zoom
+                            in={true}
+                            style={{ transitionDelay: true ? "600ms" : "0ms" }}
+                          >
+                            <div>
+                              <Lottie
+                                isClickToPauseDisabled={true}
+                                options={spaceman2}
+                                height={450}
+                                width={500}
+                              />
+                            </div>
+                          </Zoom>
+                        </div>
+                      </div> 
+                  </div>
+
+                  <div className="quiz-settings-div-containing-form" >
+                      <Box
+                      p={2}
+          
+                      role="presentation"
+                      textAlign="center"
+                      className="tempClassName"
+                    >
+                
+                      <Box
+                        id="form"
+                        component="form"
+                        sx={{ "& .MuiTextField-root": { m: 0, width: "25ch" } }}
+                        noValidate
+                        autoComplete="off"
+                      >
+                        <div>
+                          <Zoom
+                            in={true}
+                            style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                          >
+                            <div>
+                              <InputLabel id="inputLabel">Quiz name</InputLabel>
+                              <input
+                                required
+                                id="subject"
+                                label="Required"
+                                name="quizname"
+                                value={values?.quizname}
+                                onChange={handleChange}
+                              />
+                            </div>
+                          </Zoom>
+
+                          <div style={{ position: "relative" }}>
+                            <Zoom
+                              in={true}
+                              style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                            >
+                              <div>
+                                <InputLabel id="inputLabel">Subject</InputLabel>
+                                <input
+                                  required
+                                  id="subject"
+                                  label="Required"
+                                  name="subject"
+                                  value={values?.subject}
+                                  onChange={handleChange}
+                                />
+                              </div>
+                            </Zoom>
+                            {/* <Zoom
+                              in={true}
+                              style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                            >
+                              <div>
+                                <InputLabel
+                                  id="inputLabel"
+                                  htmlFor="component-simple"
+                                >
+                                  Check if Test is MCQ type.
+                                  <Checkbox
+                                    name="isMcq"
+                                    id="isMcq"
+                                    type="checkbox"
+                                    onChange={handleCheckbox}
+                                    defaultChecked={values?.isMcq}
+                                    color="success"
+                                  />
+                                </InputLabel>
+                              </div>
+                            </Zoom> */}
+                            {/* <Zoom
+                              in={true}
+                              style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                            >
+                              <div >
+                                <InputLabel id="inputLabel">
+                                  Time per Question
+                                </InputLabel>
+                                <input
+                                  required
+                                  type="number"
+                                  id="timePerQuestion"
+                                  name="timePerQuestion"
+                                  label="Required"
+                                  value={values?.timePerQuestion}
+                                  onChange={handleChange}
+                                />
+                              </div>
+                            </Zoom> }
+                            </div>
+                            <div style={{ position: "relative" }}></div>
+                            {/* <Zoom
+                              in={true}
+                              style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                            >
+                              <div>
+                                <article>
+                                  <InputLabel id="inputLabel">
+                                    Positive marking
+                                  </InputLabel>
+                                  <input
+                                    name="positiveMarking"
+                                    id="positiveMarking"
+                                    label="Required"
+                                    type="number"
+                                    min={1}
+                                    value={values?.positiveMarking}
+                                    onChange={handleChange}
+                                  />
+                                </article>
+                              </div>
+                            </Zoom> */}
+                            {/* <Zoom
+                              in={true}
+                              style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                            >
+                              <div>
+                                <article>
+                                  <InputLabel id="inputLabel">
+                                    Is there a negative marking:{" "}
+                                  </InputLabel>
+                                  <Checkbox
+                                    name="isNegative"
+                                    id="isNegative"
+                                    type="checkbox"
+                                    defaultChecked={
+                                      values?.isNegative ? values.isNegative : undefined
+                                    }
+                                    onChange={handleCheckbox}
+                                  />
+                                </article>
+                              </div>
+                            </Zoom> */}
+                            {/* <Zoom
+                              in={true}
+                              style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                            >
+                              <div>
+                                <article
+                                  id="checkbox"
+                                  style={{
+                                    visibility: !values?.isNegative ? "hidden" : "",
+                                  }}
+                                >
+                                  <InputLabel id="inputLabel">
+                                    Specify negative marking
+                                  </InputLabel>
+                                  <input
+                                    name="negativeMarking"
+                                    id="negativeMarking"
+                                    type="number"
+                                    min={0}
+                                    value={values?.negativeMarking}
+                                    onChange={handleChange}
+                                  />
+                                </article>
+                              </div>
+                            </Zoom> }
+                            <Zoom
+                              in={true}
+                              style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                            >
+                              <div>
+                                <article>
+                                  <InputLabel id="inputLabel">Start Date: </InputLabel>
+                                  <input
+                                    name="startDate"
+                                    id="startDate"
+                                    type="date"
+                                    min={curDate}
+                                    value={values?.startDate}
+                                    onChange={handleChange}
+                                  />
+                                </article>
+                              </div>
+                            </Zoom>
+                            <Zoom
+                              in={true}
+                              style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                            >
+                              <div>
+                                <article>
+                                  <InputLabel id="inputLabel">Start-Time: </InputLabel>
+                                  <input
+                                    name="startTime"
+                                    id="startTime"
+                                    type="time"
+                                    value={values?.startTime}
+                                    onChange={handleChange}
+                                  />
+                                </article>
+                              </div>
+                            </Zoom>
+                            <Zoom
+                              in={true}
+                              style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                            >
+                              <div>
+                                <article>
+                                  <InputLabel id="inputLabel">Run-Time: </InputLabel>
+                                  <input
+                                    name="runTime"
+                                    id="runTime"
+                                    type="time"
+                                    value={values?.runTime}
+                                    onChange={handleChange}
+                                  />
+                                </article>
+                              </div>
+                            </Zoom>
+                          </div>
+                        </Box>
+                        <Zoom
+                              in={true}
+                              style={{ transitionDelay: true ? "300ms" : "0ms" }}
+                            >
+                              <div id="quiz-settings-vector-addbtn-canclebtn">
+                              <div id="rocket">
+                                  <Lottie
+                                    isClickToPauseDisabled={true}
+                                    options={spaceRocket}
+                                    height={40}
+                                    width={40}
+                                  />
+                                </div>
+                                <Button
+                                  id="addSettingButton"
+                                  variant="contained"
+                                  onClick={handleClick}
+                                >
+                                  Add
+                                </Button>
+                                <div>
+                                  <Button
+                                    className="i-will-fill-later-btn"
+                                    variant="contained"
+                                    color="warning"
+                                    onClick={handleCancle}
+                                  >
+                                    I'll fill it later!
+                                  </Button>
+                                </div>
+                              </div>
+                            </Zoom>
+                      </Box>
+                    </div>
+                  </div>
+                </SwipeableDrawer>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <>
+            <div id="loading">
+              <Lottie
+                isClickToPauseDisabled={true}
+                options={VectorLoading}
+                height={170}
+                width={170}
+              />
+            </div>
+          </>
+        )}
+      </>           **/
 }

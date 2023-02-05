@@ -1,0 +1,153 @@
+@media screen and (max-width:451px) {
+  .quiz-settings-main-container{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+  #centerContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .quizSettingBtn-div{
+    display: flex;
+    align-self: flex-start;
+    position: relative;
+    margin: 2rem 0 0 0.5rem;
+    justify-self: flex-start;
+  }
+  
+  #light .quizSettingBtn {
+    color: var(--white-color);
+    margin-bottom: 4rem;
+    font-weight: 500;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle at 0.8% 1.8%, rgb(255, 104, 107) 0%, rgb(255, 187, 103) 90.1%);
+    letter-spacing: 1px;
+    border: none;
+    font-size: normal;
+    border-radius: 12px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+
+  
+
+  
+  .quiz-settings-sweepable-drawer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .quiz-settings-div-containing-vectors-and-form{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .quiz-settings-div-containing-vectors{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1rem;
+  }
+  
+  .quiz-settings-div-containing-form{
+    width: 90%;
+  }
+  
+  #quizname,
+    #subject,
+    #timePerQuestion,
+    #positiveMarking,
+    #negativeMarking,
+    #startDate,
+    #startTime,
+    #runTime {
+      border: none;
+      padding: 4px;
+      outline: none;
+      font-size: 1.4em;
+      font-family: inherit;
+      resize: none;
+      background: var(--white-color);
+      position: relative;
+      width: 80%;
+      margin: 1rem auto 1.25rem auto;
+      background: var(--white-color);
+      padding: 15px;
+      border-radius: 7px;
+      box-shadow: 0 1px 5px var(--white-color);
+      border: none;
+      font-weight: 900;
+  
+    }
+  
+    #form {
+      padding-top: 3rem;
+      box-shadow: 0 2px 10px var(--gray-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: radial-gradient(circle at 0.8% 1.8%, rgb(255, 104, 107) 0%, rgb(255, 187, 103) 90.1%);
+      align-items: center;
+      padding-bottom: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    #addSettingButton {
+      background: radial-gradient(circle at 0.8% 1.8%, rgb(255, 104, 107) 0%, rgb(255, 187, 103) 90.1%);
+      width: max-content;
+      z-index: 1;
+      border-radius: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-right: 2rem;
+    }
+  
+    #sparkles {
+      display: none;
+    }
+  
+      
+    #inputLabel {
+      color: var(--white-color);
+      font-size: large;
+      position: relative;
+      top: 2px;
+      letter-spacing: 1.5px;
+    }
+  
+    #alert {
+      width: 100%;
+      font-size: larger;
+    }
+  
+    #quiz-settings-vector-addbtn-canclebtn {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-bottom: 2rem;
+    }
+      
+    #rocket {
+      position: absolute;
+      display: flex;
+      left: 50px;
+    }
+  
+    .i-will-fill-later-btn{
+      width: max-content;
+      z-index: 9999;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+  
+    #quiz-settings-img-div{
+      display: none;
+    }
+}
