@@ -8,7 +8,7 @@ import { useUserAuth } from "../../context/AuthContext";
 import Button from "@mui/material/Button";
 import Lottie from "react-lottie";
 import Loading from "../../lotties/mainloading.json";
-import "../questionBuilderCard/Css/Mobile_questionBuilderCard.css";
+import "../questionBuilderCard/Css/Mobile_questionBuilderCard copy.css";
 import "../questionBuilderCard/Css/Desktop_questionBuilderCard.css";
 import Zoom from "@mui/material/Zoom";
 import { useNavigate } from "react-router-dom";

@@ -7,7 +7,7 @@ import QuestionCard from "../questionBuilderCard/questionBuilderCard";
 import QuestionVisualiserCard from "../questionVisualiserCard/questionVisualiserCard";
 import { useUserAuth } from "../../context/AuthContext";
 import Button from "@mui/material/Button";
-import "../questionBuilderCard/Css/Mobile_questionBuilderCard.css";
+import "../questionBuilderCard/Css/Mobile_questionBuilderCard copy.css";
 import "../questionBuilderCard/Css/Desktop_questionBuilderCard.css";
 import { useNavigate } from "react-router-dom";
 import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp";
@@ -100,14 +100,14 @@ const CreateQuiz = () => {
             }}
               className="create-quiz-create-quiz-btn-div"
             >
-                <Button
+                <button
                   id="addQuizButton"
                   variant="outlined"
                   color="success"
                   onClick={handleCreate}
                 >
                   Create Quiz
-                </Button>
+                </button>
               </motion.div>
           )}
           {questions.map((question) => {

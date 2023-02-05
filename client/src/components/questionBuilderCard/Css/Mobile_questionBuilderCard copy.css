@@ -1,0 +1,200 @@
+@media screen and (max-width:451px) {
+    .question-builder-card-main-div{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .question-builder-card-main-child-div{
+        border-color: transparent;
+        display: flex;
+        width: 115%;
+        margin-top: -40px;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .question-builder-card-main-lottie-div{
+        height: 100%;
+        width: 100%;
+        display: none;
+    }
+
+    .question-builder-card-main-form-div{
+        width: 100%;
+        flex-direction: column;
+        margin: 1rem 2rem;
+    }
+
+    #flex-main-container{
+    
+    }
+
+    #form-c{
+        
+ 
+    }
+    
+    .first-container{
+        display: flex;
+    }
+    
+    .text-area-container{
+        
+    }
+    
+    .button-container{
+   
+    }
+    
+    .add-btn-div{
+    
+    }
+    
+    #Question {
+        position: relative;
+        width: 92%;
+        justify-self: center;
+        border: none;
+        outline: none;
+        font-size: 1.2em;
+        font-family: inherit;
+        resize: none;
+        background: #eee;
+        margin: 1rem auto 0 auto;
+        padding: 15px;
+        border-radius: 7px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    }
+    
+
+    
+    
+
+    #addQuestionButton {
+        margin-top: 1rem;
+        background: radial-gradient(circle at 0.8% 1.8%, rgb(255, 104, 107) 0%, rgb(255, 187, 103) 90.1%);
+        letter-spacing: 1px;
+        border-radius: 0 50px 50px 0;
+        border: none;
+        position: fixed;
+        left: 0;
+        z-index: 1;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+        color: var(--white-color);
+    }
+    
+    .flex-option-ca-Container{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      row-gap: 1;
+    }
+    
+    .option-plus-addButton{
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    #optionDiv{
+        display: inline-table;
+    }
+    
+    #option {
+        border: none;
+        outline: none;
+        font-size: 1em;
+        font-family: inherit;
+        resize: none;
+        background: #eee;
+        margin-top: 1rem;
+        background: #fff;
+        padding: 15px;
+        width: 130px;
+        border-radius: 7px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    }
+    
+    #AddOptionButton{
+        display: flex;
+        color: var(--white-color);
+        background: radial-gradient(circle at 0.8% 1.8%, rgb(255, 104, 107) 0%, rgb(255, 187, 103) 90.1%);
+        justify-self: center;
+        justify-content: center;
+        height: 50px;
+        width: 50px;
+        position: relative;
+        top: 15px;
+        left: -10px;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+        border-radius: 100%;
+    }
+    
+   
+    .correctAns{
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        width: 150px;
+    } 
+    #correctAns{
+        border: none;
+        outline: none;
+        font-size: 1em;
+        font-family: inherit;
+        resize: none;
+        background: #eee;
+        width: fit-content;
+        background: #fff;
+        padding: 15px;
+        height: min-content;
+        border-radius: 7px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    }
+    
+    .options-individual{
+        width: 300px;
+        background: white;
+        border-radius: 7px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+        font-weight: 800;
+        margin-bottom: 2rem;
+    }
+
+    .options-individual:hover{
+        box-shadow: none;
+        transition: all 0.3s ease-in-out;
+    }
+    
+
+    
+    
+    #light .DeleteButton{
+        display: flex;
+        color: #ffb74d;
+        left: 315px;
+        width: 0;
+        bottom: 15px;
+    }
+    
+    .option-number{
+    
+        
+    }
+    
+    .option-value{
+        font-size: larger;
+        font-weight: 400;
+        letter-spacing: 1px;
+        padding: 5px;
+        font-weight: 800;
+        overflow: scroll;
+        position: relative;
+        top: 20px;
+    }
+}

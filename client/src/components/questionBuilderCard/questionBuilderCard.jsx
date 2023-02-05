@@ -3,7 +3,7 @@ import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Zoom from "@mui/material/Zoom";
 import IconButton from "@mui/material/IconButton";
-import "./Css/Mobile_questionBuilderCard.css";
+import "./Css/Mobile_questionBuilderCard copy.css";
 import "./Css/Desktop_questionBuilderCard.css";
 import Button from "@mui/material/Button";
 import { Fab } from "@mui/material";
@@ -190,14 +190,10 @@ const QuestionCard = (props) => {
                             delay: 0.5,
                             ease: [0, 0.71, 0.2, 1.01]
                           }}
+                          onClick={addOption}
+                          id="AddOptionButton"
                           >
-                            <Fab
-                              size="small"
-                              onClick={addOption}
-                              id="AddOptionButton"
-                            >
                               <AddIcon />
-                            </Fab>
                           </motion.div>
                         </div>
                           <motion.div 
@@ -219,9 +215,6 @@ const QuestionCard = (props) => {
                             />
                           </motion.div>
                       </div>
-                      <div id="optionDiv" >
-                          <List options={options} removeOption={removeOption} optionNumber={alphabets[optionNumber]}/>
-                      </div>
                       <div className="add-btn-div" >
                             <motion.div
                               initial={{ opacity: 0, scale: 0.5 }}
@@ -240,10 +233,13 @@ const QuestionCard = (props) => {
                                   id="addQuestionButton"
                                   aria-label="add"
                                 >
-                                  {`${AddQuestionText}`}
+                                  Add
                                 </Button>
                             </motion.div>
                         </div>
+                      <div id="optionDiv" >
+                          <List options={options} removeOption={removeOption} optionNumber={alphabets[optionNumber]}/>
+                      </div>
                   </div>
                   <div>
                   </div>

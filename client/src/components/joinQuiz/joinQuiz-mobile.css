@@ -154,23 +154,11 @@
         font-weight: 400;
         letter-spacing: 1px;
         font-size: large;
-        background: linear-gradient(-45deg,
-        var(--color-one),
-        var(--color-two),
-        var(--color-one));
-        background-size: 400% 400%;
-        animation: gradient 15s ease infinite;
-        color: var(--white-color);
+        background: radial-gradient(circle at 0.8% 1.8%, rgb(255, 104, 107) 0%, rgb(255, 187, 103) 90.1%);color: var(--white-color);
     }
 
     .join-quiz-fifth-containers-first-div:hover{
-        background: linear-gradient(-45deg,
-        var(--color-one),
-        var(--color-two),
-        var(--color-one));
-        background-size: 400% 400%;
-        animation: gradient 15s ease infinite;
-        color: var(--white-color);
+        background: radial-gradient(circle at 0.8% 1.8%, rgb(255, 104, 107) 0%, rgb(255, 187, 103) 90.1%); color: var(--white-color);
     }
 
     .join-quiz-fifth-containers-first-div:hover, .join-quiz-fifth-containers-first-divs-second-div{
@@ -178,12 +166,7 @@
     }
 
     .join-quiz-fifth-containers-first-div:hover  .join-quiz-fifth-containers-first-divs-second-divs-first-div {
-        background: linear-gradient(-45deg,
-        var(--color-one),
-        var(--color-two),
-        var(--color-one)) ;
-        background-size: 400% 400%;
-        animation: gradient 15s ease infinite;
+        background: radial-gradient(circle at 0.8% 1.8%, rgb(255, 104, 107) 0%, rgb(255, 187, 103) 90.1%);
     }
 
     /* #a:hover  #b{
