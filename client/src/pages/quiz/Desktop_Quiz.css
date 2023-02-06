@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: row;
   height: 90%;
+  width: 100px;
   margin: 2rem 1rem 1rem 1rem;
   align-self: center;
 }
@@ -188,9 +189,23 @@
   }
 
 
-  .home-page-sanskrit-shloka-hindi{
-    text-align: center;
-    padding: 2rem;
+  .home-page-welcome-qoute{
+    text-align: start;
+    font-size: x-large;
+    line-height: 35px;
+    font-weight: 100;
+  }
+  
+  #home-page-welcome-qoute-span{
+    border-color: transparent;
+    background: linear-gradient(-45deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one));
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    color: transparent;
+    background-clip: text;
   }
 
 }

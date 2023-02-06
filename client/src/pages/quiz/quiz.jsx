@@ -169,12 +169,16 @@ export const Quiz = (props) => {
           <div id="homePageText">
           <div className="home-page-sanskrit-shloka-div" >
               <h2 className="home-page-sanskrit-shloka" >
-                  "गुरुर्ब्रह्मा ग्रुरुर्विष्णुः गुरुर्देवो महेश्वरः। <br/>
-                  गुरुः साक्षात् परं ब्रह्म तस्मै श्री गुरवे नमः।।"
+          
               </h2>
             </div>
-            <h3 className="home-page-sanskrit-shloka-hindi">
-              "गुरु ब्रह्मा है, गुरु विष्णु है, और गुरु ही भगवान शंकर है। गुरु हि साक्षात् परब्रह्म है, उन सद्गुरु को प्रणाम करता हूँ।"
+            <h3 className="home-page-welcome-qoute">
+              Welcome to <span id="home-page-welcome-qoute-span" >Dronacharya.io</span>, where knowledge and test-taking go hand in hand! 
+              Our platform is designed to enhance your learning experience by offering subject 
+              notes and quizzes that recap what's been taught in College . We believe 
+              that an interactive learning experience is key to retaining knowledge, and our 
+              quizzes provide just that. We're dedicated to making education accessible and 
+              empowering students to achieve their full potential. Although we're still in the testing phase and resources are limited to first-year, first-semester students, we're working to expand and improve our offerings.
             </h3>
             <br/>
             <br/>

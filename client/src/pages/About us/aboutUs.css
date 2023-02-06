@@ -21,3 +21,108 @@
   color: white;
 }
 
+.about-us-sanskrit-shloka-hindi{
+  font-weight: 500;
+}
+
+.about-section{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-size: 55%;
+  background-color: #fdfdfd;
+  overflow: hidden;
+  padding: 30px 0;
+}
+
+.inner-container{
+  width: 90%;
+  float: right;
+  background-color: #fdfdfd;
+}
+
+.inner-container h1{
+  border-color: transparent;
+  background: linear-gradient(-45deg,
+  var(--color-one),
+  var(--color-two),
+  var(--color-one));
+    background-size: 400% 400%;
+    color: transparent;
+    background-clip: text;
+  margin-bottom: 30px;
+  font-size: xx-large;
+  letter-spacing: 1px;
+  font-weight: 100;
+  font-weight: 900;
+}
+
+
+
+.text{
+  font-size: x-large;
+  color: #545454;
+  line-height: 30px;
+  text-align: left;
+  line-height: 35px;
+  margin-bottom: 40px;
+}
+.about-us-page-middle-coloured-div{
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  padding: 2rem;
+}
+.second{
+  margin-top: 1rem;
+  height: 200px;
+  width: 400px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 20px;
+}
+
+.skills{
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.about-us-one{
+  background: radial-gradient(circle at 10% 20%, rgba(91, 173, 254, 0.46) 0%, rgba(91, 224, 254, 0.46) 47.2%, rgba(170, 254, 235, 0.43) 90%);
+}
+
+.about-us-two{
+  background: linear-gradient(-225deg, #DFFFCD 0%, #90F9C4 48%, #39F3BB 100%);
+}
+
+.about-us-three{
+  background: radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%);
+}
+
+@media screen and (max-width:1200px){
+  .inner-container{
+      padding: 80px;
+  }
+}
+
+@media screen and (max-width:1000px){
+  .about-section{
+      background-size: 100%;
+      padding: 100px 40px;
+  }
+  .inner-container{
+      width: 100%;
+  }
+}
+
+@media screen and (max-width:600px){
+  .about-section{
+      padding: 0;
+  }
+  .inner-container{
+      padding: 60px;
+  }
+}
