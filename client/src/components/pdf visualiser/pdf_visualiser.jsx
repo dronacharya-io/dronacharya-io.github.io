@@ -21,7 +21,7 @@ export default function Pdf_visualiser() {
       getDownloadURL(ref(storage, "sample.pdf")).then((url)=>{
         setFile(url);
       });
-    })
+    },[])
   
     function onDocumentLoadSuccess({ numPages: nextNumPages }) {
       setNumPages(nextNumPages);
