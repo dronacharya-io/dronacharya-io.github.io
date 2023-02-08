@@ -28,22 +28,28 @@ export const AboutUs = () => {
               </div>
               <div className="about-us-page-middle-coloured-div" >
                 <div className="about-us-one second" > 
-                  <h1></h1>
-                  <p class="text">
-                    
-                  </p>
+                  <h1 className="about-us-h1-lts learn" >Learn</h1>
+                  <div className="about-us-p-div learning-div" >
+                    <p className="about-us-p-lts learning" >
+                    Learning made easy with our subject notes and quizzes. Enhance your understanding and test your knowledge with our interactive platform.
+                    </p>
+                  </div>
                 </div>
-                <div className="about-us-two second" > 
-                  <h1></h1>
-                  <p class="text">
-                    
-                  </p>
+                <div className="about-us-two second test" > 
+                  <h1 className="about-us-h1-lts" >Test</h1>
+                  <div className="about-us-p-div"  >
+                    <p className="about-us-p-lts" >
+                    Elevate your testing with Dronacharya.io's interactive quizzes. Track progress, identify strengths and weaknesses.
+                    </p>
+                  </div>
                 </div>
-                <div className="about-us-three second" > 
-                  <h1></h1>
-                  <p class="text">
-                    
-                  </p>
+                <div className="about-us-three second succeed" > 
+                  <h1 className="about-us-h1-lts" >Succeed</h1>
+                  <div className="about-us-p-div"  >
+                    <p className="about-us-p-lts">
+                    Achieve success with Dronacharya.io's comprehensive notes and quizzes. Master college material and reach your full potential.
+                    </p>
+                  </div>
                 </div>
                 </div>
               <div class="inner-container">
