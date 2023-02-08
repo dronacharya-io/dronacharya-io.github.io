@@ -1,11 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 import sample from './sample.pdf';
 import "./pdf_visualiser.css";
 import {motion} from "framer-motion"; 
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-  
+import { getDownloadURL,ref } from 'firebase/storage';
+import { storage } from '../../firebase';
+
 export default function Pdf_visualiser() {
     const [file, setFile] = useState();
     const [numPages, setNumPages] = useState(null);
@@ -14,6 +16,12 @@ export default function Pdf_visualiser() {
     function onFileChange(event) {
       setFile(event.target.files[0]);
     }
+
+    useEffect(()=>{
+      getDownloadURL(ref(storage, "sample.pdf")).then((url)=>{
+        setFile(url);
+      });
+    })
   
     function onDocumentLoadSuccess({ numPages: nextNumPages }) {
       setNumPages(nextNumPages);
@@ -49,7 +57,7 @@ export default function Pdf_visualiser() {
                 exit={{ y: -10, opacity: 0 }}
                 transition={{ duration: 0.5 }}
                 className="Example">
-                <Document file={""} onLoadSuccess={onDocumentLoadSuccess} >
+                <Document file={file} onLoadSuccess={onDocumentLoadSuccess} >
                     <Page  pageNumber={pageNumber} />
                 </Document>
             </motion.div>
