@@ -21,6 +21,7 @@
     "http-proxy-middleware": "^2.0.6",
     "mdb-react-ui-kit": "^4.1.0",
     "nth-check": "^2.0.1",
+    "pdfjs-dist": "^3.4.120",
     "react": "^18.1.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-date-range": "^1.4.0",

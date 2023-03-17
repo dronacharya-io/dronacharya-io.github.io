@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
+import { Document, Page, pdfjs } from 'react-pdf/dist/esm/entry.webpack';
 import sample from './sample.pdf';
 import "./pdf_visualiser.css";
 import {motion} from "framer-motion"; 
@@ -8,7 +8,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { getDownloadURL,ref } from 'firebase/storage';
 import { storage } from '../../firebase';
 
-export default function Pdf_visualiser() {
+export default function Pdf_visualiser(props) {
     const [file, setFile] = useState(null);
     const [numPages, setNumPages] = useState(null);
    
@@ -84,7 +84,7 @@ export default function Pdf_visualiser() {
       <div
         className="pdf-visualiser-main-div">
         <header>
-          <h1>react-pdf sample page</h1>
+          <h1>{props.title}</h1>
         </header>
         <div className="Example__container">
           <div className="Example__container__document">
@@ -95,7 +95,7 @@ export default function Pdf_visualiser() {
               transition={{ duration: 0.5 }}
               style={{width:"200px",height:"400px"}}
               className="Example">
-                <Document file={"https://mega.nz/file/TUgQTAwA#OBiOU-Ppc5ghZ-5B62yuLH5lmn7X5zJafcUqh1kRN-g"}   onLoadError={onLoadError} onLoadSuccess={onDocumentLoadSuccess} width={200} height={400} loading={loading}>
+                <Document file={props.file || file}   onLoadError={onLoadError} onLoadSuccess={onDocumentLoadSuccess} width={200} height={400} loading={loading}>
                     <Page pageNumber={pageNumber} loading={pageLoading} width={200} height={400} />
                 </Document>
               </motion.div>

@@ -29,7 +29,7 @@ import earthimg from "../../lotties/Quizzes/3d illustrators/earth.png";
 import cam from "../../lotties/Quizzes/3d illustrators/crypto-camera.png";
 import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 import TravelExploreOutlinedIcon from '@mui/icons-material/TravelExploreOutlined';
-
+import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 
 export const Quiz = (props) => {
   var { user, x, setX } = useUserAuth();
@@ -309,25 +309,28 @@ export const Quiz = (props) => {
       </div>
       <div className="quiz-third-container" >
         <div className="quiz-third-containers-first-div" >
-            <div className="quiz-main-materials-div" >
+            <div className="quiz-main-materials-div" onClick={() => navigate("/exploreCourses")} >
               <div className="quiz-main-materials-div-child first-child" >
                 <AttachFileIcon className="quiz-main-materials-div-child-icons quiz-icon-one" />
               </div>
-              <p className="quiz-main-materials-divs-desc" >Materials</p>
+              <p className="quiz-main-materials-divs-desc" >Notes</p>
             </div>
-            <div className="quiz-main-materials-div " >
+            <div className="quiz-main-materials-div " onClick={() => navigate("/videoLectures")} >
               <div className="quiz-main-materials-div-child  second-child" >
-                <TextSnippetIcon  className="quiz-main-materials-div-child-icons" />
+                <VideoLibraryIcon  className="quiz-main-materials-div-child-icons" />
               </div>
-              <p className="quiz-main-materials-divs-desc" >Assignments</p>
+              <p className="quiz-main-materials-divs-desc" >Lectures</p>
             </div>
-            <div className="quiz-main-materials-div" >
+            <div className="quiz-main-materials-div"   >
+             <div className="quiz-coming-soon-div" >
+                <p className="quiz-coming-soon-desc"  >coming soon</p>
+              </div>
               <div className="quiz-main-materials-div-child third-child " >
                 <PostAddIcon  className="quiz-main-materials-div-child-icons" />
               </div>
-              <p className="quiz-main-materials-divs-desc" >Quizzes</p>
+              <p className="quiz-main-materials-divs-desc" style={{color:"gray"}} >Tutorial's</p>
             </div>
-            <div className="quiz-main-materials-div" >
+            <div className="quiz-main-materials-div" onClick={() => navigate("/timetable")} >
               <div className="quiz-main-materials-div-child  fourth-child " >
                 <TouchAppIcon  className="quiz-main-materials-div-child-icons" />
               </div>
@@ -363,13 +366,29 @@ export const Quiz = (props) => {
               </div>
             )
           }
+        <div onClick={() => navigate("/exploreCourses")} className="quiz-fifth-container quiz-fifth-containers-three">
+            <div className="quiz-fifth-container-first-div" >
+              <div className="quiz-fifth-container-first-div-icon" >
+                <TravelExploreOutlinedIcon />
+              </div>
+              <div className="quiz-fifth-container-first-div-h4" >
+                <h4>level 1</h4>
+              </div>
+              <div className="quiz-fifth-container-first-div-h2 third-h2-quiz" >
+                <h2>Explore Courses</h2>
+              </div>
+            </div>
+            <div>
+              <img className="quiz-image image-three-quiz" src={earthimg} />
+            </div>
+        </div>
         <div onClick={() => navigate("/createQuiz")} className="quiz-fifth-container quiz-fifth-containers-one" >
             <div  className="quiz-fifth-container-first-div" >
               <div className="quiz-fifth-container-first-div-icon" >
                 <AddBoxIcon />
               </div>
               <div className="quiz-fifth-container-first-div-h4" >
-                <h4>level 1</h4>
+                <h4>level 2</h4>
               </div>
               <div className="quiz-fifth-container-first-div-h2" >
                 <h2>Create Quiz</h2>
@@ -385,7 +404,7 @@ export const Quiz = (props) => {
                 <CreateOutlinedIcon />
               </div>
               <div className="quiz-fifth-container-first-div-h4" >
-                <h4>level 2</h4>
+                <h4>level 3</h4>
               </div>
               <div className="quiz-fifth-container-first-div-h2" >
                 <h2>Join Quiz</h2>
@@ -395,22 +414,7 @@ export const Quiz = (props) => {
               <img className="quiz-image" src={quizimg} />
             </div>
         </div>
-        <div onClick={() => navigate("/exploreCourses")} className="quiz-fifth-container quiz-fifth-containers-three">
-            <div className="quiz-fifth-container-first-div" >
-              <div className="quiz-fifth-container-first-div-icon" >
-                <TravelExploreOutlinedIcon />
-              </div>
-              <div className="quiz-fifth-container-first-div-h4" >
-                <h4>level 3</h4>
-              </div>
-              <div className="quiz-fifth-container-first-div-h2 third-h2-quiz" >
-                <h2>Explore Courses</h2>
-              </div>
-            </div>
-            <div>
-              <img className="quiz-image image-three-quiz" src={earthimg} />
-            </div>
-        </div>
+
     </div>
     )}
     </>

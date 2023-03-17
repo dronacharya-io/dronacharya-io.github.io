@@ -11,6 +11,8 @@ import { Classroom } from "../classroom/classroom.jsx";
 import { Settings } from "../settings/settings.jsx";
 import { Scorecard } from "../scorecard/scorecard.jsx";
 import { Quiz } from "../quiz/quiz.jsx";
+import { VideoLectures } from "../Video Lectures/VideoLectures";
+import { Timetable } from "../Time Table/timetable.jsx";
 import StickyBox from "react-sticky-box";
 import JoinQuiz from "../../components/joinQuiz/JoinQuiz";
 import CreateQuiz from "../../components/createQuiz/CreateQuiz";
@@ -41,6 +43,8 @@ export const Home = (props) => {
               <Route path="/scorecard" element={<Scorecard />} />
               <Route path="/aboutUs" element={<AboutUs />} />
               <Route path="/exploreCourses" element={<ExploreCourses />} />
+              <Route path="/videoLectures" element={<VideoLectures />} />
+              <Route path="/timetable" element={<Timetable />} />
             </Routes>
           </div>
           <div id="profile">

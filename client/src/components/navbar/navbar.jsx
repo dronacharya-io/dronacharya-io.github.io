@@ -88,6 +88,25 @@ const Navbar = (props) => {
               <AiOutlineHome className="navbar-icon" />
             </IconButton>
           </Tooltip>
+          
+          <Tooltip
+            title="Explore Courses "
+            placement="right"
+            disableFocusListener
+            disableTouchListener
+            arrow
+          >
+            <IconButton
+              className="iconCover 5"
+              sx={{ "&:hover": { backgroundColor: "white" } }}
+              onClick={() => {
+                navigate("/exploreCourses")
+                handleClick("CLASSROOM")
+              }}
+            >
+              <SiGoogleclassroom className="navbar-icon" />
+            </IconButton>
+          </Tooltip>
 
           <Tooltip
             title="My Quizzes"
@@ -101,10 +120,10 @@ const Navbar = (props) => {
               sx={{ "&:hover": { backgroundColor: "white" } }}
               onClick={() => {
                 navigate("/classroom")
-                handleClick("CLASSROOM")
+                handleClick("QUIZ")
                 }}
             >
-              <SiGoogleclassroom className="navbar-icon" />
+              <SchoolIcon className="navbar-icon" />
             </IconButton>
           </Tooltip>
 
@@ -127,25 +146,6 @@ const Navbar = (props) => {
               <IoStatsChartOutline className="navbar-icon" />
             </IconButton>
           </Tooltip>
-          <Tooltip
-            title="Explore Courses "
-            placement="right"
-            disableFocusListener
-            disableTouchListener
-            arrow
-          >
-            <IconButton
-              className="iconCover 5"
-              sx={{ "&:hover": { backgroundColor: "white" } }}
-              onClick={() => {
-                navigate("/exploreCourses")
-                handleClick("EXPLORE COURSES")
-              }}
-            >
-              <SchoolIcon className="navbar-icon" />
-            </IconButton>
-          </Tooltip>
-
 
           <Tooltip
             title="About Us"
