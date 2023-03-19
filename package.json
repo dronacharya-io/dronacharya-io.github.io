@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "pdf-viewer-reactjs": "^2.2.3"
+  }
+}

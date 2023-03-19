@@ -1,3 +1,4 @@
+
 import React, {useState,useEffect} from 'react';
 import { Document, Page, pdfjs } from 'react-pdf/dist/esm/entry.webpack';
 import sample from './sample.pdf';
@@ -7,6 +8,8 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { getDownloadURL,ref } from 'firebase/storage';
 import { storage } from '../../firebase';
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 export default function Pdf_visualiser(props) {
     const [file, setFile] = useState(null);
@@ -65,7 +68,7 @@ export default function Pdf_visualiser(props) {
             transition={{ duration: 0.5 }}
             style={{width:"200px",height:"400px"}}
             className="Example">
-            <h3>fetching document please wait..</h3>
+            <h3 style={{color:"black"}} >fetching document please wait..</h3>
           </motion.div>
         </>
       )
@@ -95,7 +98,7 @@ export default function Pdf_visualiser(props) {
               transition={{ duration: 0.5 }}
               style={{width:"200px",height:"400px"}}
               className="Example">
-                <Document file={props.file || file}   onLoadError={onLoadError} onLoadSuccess={onDocumentLoadSuccess} width={200} height={400} loading={loading}>
+                <Document file={props.file ? props.file : file}   onLoadError={onLoadError} onLoadSuccess={onDocumentLoadSuccess} width={200} height={400} loading={loading}>
                     <Page pageNumber={pageNumber} loading={pageLoading} width={200} height={400} />
                 </Document>
               </motion.div>
