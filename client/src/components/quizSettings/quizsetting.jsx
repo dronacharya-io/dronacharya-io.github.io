@@ -260,7 +260,7 @@ const QuizSetting = (props) => {
                               <InputLabel id="inputLabel">Quiz name</InputLabel>
                               <input
                                 required
-                                id="subject"
+                                id="quizname"
                                 label="Required"
                                 name="quizname"
                                 value={values?.quizname}
