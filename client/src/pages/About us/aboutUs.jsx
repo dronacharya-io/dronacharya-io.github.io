@@ -20,7 +20,7 @@ export const AboutUs = () => {
             </div> */}
             <div class="about-section">
               <div class="inner-container">
-                <h1 className=" first" >"Learn, Test, Succeed" ~ Dronacharya.io</h1>
+                <h1 className=" first" >"Learn, Test, Succeed" ~ dronacharya.co</h1>
                 <p class="text">
                   This platform have been created with the aim of making the lives of students easier. With a user-friendly interface and a wealth of information, this platform is designed to help students succeed in their studies.
                   The platform features a lecture notes created by college students. The notes are organized in a user-friendly manner, making it easy for students to find what they need quickly. Whether you're looking for a quick reference or a more in-depth study material, the platform has everything you need to succeed.
@@ -39,7 +39,7 @@ export const AboutUs = () => {
                   <h1 className="about-us-h1-lts" >Test</h1>
                   <div className="about-us-p-div"  >
                     <p className="about-us-p-lts" >
-                    Elevate your testing with Dronacharya.io's interactive quizzes. Track progress, identify strengths and weaknesses.
+                    Elevate your testing with dronacharya.co's interactive quizzes. Track progress, identify strengths and weaknesses.
                     </p>
                   </div>
                 </div>
@@ -47,7 +47,7 @@ export const AboutUs = () => {
                   <h1 className="about-us-h1-lts" >Succeed</h1>
                   <div className="about-us-p-div"  >
                     <p className="about-us-p-lts">
-                    Achieve success with Dronacharya.io's comprehensive notes and quizzes. Master college material and reach your full potential.
+                    Achieve success with dronacharya.co's comprehensive notes and quizzes. Master college material and reach your full potential.
                     </p>
                   </div>
                 </div>

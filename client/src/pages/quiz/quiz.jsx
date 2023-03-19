@@ -173,7 +173,7 @@ export const Quiz = (props) => {
               </h2>
             </div>
             <h3 className="home-page-welcome-qoute">
-              Welcome to <span id="home-page-welcome-qoute-span" >Dronacharya.io</span>, where knowledge and test-taking go hand in hand! 
+              Welcome to <span id="home-page-welcome-qoute-span" >dronacharya.co</span>, where knowledge and test-taking go hand in hand! 
               Our platform is designed to enhance your learning experience by offering subject 
               notes and quizzes that recap what's been taught in College . We believe 
               that an interactive learning experience is key to retaining knowledge, and our 
