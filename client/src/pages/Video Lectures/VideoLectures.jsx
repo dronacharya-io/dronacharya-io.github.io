@@ -12,7 +12,9 @@ export const VideoLectures = () => {
   var Subjects = ["Maths","Mechanics"];
   return (
     <>
-      <h1 className='video-lectures-heading' >{ !isTrue ? "#Select Subject" : "#"+SelectedSubject}</h1>
+    {
+      user && ( <h1 className='video-lectures-heading' >{ !isTrue ? "#Select Subject" : "#"+SelectedSubject}</h1>)
+    }
       {
         user ? (
           <>
