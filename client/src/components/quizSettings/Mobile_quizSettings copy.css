@@ -94,6 +94,7 @@
       font-weight: 500;
       letter-spacing: 1px;
       margin-right: 2rem;
+      color: var(--white-color) !important;
     }
   
     #sparkles {

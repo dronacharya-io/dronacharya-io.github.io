@@ -78,15 +78,17 @@
         align-items: center;
         justify-content: end;
         padding: 0.5rem 0;
-        margin-top: 5.5rem;
+        margin-top: 1rem;
         margin-bottom: 4rem;
         border-bottom: solid 1px rgb(233 233 233);
       }
 
       .profile-tab-img{
         display: block;
-        width: 100%;
-        height: 100%;
+        margin-left: 3rem;
+        margin-top: 0.5rem;
+        width: 70%;
+        height: 70%;
       }
 
       .profile-tab-lottie-div{
@@ -105,6 +107,8 @@
       
       #light #today {
         margin-right: 1.5rem;
+        font-weight: 100;
+        letter-spacing: 1px;
       }
       
       #dark #today {
@@ -173,6 +177,8 @@
         flex-direction: column;
         width: max-content;
         margin-left: 2.5rem;
+        font-weight: 100;
+        letter-spacing: 0.5px;
       }
       
       #light #firstname p {
@@ -203,7 +209,7 @@
         align-self: center;
         width: fit-content;
         letter-spacing: 1.5px;
-        box-shadow: 0 0.1rem 0.3rem 0rem rgb(118, 118, 118);
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
       }
       
       #dark .logout {

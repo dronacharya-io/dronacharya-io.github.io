@@ -43,31 +43,35 @@
 }
 
 .inner-container h1{
+  background: radial-gradient(circle at .8% 1.8%,#ff686b 0,#ffbb67 90.1%);
+  -webkit-background-clip: text;
+  background-clip: text;
   border-color: transparent;
-  background: linear-gradient(-45deg,
-  var(--color-one),
-  var(--color-two),
-  var(--color-one));
-    background-size: 400% 400%;
-    color: transparent;
-    background-clip: text;
-  margin-bottom: 30px;
-  font-size: xx-large;
-  letter-spacing: 1px;
-  font-weight: 100;
-  font-weight: 900;
+  color: transparent;
+  font-size: 29px;
 }
-
-
 
 .text{
   font-size: x-large;
   color: #545454;
+  margin-top: 40px;
   line-height: 30px;
   text-align: left;
   line-height: 35px;
   margin-bottom: 40px;
 }
+
+.text-p{
+  background: radial-gradient(circle at .8% 1.8%,#ff686b 0,#ffbb67 90.1%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  border-color: transparent;
+  color: transparent;
+  font-size: x-large;
+  text-align: left;
+  line-height: 35px;
+}
+
 .about-us-page-middle-coloured-div{
   display: flex;
   flex-direction: row;
@@ -152,6 +156,7 @@
       padding: 0;
   }
   .inner-container{
-      padding: 60px;
+      padding: 20px;
+      margin-bottom: 20px;
   }
 }

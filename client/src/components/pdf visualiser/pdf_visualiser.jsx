@@ -21,7 +21,7 @@ export default function Pdf_visualiser(props) {
     }
 
     useEffect(()=>{
-      getDownloadURL(ref(storage, "sample.pdf")).then((url)=>{
+      getDownloadURL(ref(storage, "na2.pdf")).then((url)=>{
         setFile(url);
       });
     },[])

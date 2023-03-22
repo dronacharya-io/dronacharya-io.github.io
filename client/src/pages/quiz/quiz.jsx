@@ -398,7 +398,7 @@ export const Quiz = (props) => {
               <img className="quiz-image" src={Books} />
             </div>
         </div>
-        <div className="quiz-fifth-container quiz-fifth-containers-two">
+        <div className="quiz-fifth-container quiz-fifth-containers-two" onClick={() => navigate("/joinquizPage")} >
           <div className="quiz-fifth-container-first-div" >
               <div className="quiz-fifth-container-first-div-icon" >
                 <CreateOutlinedIcon />

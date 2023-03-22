@@ -12,50 +12,32 @@ export const AboutUs = () => {
       {user ? (
         <div id="dashboardCover">
           <div id="upcomingTests">
-            {/* <div className="cards">
-              {CardDetails.map((card, i) => {
-                const { imgUrl, topic } = card;
-                return <Card key={i} topic={topic} img={imgUrl} />;
-              })}
-            </div> */}
             <div class="about-section">
               <div class="inner-container">
-                <h1 className=" first" >"Learn, Test, Succeed" ~ dronacharya.co</h1>
+                <h1 className="first" >#About dronacharya.co</h1>
                 <p class="text">
-                  This platform have been created with the aim of making the lives of students easier. With a user-friendly interface and a wealth of information, this platform is designed to help students succeed in their studies.
-                  The platform features a lecture notes created by college students. The notes are organized in a user-friendly manner, making it easy for students to find what they need quickly. Whether you're looking for a quick reference or a more in-depth study material, the platform has everything you need to succeed.
+                Welcome to Dronacharya.co, a platform that's dedicated to simplify students' lives by providing them with an online learning platform that delivers subject notes, recorded video lectures and quizzes that recap what's been taught in College. <br/> <br/>Eliminating the need for expensive private tuitions! <br/> <br/> We're excited to share with you our passion for education and our commitment to making learning more accessible and fun.
+
+                As the founders of this platform, Priyansh Jhalora and Aman Tank, we understand the challenges that students face when it comes to education. That's why we've created a space where students can come to learn and grow.
+
+                <br/> <br/>We're proud to offer a range of services that include daily updated notes, recorded video lectures, editorials, and quizzes. <br/> <br/> We know that every student has a unique learning style, and that's why we've designed our platform to be flexible and customizable. Whether you prefer to learn through reading, listening, or doing, we have something for everyone.<br/> <br/>
+
+                We also want to take this opportunity to thank our principal sir, <span>Dr. Anil Mehta</span>, for his unwavering support. <br/> <br/>We'd also like to express our gratitude to our teachers, <br/> <span>Dr. Sneha Kothari </span> Madam and <span>Sh. Gaurang Sharma</span> Sir, for their invaluable contributions that have been instrumental in shaping our platform and ensuring that our content is accurate and up-to-date.
+
+                <br/> <br/>Last but not least, we want to thank <span>Mrs. Sonu Heerawat</span> Madam for her tireless efforts in providing us usefull material. <br/> <br/> We're honored to have you all on our team.
+
+                <br/> <br/> We're committed to providing students with the best possible learning experience. <br/> <br/> Thank you for choosing Dronacharya.co.
+
                 </p>
-              </div>
-              <div className="about-us-page-middle-coloured-div" >
-                <div className="about-us-one second" > 
-                  <h1 className="about-us-h1-lts learn" >Learn</h1>
-                  <div className="about-us-p-div learning-div" >
-                    <p className="about-us-p-lts learning" >
-                    Learning made easy with our subject notes and quizzes. Enhance your understanding and test your knowledge with our interactive platform.
-                    </p>
-                  </div>
-                </div>
-                <div className="about-us-two second test" > 
-                  <h1 className="about-us-h1-lts" >Test</h1>
-                  <div className="about-us-p-div"  >
-                    <p className="about-us-p-lts" >
-                    Elevate your testing with dronacharya.co's interactive quizzes. Track progress, identify strengths and weaknesses.
-                    </p>
-                  </div>
-                </div>
-                <div className="about-us-three second succeed" > 
-                  <h1 className="about-us-h1-lts" >Succeed</h1>
-                  <div className="about-us-p-div"  >
-                    <p className="about-us-p-lts">
-                    Achieve success with dronacharya.co's comprehensive notes and quizzes. Master college material and reach your full potential.
-                    </p>
-                  </div>
-                </div>
-                </div>
-              <div class="inner-container">
-                <h1 className=" first" ></h1>
-                <p class="text">
-                In addition to the notes, the platform also includes a quiz section where students can practice and test their knowledge. The quizzes can be curated by students or any expert in the field, ensuring that they are relevant, up-to-date, and challenging. With instant feedback, students can quickly identify their strengths and weaknesses and focus on areas that require improvement.
+                <p class="text-p" >
+                Sincerely,
+                <br/>
+                Priyansh Jhalora <br/>Aman Tank
+                <br/> 
+                <br/>                 
+                <hr/>
+                <br/>
+                The Dronacharya.co Team
                 </p>
               </div>
               </div>

@@ -11,7 +11,9 @@ export const Timetable = () => {
     <>
       {
         user ? (
-          <Pdf_visualiser title={"Time Table"} file={pdf} />
+          <>
+            <Pdf_visualiser title={"Time Table"} file={pdf} />
+          </>
         ) : (
           <LoginSignUpPopUp />
         ) 
