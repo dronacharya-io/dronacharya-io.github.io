@@ -78,7 +78,8 @@ const ProfileTab = () => {
           <div id="iconTab">
             <h4 id="today">{Today}</h4>
             <div onClick={()=>{window.open("mailto:pixelhosters@gmail.com/")}} className="profile-tab-lottie-div" >
-              <IoMailOutline className='profile-tab-img' />
+              <IoMailOutline  className='profile-tab-img' />
+              <img src={email}  />
             </div>
           </div>
           {user ? (

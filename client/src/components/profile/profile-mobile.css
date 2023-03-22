@@ -86,9 +86,9 @@
       .profile-tab-img{
         display: block;
         margin-left: 3rem;
-        margin-top: 0.5rem;
-        width: 70%;
-        height: 70%;
+        margin-top: 0.7rem;
+        width: 50%;
+        height: 50%;
       }
 
       .profile-tab-lottie-div{
@@ -108,7 +108,6 @@
       #light #today {
         margin-right: 1.5rem;
         font-weight: 100;
-        letter-spacing: 1px;
       }
       
       #dark #today {
