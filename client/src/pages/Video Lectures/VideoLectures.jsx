@@ -3,7 +3,7 @@ import "./videoLectures.css";
 import { useUserAuth } from "../../context/AuthContext";
 import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp"; 
 import { VideoLectureCards } from '../../components/cards/Video Lecture Cards/videoLectureCards';
-import { videoPage } from './videoPage';
+import { VideoPage } from './videoPage';
 
 export const VideoLectures = () => {
   const { user } = useUserAuth();
@@ -29,7 +29,9 @@ export const VideoLectures = () => {
                     })}
                   </>
                 ) : (
-                  <></>
+                  <>
+                    <VideoPage subject={SelectedSubject} />
+                  </>
                 )
               }
             </div>

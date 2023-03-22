@@ -1,7 +1,7 @@
 import React from 'react'
 
-export const videoPage = (porps) => {
+export const VideoPage = (porps) => {
   return (
-    <div>videoPage</div>
+    <div>{porps.subject+" videos will be here shortly"}</div>
   )
 }
