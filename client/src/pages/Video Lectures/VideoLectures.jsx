@@ -13,7 +13,7 @@ export const VideoLectures = () => {
   return (
     <>
     {
-      user && ( <h1 className='video-lectures-heading' >{ !isTrue ? "#Select Subject" : "#"+SelectedSubject}</h1>)
+      user && ( <h1 className='video-lectures-heading' >{ !isTrue ? "#Select Subject" : SelectedSubject === 2001 ? "#Maths" : "#Mechanics"}</h1>)
     }
       {
         user ? (
@@ -24,7 +24,7 @@ export const VideoLectures = () => {
                   <>
                     {Subjects?.map((Subjects)=>{
                       return(
-                        <div onClick={()=>{setIsTrue(true); setSelectedSubject(Subjects)}}  >
+                        <div onClick={()=>{setIsTrue(true); setSelectedSubject(Subjects === "Mechanics" ? 2005 : 2001 )}}  >
                           <VideoLectureCards subjects={Subjects} />
                         </div>
                           )
