@@ -4,7 +4,7 @@ export var Data = [
         subject: "Mechanics",
         title:"Application of Lami's Theorem",
         date:"21/03/2023",
-        link : "https://www.youtube-nocookie.com/embed/0pYlJ7hA5Zo",
+        link : "https://www.youtube.com/embed/zDuEl0BXM2w",
         author:"Sh. Gaurang Sharma",
     },
     // {

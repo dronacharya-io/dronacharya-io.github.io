@@ -1,7 +1,6 @@
 
 import React, {useState,useEffect} from 'react';
 import { Document, Page, pdfjs } from 'react-pdf/dist/esm/entry.webpack';
-import sample from './sample.pdf';
 import "./pdf_visualiser.css";
 import {motion} from "framer-motion"; 
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
@@ -54,7 +53,7 @@ export default function Pdf_visualiser(props) {
 
     const onLoadError = () =>{
       return(
-        <h1>TRefresh and Try again</h1>
+        <h1>Refresh and Try again</h1>
       )
     }
 
@@ -81,13 +80,24 @@ export default function Pdf_visualiser(props) {
         </>
       )
     }
+
+    const removeTextLayerOffset = () => {
+      const textLayer = document.querySelectorAll(".react-pdf__Page__textContent");
+
+      textLayer.forEach((layer)=>{
+        const { style } = layer;
+        style.top = "0";
+        style.left = "0";
+        style.transform = '';
+      })
+    }
     
   
     return (
       <div
         className="pdf-visualiser-main-div">
         <header>
-          <h1>{props.title}</h1>
+          <h1 className='pdf-visualiser-title' >{props.title}</h1>
         </header>
         <div className="Example__container">
           <div className="Example__container__document">
@@ -99,7 +109,7 @@ export default function Pdf_visualiser(props) {
               style={{width:"200px",height:"400px"}}
               className="Example">
                 <Document file={props.file ? props.file : file}   onLoadError={onLoadError} onLoadSuccess={onDocumentLoadSuccess} width={200} height={400} loading={loading}>
-                    <Page pageNumber={pageNumber} loading={pageLoading} width={200} height={400} />
+                    <Page pageNumber={pageNumber} onLoadSuccess={removeTextLayerOffset} loading={pageLoading} width={200} height={400} />
                 </Document>
               </motion.div>
               <motion.div
@@ -117,37 +127,3 @@ export default function Pdf_visualiser(props) {
 
 
 
-
-// const Pdf_visualiser = () => {
-
-    // const [numPage, setNumPage] = useState(null);
-    // const [pageNumber, setPageNumber] = useState(1);
-
-    // const onDocumentLoadSuccess = ({numPages}) =>{
-    //     setNumPage(numPages);
-    //     setPageNumber(1);
-    // }
-
-    // const ChangePage = (offset) =>{
-    //     setPageNumber((prevPage)=> prevPage + offset);
-    // }
-
-    // const ChangePageBack =() =>{
-    //     ChangePage(-1);
-    // }
-
-    // const ChangePageNext = () =>{
-    //     ChangePage(+1);
-    // }
-
-//   return (
-//     <div>
-        // <Document file={sample} onLoadSuccess={onDocumentLoadSuccess} >
-        //     <Page  pageNumber={pageNumber} />
-        // </Document>
-        // <p>Page {pageNumber} of {numPage}</p>
-        // { pageNumber > 1 && (<button onClick={ChangePageBack} >Previous Page</button>)}
-        // { pageNumber < numPage && (<button onClick={ChangePageNext} >Next Page</button>) }
-//     </div>
-//   )
-// }
