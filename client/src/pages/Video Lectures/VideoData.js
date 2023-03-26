@@ -7,6 +7,17 @@ export var Data = [
         link : "https://www.youtube.com/embed/zDuEl0BXM2w",
         author:"Sh. Gaurang Sharma",
     },
+    {
+        code: 2005,
+        subject: "Mechanics",
+        title:"Types of Beam, Support and Load",
+        date:"25/03/2023",
+        link : "https://www.youtube.com/embed/R5WmqftXnRs",
+        author:"Sh. Gaurang Sharma",
+    },
+    
+
+    
     // {
     //     code: 2005,
     //     subject: "Mechanics",

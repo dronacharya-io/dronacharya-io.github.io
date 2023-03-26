@@ -9,7 +9,12 @@ export const VideoPage = (props) => {
 
   return (
     <div className='video-page-parent-div'>
-      {
+    {
+      props.subject === 2001 && (<>
+          <h2>No Maths Lectures have been recorded yet.</h2>
+        </>)
+    }
+      {                
         Data?.map((data)=>{
           return(
             data.code === props.subject && (
@@ -27,8 +32,10 @@ export const VideoPage = (props) => {
                   <p className="video-page-p-tag author">{data.author}</p>
                   <p className="video-page-p-tag" >{data.date}</p>
                 </div>
+            
               </motion.div>
             )
+            
           )
         })
       }
