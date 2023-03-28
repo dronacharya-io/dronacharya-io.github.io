@@ -15,6 +15,15 @@ export var Data = [
         link : "https://www.youtube.com/embed/R5WmqftXnRs",
         author:"Sh. Gaurang Sharma",
     },
+    {
+        code: 2005,
+        subject: "Mechanics",
+        title:"Numericals of Chapter 'Beam'",
+        date:"28/03/2023",
+        link : "https://www.youtube.com/embed/h_8wsYklgxM",
+        author:"Sh. Gaurang Sharma",
+    },
+    
     
 
     
