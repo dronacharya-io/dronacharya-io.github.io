@@ -1,0 +1,18 @@
+.video-lectures-cards-parent{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.video-lectures-heading{
+    margin-top: 5%;
+    background: radial-gradient(circle at .8% 1.8%,#ff686b 0,#ffbb67 90.1%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  border-color: transparent;
+  color: transparent;
+  font-size: 29px;
+}

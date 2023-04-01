@@ -178,10 +178,41 @@ export const Quiz = (props) => {
               notes and quizzes that recap what's been taught in College . We believe 
               that an interactive learning experience is key to retaining knowledge, and our 
               quizzes provide just that. We're dedicated to making education accessible and 
-              empowering students to achieve their full potential. Although we're still in the testing phase and resources are limited to first-year, first-semester students, we're working to expand and improve our offerings.
+              empowering students to achieve their full potential. Although we're still in the testing phase and resources are limited to first-year students, we're working to expand and improve our offerings.
             </h3>
             <br/>
             <br/>
+            <div className="quiz-third-container" >
+        </div>
+        <div className="quiz-third-containers-first-div" >
+            <div className="quiz-main-materials-div" onClick={() => navigate("/exploreCourses")} >
+              <div className="quiz-main-materials-div-child first-child" >
+                <AttachFileIcon className="quiz-main-materials-div-child-icons quiz-icon-one" />
+              </div>
+              <p className="quiz-main-materials-divs-desc" >Notes</p>
+            </div>
+            <div className="quiz-main-materials-div " onClick={() => navigate("/videoLectures")} >
+              <div className="quiz-main-materials-div-child  second-child" >
+                <VideoLibraryIcon  className="quiz-main-materials-div-child-icons" />
+              </div>
+              <p className="quiz-main-materials-divs-desc" >Lectures</p>
+            </div>
+            <div className="quiz-main-materials-div"   >
+             <div className="quiz-coming-soon-div" >
+                <p className="quiz-coming-soon-desc"  >coming soon</p>
+              </div>
+              <div className="quiz-main-materials-div-child third-child " >
+                <PostAddIcon  className="quiz-main-materials-div-child-icons" />
+              </div>
+              <p className="quiz-main-materials-divs-desc" style={{color:"gray"}} >Tutorial's</p>
+            </div>
+            <div className="quiz-main-materials-div" onClick={() => navigate("/timetable")} >
+              <div className="quiz-main-materials-div-child  fourth-child " >
+                <TouchAppIcon  className="quiz-main-materials-div-child-icons" />
+              </div>
+              <p className="quiz-main-materials-divs-desc" >Time table</p>
+            </div>
+          </div>
           </div>
           <div id="quiz-buttons">
           <Button
@@ -222,13 +253,12 @@ export const Quiz = (props) => {
               </Button>
 
             </div>
-
-   
           </div>
 
-
         </div>
+        
       </div>
+      
           <div className="quiz-animation-motion-parent-div">
             <motion.div 
               id="quiz-animation-motion-div-id"
@@ -398,7 +428,7 @@ export const Quiz = (props) => {
               <img className="quiz-image" src={Books} />
             </div>
         </div>
-        <div className="quiz-fifth-container quiz-fifth-containers-two">
+        <div className="quiz-fifth-container quiz-fifth-containers-two" onClick={() => navigate("/joinquizPage")} >
           <div className="quiz-fifth-container-first-div" >
               <div className="quiz-fifth-container-first-div-icon" >
                 <CreateOutlinedIcon />

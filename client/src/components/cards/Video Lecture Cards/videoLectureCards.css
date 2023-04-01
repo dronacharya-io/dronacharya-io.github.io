@@ -1,0 +1,47 @@
+.v-lectures-parent-div{
+    max-height: 70px;
+    min-height: 70px;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    min-width: 9rem;
+    background: radial-gradient(circle at .8% 1.8%,#ff686b 0,#ffbb67 90.1%);
+    max-width: 80px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.v-lectures-text-div{
+    height: 50%;
+    min-width: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 30px;
+}
+
+.v-lectures-h2{
+    color: var(--white-color);
+    font-size: larger;
+    font-weight: 100;
+    letter-spacing: 0.5px;
+}
+
+.v-lectures-yt-icon{
+    position: relative;
+    top: 10px;
+    height: 10%;
+    background-color: var(--white-color);
+    width: 90%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+    color: #ff686b;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}

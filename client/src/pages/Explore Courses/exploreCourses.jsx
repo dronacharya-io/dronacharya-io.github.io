@@ -63,7 +63,7 @@ export const ExploreCourses = () => {
                 </div>
               }
               <ExploreCoursesSelector />
-              <Pdf_visualiser />
+              {/* <Pdf_visualiser /> */}
           </div>
         ) : (
           <LoginSignUpPopUp />

@@ -67,3 +67,20 @@
     justify-content: center;
 }
 
+.pdf-visualiser-title{
+  background: radial-gradient(circle at .8% 1.8%,#ff686b 0,#ffbb67 90.1%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  border-color: transparent;
+  color: transparent;
+  font-size: 29px;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+/* body {
+  margin: 0;
+  background-color: #525659;
+  font-family: Segoe UI, Tahoma, sans-serif;
+} */
+

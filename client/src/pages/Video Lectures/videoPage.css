@@ -1,0 +1,48 @@
+.video-page-parent-div{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-page-video-title{
+    margin-top: 5px;
+    color:#545454;
+    letter-spacing: 0.5px;
+    font-weight: 100;
+    font-size: 15px;
+    overflow: scroll;
+}
+
+.video-page-content-div{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius:15px;
+    overflow: scroll;
+    width: 100%;
+    max-height:210px;
+    min-height:210px;
+}
+
+.video-page-name-date-div{
+    display: flex;
+    margin-top: 5px;
+    gap:80px;
+}
+
+
+.video-page-p-tag{
+    margin-left: 10px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-weight: 100;
+    color:#545454
+}
+
+.author{
+    background: radial-gradient(circle at .8% 1.8%,#ff686b 0,#ffbb67 90.1%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    border-color: transparent;
+    color: transparent;
+}

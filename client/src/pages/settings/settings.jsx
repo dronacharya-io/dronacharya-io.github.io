@@ -163,7 +163,7 @@ export const Settings = () => {
                   </Button>
                 </div>
                 <hr className="settings-hr-line"/>
-                <div id="TitleDiv">
+                {/* <div id="TitleDiv">
                   <h2 id="account">
                     {" "}
                     <DeleteIcon /> delete account
@@ -180,7 +180,7 @@ export const Settings = () => {
                   >
                     Permanently delete your account
                   </Button>
-                </div>
+                </div> */}
               </div>
             </>
           )}

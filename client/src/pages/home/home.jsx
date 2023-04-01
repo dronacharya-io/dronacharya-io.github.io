@@ -13,6 +13,7 @@ import { Scorecard } from "../scorecard/scorecard.jsx";
 import { Quiz } from "../quiz/quiz.jsx";
 import { VideoLectures } from "../Video Lectures/VideoLectures";
 import { Timetable } from "../Time Table/timetable.jsx";
+import { MobileJoinQuiz } from "../Join Quiz Mobile page/mobileJoinQuiz";
 import StickyBox from "react-sticky-box";
 import JoinQuiz from "../../components/joinQuiz/JoinQuiz";
 import CreateQuiz from "../../components/createQuiz/CreateQuiz";
@@ -45,6 +46,7 @@ export const Home = (props) => {
               <Route path="/exploreCourses" element={<ExploreCourses />} />
               <Route path="/videoLectures" element={<VideoLectures />} />
               <Route path="/timetable" element={<Timetable />} />
+              <Route path="/joinquizPage" element={<MobileJoinQuiz />} />
             </Routes>
           </div>
           <div id="profile">
