@@ -1,18 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Data } from './VideoData'
 import "./videoPage.css"
 import { motion } from 'framer-motion'
 
 
 export const VideoPage = (props) => {
-
-
+  var {subjectName, setSubjectName} = useState();
+  
+  const codeToSubject = (subjectCode) => {
+    switch (subjectCode){
+      case 2001:
+        return setSubjectName('Maths');
+      case 2002:
+        return setSubjectName('Physics');
+      case 2005:
+        return setSubjectName('Mechanics');
+      default:
+        return setSubjectName('');
+    }
+  }
+  
   return (
     <div className='video-page-parent-div'>
+  
     {
-      props.subject === 2001 && (<>
-          <h2>No Maths Lectures have been recorded yet.</h2>
-        </>)
+      props.subject === 2001 || props.subject === 2002 && (<>
+        <h2>{props.subject} lectures will be live soon.</h2>
+      </>)
     }
       {                
         Data?.map((data)=>{

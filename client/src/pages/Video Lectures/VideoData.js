@@ -23,6 +23,14 @@ export var Data = [
         link : "https://www.youtube.com/embed/h_8wsYklgxM",
         author:"Sh. Gaurang Sharma",
     },
+    {
+        code: 2001,
+        subject: "Maths",
+        title:"Vector",
+        date:"31/03/2023",
+        link : "https://www.youtube.com/embed/WKNk-qRP_5Q",
+        author:"Dr. Sneha Kothari",
+    },
     
     
 

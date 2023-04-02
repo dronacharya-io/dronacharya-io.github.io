@@ -12,6 +12,7 @@
     background: radial-gradient(circle at .8% 1.8%,#ff686b 0,#ffbb67 90.1%);
     max-width: 80px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-top: 25px;
 }
 
 .v-lectures-text-div{

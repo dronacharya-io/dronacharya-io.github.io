@@ -24,12 +24,13 @@ import TouchAppIcon from '@mui/icons-material/TouchApp';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { My_Quizzes } from "../../components/NewCards/Home_My_Quiz_Card/My_Quizzes";
 import Books from "../../lotties/Quizzes/3d illustrators/pencil-case.png";
-import quizimg from "../../lotties/Quizzes/3d illustrators/faq-file.png";
+import quizimg from "../../lotties/Quizzes/3d illustrators/create-file.png";
 import earthimg from "../../lotties/Quizzes/3d illustrators/earth.png";
 import cam from "../../lotties/Quizzes/3d illustrators/crypto-camera.png";
 import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 import TravelExploreOutlinedIcon from '@mui/icons-material/TravelExploreOutlined';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 
 export const Quiz = (props) => {
   var { user, x, setX } = useUserAuth();
@@ -396,20 +397,39 @@ export const Quiz = (props) => {
               </div>
             )
           }
+
+          <div className="quiz-fifth-container quiz-fifth-containers-four" onClick={() => navigate("/videoLectures")} >
+          <div className="quiz-fifth-container-first-div" >
+              <div className="quiz-fifth-container-first-div-icon" >
+                <PlayCircleIcon/>
+              </div>
+              <div className="quiz-fifth-container-first-div-h4" >
+                <h4>level 1</h4>
+              </div>
+              <div className="quiz-fifth-container-first-div-h2" >
+                <h2>Video Lectures</h2>
+              </div>
+            </div>
+            <div>
+              <img className="quiz-image" src={cam} alt="quiz-img" />
+            </div>
+        </div>
+
+          
         <div onClick={() => navigate("/exploreCourses")} className="quiz-fifth-container quiz-fifth-containers-three">
             <div className="quiz-fifth-container-first-div" >
               <div className="quiz-fifth-container-first-div-icon" >
                 <TravelExploreOutlinedIcon />
               </div>
               <div className="quiz-fifth-container-first-div-h4" >
-                <h4>level 1</h4>
+                <h4>level 2</h4>
               </div>
               <div className="quiz-fifth-container-first-div-h2 third-h2-quiz" >
                 <h2>Explore Courses</h2>
               </div>
             </div>
             <div>
-              <img className="quiz-image image-three-quiz" src={earthimg} />
+              <img className="quiz-image image-three-quiz" src={earthimg} alt="img"/>
             </div>
         </div>
         <div onClick={() => navigate("/createQuiz")} className="quiz-fifth-container quiz-fifth-containers-one" >
@@ -418,14 +438,14 @@ export const Quiz = (props) => {
                 <AddBoxIcon />
               </div>
               <div className="quiz-fifth-container-first-div-h4" >
-                <h4>level 2</h4>
+                <h4>level 3</h4>
               </div>
               <div className="quiz-fifth-container-first-div-h2" >
                 <h2>Create Quiz</h2>
               </div>
             </div>
             <div >
-              <img className="quiz-image" src={Books} />
+              <img className="quiz-image" src={Books} alt="books-img" />
             </div>
         </div>
         <div className="quiz-fifth-container quiz-fifth-containers-two" onClick={() => navigate("/joinquizPage")} >
@@ -434,17 +454,16 @@ export const Quiz = (props) => {
                 <CreateOutlinedIcon />
               </div>
               <div className="quiz-fifth-container-first-div-h4" >
-                <h4>level 3</h4>
+                <h4>level 4</h4>
               </div>
               <div className="quiz-fifth-container-first-div-h2" >
                 <h2>Join Quiz</h2>
               </div>
             </div>
             <div>
-              <img className="quiz-image" src={quizimg} />
+              <img className="quiz-image" src={quizimg} alt="quiz-img" />
             </div>
         </div>
-
     </div>
     )}
     </>

@@ -227,6 +227,11 @@
     background: linear-gradient(135deg, rgb(255, 168, 168) 10%, rgb(252, 255, 0) 100%);
   }
 
+  .quiz-fifth-containers-four{
+    background: linear-gradient(109.6deg, rgb(83, 231, 173) 11.2%, rgb(67, 209, 222) 100.2%);
+  }
+
+
   .quiz-image{
     width: 170px;
   }
@@ -295,6 +300,8 @@
     font-weight: 100;
     color: var(--white-color);
   }
+
+ 
 }
 
 /* background: radial-gradient(circle at 10% 20%, rgb(148, 241, 246) 0%, rgb(148, 189, 246) 100.7%); */

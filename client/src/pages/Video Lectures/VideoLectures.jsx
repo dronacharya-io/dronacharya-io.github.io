@@ -9,11 +9,25 @@ export const VideoLectures = () => {
   const { user } = useUserAuth();
   var  [isTrue, setIsTrue] = useState(false);
   var [SelectedSubject, setSelectedSubject] = useState("");
-  var Subjects = ["Maths","Mechanics"];
+  var Subjects = ["Maths","Mechanics","Physics"];
+  
+  var subjectCode = (props) =>{
+    switch(props){
+      case 'Maths':
+        return setSelectedSubject(2001);
+      case 'Mechanics':
+        return setSelectedSubject(2005);
+      case 'Physics':
+        return setSelectedSubject(2002);
+      default:
+        return setSelectedSubject(null);
+    }
+  }
+   
   return (
     <>
     {
-      user && ( <h1 className='video-lectures-heading' >{ !isTrue ? "#Select Subject" : SelectedSubject === 2001 ? "#Maths" : "#Mechanics"}</h1>)
+      user && ( <h1 className='video-lectures-heading' >{ !isTrue ? "#Select Subject" : SelectedSubject}</h1>)
     }
       {
         user ? (
@@ -24,10 +38,10 @@ export const VideoLectures = () => {
                   <>
                     {Subjects?.map((Subjects)=>{
                       return(
-                        <div onClick={()=>{setIsTrue(true); setSelectedSubject(Subjects === "Mechanics" ? 2005 : 2001 )}}  >
+                        <div onClick={()=>{setIsTrue(true); subjectCode(Subjects)}} >
                           <VideoLectureCards subjects={Subjects} />
                         </div>
-                          )
+                      )
                     })}
                   </>
                 ) : (
