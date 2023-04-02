@@ -30,6 +30,7 @@ export const VideoPage = (props) => {
     }
       {                
         Data?.map((data)=>{
+          var url = data.notes;
           return(
             data.code === props.subject && (
               <motion.div className='video-page-content-div' 
@@ -42,6 +43,7 @@ export const VideoPage = (props) => {
                 <iframe width="auto" height="auto" src={data.link} title="Dronacharya Video Player" frameborder="20" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>
                 </iframe>
                 <p className='video-page-video-title' >{data.title}</p>
+                {/* <button onClick={()=>{window.location.href = url}} className='video-page-notes-btn' >Notes</button> */}
                 <div className='video-page-name-date-div' >
                   <p className="video-page-p-tag author">{data.author}</p>
                   <p className="video-page-p-tag" >{data.date}</p>

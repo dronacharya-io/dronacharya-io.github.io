@@ -340,11 +340,14 @@ export const Quiz = (props) => {
       </div>
       <div className="quiz-third-container" >
         <div className="quiz-third-containers-first-div" >
-            <div className="quiz-main-materials-div" onClick={() => navigate("/exploreCourses")} >
+            <div className="quiz-main-materials-div" >
+              <div className="quiz-coming-soon-div" >
+                <p className="quiz-coming-soon-desc"  >coming soon</p>
+              </div>
               <div className="quiz-main-materials-div-child first-child" >
                 <AttachFileIcon className="quiz-main-materials-div-child-icons quiz-icon-one" />
               </div>
-              <p className="quiz-main-materials-divs-desc" >Notes</p>
+              <p className="quiz-main-materials-divs-desc"  style={{color:"gray"}} >Notes</p>
             </div>
             <div className="quiz-main-materials-div " onClick={() => navigate("/videoLectures")} >
               <div className="quiz-main-materials-div-child  second-child" >
@@ -416,10 +419,13 @@ export const Quiz = (props) => {
         </div>
 
           
-        <div onClick={() => navigate("/exploreCourses")} className="quiz-fifth-container quiz-fifth-containers-three">
+        <div className="quiz-fifth-container quiz-fifth-containers-three">
             <div className="quiz-fifth-container-first-div" >
-              <div className="quiz-fifth-container-first-div-icon" >
-                <TravelExploreOutlinedIcon />
+              <div className="quiz-coming-soon-div" >
+                <p className="quiz-coming-soon-desc"  >coming soon</p>
+              </div>
+              <div className="quiz-fifth-container-first-div-icon"  >
+                <TravelExploreOutlinedIcon  />
               </div>
               <div className="quiz-fifth-container-first-div-h4" >
                 <h4>level 2</h4>
@@ -429,7 +435,7 @@ export const Quiz = (props) => {
               </div>
             </div>
             <div>
-              <img className="quiz-image image-three-quiz" src={earthimg} alt="img"/>
+              <img style={{filter: "grayscale(100%)"}} className="quiz-image image-three-quiz" src={earthimg} alt="img"/>
             </div>
         </div>
         <div onClick={() => navigate("/createQuiz")} className="quiz-fifth-container quiz-fifth-containers-one" >
