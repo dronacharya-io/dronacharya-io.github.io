@@ -95,26 +95,7 @@ const JoinQuiz = () => {
     Data[index + 1] ? setIndex(index + 1) : setIndex(index);
     // setIswrittenType(Data[index].isWrittenType);
     handleSubmit();
-    if (Data[index].correctAns === Data[index].options[submissions[index].submittedAns]) {
-      setScore(score + positiveMarking);
-      console.log("correct");
-    }
-    if (Data[index].correctAns !== Data[index].options[submissions[index].submittedAns]) {
-      setScore(score - negativeMarking);
-      console.log("wrong");
-    }
-    if (Data[index + 1]) {
-      setCounter(index + 1);
-    }
     if (!Data[index + 1]) {
-      if (Data[index].correctAns === Data[index].options[submissions[index].submittedAns]) {
-        setScore(score + positiveMarking);
-        console.log("correct");
-      }
-      if (Data[index].correctAns !== Data[index].options[submissions[index].submittedAns]) {
-        setScore(score - negativeMarking);
-        console.log("wrong");
-      }
       if (!isFound) {
         try {
           const url =
@@ -215,7 +196,7 @@ const JoinQuiz = () => {
               </div>
               <div className="join-quiz-third-container" >
                 <div className="join-quiz-third-containers-first-div" >
-                  <h2 className="join-quiz-question" >{`${Data[index].Question}`}</h2>
+                  <h2 className="join-quiz-question" >{Data[index].Question}</h2>
                 </div>
                 <div className="join-quiz-third-containers-second-div"  >
                   <h4 className="join-quiz-under-question-text" >Answer and get points</h4>
