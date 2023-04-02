@@ -93,7 +93,7 @@ const EditQuiz = () => {
         user.userData._id.toString();
       console.log(url);
       const arr = user.userData.quizzesCreated;
-      const arr_m = qfilter((quiz) => {
+      const arr_m = arr.filter((quiz) => {
         if (quiz.id === res.data._id) {
           return {
             id: res.data._id,
