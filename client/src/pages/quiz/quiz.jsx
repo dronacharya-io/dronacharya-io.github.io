@@ -368,7 +368,7 @@ export const Quiz = (props) => {
               <div className="quiz-main-materials-div-child  fourth-child " >
                 <TouchAppIcon  className="quiz-main-materials-div-child-icons" />
               </div>
-              <p className="quiz-main-materials-divs-desc" >Time table</p>
+              <p className="quiz-main-materials-divs-desc" >Syllabus</p>  {/*syllabbus is Timetable page*/}
             </div>
           </div>
         </div>

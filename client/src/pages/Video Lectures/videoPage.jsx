@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Data } from './VideoData'
 import "./videoPage.css"
 import { motion } from 'framer-motion'
 
 
 export const VideoPage = (props) => {
-  var {subjectName, setSubjectName} = useState();
+  var [subjectName, setSubjectName] = useState("");
   
   const codeToSubject = (subjectCode) => {
     switch (subjectCode){
@@ -19,13 +19,17 @@ export const VideoPage = (props) => {
         return setSubjectName('');
     }
   }
-  
+
+  useEffect(()=>{
+    codeToSubject(props.subject);
+  },[props.subject])
+    
   return (
     <div className='video-page-parent-div'>
   
     {
       props.subject === 2001 || props.subject === 2002 && (<>
-        <h2>{props.subject} lectures will be live soon.</h2>
+        <h2>{subjectName} lectures will be live soon.</h2>
       </>)
     }
       {                
@@ -43,7 +47,9 @@ export const VideoPage = (props) => {
                 <iframe width="auto" height="auto" src={data.link} title="Dronacharya Video Player" frameborder="20" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>
                 </iframe>
                 <p className='video-page-video-title' >{data.title}</p>
-                {/* <button onClick={()=>{window.location.href = url}} className='video-page-notes-btn' >Notes</button> */}
+                {
+                  data.notes === "" ? (""):(<button onClick={()=>{window.location.href = url}} className='video-page-notes-btn' >Notes</button>)
+                }
                 <div className='video-page-name-date-div' >
                   <p className="video-page-p-tag author">{data.author}</p>
                   <p className="video-page-p-tag" >{data.date}</p>

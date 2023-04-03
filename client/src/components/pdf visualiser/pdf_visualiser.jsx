@@ -7,6 +7,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { getDownloadURL,ref } from 'firebase/storage';
 import { storage } from '../../firebase';
+import 'react-pdf/dist/esm/Page/TextLayer.css';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -86,8 +87,8 @@ export default function Pdf_visualiser(props) {
 
       textLayer.forEach((layer)=>{
         const { style } = layer;
-        style.top = "0";
-        style.left = "0";
+        style.top = "1";
+        style.left = "2";
         style.transform = '';
       })
     }
@@ -108,8 +109,14 @@ export default function Pdf_visualiser(props) {
               transition={{ duration: 0.5 }}
               style={{width:"200px",height:"400px"}}
               className="Example">
-                <Document file={props.file ? props.file : file}   onLoadError={onLoadError} onLoadSuccess={onDocumentLoadSuccess} width={200} height={400} loading={loading}>
-                    <Page pageNumber={pageNumber} onLoadSuccess={removeTextLayerOffset} loading={pageLoading} width={200} height={400} />
+                <Document 
+                  options={{
+                    cMapUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/cmaps/`,
+                    cMapPacked: true,
+                    standardFontDataUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/standard_fonts`,
+                  }}
+                 file={props.file ? props.file : file}   onLoadError={onLoadError} onLoadSuccess={onDocumentLoadSuccess} width={200} height={400} loading={loading}>
+                    <Page renderTextLayer={false} pageNumber={pageNumber} onLoadSuccess={removeTextLayerOffset} loading={pageLoading} width={200} height={400} />
                 </Document>
               </motion.div>
               <motion.div
