@@ -40,7 +40,7 @@
 
 .Example__container__document .react-pdf__Page {
   max-width: calc(100% - 2em);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   margin: 1em;
 }
 
@@ -78,9 +78,42 @@
   letter-spacing: 1px;
 }
 
-/* body {
-  margin: 0;
-  background-color: #525659;
-  font-family: Segoe UI, Tahoma, sans-serif;
-} */
+.pdf-visualiser-pages-navigation-btn-div{
+  display: flex;
+  border-radius: 5px;
+  background-color: var(--white-color);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.pdf-visualiser-pages-navigation-btn{
+  background-color: var(--white-color);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  width: 70px;
+  transition:  2s, 2s, background-color 2s, rotate 2s;
+}
+
+.pdf-visualiser-pages-navigation-btn:hover{
+  background-color: rgba(84, 84, 84, 0.153);
+}
+
+.p-v-first-btn:hover{
+  border-radius: 5px 0 0 5px;
+}
+
+.p-v-second-btn{
+  border-radius: 0 5px 5px 0;
+}
+
+
+.pdf-visualiser-pages-navigation-p-tag{
+  display: flex;
+  align-self: center;
+  font-size: 10px;
+  color: #545454;
+  letter-spacing: 0.5px;
+  margin: 0 20px 0 20px;
+}
+
 

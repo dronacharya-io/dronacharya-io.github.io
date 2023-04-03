@@ -107,7 +107,7 @@ export default function Pdf_visualiser(props) {
               initial={{ y: 40, opacity: 0 }}
               exit={{ y: -10, opacity: 0 }}
               transition={{ duration: 0.5 }}
-              style={{width:"200px",height:"400px"}}
+              style={{width:"100%",height:"100%"}}
               className="Example">
                 <Document 
                   options={{
@@ -116,15 +116,17 @@ export default function Pdf_visualiser(props) {
                     standardFontDataUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/standard_fonts`,
                   }}
                  file={props.file ? props.file : file}   onLoadError={onLoadError} onLoadSuccess={onDocumentLoadSuccess} width={200} height={400} loading={loading}>
-                    <Page renderTextLayer={false} pageNumber={pageNumber} onLoadSuccess={removeTextLayerOffset} loading={pageLoading} width={200} height={400} />
+                    <Page renderTextLayer={false} pageNumber={pageNumber} onLoadSuccess={removeTextLayerOffset} loading={pageLoading} width={330} height={400} />
                 </Document>
               </motion.div>
               <motion.div
                 className='pdf-visualiser-pages-navigation-div'
               >
-                { (<button className='pdf-visualiser-pages-navigation-btn' disabled={pageNumber > 1 ? false : true } onClick={ChangePageBack} ><ChevronLeftIcon /></button>)}
+              <div className='pdf-visualiser-pages-navigation-btn-div' >
+                { (<button className='pdf-visualiser-pages-navigation-btn p-v-first-btn' disabled={pageNumber > 1 ? false : true } onClick={ChangePageBack} ><ChevronLeftIcon /></button>)}
                 <p className='pdf-visualiser-pages-navigation-p-tag' >{pageNumber} of {numPages}</p>
-                {(<button className='pdf-visualiser-pages-navigation-btn' disabled={ pageNumber < numPages ? false : true} onClick={ChangePageNext} ><NavigateNextIcon/></button>) }
+                {(<button className='pdf-visualiser-pages-navigation-btn p-v-second-btn' disabled={ pageNumber < numPages ? false : true} onClick={ChangePageNext} ><NavigateNextIcon/></button>) }
+              </div>
               </motion.div>
           </div>
         </div>
