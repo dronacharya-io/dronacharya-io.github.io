@@ -8,6 +8,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { getDownloadURL,ref } from 'firebase/storage';
 import { storage } from '../../firebase';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
+import Skeleton from '@mui/material/Skeleton';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -58,27 +59,32 @@ export default function Pdf_visualiser(props) {
       )
     }
 
+    
+
     const loading = () =>{
       return  (
-        <>
-          <motion.div
-            animate={animateCard}
-            initial={{ y: 40, opacity: 0 }}
-            exit={{ y: -10, opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            style={{width:"200px",height:"400px"}}
-            className="Example">
-            <h3 style={{color:"black"}} >fetching document please wait..</h3>
-          </motion.div>
-        </>
+          <div className="Example__container__document react-pdf__Page" >
+            <Skeleton
+              sx={{ bgcolor: '#d9d9d9' }}
+              variant="rectangular"
+              width={330}
+              height={400}
+            />
+          </div>
       )
     }
     
+    
     const pageLoading = () =>{
       return(
-        <>
-          <h2>loading next page..</h2>
-        </>
+          <div >
+            <Skeleton
+              sx={{ bgcolor:  ' #d9d9d9' }}
+              variant="rectangular"
+              width={330}
+              height={400}
+            />
+          </div>
       )
     }
 
@@ -103,10 +109,6 @@ export default function Pdf_visualiser(props) {
         <div className="Example__container">
           <div className="Example__container__document">
             <motion.div
-              animate={animateCard}
-              initial={{ y: 40, opacity: 0 }}
-              exit={{ y: -10, opacity: 0 }}
-              transition={{ duration: 0.5 }}
               style={{width:"100%",height:"100%"}}
               className="Example">
                 <Document 

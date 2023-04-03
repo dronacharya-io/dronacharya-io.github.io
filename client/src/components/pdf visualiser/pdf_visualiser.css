@@ -91,11 +91,12 @@
   border-radius: 5px;
   padding: 5px;
   width: 70px;
-  transition:  2s, 2s, background-color 2s, rotate 2s;
+ 
 }
 
 .pdf-visualiser-pages-navigation-btn:hover{
-  background-color: rgba(84, 84, 84, 0.153);
+  background: radial-gradient(circle at .8% 1.8%,#ff686b 0,#ffbb67 90.1%);
+  color: var(--white-color);
 }
 
 .p-v-first-btn:hover{
