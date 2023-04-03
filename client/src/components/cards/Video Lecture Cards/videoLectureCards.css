@@ -7,6 +7,7 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
     justify-content: center;
     min-width: 9rem;
     background: radial-gradient(circle at .8% 1.8%,#ff686b 0,#ffbb67 90.1%);

@@ -4,12 +4,12 @@
     gap:20px;
     justify-content: center;
     align-items: center;
-    margin-top: 10%;
     flex-wrap: wrap;
 }
 
 .video-lectures-heading{
-    margin-top: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
     background: radial-gradient(circle at .8% 1.8%,#ff686b 0,#ffbb67 90.1%);
   -webkit-background-clip: text;
   background-clip: text;
