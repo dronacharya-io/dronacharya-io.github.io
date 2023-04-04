@@ -103,9 +103,9 @@ export default function Pdf_visualiser(props) {
     return (
       <div
         className="pdf-visualiser-main-div">
-        <header>
+        <div>
           <h1 className='pdf-visualiser-title' >{props.title}</h1>
-        </header>
+        </div>
         <div className="Example__container">
           <div className="Example__container__document">
             <motion.div
@@ -124,6 +124,7 @@ export default function Pdf_visualiser(props) {
               <motion.div
                 className='pdf-visualiser-pages-navigation-div'
               >
+              
               <div className='pdf-visualiser-pages-navigation-btn-div' >
                 { (<button className='pdf-visualiser-pages-navigation-btn p-v-first-btn' disabled={pageNumber > 1 ? false : true } onClick={ChangePageBack} ><ChevronLeftIcon /></button>)}
                 <p className='pdf-visualiser-pages-navigation-p-tag' >{pageNumber} of {numPages}</p>
@@ -132,6 +133,7 @@ export default function Pdf_visualiser(props) {
               </motion.div>
           </div>
         </div>
+        
       </div>
     );
   }

@@ -69,12 +69,17 @@
 
 .pdf-visualiser-title{
   background: radial-gradient(circle at .8% 1.8%,#ff686b 0,#ffbb67 90.1%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  border-color: transparent;
-  color: transparent;
-  font-size: 29px;
+  width: 80%;
+  margin: 0 auto 0 auto;
+  color: var(--white-color);
+  display: flex;
+  border-radius: 5px;
+  justify-content: center;
+  align-self: center;
+  font-size: 13px;
+  padding: 5px;
   margin-top: 20px;
+  margin-bottom: -40px;
   letter-spacing: 1px;
 }
 

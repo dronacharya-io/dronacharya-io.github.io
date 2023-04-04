@@ -12,9 +12,12 @@ export const Timetable = () => {
   return (
     <>
       {
+        user && ( <h1 className='video-lectures-heading' >{"#Syllabus"}</h1>)
+      }
+      {
         user ? (
           <>
-            <Pdf_visualiser title={"#Syllabus"} file={pdf} />
+            <Pdf_visualiser file={pdf} />
             <div className='time-table-p-div' >
               <p className='time-table-p' >
                 We would like to inform you that on our <span>syllabus page</span>, we provide a detailed outline of the courses offered during the academic year.

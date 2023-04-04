@@ -20,7 +20,7 @@ import CreateQuiz from "../../components/createQuiz/CreateQuiz";
 import EditQuiz from "../../components/editQuiz/editQuiz";
 import QuizSubmissions from "../quizSubmissions/quizSubmissions";
 import QuizScore from "../quizScore/quizScore";
-
+import Tutorial from "../Tutorials/Tutorials.jsx";
 export const Home = (props) => {
   return (
     <>
@@ -47,6 +47,7 @@ export const Home = (props) => {
               <Route path="/videoLectures" element={<VideoLectures />} />
               <Route path="/timetable" element={<Timetable />} />
               <Route path="/joinquizPage" element={<MobileJoinQuiz />} />
+              <Route path="/tutorials" element={<Tutorial/>} />
             </Routes>
           </div>
           <div id="profile">

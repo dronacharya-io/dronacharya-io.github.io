@@ -355,14 +355,11 @@ export const Quiz = (props) => {
               </div>
               <p className="quiz-main-materials-divs-desc" >Lectures</p>
             </div>
-            <div className="quiz-main-materials-div"   >
-             <div className="quiz-coming-soon-div" >
-                <p className="quiz-coming-soon-desc"  >coming soon</p>
-              </div>
+            <div className="quiz-main-materials-div"  onClick={()=>{navigate("/tutorials")}} >
               <div className="quiz-main-materials-div-child third-child " >
                 <PostAddIcon  className="quiz-main-materials-div-child-icons" />
               </div>
-              <p className="quiz-main-materials-divs-desc" style={{color:"gray"}} >Tutorial's</p>
+              <p className="quiz-main-materials-divs-desc" >Tutorial's</p>
             </div>
             <div className="quiz-main-materials-div" onClick={() => navigate("/timetable")} >
               <div className="quiz-main-materials-div-child  fourth-child " >
