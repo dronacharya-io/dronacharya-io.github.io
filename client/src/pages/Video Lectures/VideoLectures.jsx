@@ -39,7 +39,7 @@ export const VideoLectures = () => {
                     {Subjects?.map((Subjects)=>{
                       return(
                         <div onClick={()=>{setIsTrue(true); subjectCode(Subjects)}} >
-                          <VideoLectureCards subjects={Subjects} />
+                          <VideoLectureCards setShowVideoIcon={true} subjects={Subjects} />
                         </div>
                       )
                     })}

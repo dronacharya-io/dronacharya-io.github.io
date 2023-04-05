@@ -1,0 +1,26 @@
+.tutorial-card-parent-container{
+    height: 4rem;
+    width: 90%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+._number_1{
+    color: black;
+    background: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+}
+
+._number_2{
+    color: var(--white-color);
+    background: linear-gradient(109.6deg, rgba(119, 44, 232, 0.68) 11.5%, rgb(119, 44, 232) 91.2%);
+}
+
+.tutorial-card-title{
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}

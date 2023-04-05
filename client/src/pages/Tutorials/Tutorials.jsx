@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import "./Tutorials.css";
-import PdfVisualiser from "../../components/pdf visualiser/pdf_visualiser";
 import { VideoLectureCards } from '../../components/cards/Video Lecture Cards/videoLectureCards';
 import { useUserAuth } from "../../context/AuthContext";
 import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp"; 
-import firstTute from "../../components/pdf visualiser/pdfs/Maths/Tute/one.pdf";
-import secondTute from "../../components/pdf visualiser/pdfs/Maths/Tute/two.pdf";
+import TutorialCard from '../../components/cards/Tutorial Cards/tutorialCards';
+import { Tutorials } from './TutorialData';
+
 const Tutorial = (porps) => {
   
   const { user } = useUserAuth();
   var [SelectedSubject, setSelectedSubject] = useState("");
   var [isTrue, setIsTrue] = useState(false);
   const available_Subjects = ["Maths"];
-  const files = [firstTute, secondTute];
+
   var subjectCode = (props) =>{
     switch(props){
       case 'Maths':
@@ -41,7 +41,7 @@ const Tutorial = (porps) => {
                     {available_Subjects?.map((Subjects)=>{
                       return(
                         <div onClick={()=>{setIsTrue(true); subjectCode(Subjects)}} >
-                          <VideoLectureCards subjects={Subjects} />
+                          <VideoLectureCards setShowVideoIcon={false} subjects={Subjects} />
                         </div>
                       )
                     })}
@@ -49,10 +49,10 @@ const Tutorial = (porps) => {
                 ) : (
                   <>
                     {
-                      files?.map((Subjects,index)=>{
+                      Tutorials?.map((data,index)=>{
                         return(
                           <>
-                            <PdfVisualiser file={Subjects} title={`Tutorial No ${index+1}`}  />
+                            <TutorialCard teacher={data.teacher} number={index+1} link={data.link} title={data.details} />
                           </>
                         )
                       })

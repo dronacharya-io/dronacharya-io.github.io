@@ -69,7 +69,6 @@
 
 .pdf-visualiser-title{
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  background: radial-gradient(circle at .8% 1.8%,#ff686b 0,#ffbb67 90.1%);
   width: 80%;
   margin: 0 auto 0 auto;
   color: var(--white-color);
