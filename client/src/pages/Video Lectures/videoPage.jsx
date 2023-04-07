@@ -32,6 +32,7 @@ export const VideoPage = (props) => {
           return(
             data.code === props.subject && (
               <motion.div className='video-page-content-div' 
+                style={{width : url === "" ? ("80%"):("100%")}}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{
