@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Data } from './VideoData'
-import "./videoPage.css"
+import "./videoPage.scss"
 import { motion } from 'framer-motion'
 
 
