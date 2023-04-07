@@ -35,6 +35,15 @@ export var Data = [
         link : "https://www.youtube.com/embed/WKNk-qRP_5Q",
         author:"Dr. Sneha Kothari",
     },
+    {
+        code: 2002,
+        subject: "Physics",
+        title:"Magnetic force on Moving charge and current carrying conductor in Uniform Magnetic field",
+        date:"31/03/2023",
+        notes:"",
+        link : "https://mega.nz/embed/DVRGETzQ#zaoZYVc5pTBjmt-8CSriGzR4NXqF-VnyYEu0RJKnWVo",
+        author:"Sh. Hemant Salvi",
+    },
     
     
 

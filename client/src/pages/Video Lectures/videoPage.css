@@ -1,3 +1,5 @@
+
+
 .video-page-parent-div{
     display: flex;
     flex-direction: row;
@@ -8,20 +10,30 @@
 }
 
 .video-page-video-title{
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 3px;
+    width: 80%;
+    height: 20px;
     color:#545454;
     letter-spacing: 0.5px;
     font-weight: 100;
     font-size: 15px;
-    overflow: scroll;
+    overflow-y: scroll;
+}
+
+.video-page-content-div-parent{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    gap:2px;  
 }
 
 .video-page-content-div{
+    z-index: 1;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius:15px;
     overflow: scroll;
-    max-height:215px;
+    max-height:max-content;
     min-height:215px;
 }
 
@@ -49,19 +61,19 @@
 }
 
 .video-page-notes-btn{
-    border-radius: 12px 0 0 12px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     background: radial-gradient(circle at 0.8% 1.8%, rgb(255, 104, 107) 0%, rgb(255, 187, 103) 90.1%);
-        width: 7.7%;
-        margin-left: -11.5rem;
-        margin-top: -17px;
-        position: absolute;
+        width: 100%;
+        justify-self: flex-start;
+        align-self: flex-start;
+        border-radius: 0 0 12px;
         color: var(--white-color);
-        z-index: 1;
+        cursor: pointer;
+        font-size: small;
         height: 25px;
+        margin-top: 2px;
         letter-spacing: 1px;
         font-weight: 100;
-        font-size:7px;
         border: none;
         box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     }
