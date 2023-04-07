@@ -18,6 +18,23 @@
     font-weight: 100;
     font-size: 15px;
     overflow-y: scroll;
+    
+
+}
+
+.video-page-video-title::-webkit-scrollbar {
+    width: 2.5px;
+
+    
+  }
+   
+    ::-webkit-scrollbar-track {
+    background: #ddd;
+    }
+   
+::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background: radial-gradient(circle at .8% 1.8%,#ff686b 0,#ffbb67 90.1%); 
 }
 
 .video-page-content-div-parent{

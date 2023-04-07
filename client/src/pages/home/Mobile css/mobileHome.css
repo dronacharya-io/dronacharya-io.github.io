@@ -4,7 +4,8 @@
   -ms-overflow-style: none;
 }
 
-::-webkit-scrollbar {
+
+::-webkit-scrollbar-track{
   display: none;
 }
 
@@ -19,4 +20,9 @@
   margin-bottom: 50px;
   width: -webkit-fill-available;
 }
+}
+
+
+::-webkit-scrollbar-track{
+  display: none;
 }
