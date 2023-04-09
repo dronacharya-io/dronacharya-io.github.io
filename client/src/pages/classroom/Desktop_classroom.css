@@ -3,9 +3,7 @@
         width: 100%;
         background-color: #222B45;
     }
-    ::-webkit-scrollbar {
-       display: none;
-    }
+
     
     #light .para {
         color: #000000;
