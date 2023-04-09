@@ -1,7 +1,6 @@
 #settingsBody {
     z-index: 0;
     display: flex;
-
     justify-content: center;
     align-items: center;
 }
@@ -98,9 +97,15 @@
 
 #light #lable {
  color: black;
+ letter-spacing: 1px;
+ font-weight: 500;
+ font-size: larger;
 }
 
 #dark #lable{
+    letter-spacing: 1px;
+ font-weight: 500;
+ font-size: larger;
     color: white;
 }
 
@@ -117,7 +122,7 @@
     background: #fff;
     padding: 15px;
     border-radius: 7px;
-    box-shadow: 0 1px 5px rgb(207, 207, 207);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border: none;
 }
 
