@@ -27,6 +27,15 @@ export var Data = [
         author:"Sh. Gaurang Sharma",
     },
     {
+        code: 2005,
+        subject: "Mechanics",
+        title:"Limiting Equilibrium and Friction, Coefficient of Friction (µ), Angle of Friction, Relation between Angle of Friction and Coefficient of Friction",
+        date:"1/04/2023",
+        notes:"https://drive.google.com/file/d/1G8YdgU-Y03XhoUWMSaTUswYQnMnOPPUb/view?usp=share_link",
+        link : "https://www.youtube.com/embed/T5R_bbPUk3k",
+        author:"Sh. Gaurang Sharma",
+    },
+    {
         code: 2001,
         subject: "Maths",
         title:"Vector",
@@ -41,7 +50,7 @@ export var Data = [
         title:"Magnetic force on Moving charge and current carrying conductor in Uniform Magnetic field",
         date:"31/03/2023",
         notes:"",
-        link : "https://mega.nz/embed/DVRGETzQ#zaoZYVc5pTBjmt-8CSriGzR4NXqF-VnyYEu0RJKnWVo",
+        link : "https://www.youtube.com/embed/n4yVUF4Zp4E",
         author:"Sh. Hemant Salvi",
     },
     

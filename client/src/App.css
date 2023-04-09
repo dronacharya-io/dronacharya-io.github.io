@@ -40,3 +40,6 @@
     transform: rotate(360deg);
   }
 }
+::-webkit-scrollbar {
+  display: none;
+}

@@ -25,14 +25,13 @@ export const VideoPage = (props) => {
   },[props.subject])
     
   return (
-    <div className='video-page-parent-div'>
+    <>
       {                
         Data?.map((data)=>{
           var url = data.notes;
           return(
             data.code === props.subject && (
               <motion.div className='video-page-content-div' 
-                style={{width : url === "" ? ("80%"):("100%")}}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{
@@ -57,6 +56,6 @@ export const VideoPage = (props) => {
           )
         })
       }
-    </div>
+    </>
   )
 }
