@@ -5,3 +5,5 @@ Dronacharya.co is an open-source project that is currently working with one coll
 With its user-friendly interface and comprehensive range of learning resources, Dronacharya.co is poised to make a big impact on the education sector. The platform offers a range of features that are designed to help students learn more effectively, including access to subject-specific notes, recorded lectures, and quizzes that test their knowledge and understanding.
 
 As more and more students turn to online learning platforms to supplement their studies, Dronacharya.co is well-positioned to become a leader in the field. With its commitment to open-source principles and user-focused design, the platform has the potential to transform the way students learn and help them achieve their academic goals.
+
+[Dronacharya.co](https://www.dronacharya.co)
