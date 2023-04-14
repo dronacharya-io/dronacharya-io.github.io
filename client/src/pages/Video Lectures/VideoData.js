@@ -25,6 +25,15 @@ export var Data = [
         notes:"",
         link : "https://www.youtube.com/embed/h_8wsYklgxM",
         author:"Sh. Gaurang Sharma",
+    },    
+    {
+        code: 2005,
+        subject: "Mechanics",
+        title:"Law's of Friction",
+        date:"31/03/2023",
+        notes:"",
+        link : "https://www.youtube.com/embed/kggawNT1yvU",
+        author:"Sh. Gaurang Sharma",
     },
     {
         code: 2005,
