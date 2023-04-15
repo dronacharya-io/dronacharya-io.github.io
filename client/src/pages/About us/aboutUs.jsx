@@ -26,7 +26,7 @@ export const AboutUs = () => {
 
                 <br/> <br/>Last but not least, we want to thank <span>Mrs. Sonu Heerawat</span> Madam for her tireless efforts in providing us usefull material. <br/> <br/> We're honored to have you all on our team.
 
-                <br/> <br/> We're committed to providing students with the best possible learning experience. <br/> <br/> Thank you for choosing Dronacharya.co.
+                <br/> <br/> We're committed to providing students with the best possible learning experience. <br/> <br/> Thank you for choosing <span > Dronacharya.co</span>
 
                 </p>
                 <p class="text-p" >
