@@ -22,7 +22,7 @@ export var Data = [
         subject: "Mechanics",
         title:"Numericals of Chapter 'Beam'",
         date:"28/03/2023",
-        notes:"",
+        notes:"https://drive.google.com/file/d/1pWW-asfbq4DjYi-A45qYAn_gga6ZC1EC/view?usp=share_link",
         link : "https://www.youtube.com/embed/h_8wsYklgxM",
         author:"Sh. Gaurang Sharma",
     },    
