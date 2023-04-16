@@ -62,7 +62,15 @@ export var Data = [
         link : "https://www.youtube.com/embed/n4yVUF4Zp4E",
         author:"Sh. Hemant Salvi",
     },
-    
+    {
+        code: 2005,
+        subject: "Mechanics",
+        title:"Inclined Plain",
+        date:"13/04/2023",
+        notes:"https://drive.google.com/file/d/1t3ovnGAIsiXm7EcnRdtGjYhw7tffr401/view?usp=share_link",
+        link : "https://www.youtube.com/embed/mmxHeI43G9c",
+        author:"Sh. Gaurang Sharma",
+    },
     
 
     
