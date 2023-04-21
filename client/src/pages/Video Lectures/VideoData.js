@@ -74,10 +74,19 @@ export var Data = [
     {
         code: 2005,
         subject: "Mechanics",
-        title:"Centroid and Center of Gravity",
+        title:"Centroid and Center of Gravity, Step 1 & 2",
         date:"15/04/2023",
         notes:"https://drive.google.com/file/d/1PzA3Y5dlN2LYu2ZaCyBBmjGJDgChRieo/view?usp=share_link",
         link : "https://www.youtube.com/embed/N1bzk3inbuY",
+        author:"Sh. Gaurang Sharma",
+    },
+    {
+        code: 2005,
+        subject: "Mechanics",
+        title:"Centroid and Center of Gravity, Step 3 & 4",
+        date:"18/04/2023",
+        notes:"",
+        link : "https://www.youtube.com/embed/XofqxMyVjO4",
         author:"Sh. Gaurang Sharma",
     },
     
