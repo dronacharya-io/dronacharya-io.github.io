@@ -107,7 +107,15 @@ export var Data = [
         link : "https://www.youtube.com/embed/cK9wQG8LgiM",
         author:"Sh. Hemant Salvi",
     },
-    
+    {
+        code: 2005,
+        subject: "Mechanics",
+        title:"3D Shapes in Centroid and Center of Gravity.",
+        date:"21/04/2023",
+        notes:"",
+        link : "https://www.youtube.com/embed/Ej5cs0tKeDQ",
+        author:"Sh. Gaurang Sharma",
+    },
 
     
     // {
