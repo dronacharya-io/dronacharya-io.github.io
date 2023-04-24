@@ -85,9 +85,27 @@ export var Data = [
         subject: "Mechanics",
         title:"Centroid and Center of Gravity, Step 3 & 4",
         date:"18/04/2023",
-        notes:"",
+        notes:"https://drive.google.com/file/d/1lk6OhTJBwFI8M6pvnGnPp2Cc3AEWK7Hc/view?usp=share_link",
         link : "https://www.youtube.com/embed/XofqxMyVjO4",
         author:"Sh. Gaurang Sharma",
+    },
+    {
+        code: 2005,
+        subject: "Mechanics",
+        title:"Centroid and Center of Gravity, C Shape, Z Shape, T Shape, F Shape",
+        date:"20/04/2023",
+        notes:"",
+        link : "https://www.youtube.com/embed/Ff8voYXzqmM",
+        author:"Sh. Gaurang Sharma",
+    },
+    {
+        code: 2002,
+        subject: "Physics",
+        title:"Explain formation of P-Type and N-Type Semi-conductor. WHat do you mean by PN Junction diote? Explain it's characteristics curve.",
+        date:"21/04/2023",
+        notes:"",
+        link : "https://www.youtube.com/embed/cK9wQG8LgiM",
+        author:"Sh. Hemant Salvi",
     },
     
 
