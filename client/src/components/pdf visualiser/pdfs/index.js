@@ -1,1 +1,1 @@
-export { default  as Tutorials } from "./importingTute.js";
+export { default as pdfs } from "./Syllabus/pdf_exp.js";
