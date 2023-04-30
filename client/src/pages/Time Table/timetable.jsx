@@ -1,14 +1,15 @@
 import React from 'react'
 import "./timeTable.css"
+import { pdfs } from '../../components/pdf visualiser/pdfs/index.js';
 import Pdf_visualiser from '../../components/pdf visualiser/pdf_visualiser'
-import Syllabus from "../../components/pdf visualiser/pdfs/Time Table/one.pdf"
 import { useUserAuth } from "../../context/AuthContext";
 import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp"; 
 
 
 export const Timetable = () => {
-    const pdf = Syllabus;
     const { user } = useUserAuth();
+    const { Mathspdf  } = pdfs;
+    const pdf_Arr = [ Mathspdf ];
   return (
     <>
       {
@@ -17,7 +18,13 @@ export const Timetable = () => {
       {
         user ? (
           <>
-            {/* <Pdf_visualiser file={pdf} /> */}
+            {
+              pdf_Arr?.map((pdf)=>{
+                return(
+                  <Pdf_visualiser file={pdf} />
+                )
+              })
+            }
             <div className='time-table-p-div' >
               <p className='time-table-p' >
                 We would like to inform you that on our <span>syllabus page</span>, we provide a detailed outline of the courses offered during the academic year.
