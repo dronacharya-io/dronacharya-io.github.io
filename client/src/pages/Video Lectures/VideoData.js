@@ -103,7 +103,7 @@ export var Data = [
         subject: "Physics",
         title:"Explain formation of P-Type and N-Type Semi-conductor. WHat do you mean by PN Junction diote? Explain it's characteristics curve.",
         date:"21/04/2023",
-        notes:"",
+        notes:"https://drive.google.com/file/d/1Q__qiNg8vMTCKMWFBBxkD4eziJdgyQYZ/view?usp=share_link",
         link : "https://www.youtube.com/embed/cK9wQG8LgiM",
         author:"Sh. Hemant Salvi",
     },
