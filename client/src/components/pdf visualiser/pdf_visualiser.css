@@ -10,6 +10,14 @@
   color: white;
 }
 
+.pdf-visualiser-main-div{
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+}
+
 .Example header h1 {
   font-size: inherit;
   margin: 0;
@@ -67,7 +75,7 @@
     justify-content: center;
 }
 
-.pdf-visualiser-title{
+/* .pdf-visualiser-title{
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   width: 80%;
   margin: 0 auto 0 auto;
@@ -81,7 +89,7 @@
   margin-top: 20px;
   margin-bottom: -40px;
   letter-spacing: 1px;
-}
+} */
 
 .pdf-visualiser-pages-navigation-btn-div{
   display: flex;

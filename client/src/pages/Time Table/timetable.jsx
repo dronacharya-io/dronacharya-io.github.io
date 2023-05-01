@@ -8,8 +8,14 @@ import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp";
 
 export const Timetable = () => {
     const { user } = useUserAuth();
-    const { Mathspdf, Physicspdf  } = pdfs;
-    const pdf_Arr = [ Mathspdf, Physicspdf ];
+    const { 
+      Mathspdf,
+      Physicspdf,
+      Mechanicspdf,
+      Electronicspdf,
+      ITpdf } = pdfs;
+
+    const pdf_Arr = [ Mathspdf, Physicspdf, Mechanicspdf, Electronicspdf, ITpdf ];
   return (
     <>
       {

@@ -121,7 +121,7 @@ export var Data = [
         subject: "Physics",
         title:"What do you mean by Zener Diote? Explain characteristics curve of zener diode.  What do you mean by Rectifier? Explain working of half wave rectifier. ",
         date:"24/04/2023",
-        notes:"",
+        notes:"https://drive.google.com/file/d/1JxgvgxTeV659dTcS9HRxS7aWyadIRZ8X/view?usp=share_link",
         link : "https://www.youtube.com/embed/NG6VKPqpnhM",
         author:"Sh. Hemant Salvi",
     },

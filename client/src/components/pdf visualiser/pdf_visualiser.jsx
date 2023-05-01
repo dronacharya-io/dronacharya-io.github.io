@@ -112,6 +112,7 @@ export default function Pdf_visualiser(props) {
               style={{width:"100%",height:"100%"}}
               className="Example">
                 <Document 
+                  style={{display:"inline"}}
                   options={{
                     cMapUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/cmaps/`,
                     cMapPacked: true,
