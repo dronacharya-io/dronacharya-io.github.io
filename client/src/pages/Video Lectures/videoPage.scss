@@ -97,3 +97,32 @@
         border: none;
         box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     }
+
+    .video_page-yt_refrence_card_parent{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border-radius:15px;
+        width: 19.7rem;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        overflow: scroll;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: radial-gradient(circle at 10% 20%, rgb(253, 193, 104) 0%, rgb(251, 128, 128) 90%);
+        justify-content: center;
+        gap:5px;
+        max-height:max-content;
+        min-height:100px;    
+    }
+
+    .video-page-p-tag-card{
+        font-weight: 500;
+        letter-spacing: 1px;
+        color:var(--white-color);
+        font-size: 12px;
+    }
+
+    .video-page-video-title-card{
+        color:var(--white-color);
+        font-size: larger;
+    }

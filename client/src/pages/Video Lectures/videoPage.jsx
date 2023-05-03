@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { Data } from './VideoData'
-import "./videoPage.scss"
-import { motion } from 'framer-motion'
-
+import React, { useEffect, useState } from 'react';
+import { Data } from './VideoData';
+import "./videoPage.scss";
+import { motion } from 'framer-motion';
 
 export const VideoPage = (props) => {
   var [subjectName, setSubjectName] = useState("");
@@ -30,7 +29,9 @@ export const VideoPage = (props) => {
         Data?.map((data)=>{
           var url = data.notes;
           return(
-            data.code === props.subject && (
+            <>
+            {
+              data.code === props.subject && !data.videoCard && (
               <motion.div className='video-page-content-div' 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -52,7 +53,25 @@ export const VideoPage = (props) => {
               </div>
               </motion.div>
             )
-            
+            }
+            {
+                  data.videoCard && data.code === props.subject && (
+                    <motion.div 
+                    onClick={()=> window.open(data.link)}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{
+                      delay:0.5,
+                    }}
+                    className='video_page-yt_refrence_card_parent' >
+                      <p className='video-page-video-title-card' >{data.title}</p>
+                      <div className='video-page-name-date-div' >
+                        <p className="video-page-p-tag-card">{data.author}</p>
+                      </div>
+                    </motion.div>
+                    )
+            }
+            </>
           )
         })
       }
