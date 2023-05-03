@@ -27,6 +27,7 @@ import Books from "../../lotties/Quizzes/3d illustrators/pencil-case.png";
 import quizimg from "../../lotties/Quizzes/3d illustrators/create-file.png";
 import earthimg from "../../lotties/Quizzes/3d illustrators/earth.png";
 import cam from "../../lotties/Quizzes/3d illustrators/crypto-camera.png";
+import levelOne from "../../lotties/Quizzes/3d illustrators/faq-file.png";
 import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 import TravelExploreOutlinedIcon from '@mui/icons-material/TravelExploreOutlined';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
@@ -397,14 +398,32 @@ export const Quiz = (props) => {
               </div>
             )
           }
-
+          <div className="quiz-fifth-container quiz-fifth-containers-three">
+            <div className="quiz-fifth-container-first-div" >
+              <div className="quiz-coming-soon-div" >
+                <p className="quiz-coming-soon-desc"  >coming soon</p>
+              </div>
+              <div className="quiz-fifth-container-first-div-icon"  >
+                <TravelExploreOutlinedIcon  />
+              </div>
+              <div className="quiz-fifth-container-first-div-h4" >
+                <h4>level 1</h4>
+              </div>
+              <div className="quiz-fifth-container-first-div-h2 third-h2-quiz" >
+                <h2>Sample Papers</h2>
+              </div>
+            </div>
+            <div>
+              <img style={{filter: "grayscale(100%)"}} className="quiz-image image-three-quiz" src={levelOne} alt="img"/>
+            </div>
+        </div>
           <div className="quiz-fifth-container quiz-fifth-containers-four" onClick={() => navigate("/videoLectures")} >
           <div className="quiz-fifth-container-first-div" >
               <div className="quiz-fifth-container-first-div-icon" >
                 <PlayCircleIcon/>
               </div>
               <div className="quiz-fifth-container-first-div-h4" >
-                <h4>level 1</h4>
+                <h4>level 2</h4>
               </div>
               <div className="quiz-fifth-container-first-div-h2" >
                 <h2>Video Lectures</h2>
@@ -414,9 +433,7 @@ export const Quiz = (props) => {
               <img className="quiz-image" src={cam} alt="quiz-img" />
             </div>
         </div>
-
-          
-        <div className="quiz-fifth-container quiz-fifth-containers-three">
+          <div className="quiz-fifth-container quiz-fifth-containers-three">
             <div className="quiz-fifth-container-first-div" >
               <div className="quiz-coming-soon-div" >
                 <p className="quiz-coming-soon-desc"  >coming soon</p>
@@ -425,10 +442,10 @@ export const Quiz = (props) => {
                 <TravelExploreOutlinedIcon  />
               </div>
               <div className="quiz-fifth-container-first-div-h4" >
-                <h4>level 2</h4>
+                <h4>level 3</h4>
               </div>
               <div className="quiz-fifth-container-first-div-h2 third-h2-quiz" >
-                <h2>Explore Courses</h2>
+                <h2>Sample Papers</h2>
               </div>
             </div>
             <div>
@@ -441,7 +458,7 @@ export const Quiz = (props) => {
                 <AddBoxIcon />
               </div>
               <div className="quiz-fifth-container-first-div-h4" >
-                <h4>level 3</h4>
+                <h4>level 4</h4>
               </div>
               <div className="quiz-fifth-container-first-div-h2" >
                 <h2>Create Quiz</h2>
@@ -457,7 +474,7 @@ export const Quiz = (props) => {
                 <CreateOutlinedIcon />
               </div>
               <div className="quiz-fifth-container-first-div-h4" >
-                <h4>level 4</h4>
+                <h4>level 5</h4>
               </div>
               <div className="quiz-fifth-container-first-div-h2" >
                 <h2>Join Quiz</h2>
