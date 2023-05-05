@@ -22,7 +22,7 @@ export const AboutUs = () => {
 
                 <br/> <br/>We're proud to offer a range of services that include daily updated notes, recorded video lectures, editorials, and quizzes. <br/> <br/> We know that every student has a unique learning style, and that's why we've designed our platform to be flexible and customizable. Whether you prefer to learn through reading, listening, or doing, we have something for everyone.<br/> <br/>
 
-                We also want to take this opportunity to thank our principal sir, <span>Dr. Anil Mehta</span>, for his unwavering support. <br/> <br/>We'd also like to express our gratitude to our teachers, <br/> <span>Dr. Sneha Kothari </span> Madam, <span>Sh. Gaurang Sharma</span> Sir and <span>Sh. Hemant Salvi</span> Sir for their invaluable contributions that have been instrumental in shaping our platform and ensuring that our content is accurate and up-to-date.
+                We also want to take this opportunity to thank our principal sir, <span>Dr. Anil Mehta</span>, for his unwavering support. <br/> <br/>We'd also like to express our gratitude to our teachers, <br/> <span>Dr. Sneha Kothari </span> Madam, <span>Sh. Gaurang Sharma</span> Sir, <span>Sh. Hemant Salvi</span> Sir and <span>Sh. Amit Kushwaha</span> Sir for their invaluable contributions that have been instrumental in shaping our platform and ensuring that our content is accurate and up-to-date.
 
                 <br/> <br/>Last but not least, we want to thank <span>Mrs. Sonu Heerawat</span> Madam for her tireless efforts in providing us usefull material. <br/> <br/> We're honored to have you all on our team.
 

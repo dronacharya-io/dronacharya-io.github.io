@@ -11,7 +11,7 @@ const Tutorial = (porps) => {
   const { user } = useUserAuth();
   var [SelectedSubject, setSelectedSubject] = useState("");
   var [isTrue, setIsTrue] = useState(false);
-  const available_Subjects = ["Maths"];
+  const available_Subjects = ["Maths","Mechanics"];
 
   var subjectCode = (props) =>{
     switch(props){
@@ -52,7 +52,9 @@ const Tutorial = (porps) => {
                       Tutorials?.map((data,index)=>{
                         return(
                           <>
-                            <TutorialCard teacher={data.teacher} number={index+1} link={data.link} title={data.details} />
+                            {
+                              data.subjectCode === SelectedSubject && <TutorialCard teacher={data.teacher} number={index+1} link={data.link} title={data.details} />
+                            }
                           </>
                         )
                       })

@@ -11,7 +11,7 @@ const TutorialCard = (props) => {
         delay:0.5,
       }}
     onClick={()=>{window.location.href=props.link}}
-    className={`tutorial-card-parent-container _number_${props.number}`}>
+    className={`tutorial-card-parent-container _number_2`}>
         <h3 className='tutorial-card-title' >{props.title}</h3>
         {/* <div>
           <p>{props.teacher}</p>

@@ -9,14 +9,10 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
-._number_1{
-    color: black;
-    background: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
-}
 
 ._number_2{
     color: var(--white-color);
-    background: linear-gradient(109.6deg, rgba(119, 44, 232, 0.68) 11.5%, rgb(119, 44, 232) 91.2%);
+    background: radial-gradient(circle at 10% 20%, rgb(253, 193, 104) 0%, rgb(251, 128, 128) 90%);
 }
 
 .tutorial-card-title{
