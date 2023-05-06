@@ -4,6 +4,7 @@ import Card from "../../components/NewCards/Newcard.jsx";
 import CardDetails from "../../components/cards/cardDetails";
 import { useUserAuth } from "../../context/AuthContext";
 import LoginSignUpPopUp from "../../components/PopUps/LoginSignUpPopUp"; 
+
 export const AboutUs = () => {
   const { user, googleSignIn } = useUserAuth();
 
