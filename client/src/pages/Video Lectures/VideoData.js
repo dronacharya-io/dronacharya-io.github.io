@@ -243,7 +243,17 @@ export var Data = [
         link:"https://youtu.be/OwWBnP86vV0",
         title:"Matrix Part 4",
     },
-
+    {
+        code: 2005,
+        videoCard:false,
+        notification: true,
+        subject: "Mechanics",
+        title:"The Height of a Uniform Frustum of a cone is 28cm and the radius of it top and bottom are 21cm and 35cm Respectively find the distance of its C.G. from the base of the cone.",
+        date:"25/04/2023",
+        notes:"",
+        link : "https://www.youtube.com/embed/ODbLBFyxBiw",
+        author:"Sh. Gaurang Sharma",
+    },
     
     // {
     //     code: 2005,
