@@ -84,10 +84,7 @@ const ProfileTab = () => {
                 
               </div>
               <div className="profile-notification-parent-div" > 
-              <div className="notification-heading-div" >
-                <p className="profile-notification-heading gradient-text" >notifications</p>
-                
-              </div>
+            
                 <div className="profile-notification-content-div">
                   {
                     Data.map((data)=>{
