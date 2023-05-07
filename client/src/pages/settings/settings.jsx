@@ -154,33 +154,16 @@ export const Settings = () => {
                 </div>
                 <div>
                   <Button
-                    onClick={() => handleUpdate}
-                    variant="outlined"
-                    color="success"
+                    onClick={() => {
+                      logOut();
+                      navigate("../");
+                      }}
                     id="UpdateButton"
                   >
-                    <UpgradeSharpIcon /> Update Profile
+                    <UpgradeSharpIcon /> Logout
                   </Button>
                 </div>
                 <hr className="settings-hr-line"/>
-                {/* <div id="TitleDiv">
-                  <h2 id="account">
-                    {" "}
-                    <DeleteIcon /> delete account
-                  </h2>
-                </div>
-                <div>
-                  <Button
-                    onClick={() => {
-                      deleteAccount();
-                    }}
-                    variant="outlined"
-                    color="error"
-                    id="deleteButton"
-                  >
-                    Permanently delete your account
-                  </Button>
-                </div> */}
               </div>
             </>
           )}
