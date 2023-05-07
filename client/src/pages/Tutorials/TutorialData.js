@@ -62,11 +62,21 @@ export const Tutorials = [
     {
         subjectCode:2001,
         subject:"Maths",
-        details:"ThirdTutorial",
+        details:"Third Tutorial",
         teacher:"Dr. Sneha Kothari",
         year:"2022-23",
         class:"1st Year",
         semester:"seconde semester",
         link:"https://drive.google.com/file/d/1fQfOBtq8H9lsSoclDbPGJh14cDlCbYba/view?usp=share_link",
+    },
+    {
+        subjectCode:2001,
+        subject:"Maths",
+        details:"Fourth Tutorial",
+        teacher:"Dr. Sneha Kothari",
+        year:"2022-23",
+        class:"1st Year",
+        semester:"seconde semester",
+        link:"https://drive.google.com/file/d/1L8NiQZFNMaxMd861dwsJE6KakB5ClGyh/view?usp=share_link",
     },
 ]
