@@ -58,7 +58,6 @@
         display: flex;
         flex-direction: column;
         height: 100vh;
-        gap: 10px;
         width: 22.5rem;
         border-left: solid 1px rgb(233 233 233);
         background-color: white;
@@ -186,7 +185,24 @@
         margin-top: 1rem;
         border-top: solid 1px rgb(233 233 233);
       }
-      
+      #light .logout {
+        border-color: transparent;
+        background: linear-gradient(-45deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-one));
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+        color: var(--white-color);
+        position: relative;
+        top: 45%;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border-radius: 10px;
+        justify-self: center;
+        align-self: center;
+      }
+
+
       .profile-notification-content-div{
         overflow: scroll;
         width: 100%;
@@ -194,17 +210,21 @@
         flex-direction: column;
         gap: 20px;
         align-items: center;
+        border-radius: 20px;
         justify-items: center;
         height: 100%;
       }
 
       .profile-notification-heading{
-        text-transform: uppercase;
-        margin:0.5rem;
+        padding:1rem;
         letter-spacing: 1px;
         font-weight: 800;
+        margin-left: 1rem;
       }
-      
+      .notification-heading-div{
+        border-radius: 25px;
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+      }
       .notification-content-div{
         width: 80%;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;

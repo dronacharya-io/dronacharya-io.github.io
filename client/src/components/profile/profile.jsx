@@ -66,10 +66,7 @@ const ProfileTab = () => {
       {profileTab && (
         <div id="outerTab">
           <div id="iconTab">
-            <h4 id="today" >{Today}</h4>
-            <div  className="profile-tab-lottie-div" >
-              <IoMailOutline  onClick={()=>{window.open("mailto:pixelhosters@gmail.com/")}} className='profile-tab-img' />
-            </div>
+
           </div>
           {user ? (
             <>
@@ -84,9 +81,13 @@ const ProfileTab = () => {
                       .toLowerCase()}
                   !
                 </p>
+                
               </div>
               <div className="profile-notification-parent-div" > 
-                <h2 className="profile-notification-heading" >notifications</h2>
+              <div className="notification-heading-div" >
+                <p className="profile-notification-heading gradient-text" >notifications</p>
+                
+              </div>
                 <div className="profile-notification-content-div">
                   {
                     Data.map((data)=>{
@@ -102,7 +103,7 @@ const ProfileTab = () => {
                             }}
                            >
                             <h3 className="notification-title" >{data.title}</h3> 
-                            <h6 className="notification-author" >{data.author}</h6>
+                            <h6 className="notification-author" >{data.author}, {data.subject}</h6>
                           </motion.div>
                         )
                       )

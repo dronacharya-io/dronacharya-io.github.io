@@ -182,10 +182,42 @@
   justify-self:center;
   align-self: center;
   height: 80%;
+  border-radius: 20px;
   margin-top: 1rem;
   border-top: solid 1px rgb(233 233 233);
 }
-
+#dark .logout {
+  border-color: transparent;
+  background: linear-gradient(-45deg,
+  var(--color-one),
+  var(--color-two),
+  var(--color-one));
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}
+#light .logout {
+  border-color: transparent;
+  background: linear-gradient(-45deg,
+  var(--color-one),
+  var(--color-two),
+  var(--color-one));
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  color: var(--white-color);
+  position: relative;
+  top: 45%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 10px;
+  justify-self: center;
+  align-self: center;
+}
+.gradient-text{
+  border-color: transparent;
+  color: transparent;
+  background: radial-gradient(circle at .8% 1.8%,#ff686b 0,#ffbb67 90.1%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
 .profile-notification-content-div{
   overflow: scroll;
   width: 100%;
@@ -199,10 +231,12 @@
 }
 
 .profile-notification-heading{
-  text-transform: uppercase;
   margin:0.5rem;
   letter-spacing: 1px;
   font-weight: 800;
+  justify-self: flex-start;
+  border-radius: 15px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
 .notification-content-div{
