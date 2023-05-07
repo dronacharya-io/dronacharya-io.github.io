@@ -246,7 +246,6 @@ export var Data = [
     {
         code: 2005,
         videoCard:false,
-        notification: true,
         subject: "Mechanics",
         title:"The Height of a Uniform Frustum of a cone is 28cm and the radius of it top and bottom are 21cm and 35cm Respectively find the distance of its C.G. from the base of the cone.",
         date:"25/04/2023",
@@ -254,7 +253,29 @@ export var Data = [
         link : "https://www.youtube.com/embed/ODbLBFyxBiw",
         author:"Sh. Gaurang Sharma",
     },
-    
+    {
+        code: 2002,
+        videoCard:false,
+        subject: "Physics",
+        title:"What do you mean by Full wave Rectifier. Explain Working, Use and Construction of Full wave Rectifier. What do you mean by LASER light. Write Special features of LASER light. ",
+        date:"25/04/2023",
+        notes:"",
+        link : "https://www.youtube.com/embed/5r-m3kBBVEc",
+        author:"Sh. Hemant Salvi",
+    },
+    {
+        code: 2001,
+        videoCard:false,
+        subject: "Maths",
+        title:"Integration Excercise I(A)-I(B) ",
+        date:"26/04/2023",
+        notes:"",
+        link : "https://www.youtube.com/embed/DVvV3V4XMvc",
+        author:"Dr. Sneha Kothari",
+    },
+
+
+
     // {
     //     code: 2005,
     //     subject: "Mechanics",
