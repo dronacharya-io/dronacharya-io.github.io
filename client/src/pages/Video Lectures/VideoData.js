@@ -273,7 +273,16 @@ export var Data = [
         link : "https://www.youtube.com/embed/DVvV3V4XMvc",
         author:"Dr. Sneha Kothari",
     },
-
+    {
+        code: 2005,
+        videoCard:false,
+        subject: "Mechanics",
+        title:"(End of Unit-4 'Center of Gravity')Two uniform spheres composed of the same material and who's diameter's are 6cm and 12cm are touching each other. Find the position of the C.G. of the two sphere's taken together. ,Unit-5 'Simple Machine'",
+        date:"27/04/2023",
+        notes:"",
+        link : "https://www.youtube.com/embed/e56y_Dc1qqY",
+        author:"Sh. Gaurang Sharma",
+    },
 
 
     // {
