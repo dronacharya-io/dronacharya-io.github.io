@@ -295,6 +295,16 @@ export var Data = [
         link : "https://www.youtube.com/embed/e56y_Dc1qqY",
         author:"Sh. Gaurang Sharma",
     },
+    {
+        code: 2005,
+        videoCard:false,
+        subject: "Mechanics",
+        title:"Simple Machine - 'Velocity Ratio', 'Efficiency', 'Ideal Machine', 'Friction in Machine [Actual Machine]'",
+        date:"28/04/2023",
+        notes:"",
+        link : "https://www.youtube.com/embed/_MQE75XsPpc",
+        author:"Sh. Gaurang Sharma",
+    },
 
     
     // {
