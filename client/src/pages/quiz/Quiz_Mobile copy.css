@@ -102,8 +102,8 @@
   }
 
   .first-child{
-    background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-    /* background: radial-gradient(801px at 4.2% 16.4%, rgba(104, 211, 218, 0.99) 0%, rgb(184, 77, 235) 88.8%); */
+    /* background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); */
+    background: radial-gradient(801px at 4.2% 16.4%, rgba(104, 211, 218, 0.99) 0%, rgb(184, 77, 235) 88.8%);
   }
 
   .second-child{
@@ -225,8 +225,12 @@
   }
 
   .quiz-fifth-containers-three{
+   
+    background: linear-gradient(135deg, rgb(255, 168, 168) 10%, rgb(252, 255, 0) 100%);
+  }
+  
+  .gray{
     background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-    /* background: linear-gradient(135deg, rgb(255, 168, 168) 10%, rgb(252, 255, 0) 100%); */
   }
 
   .quiz-fifth-containers-four{

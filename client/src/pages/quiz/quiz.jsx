@@ -188,9 +188,6 @@ export const Quiz = (props) => {
         </div>
         <div className="quiz-third-containers-first-div" >
             <div className="quiz-main-materials-div" onClick={() => navigate("/exploreCourses")} >
-              <div className="quiz-coming-soon-div" >
-                <p className="quiz-coming-soon-desc"  >coming soon</p>
-              </div>
               <div className="quiz-main-materials-div-child first-child " >
                 <AttachFileIcon className="quiz-main-materials-div-child-icons quiz-icon-one" />
               </div>
@@ -341,10 +338,7 @@ export const Quiz = (props) => {
       </div>
       <div className="quiz-third-container" >
         <div className="quiz-third-containers-first-div" >
-            <div className="quiz-main-materials-div" >
-              <div className="quiz-coming-soon-div" >
-                <p className="quiz-coming-soon-desc"  >coming soon</p>
-              </div>
+            <div className="quiz-main-materials-div" onClick={()=> navigate('/exploreCourses')}  >
               <div className="quiz-main-materials-div-child first-child" >
                 <AttachFileIcon className="quiz-main-materials-div-child-icons quiz-icon-one" />
               </div>
@@ -398,7 +392,7 @@ export const Quiz = (props) => {
               </div>
             )
           }
-          <div className="quiz-fifth-container quiz-fifth-containers-three">
+          <div className="quiz-fifth-container gray">
             <div className="quiz-fifth-container-first-div" >
               <div className="quiz-coming-soon-div" >
                 <p className="quiz-coming-soon-desc"  >coming soon</p>
@@ -433,11 +427,8 @@ export const Quiz = (props) => {
               <img className="quiz-image" src={cam} alt="quiz-img" />
             </div>
         </div>
-          <div className="quiz-fifth-container quiz-fifth-containers-three">
+          <div onClick={()=>navigate('/exploreCourses')} className="quiz-fifth-container quiz-fifth-containers-three">
             <div className="quiz-fifth-container-first-div" >
-              <div className="quiz-coming-soon-div" >
-                <p className="quiz-coming-soon-desc"  >coming soon</p>
-              </div>
               <div className="quiz-fifth-container-first-div-icon"  >
                 <TravelExploreOutlinedIcon  />
               </div>
@@ -445,11 +436,11 @@ export const Quiz = (props) => {
                 <h4>level 3</h4>
               </div>
               <div className="quiz-fifth-container-first-div-h2 third-h2-quiz" >
-                <h2>Sample Papers</h2>
+                <h2>Explore Notes</h2>
               </div>
             </div>
             <div>
-              <img style={{filter: "grayscale(100%)"}} className="quiz-image image-three-quiz" src={earthimg} alt="img"/>
+              <img className="quiz-image image-three-quiz" src={earthimg} alt="img"/>
             </div>
         </div>
         <div onClick={() => navigate("/createQuiz")} className="quiz-fifth-container quiz-fifth-containers-one" >
