@@ -47,7 +47,7 @@ const SearchCourses = ( props ) => {
 
   return (
     <div>
-        <Button variant='outlined' className="Search-course-component-main-botton" onClick={handleClickOpen}>Let's go</Button>
+        <button className="Search-course-component-main-botton" onClick={handleClickOpen}>Search Notes</button>
         <Dialog disableEscapeKeyDown open={open} onClose={handleClose}>
         <DialogTitle>Fill the form</DialogTitle>
         <DialogContent>
