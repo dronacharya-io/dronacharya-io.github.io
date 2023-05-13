@@ -6,14 +6,14 @@ import ExploreCoursesSelector from "../../components/explore Courses Search/Sear
 import Lottie from "react-lottie";
 import searchLottie from "../../lotties/112360-search-files"
 import { motion } from "framer-motion";
-import Heading from '../../components/HeadingText/heading'
-import Pdf_visualiser from '../../components/pdf visualiser/pdf_visualiser'
-
+import TutorialData from "../Tutorials/TutorialData.js";
+import videoData from "../Video Lectures/VideoData.js";
 
 export const ExploreCourses = () => {
   const [open, setOpen] = React.useState(false);
   const [age, setAge] = React.useState('');
-
+  var [showData, setShowData] = React.useState(false);
+  const [subject, setSubject] = React.useState('');
   const handleChange = (event) => {
     setAge(Number(event.target.value) || '');
   };
@@ -39,31 +39,46 @@ export const ExploreCourses = () => {
     },
   };
 
+  const List = (props) => {
+    setSubject(props);
+  }
+
+
   return (
     <>
      
       {
         user ? (
           <div className="explore-courses-main-container" >
-              { <div className='explore-courses-content-lottie-div' >
-
-                  <motion.div  
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{
-                      duration: 0.8,
-                      delay: 0.5,
-                      ease: [0, 0.71, 0.2, 1.01]
-                    }}
-                  >
-                    <Lottie isClickToPauseDisabled={true}  options={InitaialLottie} height={300} width={300} />
-                  </motion.div>
-                  <h2 className='explore-courses-h2' >To find <span>relevant notes</span>, simply <span>click</span> the designated <span>button</span> and select your <span>desired subject</span> from the list provided.</h2>
-                  <h2 className='explore-courses-h2' style={{marginBottom:"2rem"}} > उपयुक्त <span>नोट्स</span> ढूँढने के लिए, सिर्फ निर्धारित <span>बटन</span> पर क्लिक करें और उपलब्ध सूची से अपना<span> विषय</span> चुनें। </h2>
-                </div>
-              }
-              <ExploreCoursesSelector />
-              {/* <Pdf_visualiser /> */}
+            {
+              !showData ? (
+                <>
+                  <div className='explore-courses-content-lottie-div' >
+                    <motion.div  
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{
+                        duration: 0.8,
+                        delay: 0.5,
+                        ease: [0, 0.71, 0.2, 1.01]
+                      }}
+                    >
+                      <Lottie isClickToPauseDisabled={true}  options={InitaialLottie} height={300} width={300} />
+                    </motion.div>
+                    <h2 className='explore-courses-h2' >To find <span>relevant notes</span>, simply <span>click</span> the designated <span>button</span> and select your <span>desired subject</span> from the list provided.</h2>
+                    <h2 className='explore-courses-h2' style={{marginBottom:"2rem"}} > उपयुक्त <span>नोट्स</span> ढूँढने के लिए, सिर्फ निर्धारित <span>बटन</span> पर क्लिक करें और उपलब्ध सूची से अपना<span> विषय</span> चुनें। </h2>
+                    </div>
+                    
+                    <ExploreCoursesSelector selectedSubject={List} setOpen={setShowData} />
+                </>
+              ) 
+              : 
+              (
+                  <>
+                    {subject}
+                  </>
+              )
+            }
           </div>
         ) : (
           <LoginSignUpPopUp />

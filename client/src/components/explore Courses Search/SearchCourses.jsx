@@ -29,8 +29,9 @@ const SearchCourses = ( props ) => {
       setStandard(event.target.value);
     }
 
-    const handleChangeLanguage = (event) => {
+    const handleChangeSubject = (event) => {
       setLanguage(event.target.value);
+      props.selectedSubject(event.target.value);
     }
 
 
@@ -40,10 +41,18 @@ const SearchCourses = ( props ) => {
     };
   
     const handleClose = (event, reason) => {
-      if (reason !== 'backdropClick') {
+      if(language === ''){
+        setOpen(true);
+      }
+      else if (reason !== 'backdropClick') {
         setOpen(false);
+        props.setOpen(true);
       }
     };
+
+    const handleCancle = () =>{
+      setOpen(false);
+    }
 
   return (
     <div>
@@ -52,7 +61,7 @@ const SearchCourses = ( props ) => {
         <DialogTitle>Fill the form</DialogTitle>
         <DialogContent>
             <Box component="form" sx={{ display: 'flex', flexWrap: 'wrap' }}>
-            <FormControl sx={{ m: 1, minWidth: 120 }}>
+            {/* <FormControl sx={{ m: 1, minWidth: 120 }}>
                 <InputLabel id="demo-dialog-select-label">College</InputLabel>
                 <Select
                 labelId="demo-dialog-select-label"
@@ -76,27 +85,30 @@ const SearchCourses = ( props ) => {
 
                 <MenuItem value={'firstYear'}>1st Year</MenuItem>
                 </Select>
-            </FormControl>
+            </FormControl> */}
             
-            <FormControl sx={{ m: 1, minWidth: 120 }}>
-                <InputLabel id="demo-dialog-select-label">Medium</InputLabel>
+            <FormControl sx={{ m: 4, minWidth: 200 }}>
+                <InputLabel id="demo-dialog-select-label">Subject</InputLabel>
                 <Select
                 labelId="demo-dialog-select-label"
                 id="demo-dialog-select"
                 value={language}
-                onChange={handleChangeLanguage}
+                onChange={handleChangeSubject}
                 input={<OutlinedInput label="Language" />}
                 >
 
-                <MenuItem value={'hindi'}>Hindi</MenuItem>
-                <MenuItem value={'english'}>English</MenuItem>
+                <MenuItem value={'maths'}>Maths</MenuItem>
+                <MenuItem value={'physics'}>Physics</MenuItem>
+                <MenuItem value={'mechanics'}>Mechanics</MenuItem>
+                <MenuItem value={'it'}>Intro to I.T.</MenuItem>
+                <MenuItem value={'ee/el'}>Fundamentals of EE/EL</MenuItem>
                 </Select>
             </FormControl>
             </Box>
         </DialogContent>
         <DialogActions>
-            <Button onClick={handleClose}>Cancel</Button>
-            <Button onClick={handleClose}>Ok</Button>
+            <Button onClick={handleCancle}>Cancel</Button>
+            <Button onClick={()=>{handleClose(); }}>Ok</Button>
         </DialogActions>
         </Dialog>
     </div>
