@@ -100,8 +100,8 @@ const SearchCourses = ( props ) => {
                 <MenuItem value={'maths'}>Maths</MenuItem>
                 <MenuItem value={'physics'}>Physics</MenuItem>
                 <MenuItem value={'mechanics'}>Mechanics</MenuItem>
-                <MenuItem value={'it'}>Intro to I.T.</MenuItem>
-                <MenuItem value={'ee/el'}>Fundamentals of EE/EL</MenuItem>
+                {/* <MenuItem value={'it'}>Intro to I.T.</MenuItem> */}
+                {/* <MenuItem value={'ee/el'}>Fundamentals of EE/EL</MenuItem> */}
                 </Select>
             </FormControl>
             </Box>

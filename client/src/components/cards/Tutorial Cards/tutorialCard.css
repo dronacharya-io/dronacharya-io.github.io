@@ -1,6 +1,7 @@
 .tutorial-card-parent-container{
-    height: 4rem;
-    width: 90%;
+    height: max-content;
+    padding: 2rem;
+    width: 75%;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -18,5 +19,6 @@
 .tutorial-card-title{
     font-size: 15px;
     letter-spacing: 1px;
-    font-weight: 500;
+    line-height: normal;
+    font-weight:500;
 }

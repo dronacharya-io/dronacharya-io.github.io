@@ -96,7 +96,7 @@ export const ExploreCourses = () => {
                         return(
                           <>
                             {
-                              data.code === subjectCode  && data.notes !== "" && !data.videoCard  && (<TutorialCard teacher={data.author} number={index+1} link={data.notes} title={data.details || data.title} />) 
+                              data.code === subjectCode  && data.notes !== "" && !data.videoCard  && (<div className='explore-courses-notes-card' ><TutorialCard teacher={data.author} number={index+1} link={data.notes} title={data.details || data.title} /></div>) 
                             }
                           </>
                         )

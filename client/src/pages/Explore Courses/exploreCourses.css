@@ -22,3 +22,10 @@
     padding: 1rem;
 }
 
+.explore-courses-notes-card{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem; 
+}
