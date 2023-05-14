@@ -342,7 +342,7 @@ export const Quiz = (props) => {
               <div className="quiz-main-materials-div-child first-child" >
                 <AttachFileIcon className="quiz-main-materials-div-child-icons quiz-icon-one" />
               </div>
-              <p className="quiz-main-materials-divs-desc"  style={{color:"gray"}} >Notes</p>
+              <p className="quiz-main-materials-divs-desc"   >Notes</p>
             </div>
             <div className="quiz-main-materials-div " onClick={() => navigate("/videoLectures")} >
               <div className="quiz-main-materials-div-child  second-child" >
