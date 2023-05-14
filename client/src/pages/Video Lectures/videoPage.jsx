@@ -40,7 +40,7 @@ export const VideoPage = (props) => {
                 }}
               >
               <div className='video-page-content-div-parent' >
-                <iframe width="auto" height="auto" src={data.link} title="Dronacharya Video Player" frameborder="20" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>
+                <iframe width="auto" height="auto" src={data.videoLink} title="Dronacharya Video Player" frameborder="20" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>
                 </iframe>
                 <p className='video-page-video-title' >{data.title}</p>
                 <div className='video-page-name-date-div' >

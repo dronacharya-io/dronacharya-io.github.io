@@ -6,18 +6,34 @@ import ExploreCoursesSelector from "../../components/explore Courses Search/Sear
 import Lottie from "react-lottie";
 import searchLottie from "../../lotties/112360-search-files"
 import { motion } from "framer-motion";
-import TutorialData from "../Tutorials/TutorialData.js";
-import videoData from "../Video Lectures/VideoData.js";
+import {Tutorials} from "../Tutorials/TutorialData.js";
+import {Data} from "../Video Lectures/VideoData.js";
+import TutorialCard from '../../components/cards/Tutorial Cards/tutorialCards'
 
 export const ExploreCourses = () => {
   const [open, setOpen] = React.useState(false);
   const [age, setAge] = React.useState('');
   var [showData, setShowData] = React.useState(false);
-  const [subject, setSubject] = React.useState('');
-  const handleChange = (event) => {
-    setAge(Number(event.target.value) || '');
-  };
+  var [subjectCode, setSubjectCode] = React.useState("initial");
+  var notesData = Data.concat(Tutorials);
+  
+  const subjectToCode = (subject) =>{
+    switch(subject){
+      case 'maths':
+        return setSubjectCode(2001);
+      case 'physics':
+        return setSubjectCode(2002);
+      case 'mechanics':
+        return setSubjectCode(2005);
+      case 'it':
+        return setSubjectCode(2003);
+      case 'ee/el':
+        return setSubjectCode(2004);
+      default:
+        return setSubjectCode(null);
+    }
 
+  }
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -40,7 +56,7 @@ export const ExploreCourses = () => {
   };
 
   const List = (props) => {
-    setSubject(props);
+    subjectToCode(props);
   }
 
 
@@ -75,7 +91,17 @@ export const ExploreCourses = () => {
               : 
               (
                   <>
-                    {subject}
+                    {
+                      notesData.map((data,index)=>{
+                        return(
+                          <>
+                            {
+                              data.code === subjectCode  && data.notes !== "" && !data.videoCard  && (<TutorialCard teacher={data.author} number={index+1} link={data.notes} title={data.details || data.title} />) 
+                            }
+                          </>
+                        )
+                      })
+                    }
                   </>
               )
             }

@@ -6,7 +6,7 @@ export var Data = [
         title:"Vector",
         date:"31/03/2023",
         notes:"https://drive.google.com/file/d/115ubigQPTPPppP6urkHvLv5ZTBPg6lxf/view?usp=share_link",
-        link : "https://www.youtube.com/embed/WKNk-qRP_5Q",
+        videoLink : "https://www.youtube.com/embed/WKNk-qRP_5Q",
         author:"Dr. Sneha Kothari",
     },
     {
@@ -16,7 +16,7 @@ export var Data = [
         title:"Integration Excercise I(A)-I(B) ",
         date:"26/04/2023",
         notes:"",
-        link : "https://www.youtube.com/embed/DVvV3V4XMvc",
+        videoLink : "https://www.youtube.com/embed/DVvV3V4XMvc",
         author:"Dr. Sneha Kothari",
     },
     {
@@ -26,7 +26,7 @@ export var Data = [
         title:"Integration by Parts and Second semester previous year Question Paper.",
         date:"28/04/2023",
         notes:"",
-        link : "https://www.youtube.com/embed/bQHlikZucNg",
+        videoLink : "https://www.youtube.com/embed/bQHlikZucNg",
         author:"Dr. Sneha Kothari",
     },
     {
@@ -34,7 +34,7 @@ export var Data = [
         subject:"Maths",
         author:"Sh. Amit Kushwaha",
         videoCard:true,
-        link:"https://youtu.be/fHTEpQ7UbiU",
+        videoLink:"https://youtu.be/fHTEpQ7UbiU",
         title:"Cramer's Rule",
     },
     {
@@ -42,7 +42,7 @@ export var Data = [
         subject:"Maths",
         author:"Sh. Amit Kushwaha",
         videoCard:true,
-        link:"https://youtu.be/cUFlioM6mgk",
+        videoLink:"https://youtu.be/cUFlioM6mgk",
         title:"Inverse of a Matrix",
     },
     {
@@ -50,7 +50,7 @@ export var Data = [
         subject:"Maths",
         author:"Sh. Amit Kushwaha",
         videoCard:true,
-        link:"https://youtu.be/ZY2jycIl0Zg",
+        videoLink:"https://youtu.be/ZY2jycIl0Zg",
         title:"Determinants Full Chapter",
     },
     {
@@ -58,7 +58,7 @@ export var Data = [
         subject:"Maths",
         author:"Sh. Amit Kushwaha",
         videoCard:true,
-        link:"https://youtu.be/R4s2vzJeBPI",
+        videoLink:"https://youtu.be/R4s2vzJeBPI",
         title:"VECTOR ALGEBRA",
     },
     {
@@ -66,7 +66,7 @@ export var Data = [
         subject:"Maths",
         author:"Sh. Amit Kushwaha",
         videoCard:true,
-        link:"https://youtu.be/-yky85p3Yg8",
+        videoLink:"https://youtu.be/-yky85p3Yg8",
         title:"समाकलन INTEGRATION Part 1",
     },
     {
@@ -74,7 +74,7 @@ export var Data = [
         subject:"Maths",
         author:"Sh. Amit Kushwaha",
         videoCard:true,
-        link:"https://youtu.be/m-ve2pSXPmw",
+        videoLink:"https://youtu.be/m-ve2pSXPmw",
         title:"समाकलन INTEGRATION Part 2",
     },
     {
@@ -82,7 +82,7 @@ export var Data = [
         subject:"Maths",
         author:"Sh. Amit Kushwaha",
         videoCard:true,
-        link:"https://youtu.be/xyd98qN15bE",
+        videoLink:"https://youtu.be/xyd98qN15bE",
         title:"समाकलन INTEGRATION Part 3",
     },
     {
@@ -90,7 +90,7 @@ export var Data = [
         subject:"Maths",
         author:"Sh. Amit Kushwaha",
         videoCard:true,
-        link:"https://youtu.be/EStNFduCn8o",
+        videoLink:"https://youtu.be/EStNFduCn8o",
         title:"समाकलन INTEGRATION Part 4",
     },
     {
@@ -98,7 +98,7 @@ export var Data = [
         subject:"Maths",
         author:"Sh. Amit Kushwaha",
         videoCard:true,
-        link:"https://youtu.be/vDVs_CXplEg",
+        videoLink:"https://youtu.be/vDVs_CXplEg",
         title:"समाकलन INTEGRATION Part 5",
     },
     {
@@ -106,7 +106,7 @@ export var Data = [
         subject:"Maths",
         author:"Sh. Amit Kushwaha",
         videoCard:true,
-        link:"https://youtu.be/0rNAZao2iVI",
+        videoLink:"https://youtu.be/0rNAZao2iVI",
         title:"Matrix Part 1",
     },
     {
@@ -114,7 +114,7 @@ export var Data = [
         subject:"Maths",
         author:"Sh. Amit Kushwaha",
         videoCard:true,
-        link:"https://youtu.be/1_WrsYnG5eY",
+        videoLink:"https://youtu.be/1_WrsYnG5eY",
         title:"Matrix Part 2",
     },
     {
@@ -122,7 +122,7 @@ export var Data = [
         subject:"Maths",
         author:"Sh. Amit Kushwaha",
         videoCard:true,
-        link:"https://youtu.be/AR3JwKr5Kp8",
+        videoLink:"https://youtu.be/AR3JwKr5Kp8",
         title:"Matrix Part 3",
     },
     {
@@ -130,7 +130,7 @@ export var Data = [
         subject:"Maths",
         author:"Sh. Amit Kushwaha",
         videoCard:true,
-        link:"https://youtu.be/OwWBnP86vV0",
+        videoLink:"https://youtu.be/OwWBnP86vV0",
         title:"Matrix Part 4",
     },
     {
@@ -140,7 +140,7 @@ export var Data = [
         title:"Application of Lami's Theorem, JIB CRANE",
         date:"21/03/2023",
         notes:"https://drive.google.com/file/d/1sezhw154WkFXhFeQIhAdiEyvgvau-9Vi/view?usp=share_link",
-        link : "https://www.youtube.com/embed/zDuEl0BXM2w",
+        videoLink : "https://www.youtube.com/embed/zDuEl0BXM2w",
         author:"Sh. Gaurang Sharma",
     },
     {
@@ -150,7 +150,7 @@ export var Data = [
         title:"Types of Beam, Support and Load",
         date:"25/03/2023",
         notes:"https://drive.google.com/file/d/1ruoIrSpVnivxOjSs7PocYf8R7DBgljOh/view?usp=share_link",
-        link : "https://www.youtube.com/embed/R5WmqftXnRs",
+        videoLink : "https://www.youtube.com/embed/R5WmqftXnRs",
         author:"Sh. Gaurang Sharma",
     },
     {
@@ -160,7 +160,7 @@ export var Data = [
         title:"Numericals of Chapter 'Beam'",
         date:"28/03/2023",
         notes:"https://drive.google.com/file/d/1pWW-asfbq4DjYi-A45qYAn_gga6ZC1EC/view?usp=share_link",
-        link : "https://www.youtube.com/embed/h_8wsYklgxM",
+        videoLink: "https://www.youtube.com/embed/h_8wsYklgxM",
         author:"Sh. Gaurang Sharma",
     },    
     {
@@ -170,7 +170,7 @@ export var Data = [
         title:"Friction and Law's of Friction",
         date:"31/03/2023",
         notes:"https://drive.google.com/file/d/1j7ozytz1PBz-UQpfq2SLAUyP2GN6WzUS/view?usp=share_link",
-        link : "https://www.youtube.com/embed/kggawNT1yvU",
+        videoLink: "https://www.youtube.com/embed/kggawNT1yvU",
         author:"Sh. Gaurang Sharma",
     },
     {
@@ -180,7 +180,7 @@ export var Data = [
         title:"Limiting Equilibrium and Friction, Coefficient of Friction (µ), Angle of Friction, Relation between Angle of Friction and Coefficient of Friction",
         date:"1/04/2023",
         notes:"https://drive.google.com/file/d/1G8YdgU-Y03XhoUWMSaTUswYQnMnOPPUb/view?usp=share_link",
-        link : "https://www.youtube.com/embed/T5R_bbPUk3k",
+        videoLink : "https://www.youtube.com/embed/T5R_bbPUk3k",
         author:"Sh. Gaurang Sharma",
     },
 
@@ -191,7 +191,7 @@ export var Data = [
         title:"Magnetic force on Moving charge and current carrying conductor in Uniform Magnetic field",
         date:"31/03/2023",
         notes:"",
-        link : "https://www.youtube.com/embed/n4yVUF4Zp4E",
+        videoLink : "https://www.youtube.com/embed/n4yVUF4Zp4E",
         author:"Sh. Hemant Salvi",
     },
     {
@@ -201,7 +201,7 @@ export var Data = [
         title:"Inclined Plain",
         date:"13/04/2023",
         notes:"https://drive.google.com/file/d/1t3ovnGAIsiXm7EcnRdtGjYhw7tffr401/view?usp=share_link",
-        link : "https://www.youtube.com/embed/mmxHeI43G9c",
+        videoLink: "https://www.youtube.com/embed/mmxHeI43G9c",
         author:"Sh. Gaurang Sharma",
     },
     {
@@ -211,7 +211,7 @@ export var Data = [
         title:"Centroid and Center of Gravity, Step 1 & 2",
         date:"15/04/2023",
         notes:"https://drive.google.com/file/d/1PzA3Y5dlN2LYu2ZaCyBBmjGJDgChRieo/view?usp=share_link",
-        link : "https://www.youtube.com/embed/N1bzk3inbuY",
+        videoLink: "https://www.youtube.com/embed/N1bzk3inbuY",
         author:"Sh. Gaurang Sharma",
     },
     {
@@ -221,7 +221,7 @@ export var Data = [
         title:"Centroid and Center of Gravity, Step 3 & 4",
         date:"18/04/2023",
         notes:"https://drive.google.com/file/d/1lk6OhTJBwFI8M6pvnGnPp2Cc3AEWK7Hc/view?usp=share_link",
-        link : "https://www.youtube.com/embed/XofqxMyVjO4",
+        videoLink : "https://www.youtube.com/embed/XofqxMyVjO4",
         author:"Sh. Gaurang Sharma",
     },
     {
@@ -231,7 +231,7 @@ export var Data = [
         title:"Centroid and Center of Gravity, C Shape, Z Shape, T Shape, F Shape",
         date:"20/04/2023",
         notes:"",
-        link : "https://www.youtube.com/embed/Ff8voYXzqmM",
+        videoLink : "https://www.youtube.com/embed/Ff8voYXzqmM",
         author:"Sh. Gaurang Sharma",
     },
     {
@@ -241,7 +241,7 @@ export var Data = [
         title:"Explain formation of P-Type and N-Type Semi-conductor. WHat do you mean by PN Junction diote? Explain it's characteristics curve.",
         date:"21/04/2023",
         notes:"https://drive.google.com/file/d/1Q__qiNg8vMTCKMWFBBxkD4eziJdgyQYZ/view?usp=share_link",
-        link : "https://www.youtube.com/embed/cK9wQG8LgiM",
+        videoLink: "https://www.youtube.com/embed/cK9wQG8LgiM",
         author:"Sh. Hemant Salvi",
     },
     {
@@ -251,7 +251,7 @@ export var Data = [
         title:"3D Shapes in Centroid and Center of Gravity.",
         date:"21/04/2023",
         notes:"",
-        link : "https://www.youtube.com/embed/Ej5cs0tKeDQ",
+        videoLink : "https://www.youtube.com/embed/Ej5cs0tKeDQ",
         author:"Sh. Gaurang Sharma",
     },
     {
@@ -261,7 +261,7 @@ export var Data = [
         title:"What do you mean by Zener Diote? Explain characteristics curve of zener diode.  What do you mean by Rectifier? Explain working of half wave rectifier. ",
         date:"24/04/2023",
         notes:"https://drive.google.com/file/d/1JxgvgxTeV659dTcS9HRxS7aWyadIRZ8X/view?usp=share_link",
-        link : "https://www.youtube.com/embed/NG6VKPqpnhM",
+        videoLink : "https://www.youtube.com/embed/NG6VKPqpnhM",
         author:"Sh. Hemant Salvi",
     },
     
@@ -272,7 +272,7 @@ export var Data = [
         title:"The Height of a Uniform Frustum of a cone is 28cm and the radius of it top and bottom are 21cm and 35cm Respectively find the distance of its C.G. from the base of the cone.",
         date:"25/04/2023",
         notes:"",
-        link : "https://www.youtube.com/embed/ODbLBFyxBiw",
+        videoLink: "https://www.youtube.com/embed/ODbLBFyxBiw",
         author:"Sh. Gaurang Sharma",
     },
     {
@@ -282,7 +282,7 @@ export var Data = [
         title:"What do you mean by Full wave Rectifier. Explain Working, Use and Construction of Full wave Rectifier. What do you mean by LASER light. Write Special features of LASER light. ",
         date:"25/04/2023",
         notes:"",
-        link : "https://www.youtube.com/embed/5r-m3kBBVEc",
+        videoLink: "https://www.youtube.com/embed/5r-m3kBBVEc",
         author:"Sh. Hemant Salvi",
     },
     {
@@ -292,7 +292,7 @@ export var Data = [
         title:"(End of Unit-4 'Center of Gravity') (Starting of Unit-5 'Simple Machine') Two uniform spheres composed of the same material and who's diameter's are 6cm and 12cm are touching each other. Find the position of the C.G. of the two sphere's taken together. ",
         date:"27/04/2023",
         notes:"",
-        link : "https://www.youtube.com/embed/e56y_Dc1qqY",
+        videoLink: "https://www.youtube.com/embed/e56y_Dc1qqY",
         author:"Sh. Gaurang Sharma",
     },
     {
@@ -302,7 +302,7 @@ export var Data = [
         title:"Simple Machine - 'Velocity Ratio', 'Efficiency', 'Ideal Machine', 'Friction in Machine [Actual Machine]'",
         date:"28/04/2023",
         notes:"",
-        link : "https://www.youtube.com/embed/_MQE75XsPpc",
+        videoLink: "https://www.youtube.com/embed/_MQE75XsPpc",
         author:"Sh. Gaurang Sharma",
     },
 
