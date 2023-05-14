@@ -392,30 +392,13 @@ export const Quiz = (props) => {
               </div>
             )
           }
-          
-          <div className="quiz-fifth-container quiz-fifth-containers-four" onClick={() => navigate("/videoLectures")} >
-          <div className="quiz-fifth-container-first-div" >
-              <div className="quiz-fifth-container-first-div-icon" >
-                <PlayCircleIcon/>
-              </div>
-              <div className="quiz-fifth-container-first-div-h4" >
-                <h4>level 1</h4>
-              </div>
-              <div className="quiz-fifth-container-first-div-h2" >
-                <h2>Video Lectures</h2>
-              </div>
-            </div>
-            <div>
-              <img className="quiz-image" src={cam} alt="quiz-img" />
-            </div>
-        </div>
           <div onClick={()=>navigate('/exploreCourses')} className="quiz-fifth-container quiz-fifth-containers-three">
             <div className="quiz-fifth-container-first-div" >
               <div className="quiz-fifth-container-first-div-icon"  >
                 <TravelExploreOutlinedIcon  />
               </div>
               <div className="quiz-fifth-container-first-div-h4" >
-                <h4>level 2</h4>
+                <h4>level 1</h4>
               </div>
               <div className="quiz-fifth-container-first-div-h2 third-h2-quiz" >
                 <h2>Explore Notes</h2>
@@ -425,6 +408,23 @@ export const Quiz = (props) => {
               <img className="quiz-image image-three-quiz" src={earthimg} alt="img"/>
             </div>
         </div>
+          <div className="quiz-fifth-container quiz-fifth-containers-four" onClick={() => navigate("/videoLectures")} >
+          <div className="quiz-fifth-container-first-div" >
+              <div className="quiz-fifth-container-first-div-icon" >
+                <PlayCircleIcon/>
+              </div>
+              <div className="quiz-fifth-container-first-div-h4" >
+                <h4>level 2</h4>
+              </div>
+              <div className="quiz-fifth-container-first-div-h2" >
+                <h2>Video Lectures</h2>
+              </div>
+            </div>
+            <div>
+              <img className="quiz-image" src={cam} alt="quiz-img" />
+            </div>
+        </div>
+          
         <div onClick={() => navigate("/createQuiz")} className="quiz-fifth-container quiz-fifth-containers-one" >
             <div  className="quiz-fifth-container-first-div" >
               <div className="quiz-fifth-container-first-div-icon" >
