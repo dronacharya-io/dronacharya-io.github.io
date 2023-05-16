@@ -79,4 +79,14 @@ export const Tutorials = [
         semester:"seconde semester",
         notes:"https://drive.google.com/file/d/1L8NiQZFNMaxMd861dwsJE6KakB5ClGyh/view?usp=share_link",
     },
+    {
+        code:2001,
+        subject:"Maths",
+        details:"Fifth Tutorial",
+        author:"Dr. Sneha Kothari",
+        year:"2022-23",
+        class:"1st Year",
+        semester:"seconde semester",
+        notes:"https://drive.google.com/file/d/1fUfCxaUFRNsg8V80TdIxXrHZzfKULlh-/view?usp=share_link",
+    },
 ]
