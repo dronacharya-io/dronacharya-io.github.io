@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Lottie from "react-lottie";
 import {Data} from "../../pages/Video Lectures/VideoData.js";
+import { Tutorials } from "../../pages/Tutorials/TutorialData";
 
 const ProfileTab = () => {
   const navigate = useNavigate();
@@ -53,6 +54,8 @@ const ProfileTab = () => {
     " " +
     months[today.getMonth()];
 
+    const data = Data.concat(Tutorials);
+  
   return (
     <motion.div
       initial={{ y: 10, opacity: 0 }}
@@ -87,11 +90,11 @@ const ProfileTab = () => {
             
                 <div className="profile-notification-content-div">
                   {
-                    Data.map((data)=>{
+                    data.map((data)=>{
                       return(
                         (
                           <motion.div 
-                            onClick={()=>window.open(`${data.link}`)} 
+                            onClick={()=>{ data.notes ? window.open(`${data.notes}`) : window.open(`${data.videoLink}`)}} 
                             className="notification-content-div"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}

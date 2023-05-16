@@ -2,7 +2,7 @@ export const Tutorials = [
     {
         code:2001,
         subject:"Maths",
-        details:"First Tutorial",
+        title:"First Tutorial",
         author:"Dr. Sneha Kothari",
         year:"2022-23",
         class:"1st Year",
@@ -12,7 +12,7 @@ export const Tutorials = [
     {
         code:2001,
         subject:"Maths",
-        details:"Second Tutorial",
+        title:"Second Tutorial",
         author:"Dr. Sneha Kothari",
         year:"2022-23",
         class:"1st Year",
@@ -22,7 +22,7 @@ export const Tutorials = [
     {
         code:2005,
         subject:"Mechanics",
-        details:"First Tutorial",
+        title:"First Tutorial",
         author:"Sh. Gaurang Sharma",
         year:"2022-23",
         class:"1st Year",
@@ -32,7 +32,7 @@ export const Tutorials = [
     {
         code:2005,
         subject:"Mechanics",
-        details:"Second Tutorial",
+        title:"Second Tutorial",
         author:"Sh. Gaurang Sharma",
         year:"2022-23",
         class:"1st Year",
@@ -42,7 +42,7 @@ export const Tutorials = [
     {
         code:2005,
         subject:"Mechanics",
-        details:"Third Tutorial",
+        title:"Third Tutorial",
         author:"Sh. Gaurang Sharma",
         year:"2022-23",
         class:"1st Year",
@@ -52,7 +52,7 @@ export const Tutorials = [
     {
         code:2005,
         subject:"Mechanics",
-        details:"Fourth Tutorial",
+        title:"Fourth Tutorial",
         author:"Sh. Gaurang Sharma",
         year:"2022-23",
         class:"1st Year",
@@ -62,7 +62,7 @@ export const Tutorials = [
     {
         code:2001,
         subject:"Maths",
-        details:"Third Tutorial",
+        title:"Third Tutorial",
         author:"Dr. Sneha Kothari",
         year:"2022-23",
         class:"1st Year",
@@ -72,7 +72,7 @@ export const Tutorials = [
     {
         code:2001,
         subject:"Maths",
-        details:"Fourth Tutorial",
+        title:"Fourth Tutorial",
         author:"Dr. Sneha Kothari",
         year:"2022-23",
         class:"1st Year",
@@ -82,7 +82,7 @@ export const Tutorials = [
     {
         code:2001,
         subject:"Maths",
-        details:"Fifth Tutorial",
+        title:"Fifth Tutorial",
         author:"Dr. Sneha Kothari",
         year:"2022-23",
         class:"1st Year",
