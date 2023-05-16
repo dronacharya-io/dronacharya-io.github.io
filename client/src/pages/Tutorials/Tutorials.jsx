@@ -53,7 +53,7 @@ const Tutorial = (porps) => {
                         return(
                           <>
                             {
-                              data.code === SelectedSubject && <TutorialCard teacher={data.author} number={index+1} link={data.notes} title={data.details} />
+                              data.code === SelectedSubject && <TutorialCard teacher={data.author} number={index+1} link={data.notes} title={data.title} />
                             }
                           </>
                         )
