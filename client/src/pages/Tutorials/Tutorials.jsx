@@ -11,7 +11,7 @@ const Tutorial = (porps) => {
   const { user } = useUserAuth();
   var [SelectedSubject, setSelectedSubject] = useState("");
   var [isTrue, setIsTrue] = useState(false);
-  const available_Subjects = ["Maths","Mechanics"];
+  const available_Subjects = ["Maths","Mechanics","Physics"];
 
   var subjectCode = (props) =>{
     switch(props){

@@ -89,4 +89,14 @@ export const Tutorials = [
         semester:"seconde semester",
         notes:"https://drive.google.com/file/d/1fUfCxaUFRNsg8V80TdIxXrHZzfKULlh-/view?usp=share_link",
     },
+    {
+        code:2002,
+        subject:"Physics",
+        title:"Physics Tutorial",
+        author:"Sh. Hemant Salvi",
+        year:"2022-23",
+        class:"1st Year",
+        semester:"seconde semester",
+        notes:"https://drive.google.com/file/d/1DQducL6z27aePx-NoVU0ZBSXItwmwnt0/view?usp=share_link",
+    },
 ]
