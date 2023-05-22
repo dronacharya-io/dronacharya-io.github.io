@@ -1,9 +1,27 @@
-[Dronacharya.co](https://www.dronacharya.co) is an innovative online learning platform that aims to simplify students' lives by providing them with access to subject notes, recorded video lectures, and quizzes that recap what's been taught in college. The platform has been designed to help students improve their understanding of various subjects and enhance their learning experience.
+<p align="Center">
+  <a href="https://www.dronacharya.co/">
+    <img src="https://www.dronacharya.co/static/media/logo.85711f6a8d303e5c5118.webp" alt="Logo"/ width="100" height="110"/>
+  </a>
+</p>
 
-Dronacharya.co is an open-source project that is currently working with one college organization. This means that the platform is constantly evolving and improving, with the input and feedback from users helping to shape its development. As an open-source project, Dronacharya.co is available to anyone who wishes to use it.
+<h3 align="center" > Dronacharya.co </h3>
 
-With its user-friendly interface and comprehensive range of learning resources, Dronacharya.co is poised to make a big impact on the education sector. The platform offers a range of features that are designed to help students learn more effectively, including access to subject-specific notes, recorded lectures, and quizzes that test their knowledge and understanding.
+<p align="center">
+ An Open source Learning platform and Quiz web app for the Engineering Students from the basics.
+ <br>
+ <hr>
+ <table align="center">
+  <tr>
+    <td>
+       <a href="https://www.dronacharya.co/" <strong> Explore some of the free lectures we offer.</strong>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://www.dronacharya.co/createQuiz" <strong> Create some quizzes so that students can get benefit from your questions.</strong>
+     </td>
+  </tr>
+ </table>
+ 
 
-As more and more students turn to online learning platforms to supplement their studies, Dronacharya.co is well-positioned to become a leader in the field. With its commitment to open-source principles and user-focused design, the platform has the potential to transform the way students learn and help them achieve their academic goals.
-
-
+ 
