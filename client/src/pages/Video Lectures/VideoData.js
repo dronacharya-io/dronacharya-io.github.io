@@ -315,7 +315,16 @@ export var Data = [
         videoLink: "https://www.youtube.com/embed/zZZRgkH9HkQ",
         author:"Sh. Gaurang Sharma",
     },
-    
+    {
+        code: 2002,
+        videoCard:false,
+        subject: "Physics",
+        title:"Explain Helium Neon Laser.",
+        date:"02/05/2023",
+        notes:"",
+        videoLink: "https://www.youtube.com/embed/RfZi5tG6Aq0",
+        author:"Sh. Hemant Salvi",
+    },
     // {
     //     code: 2005,
     //     subject: "Mechanics",
