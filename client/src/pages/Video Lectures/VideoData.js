@@ -305,7 +305,16 @@ export var Data = [
         videoLink: "https://www.youtube.com/embed/_MQE75XsPpc",
         author:"Sh. Gaurang Sharma",
     },
-
+    {
+        code: 2005,
+        videoCard:false,
+        subject: "Mechanics",
+        title:"| Effort lost due to friction and Load lost due to friction. |  Maximum Efficiancy and Maximum Mechanical Advantage. | Law of Machine. | Numeriacal",
+        date:"02/05/2023",
+        notes:"",
+        videoLink: "https://www.youtube.com/embed/zZZRgkH9HkQ",
+        author:"Sh. Gaurang Sharma",
+    },
     
     // {
     //     code: 2005,
