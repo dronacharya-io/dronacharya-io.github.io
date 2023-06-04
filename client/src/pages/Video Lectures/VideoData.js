@@ -30,6 +30,16 @@ export var Data = [
         author:"Dr. Sneha Kothari",
     },
     {
+        code: 2001,
+        videoCard:false,
+        subject: "Maths",
+        title:"Integration by Parts",
+        date:"03/05/2023",
+        notes:"",
+        videoLink : "https://www.youtube.com/embed/lVEEUtlr5qU",
+        author:"Dr. Sneha Kothari",
+    },
+    {
         code:2001,
         subject:"Maths",
         author:"Sh. Amit Kushwaha",
