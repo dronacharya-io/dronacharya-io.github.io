@@ -325,6 +325,16 @@ export var Data = [
         videoLink: "https://www.youtube.com/embed/RfZi5tG6Aq0",
         author:"Sh. Hemant Salvi",
     },
+    {
+        code: 2005,
+        videoCard:false,
+        subject: "Mechanics",
+        title:"",
+        date:"04/05/2023",
+        notes:"| A Lifiting machine lifts 770 newton weight by 15 newton effort. If efficiency at this load is 60% then find the velocity ratio. Now find efficiency at 25 newton effort and 1320 newton load also find Maximum Efficiency of Machine. || A Machine of Velocity Ratio 30, lift's 200 newton and 400 newton with efforts 20 newton and 24 newton respectively. (A) Find Law of Machine. (B) Find Effort to lift 300 newton. (C) Find Efficiency. (D) Find Efforst lost in Friction. |      ",
+        videoLink: "https://www.youtube.com/embed/rKsb9phPJAE",
+        author:"Sh. Gaurang Sharma",
+    },
     // {
     //     code: 2005,
     //     subject: "Mechanics",
