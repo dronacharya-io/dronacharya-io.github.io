@@ -335,6 +335,16 @@ export var Data = [
         videoLink: "https://www.youtube.com/embed/rKsb9phPJAE",
         author:"Sh. Gaurang Sharma",
     },
+    {
+        code: 2002,
+        videoCard:false,
+        subject: "Physics",
+        title:"| Optics || What do you mean by Light || Basic Law of Optics || Reflection and Law of Reflection || Refraction and Law of Refraction ||   ",
+        date:"03/05/2023",
+        notes:"",
+        videoLink: "https://www.youtube.com/embed/MJdGpdxt8LU",
+        author:"Sh. Hemant Salvi",
+    },
     // {
     //     code: 2005,
     //     subject: "Mechanics",
