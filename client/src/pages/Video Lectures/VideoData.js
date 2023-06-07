@@ -375,6 +375,16 @@ export var Data = [
         videoLink: "https://www.youtube.com/embed/noA1D501VqE",
         author:"Sh. Hemant Salvi",
     },
+     {
+        code: 2005,
+        videoCard:false,
+        subject: "Mechanics",
+        title:"| In a Lifting Machine Velocity Ratio is 15. A load of 900 Newton can be lifted with an Effort of 150 Newton. Find out the Efficiency of machine, Loss in effort and Load due to friction. || In a lifting machine an effort of 100 Newton was required to lift a load of 3000 Newton. The Velocity Ratio of machine being 40. Is the machine reversible? | ",
+        date:"06/05/2023",
+        notes:"",
+        videoLink: "https://www.youtube.com/embed/jvQ-3LJpi0I",
+        author:"Sh. Gaurang Sharma",
+    },
     // {
     //     code: 2005,
     //     subject: "Mechanics",
