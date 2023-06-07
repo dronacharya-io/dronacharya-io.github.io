@@ -21,6 +21,8 @@ import EditQuiz from "../../components/editQuiz/editQuiz";
 import QuizSubmissions from "../quizSubmissions/quizSubmissions";
 import QuizScore from "../quizScore/quizScore";
 import Tutorial from "../Tutorials/Tutorials.jsx";
+import { PageNotFound } from "../Page Not Found/pageNotFound";
+
 export const Home = (props) => {
   return (
     <>
@@ -48,6 +50,7 @@ export const Home = (props) => {
               <Route path="/timetable" element={<Timetable />} />
               <Route path="/joinquizPage" element={<MobileJoinQuiz />} />
               <Route path="/tutorials" element={<Tutorial/>} />
+              <Route path="*" element={<PageNotFound />} />
             </Routes>
           </div>
           <div id="profile">
