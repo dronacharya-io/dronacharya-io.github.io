@@ -385,6 +385,16 @@ export var Data = [
         videoLink: "https://www.youtube.com/embed/jvQ-3LJpi0I",
         author:"Sh. Gaurang Sharma",
     },
+    {
+        code: 2002,
+        videoCard:false,
+        subject: "Physics",
+        title:"| Difference between Convex and Concave lense. || Focal length of convex lense is 10cm and distance of object from lense is 20cm. Find out position and nature of image. || Explain the Ray diagram of microscope also explain magnification of microscope. | ",
+        date:"08/05/2023",
+        notes:"",
+        videoLink: "https://www.youtube.com/embed/MkBMDL-UzFU",
+        author:"Sh. Hemant Salvi",
+    },
     // {
     //     code: 2005,
     //     subject: "Mechanics",
