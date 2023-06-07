@@ -365,6 +365,16 @@ export var Data = [
         videoLink: "https://www.youtube.com/embed/MJdGpdxt8LU",
         author:"Sh. Hemant Salvi",
     },
+    {
+        code: 2002,
+        videoCard:false,
+        subject: "Physics",
+        title:"| Explain Critical Error. || Explain Total internal Reflection and Optical Fiber Cable. |",
+        date:"05/05/2023",
+        notes:"",
+        videoLink: "https://www.youtube.com/embed/noA1D501VqE",
+        author:"Sh. Hemant Salvi",
+    },
     // {
     //     code: 2005,
     //     subject: "Mechanics",
