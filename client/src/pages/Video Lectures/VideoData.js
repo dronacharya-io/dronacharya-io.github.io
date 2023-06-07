@@ -40,6 +40,16 @@ export var Data = [
         author:"Dr. Sneha Kothari",
     },
     {
+        code: 2001,
+        videoCard:false,
+        subject: "Maths",
+        title:"| 2022 Exam questions of Intergrals || Diffrential Equation Method || Unit-4 Coordinate Geometry |  ",
+        date:"05/05/2023",
+        notes:"",
+        videoLink : "https://www.youtube.com/embed/1c-4C54ycOM",
+        author:"Dr. Sneha Kothari",
+    },
+    {
         code:2001,
         subject:"Maths",
         author:"Sh. Amit Kushwaha",
