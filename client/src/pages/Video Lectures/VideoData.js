@@ -395,6 +395,16 @@ export var Data = [
         videoLink: "https://www.youtube.com/embed/MkBMDL-UzFU",
         author:"Sh. Hemant Salvi",
     },
+    {
+        code: 2005,
+        videoCard:false,
+        subject: "Mechanics",
+        title:"| Numericals of Simple Machine. || Application and Advantage of Machine. | ",
+        date:"09/05/2023",
+        notes:"",
+        videoLink: "https://www.youtube.com/embed/R06x-wtH2ZM",
+        author:"Sh. Gaurang Sharma",
+    },
     // {
     //     code: 2005,
     //     subject: "Mechanics",
