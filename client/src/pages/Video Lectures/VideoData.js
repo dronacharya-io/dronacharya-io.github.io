@@ -405,6 +405,16 @@ export var Data = [
         videoLink: "https://www.youtube.com/embed/R06x-wtH2ZM",
         author:"Sh. Gaurang Sharma",
     },
+    {
+        code: 2002,
+        videoCard:false,
+        subject: "Physics",
+        title:"| Applications of Microscope. || Explain Ray daigram of compound microscope. |",
+        date:"09/05/2023",
+        notes:"",
+        videoLink: "https://www.youtube.com/embed/jGfTgZ4XoFo",
+        author:"Sh. Hemant Salvi",
+    },
     // {
     //     code: 2005,
     //     subject: "Mechanics",
