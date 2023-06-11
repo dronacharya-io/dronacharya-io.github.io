@@ -60,6 +60,16 @@ export var Data = [
         author:"Dr. Sneha Kothari",
     },
     {
+        code: 2001,
+        videoCard:false,
+        subject: "Maths",
+        title:"| Questions of Straight Line |",
+        date:"12/05/2023",
+        notes:"",
+        videoLink : "https://www.youtube.com/embed/Z9609no-s7E",
+        author:"Dr. Sneha Kothari",
+    },
+    {
         code:2001,
         subject:"Maths",
         author:"Sh. Amit Kushwaha",
