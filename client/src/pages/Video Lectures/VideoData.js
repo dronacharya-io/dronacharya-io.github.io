@@ -50,6 +50,16 @@ export var Data = [
         author:"Dr. Sneha Kothari",
     },
     {
+        code: 2001,
+        videoCard:false,
+        subject: "Maths",
+        title:"| Distance Formula || Section Formula |",
+        date:"10/05/2023",
+        notes:"",
+        videoLink : "https://www.youtube.com/embed/-j8-BQARF3U",
+        author:"Dr. Sneha Kothari",
+    },
+    {
         code:2001,
         subject:"Maths",
         author:"Sh. Amit Kushwaha",
@@ -73,6 +83,7 @@ export var Data = [
         videoLink:"https://youtu.be/ZY2jycIl0Zg",
         title:"Determinants Full Chapter",
     },
+    
     {
         code:2001,
         subject:"Maths",
