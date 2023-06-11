@@ -436,6 +436,16 @@ export var Data = [
         videoLink: "https://www.youtube.com/embed/jGfTgZ4XoFo",
         author:"Sh. Hemant Salvi",
     },
+    {
+        code: 2002,
+        videoCard:false,
+        subject: "Physics",
+        title:"Explain the Ruby Laser.",
+        date:"12/05/2023",
+        notes:"",
+        videoLink: "https://www.youtube.com/embed/1mhHBUpWCPQ",
+        author:"Sh. Hemant Salvi",
+    },
     // {
     //     code: 2005,
     //     subject: "Mechanics",
