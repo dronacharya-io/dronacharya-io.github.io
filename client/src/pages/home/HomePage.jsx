@@ -23,7 +23,7 @@ import QuizScore from "../quizScore/quizScore";
 import Tutorial from "../Tutorials/Tutorials.jsx";
 import { PageNotFound } from "../Page Not Found/pageNotFound";
 
-export const Home = (props) => {
+export const HomePage = (props) => {
   return (
     <>
       <BrowserRouter>
@@ -53,11 +53,11 @@ export const Home = (props) => {
               <Route path="*" element={<PageNotFound />} />
             </Routes>
           </div>
-          <div id="profile">
+          {/* <div id="profile">
             <StickyBox offsetTop={0} offsetBottom={0}>
               <ProfileTab />
             </StickyBox>
-          </div>
+          </div> */}
         </div>
       </BrowserRouter>
     </>
